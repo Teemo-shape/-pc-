@@ -1,0 +1,38 @@
+#div {
+	height: 300;
+	width: 100%;
+	text-align: center;
+	line-height: 300px;
+	font-size: 40px;
+	color: red;
+}
+.check{
+	float: left;
+	height: 50px;
+	width: 150px;
+	margin-right: 10px;
+}
+.check a{
+	display: block;
+	height: 40px;
+	width: 100;
+	border: 1px solid #999;
+	text-align: center;
+	line-height: 40px;
+}
+.go{
+	background: red;
+	color: white;
+	border: 1px solid red;
+}
+.go:hover{
+	color: white !important;
+}
+.bottom{
+	position: relative;
+	left: 0;
+	top: -95px;
+	margin: 0 auto;
+	height: 50px;
+	width: 320px;
+}

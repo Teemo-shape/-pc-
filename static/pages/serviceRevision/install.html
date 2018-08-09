@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TCL服务中心_TCL帮助中心-TCL内购商城</title>
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/serviceRevision.css">
+</head>
+<body>
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<div class="navScum">
+    <div class="content"><a href="/">首页</a> > <a href="/pages/service-home/index.html">服务</a> > <a href="/pages/serviceRevision/install.html">我要安装</a></div>
+</div>
+<div class="mask j-mask" id="hei" style="min-height: 1500px;opacity: 1; z-index: 499; visibility: visible; display: none;">
+</div>
+	<div class="sel-proModel">
+		<span class="close pos"></span>
+		<h3>如何查找您的产品型号</h3>
+		<div class="modBox">
+			一、<span class="f_weight">电视的产品型号查找方法：</span><br/>
+			找到<span class="fred">电视背面或者包装箱上白色条码贴纸</span>，如下图红色框部分就是电视的产品型号。不同时期生产的产品型号位置可能略有差异，铁粉们仔细查看一定可以找到哒。<br/>
+			<img class="mar-10" src="../../app/images/dir1.png"/>
+			<img src="../../app/images/dir2.png"/><br/><br/>
+		          二、 <span class="f_weight">冰洗空的产品型号查找方法：</span><br/>
+		            找到<span class="fred">冰箱、洗衣机或空调机身的中国能效贴纸或者包装箱上白色条码贴纸</span>，如下图红色框部分就是产品型号了。不同时期生产的产品型号位置可能略有差异，铁粉们仔细查看一定可以找到哒。    <br/>  
+			<img class="mar-10" src="../../app/images/dir3.png"/>
+			<img src="../../app/images/dir4.png"/><br/><br/>
+		          三、<span class="f_weight">全品类通用型查找产品型号方式：</span><br/>
+			以电视产品为例，<span class="fred">找到产品的纸质说明书，说明书封面就有产品型号</span>，根据产品的尺寸就可以确认您的电视型号了<br/>
+			<img class="mar-10" src="../../app/images/dir5.png"/><br/><br/>
+			<span class="c_weightest">更多服务请关注“TCL官方服务”</span><br/>
+			<img class="wid1" src="../../app/images/dir6.png"/>
+		</div>
+		<span class="i-btn">我知道了</span>
+	</div>
+<div class="server-box">
+    <div class="server-menu">
+        <h3 class="title">自助服务</h3>
+        <div class="ser-item"><a href="repair.html">我要维修</a><span class="ser-sank"></span></div>
+        <div class="ser-item active"><a href="install.html">我要安装</a><span class="ser-sank"></span></div>
+        <div class="ser-item J-SerItem">
+            <p class="J-SerTitle">服务政策</p>
+            <ul class="J-Polocy active"></ul>
+        </div>
+        <div class="ser-item"><a href="autoCheck.html">自助检测</a><span class="ser-sank"></span></div>
+    </div>
+    <div class="server-r">
+        <h3 class="sel-title">
+            <span>我要安装</span>
+            <div class="right">
+                <span>扫描二维码 关注公众号</span>
+                <div class="sel-code"><img src="../../app/images/code-img.png" /></div>
+            </div>
+        </h3>
+        <div class="ser-form">
+            <div class="sel-box hiden">
+                <div class="sel-item">
+                    <input type="text" class="four-item J-PhoneVal" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" placeholder='联系电话' />
+                    <span class="sel-hint J-PhoneHint"></span>
+                </div>
+                <div class="sel-item">
+                    <input type="text" class="four-item J-ImgVal" placeholder='图片验证码' maxlength="6" />
+                    <span class="img-code J-ImgKey"><img /></span>
+                    <span class="sel-hint J-ImgHint"></span>
+                </div>
+                <div class="sel-item">
+                    <input type="text" class="four-item J-PhoneCodeVal" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="6" placeholder='短信验证码' />
+                    <span class="phone-code J-PhoneSubmit">获取验证码</span>
+                    <span class="sel-hint J-PhoneCodeHint"></span>
+                </div>
+                <div class="sel-item">
+                    <input type="text" class="four-item J-ContactsVal four-n" placeholder='联系人' />
+                    <span class="sel-hint J-ContactsHint"></span>
+                </div>
+            </div>
+
+            <div class="sel-box hiden J-ProvinceBox">
+
+            </div>
+
+            <div class="sel-box">
+                <input type="text" class="max-item J-Address" placeholder='详细地址 (必填)' />
+                <span class="sel-hint J-AddressHint"></span>
+            </div>
+
+            <div class="sel-box">
+                <div class="sel-item">
+                    <select class="half-item J-ProductClass">
+                        <option>请选择产品分类</option>
+                    </select>
+                    <span class="sel-hint J-ProductClassHint"></span>
+                </div>
+                <div class="sel-item">
+                    <input type="text" class="half-item J-ProductSn" placeholder='请输入产品型号' />
+                    <span class="sel-hint J-ProductSnHint"></span>
+                    <ul class="product-model J-ProductModel"></ul>
+                </div>
+                <div class="sel-item">
+                	<span class="sel-dir">如何查找您的产品型号？</span>
+                </div>
+            </div>
+
+            <div class="sel-box hiden">
+                <div class="sel-item">
+                    <textarea class="max-item J-Demand" placeholder='需求描述'></textarea>
+                    <span class="sel-hint J-DemandHint" style="bottom:-5px"></span>
+                </div>
+            </div>
+
+            <div class="sel-box">
+               <div class="sel-item">预约上门时间： </div>
+                <div class="sel-item J-data">
+                    <input type="text" id="ctime" class="half-item j-val" placeholder='年 / 月 / 日' value="2000-01-01" />
+                    <span class="sel-hint J-DataTimeHint"></span>
+                </div>
+                <div class="sel-item" style="margin-top: 2px;">
+                    <select class="half-item J-TimeType">
+                        <!--<option>08:00-10:00</option>
+                        <option>10:00-12:00</option>
+                        <option>12:00-14:00</option>
+                        <option>14:00-16:00</option>
+                        <option>16:00-18:00</option>-->
+                    </select>
+                </div>
+            </div>
+
+            <div class="sel-box hiden" style="text-align: center;">
+                <a href="##" class="sel-submit J-RepairSubmit">提交申请</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- @content end -->
+<!-- Help center html start -->
+<div class="help">
+    <div class="min-wid">
+        <dl>
+            <dt>帮助中心</dt>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>服务支持</dt>
+            <dd>
+                <a target="_blank" href="/pages/service/service.html#policy">售后服务</a>
+            </dd>
+            <dd>
+                <a target="_blank" href="/pages/service/service.html#repair">自助服务</a>
+            </dd>
+            <dd>
+                <a target="_blank" href="/pages/service/service.html#query">进度查询</a>
+            </dd>
+            <dd>
+                <a target="_blank" href="/pages/service/service.html#policye">电子保单</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>客户服务</dt>
+            <dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd>
+            <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+            <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd>
+        </dl>
+        <dl>
+            <dt>关注我们</dt>
+            <dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd>
+            <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+            <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+        </dl>
+        <dl>
+            <dt>应用服务</dt>
+            <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+            <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+            <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+            <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+            <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+        </dl>
+        <dl class="last-r">
+            <p class="red phone">4008-123456</p>
+
+            <p class="grey">（24小时在线，仅收市话费）</p>
+            <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+        </dl>
+    </div>
+</div>
+<!-- Help center html end -->
+
+<!-- footer html start -->
+<div class="footer">
+    <div>
+        <div class="foot-logo">&#xe674;</div>
+        <p class="blod">
+            <a target="_blank" href="/group/companyInfo/index">关于TCL</a>|
+            <a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|
+            <a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|
+            <a target="_blank" href="/group/news/index">新闻中心</a>|
+            <a target="_blank" href="/group/recruitment/index">人才招聘</a>|
+            <a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+
+        <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+            <a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|
+            <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|
+            <a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+
+        <div class="foot-r">
+            <div class="language">
+                <i class="arrow">&#xe608;</i>
+                <a href="#" class="lang-item active">中文简体</a>
+                <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+            <div><img src="/app/images/credibility.png"/></div>
+        </div>
+    </div>
+</div>
+<!-- footer html end -->
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+<script src="../../app/js/date.js"></script>
+<script>
+    require(['serviceRevision.js'],function(obj){
+        obj.install('install');
+    })
+</script>
+</body>
+</html>

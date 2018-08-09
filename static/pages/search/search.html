@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>T严选-TCL员工购物平台,TCL员工之家,TCL内部员工购物商城</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+    <style>
+    .header.my {
+        position: relative;
+    }
+    
+    .padding-box button {
+        background: #fff;
+    }
+    
+    .padding-box button[disabled] {
+        color: #999 !important;
+    }
+
+    .crumbs-box {
+        width: 100%;
+        height: 50px;
+        background-color: #e3e3e3;
+    }
+    
+    .crumbs-box a {
+        font-size: 12px;
+        color: #000;
+    }
+    
+    .comm-list .comm-r .comm-text span a {
+        display: inline;
+    }
+    .commodity .loading{opacity: 0;}
+    </style>
+    <link rel="stylesheet" href="../../app/css/not-search.css">
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- header-->
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!-- side bar start -->
+    <div class="mask"></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close">&#xe63b;</span>
+        <div class="cart" id="dvPlatTopCart">
+            <h3 class="cart-head">
+                <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                    <img class="loading"  src="http://10.73.128.174:20300/static/usercenter/img/loading.gif">
+                </div>
+            </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist">
+            <h3>
+                <span class="shoping">&#xe624;</span>注册
+            </h3>
+            <div class="login-inp">
+                <div>
+                    <input type="text" placeholder="手机或邮箱">
+                </div>
+                <div class="verify">
+                    <input type="text" placeholder="图片验证码"><span><img src="http://10.73.128.174:20300/static/kuyu/common/img/verify.gif"></span></div>
+                <div>
+                    <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种">
+                </div>
+                <div>
+                    <input type="text" placeholder="确认密码">
+                </div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div>
+                    <button class="buy zhuce">注册</button>
+                </div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide">
+        </div>
+        <input type="text" id="test">
+        <!-- 判断是否已经登录，同步登录用于判断 -->
+        <input type="hidden" name="userloginname" id="userloginname" value="">
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null">
+        <!-- login html end -->
+    </div>
+    <!-- side bar end -->
+    <!-- Commodity list html start -->
+    <div class="box commodity" id="channelSty">       
+        <div class="searchRes">
+            搜索：<strong></strong>&emsp;共&nbsp;<em></em>&nbsp;个商品
+        </div>
+        <div class="searByPri">
+            <strong>价格</strong>
+            <div class="priRange">
+                <input class="price-start" data-start="" type="text" placeholder="￥">-<input class="price-end" data-end="" type="text" placeholder="￥"><span class="confirm">确定</span>
+            </div>
+        </div>
+        <!--<div id="tmpCheatCateSelect"><div class="toggle">v</div></div>-->
+        <div class="comm-search-content">
+          <div class="sort-list">
+             <a href="javascript:;" data-name="sortWeight" sorttype="1" class="sortWeight">综合排序</a>
+             <a href="javascript:;" data-name="salsnum" sorttype="2" class="salsnum">销量&nbsp;&nbsp;↑</a>
+             <a href="javascript:;" data-name="staffPrice" sorttype="2" class="priceRank">价格&nbsp;&nbsp;↑</a>
+              <img class="iloading" src="../../app/images/loading.gif">
+          </div>
+       </div>
+        <div class="comm-list">
+            <!-- 商品列表 -->
+            <div class="comm-mar"></div>
+            <!-- 隐藏域 -->
+            <input type="hidden" id="hdn_keyword" value="" />
+            <input type="hidden" id="hdn_totalNum" value="17" />
+            <input type="hidden" id="hdn_keywords2" value="" />
+        </div>
+    </div>
+    <div id="pagingDv" class="channPag">
+        <input type="hidden" id="channelId" value="" />
+        <div class="padding-box">
+            <div class="padding clearmar">
+                <!-- 页码 -->
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdn_productPicType" value="" />
+    <input type="hidden" id="hdn_attributePrice" value="" />
+    <!-- Commodity list html end -->
+    <!-- Help center html start -->
+    <div class="help">
+        <div class="min-wid">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policy">售后服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#repair">自助服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#query">进度查询</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policye">电子保单</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>客户服务</dt>
+                <dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd>
+                <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+                <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd> 
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd>
+                <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+                <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+            </dl>
+            <dl>
+                <dt>应用服务</dt>
+                <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+                <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+                <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+                <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+                <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+            </dl>
+            <dl class="last-r">
+                <p class="red phone">4008-123456</p>
+
+                <p class="grey">（24小时在线，仅收市话费）</p>
+                <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+            </dl>
+        </div>
+    </div>
+    <!-- Help center html end -->
+
+    <!-- footer html start -->
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="/group/companyInfo/index">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|
+                <a target="_blank" href="/group/news/index">新闻中心</a>|
+                <a target="_blank" href="/group/recruitment/index">人才招聘</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="http://www.tcl.com/" class="lang-item active">中文简体</a>
+                    <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+                <div><img src="/app/images/credibility.png"/></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="search.js"></script> 
+</body>
+
+</html>

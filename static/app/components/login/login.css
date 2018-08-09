@@ -1,0 +1,413 @@
+body {
+    background-color: #fff !important;
+    color: #666;
+    font-family: "Hiragino Sans GB","Microsoft Yahei",Lato,Arial,sans-serif;
+    font-size: 16px;
+    min-height: 100%;
+    min-width: 1224px;
+    position: relative;
+}
+.headerbox {
+    margin: 0 auto;
+    width: 1226px;
+}
+.fl {
+    float: left;
+}
+.headerbox .header .crumb {
+    color: #666;
+    font-size: 32px;
+    font-weight: lighter;
+    line-height: 100px;
+    margin-left: 30px;
+}
+.login-box {
+    height: 480px;
+    position: relative;
+}
+.login-box .main {
+    margin-top: 0;
+}
+.pr {
+    position: relative;
+}
+.main {
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 1226px;
+}
+.login-box .login-cont {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    height: 378px;
+    padding: 20px 40px;
+    right: 0;
+    top: 40px;
+    width: 360px;
+}
+.login-box .login-cont .fm-group {
+    margin: 5px 0 20px 0;
+    /*padding-bottom: 15px;*/
+}
+
+.login-box .login-cont .fm-group .ikyuser {
+    font-family: 'iconfont-tcl';
+    top: 11px;
+    left: 3%;
+    /*height: 27px;*/
+    /*margin: 8px 0 0 8px;*/
+    /*width: 28px;*/
+}
+.pa {
+    position: absolute;
+}
+.login-box .login-cont .fm-group .linfo {
+    border: 1px solid #999;
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-indent: 50px;
+    width: 100%;
+}
+.login-box .login-btn {
+    margin-top: 5px;
+}
+.login-box .login-btn a, .login-box .login-btn button, .login-box .login-btn span {
+    background: red none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.login-box .o-methds {
+    margin-top: 4px;
+    width: 350px;
+}
+.login-box .o-methds a {
+    color: #333;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    margin-right: 44px;
+    color:#ff0000;
+}
+a, button, input, label, li, select, ul {
+    list-style: outside none none;
+    outline: 0 none;
+}
+.footerbox {
+    margin:42px auto 42px auto;
+    width: 1226px;
+}
+.footerbox .footnav {
+    margin: 0 auto;
+    width: 500px;
+}
+.footerbox .footnav a {
+    border-right: 1px solid #ccc;
+    color: #666;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    width: 92px;
+}
+a {
+    -moz-user-select: none;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+.footerbox .copyright {
+    color: #999;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 13px;
+    text-align: center;
+}
+.headerbox .header {
+    height: 100px;
+}
+.headerbox .header {
+    border: medium none;
+    height: 100px;
+    margin-left: 20px;
+    line-height: 100px;
+    vertical-align: middle;
+}
+.fr{
+    float:right;
+}
+.login-box .o-methds a.btn-accuntApply{
+    margin-right: 70px;
+}
+.logo-icon{
+    font-family: "iconfont-tcl";
+    font-size: 80px;
+    color: #ff0000;
+}
+.login-box .login-box-bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+}
+.login-box .login-box-bg img{
+    width:100%;
+    height: 100%;
+}
+.T-logo{
+    font-family: "iconfont-tcl";
+    font-size: 80px;
+    color: #ff0000;
+}
+.forget-box .pass-code{
+    top:1px;
+    width:148px;
+    height: 46px;
+    background-color: #F7F7F7;
+    line-height: 46px;
+    color: #ff0000;
+}
+.forget-box .red-link{
+    text-decoration: underline;
+    color:#ff0000;
+}
+.forget-box .user-ico{
+    background-image: none;
+    font-size: 20px;
+    color:#999;
+    font-family: 'iconfont-tcl';
+    top:15px;
+}
+.forget-box .pass-code img{
+    width:100%;
+    height: 100%;
+}
+.forget-box .pass-code a{
+    color: #ff0000;
+}
+.forget-box .forget-get-row{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width:100%;
+}
+.forget-box .forget-get-row input[type=radio]{
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    border:none !important;
+    vertical-align: top;
+    background: url(../../images/r-two.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    margin-top: 14px;
+    position: absolute;
+    opacity: 0;
+}
+.forget-box .forget-get-row input[type=radio]+.get-way-select-img{
+    background: url(../../images/r-two.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.forget-box .forget-get-row input[type=radio]:checked+.get-way-select-img{
+    background: url(../../images/r-one.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.forget-box .forget-get-row input[type=radio]:checked{
+    background: url(../../images/r-one.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 0;
+}
+.forget-box .get-way-select-icon{
+    background-color: #fff;
+    border: 1px solid #dddee1;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.forget-box .forget-get-way{
+    width:410px;
+    margin: 10px auto;
+}
+.forget-box .forget-get-succ{
+    width:410px;
+    margin: 10px auto;
+}
+.forget-box .forget-get-succ .succ-icon{
+    font-family: iconfont-tcl;
+    font-size: 62px;
+    width:90px;
+    height: 90px;
+    border-radius: 45px;
+    background-color: #52AB3F;
+    color: #ffffff;
+    margin: 15% auto;
+    margin-bottom: 10%;
+    line-height: 87px;
+    padding-left: 8px;
+}
+.forget-box .forget-get-succ .succ-tip{
+    font-size: 25px;
+    width:100%;
+    text-align: center;
+}
+.succ-tip > strong {
+    font-size: 30px;
+}
+.forget-box .forget-get-succ .btn-row{
+    width:100%;
+}
+.forget-box .btn-row{
+    width:410px;
+    margin: 6% auto;
+}
+.forget-box .btn-row .btn-red{
+    background-color: #ff0000;
+    color: #ffffff;
+    width: 36.5%;
+    margin: 3%;
+    margin-left: 11%;
+    padding:10px 0;
+    font-size: 16px;
+}
+
+.forget-box .btn-row .btn-emtry{
+    background-color: #ffffff;
+    color: #ff0000;
+    width: 36.5%;
+    margin: 3%;
+    border:1px solid #ff0000;
+    padding: 9px 0;
+    font-size: 16px;
+}
+.login-box .hint{
+    color: #ff0000;
+}
+.login-box .ImgCodeshow{
+    position: absolute;
+    width: 100px;
+    height: 38px;
+    top: 1px;
+    right: 1px;
+}
+.reg-cont input.agree-apply{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+.applyForm .ImgCodeshow{
+    height: 48px;
+    right: 34%;
+    top: 1px;
+    width: 134px;
+}
+.applyForm .ImgCodeshow img{
+    width:100%;
+    height: 100%;
+}
+.input-box .user-info-label{
+    margin-left:20px;
+    width: 60px;
+    font-size: 13px;
+    text-align: justify;
+    position: absolute;
+    top: 16px;
+}
+.input-box .user-info-label:after{
+    display: inline-block ;
+    content: '';
+    padding-left: 100%;
+}
+.reg-cont input.user-base{
+    padding-left: 90px;
+}
+
+#mask-ele{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .6;
+    display: block;
+}
+.agreement.hide,
+#mask-ele.hide{
+    display: none;
+}
+.agreement{
+    z-index: 15000;
+    display: block;
+}
+.agreement .J-ProtocolClose {
+    color: #666;
+    font-size: 32px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 20px;
+
+}
+ .agreement .agr-main {
+    margin: 0 15px;
+}
+ .agreement .agr-main .agr-content {
+    height: 340px;
+    overflow: hidden;
+    overflow-y: scroll;
+    font-size: 14px;
+    color: #666;
+}
+ .agreement .agr-main .agree-box .agree {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: red;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+.agreement.J-Agreement{
+    opacity: 1;
+}
+.j-cTip {
+    cursor: pointer;
+}
+
+.tip-lable{text-align: left;color:#999;padding-left:24px;}

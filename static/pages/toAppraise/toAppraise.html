@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL - 产品订单列表</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+    <style>
+         .file {
+            position: relative;
+            display: block;
+            background: #f0f0f0;
+            border: 1px solid #e3e3e3;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            color: #ccc;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 80px;
+            font-size: 80px;
+            text-align: center;
+            font-weight: 100;
+        }
+        .file input {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            filter: alpha(opacity=0);
+        }
+        form a:hover{color: #999;}
+        .uploadimgShow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 128px;
+            height: 128px;
+            z-index: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top html start -->
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!--<div class="header translucent fixed">
+        <div class="nav">
+            <div class="nav-bor">
+                <div class="nav-bar"><span class="close"></span>
+                    <h1 class="hea-box"><a href="/pages/index/index.html" class="logo">&#xe674;</a></h1>
+                    <div class="hea-box hot"></div>
+                    <div class="saerch">
+                        <span class="fl">&#xe614;</span>
+                        <input type="text" class="nav-saerch" value="" placeholder="输入查询的商品">
+                        <div class="hot-words">
+                        </div>
+                    </div>
+                    <div class="fr">
+                        <div class="menu">
+                            <i class="menu_line"></i>
+                            <div class="mes" data-id="1">
+                                <a href="/pages/channel/channel.html?channelId=tv">电视</a>
+                            </div>
+                            <div class="mes" data-id="2">
+                                <a href="/pages/channel/channel.html?channelId=mobile">手机</a>
+                            </div>
+                            <div class="mes" data-id="3">
+                                <a href="/pages/channel/channel.html?channelId=air">空调</a>
+                            </div>
+                            <div class="mes" data-id="4">
+                                <a href="/pages/channel/channel.html?channelId=refrigerator">冰箱</a>
+                            </div>
+                            <div class="mes" data-id="5">
+                                <a href="/pages/channel/channel.html?channelId=washer">洗衣机</a>
+                            </div>
+                            <div class="mes" data-id="6">
+                                <a href="/pages/channel/channel.html?channelId=homeappliance">健康电器</a>
+                            </div>
+                            <div class="mes" data-id="7">
+                                <a href="/pages/service/service.html" target="_blank">服务</a>
+                            </div>
+                            <div class="mes" data-id="8">
+                                <a href="http://fans.tcl.com/" target="_blank">社区</a>
+                            </div>
+                            <div class="mes" data-id="9">
+                                <a href="http://hy.tcl.com/" target="_blank">积分兑换</a>
+                            </div>
+                            <div class="mes" data-id="10">
+                                <a href="/pages/bulkpurchase/bulkpurchase.html" target="_blank">大宗采购</a>
+                            </div>
+                        </div>
+                        <div class="nav-r fl">
+                            <span class="sear">&#xe614;</span>
+                            <span class="shoping ps-rela">&#xe60c;
+                                    <span class="header-circle hide" id="head_cart"></span>
+                            </span>
+                            <span class="admin">&#xe624;</span>
+                            <font id="span_customerName" title="">
+                            </font>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-list" style="display: none;">
+            <div class="li" data-id="1" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="/pages/productDetails/productDetails.html?id=9e8fc39599fe49339fc453082ee0731f">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/155/0000155360.fid"></span>
+                            <p class="m_tit">家用节能变频滚筒 8公斤</p>
+                            <p class="red" id="plathead_9e8fc39599fe49339fc453082ee0731f">
+                                1899.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/eba962e6c6f64b218dc5db1a4ff6466b">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116267.fid"></span>
+                            <p class="m_tit">大屏滚筒 7公斤</p>
+                            <p class="red" id="plathead_eba962e6c6f64b218dc5db1a4ff6466b">
+                                1299.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/4f875fbea2184a2aa1f1928ca64477d0">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116266.fid"></span>
+                            <p class="m_tit">大容量的波轮 8公斤</p>
+                            <p class="red" id="plathead_4f875fbea2184a2aa1f1928ca64477d0">
+                                999.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/e44d490c208146569b7c55506eb1aee1">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116265.fid"></span>
+                            <p class="m_tit">德国工艺波轮7公斤</p>
+                            <p class="red" id="plathead_e44d490c208146569b7c55506eb1aee1">
+                                899.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/6bd84c870fef424d81c6b8e0c546e140">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116264.fid"></span>
+                            <p class="m_tit">德国工艺波轮 6公斤</p>
+                            <p class="red" id="plathead_6bd84c870fef424d81c6b8e0c546e140">
+                                749.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="li" data-id="2" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/28ca18b4b8a545cc8dbafe02905ef228">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116255.fid"></span>
+                            <p class="m_tit">北斗天玑智能钛金 大2匹</p>
+                            <p class="red" id="plathead_28ca18b4b8a545cc8dbafe02905ef228">
+                                4099.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/d88b3abd95c540dfbc05436513e8bbb2">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116256.fid"></span>
+                            <p class="m_tit">天阔 纯铜冷暖 大1.5匹</p>
+                            <p class="red" id="plathead_d88b3abd95c540dfbc05436513e8bbb2">
+                                1649.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/79075d3ecd324fe582b801097a0ad144">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116251.fid"></span>
+                            <p class="m_tit">单冷型移动空调 小1匹</p>
+                            <p class="red" id="plathead_79075d3ecd324fe582b801097a0ad144">
+                                1899.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/e8a8c2c77ba1438f9fe27c551557154e">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/155/0000155452.fid"></span>
+                            <p class="m_tit">智能云钛金节能型 1.5匹</p>
+                            <p class="red" id="plathead_e8a8c2c77ba1438f9fe27c551557154e">
+                                1799.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="li" data-id="3" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/1ddc80a412a34e89ae4b13b4eb77569b">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/179/0000179274.fid"></span>
+                            <p class="m_tit">流光金属多门 456L</p>
+                            <p class="red" id="plathead_1ddc80a412a34e89ae4b13b4eb77569b">
+                                2799.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/312585b66f8c482e99c3778e140c4323">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116179.fid"></span>
+                            <p class="m_tit">精准控温对开门 515L</p>
+                            <p class="red" id="plathead_312585b66f8c482e99c3778e140c4323">
+                                2699.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/931674b455924694aea8538e39a3e957">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116125.fid"></span>
+                            <p class="m_tit">德式经典三门 205L</p>
+                            <p class="red" id="plathead_931674b455924694aea8538e39a3e957">
+                                1099.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/3b1afd7a1daa48bb96e97afb7aeadfd4">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116064.fid"></span>
+                            <p class="m_tit">德式经典双门 171L</p>
+                            <p class="red" id="plathead_3b1afd7a1daa48bb96e97afb7aeadfd4">
+                                899.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/8791e668a1294cf886f47b7681c88ec8">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116061.fid"></span>
+                            <p class="m_tit">家用小双门 芭蕾白 118L</p>
+                            <p class="red" id="plathead_8791e668a1294cf886f47b7681c88ec8">
+                                699.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="li" data-id="4" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/bbc6843e3b2148c19ff29933316a09b5">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/171/0000171986.fid"></span>
+                            <p class="m_tit">TCL-580菁英本色态度商务手机 素银</p>
+                            <p class="red" id="plathead_bbc6843e3b2148c19ff29933316a09b5">
+                                1399.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/b2f58bc058a84bed8191b9ab54abaeec">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/171/0000171985.fid"></span>
+                            <p class="m_tit">TCL-950剑胆琴心内涵商务手机 泰然金</p>
+                            <p class="red" id="plathead_b2f58bc058a84bed8191b9ab54abaeec">
+                                3299.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/e70bc3a70eb64986aa6c0ba3fbd78ff9">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/153/0000153553.fid"></span>
+                            <p class="m_tit">TCL-750 初现 文艺气质手机 雅金</p>
+                            <p class="red" id="plathead_e70bc3a70eb64986aa6c0ba3fbd78ff9">
+                                1599.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/401d1d5ded8945eeab33c66ce2a23af2">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/173/0000173862.fid"></span>
+                            <p class="m_tit">TCL-520初现 美颜气质手机 曜黑</p>
+                            <p class="red" id="plathead_401d1d5ded8945eeab33c66ce2a23af2">
+                                1290.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/37f11efdd26d4c0b8856a51d05724759">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116261.fid"></span>
+                            <p class="m_tit">老人机升级版 纯净白</p>
+                            <p class="red" id="plathead_37f11efdd26d4c0b8856a51d05724759">
+                                199.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="li" data-id="5" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/29bf9d55ab4f49c6b71c0efce2ac5e43">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116632.fid"></span>
+                            <p class="m_tit"> 观影王曲面版 55英寸</p>
+                            <p class="red" id="plathead_29bf9d55ab4f49c6b71c0efce2ac5e43">
+                                4799.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/1ffa4ff89390411fba54aa75d4e539b6">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116630.fid"></span>
+                            <p class="m_tit">观影王2代纤薄版55英寸</p>
+                            <p class="red" id="plathead_1ffa4ff89390411fba54aa75d4e539b6">
+                                4599.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/e07d222b1ab941aab7c7a37f5da7254f">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116631.fid"></span>
+                            <p class="m_tit">观影王高色域版55英寸</p>
+                            <p class="red" id="plathead_e07d222b1ab941aab7c7a37f5da7254f">
+                                3799.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/750340a9b60f4272b035b7215f8afafa">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116634.fid"></span>
+                            <p class="m_tit">真4K 561系列 55英寸</p>
+                            <p class="red" id="plathead_750340a9b60f4272b035b7215f8afafa">
+                                3199.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/0ca46175908640d4ab3e21f323f747b0">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/155/0000155224.fid"></span>
+                            <p class="m_tit">观影王4K护眼版 49英寸</p>
+                            <p class="red" id="plathead_0ca46175908640d4ab3e21f323f747b0">
+                                2699.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="li" data-id="6" style="display: none;">
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/3dd64e3e1c784c828aba3d71f26a05c4">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116248.fid"></span>
+                            <p class="m_tit">全罩式RO智能净水机</p>
+                            <p class="red" id="plathead_3dd64e3e1c784c828aba3d71f26a05c4">
+                                1899.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/7a28a0ea9c844561957f734c959f7f97">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116249.fid"></span>
+                            <p class="m_tit">阿里云小智土豪金净化器</p>
+                            <p class="red" id="plathead_7a28a0ea9c844561957f734c959f7f97">
+                                999.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/b1fdae825a674a0fa588b6f2cafc8f16">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116191.fid"></span>
+                            <p class="m_tit">干湿两用 扫拖一体机</p>
+                            <p class="red" id="plathead_b1fdae825a674a0fa588b6f2cafc8f16">
+                                1099.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/42936c06da3a431aa2c29a6665487095">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116250.fid"></span>
+                            <p class="m_tit">第三代原汁魔法师</p>
+                            <p class="red" id="plathead_42936c06da3a431aa2c29a6665487095">
+                                599.00元
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.tcl.com/item/2d3748d909cf49008efc1c94e9a2c7f2">
+                            <span class="m_img"><img src="http://img.mall.tcl.com/dev1/0/000/116/0000116190.fid"></span>
+                            <p class="m_tit">床铺除螨仪 白色</p>
+                            <p class="red" id="plathead_2d3748d909cf49008efc1c94e9a2c7f2">
+                                399.00元
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    <!-- Top html end -->
+    <!-- Right slide bar html end -->
+    <div class="mask"></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close">&#xe60f;</span>
+        <div class="cart" id="dvPlatTopCart">
+            <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading" style="display:none" src="http://www.tcl.com:80static/usercenter/img/loading.gif"/>
+            </div>
+        </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist">
+            <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+            <div class="login-inp">
+                <div>
+                    <input type="text" placeholder="手机或邮箱" />
+                </div>
+                <div class="verify">
+                    <input type="text" placeholder="图片验证码" /><span><img
+                    src="http://www.tcl.com:80static/kuyu/common/img/verify.gif"/></span></div>
+                <div>
+                    <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" />
+                </div>
+                <div>
+                    <input type="text" placeholder="确认密码" />
+                </div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div>
+                    <button class="buy zhuce">注册</button>
+                </div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide">
+            <div class="login-success">
+                <h3>
+                <p class="login-img">
+                    <a href="http://www.tcl.com:80/usercenter/customercomplex/toUploadImageKuyu"
+                            target="_blank">
+                            <img src="http://www.tcl.com:80static/usercenter/img/default.png"/></a>
+                </p>
+                <p class="login-name" id="loginName"></p>
+                <ul class="login-infor">
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tclcustomer/toMyIntegralDetailKuyu"><span
+                            class="title" id="jifen">0</span></a> <span>积分</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/coupondetails/toListKuyu"><span
+                            class="title" id="coupon">0</span></a> <span>优惠券</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tcode/tcodeListKuyu/1/1/10"><span
+                            class="title" id="tcode">0</span></a> <span>T码</span></li>
+                </ul>
+            </h3>
+                <div class="login-inp" style="line-height: 3">
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/toMyCenter">个人中心<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/order/listKuyu/1/5?init=true">我的订单<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/productfavorite/toPageKuyu">我的收藏<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/reserveorder/listKuyu/1/5">我的预约<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/accountSecurityKuyu">管理账号<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                </div>
+                <div class="login-log">
+                    <a href="http://www.tcl.com:80/tclcustomer/logout" class="buy">退出</a>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="test" />
+        <input type="hidden" name="userloginname" id="userloginname" value="113362140" />
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null" />
+        <!-- login html end -->
+    </div>
+    <!-- go to top html-->
+    <!--<div class="goTop">
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+    </div>-->
+    <!-- go to top html-->
+    <div id="insertc"></div>
+    <!-- Top html end -->
+    <!--crumbs html start-->
+    <div class="m_crumbs bg_f0">
+        <div class="min-wid">
+            <div class="fl"><a href="/">首页</a> / 产品订单 / 评价管理</div>
+        </div>
+    </div>
+    <!--crumbs html end-->
+    <!--mian html start-->
+    <div class="member_mian min-wid m-mt">
+        <!-- 菜单 -->
+        <!--左侧导航#navigation-->
+        <div class="fl nav_left">
+            <include type="userCenterBar" src="{{userCenterBar}}"></include>
+        </div>
+        <!-- 菜单end -->
+        <div class="fr mian_right" id="mian_right">
+            <div class="m_content">
+                <h3>商品评价</h3>
+                <div id="main_comment">
+                    <!-- 商品评价详情 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--mian html start-->
+    <div class="reson-tip hidden"></div>
+    <!-- Help center html start -->
+    <div class="help"  id = "navFooterLink">
+        <div class="min-wid">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policy">售后服务</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService">自助服务</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policye">电子保单</a></dd>
+            </dl>
+            <dl>
+                <dt>关于TCL</dt>
+                <dd><a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=1">了解TCL</a></dd>
+                <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/group/recruitment/index">人才招聘</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/connectWithUs.jsp">联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+                <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">新浪微博</a>
+                </dd>
+                <dd><a target="_blank" href="http://www.shifendaojia.com/pc.html">十分到家</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a></dd>
+            </dl>
+            <dl>
+                <dt>特色服务</dt>
+                <dd><a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a>
+                </dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>应用服务</dt>
+                <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+                <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+                <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+                <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+                <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+            </dl>
+            <dl class="last-r">
+                <p class="red phone">4008-123456</p>
+                <p class="grey">（24小时在线，仅收市话费）</p>
+                <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+            </dl>
+        </div>
+    </div>
+    <!-- Help center html end -->
+    <!-- go to top html-->
+    <!--<div class="goTop">
+        <a href="#">
+            <div class="item">&#xe64a;</div>
+        </a>
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+    </div>-->
+    <!-- footer html end -->
+    <div class="footer">
+        <div>
+            <!-- <img src="http://www.tcl.com:80static/frontpage/common2/img/logo.png" /> -->
+            <div class="foot-logo">&#xe656;</div>
+            <p class="blod"><a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> | <a target="_blank" href="http://www.tcl.com/group/investors/index">投资者关系</a> | <a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> | <a target="_blank" href="/dealer/toLogin">经销商之家</a> | <a target="_blank" href="http://www.tcl.com:80/bulkpurchase/service">大宗采购</a> | <a rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> | <a href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a> | <a href="http://news.tcl.com/English.php/index/index.html">English</a></p>
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. <a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> TCL集团股份有限公司版权所有 粤ICP备05040863号</p>
+            <div class="foot-r"><span><em>&#xe63a;</em></span>诚信网站</div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <!-- footer html end -->
+    <!-- go to top html-->
+    <div class="goTop">
+        <a href="#"></a>
+    </div>
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+        <script src="../../app/js/ajaxfileupload.js"></script>
+    <script src="toAppraise.js"></script>
+</body>
+
+</html>

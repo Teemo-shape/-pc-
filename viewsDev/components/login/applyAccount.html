@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>账号登录-TCL</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/app/css/global.css">
+    <link rel="stylesheet" href="/app/css/channel.css">
+    <link rel="stylesheet" href="/app/css/style.css">
+    <link rel="stylesheet" href="/app/components/login/login.css">
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="../../app/js/ie9.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <style>
+        .header.my {
+            position: relative;
+        }
+    </style>
+    <style>
+        .reg-cont .btn_disabled {
+            border-color: #B4B4B4;
+            background-color: #B4B4B4
+        }
+    </style>
+    <% include ../../headerlogin %>
+        <% var R = __result__ %>
+            <div class="box ">
+                <div class="reg-top">
+                    <div class="logo">
+                        <a href="javascript:;" binder-event="click|goIndex">
+                            <span class="T-logo" style="line-height: 60px">&#xe6a9;</span>
+                        </a>
+                    </div>
+                    <div class="title">账号申请</div>
+                </div>
+            </div>
+            <!-- Top html end -->
+            <!-- content html start -->
+            <div class="reg-cont forget-box applyBase">
+                <strong id="Msg" style="color:red;"></strong>
+                <!--<div class="user-name input-box j-way j-workid hide"><span class="user-ico">&#xe620;</span>-->
+                <!--<input type="text" name="workid" id="workid" placeholder="请输入TCL员工工号" value=""/>-->
+                <!--<span>没有手机号的员工可使用<a class="red-link j-select-apply-way" href="javascript:;" data-rela="email">邮箱申请</a> 或 <a class="red-link j-select-apply-way" href="javascript:;" data-rela="phone">手机号申请</a></span>-->
+                <!--<strong class="j-name-check"></strong>-->
+                <!--</div>-->
+                <div class="user-name input-box j-way j-phone hide"><span class="user-ico">&#xe620;</span>
+                    <input type="text" name="phone" id="phone" placeholder="请输入TCL员工手机号" value="" />
+                    <p class="tip-lable">没有手机号的员工可使用<a class="red-link j-select-apply-way" href="javascript:;" data-rela="email">邮箱申请</a></p>
+                    <strong class="j-name-check"></strong>
+                </div>
+                <div class="user-name input-box j-way j-email"><span class="user-ico">&#xe643;</span>
+                    <input type="text" name="email" id="email" placeholder="请输入TCL集团邮箱" value="" />
+                    <p class="tip-lable">没有邮箱的员工可使用<a class="red-link j-select-apply-way" href="javascript:;" data-rela="phone">手机号申请</a></p>
+                    <strong class="j-name-check"></strong>
+                </div>
+                <div class="user-name input-box j-code-msg hide"><span class="user-ico">&#xe6a5;</span>
+                    <span class="pass-code"><img src="" class="imgcode"></span>
+                    <input type="text" name="J-ImgCode" class="J-ImgCode" placeholder="请输入图型验证码" maxlength="4" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box" id="VilidateCode"><span class="user-ico">&#xe6a5;</span>
+                    <span class="pass-code"><a href="javascript:;"  class="j-get-pass-code" >点击获取验证码</a></span>
+                    <input type="hidden" name="captchakey" id="captchakey" />
+                    <input type="text" name="captchadata" id="captchadata" placeholder="请输入账号验证码" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box"><span class="user-ico">&#xe63e;</span>
+                    <input type="password" name="pswone" id="pswone" placeholder="请输入密码" value="" />
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box">
+                    <span class="user-ico">&#xe63e;</span>
+                    <input type="password" name="pswtwo" id="pswtwo" placeholder="请输入确认密码" />
+                    <p class="psw-tip tip-lable">密码长度8-16位，数字、字母、字符至少包含两种</p>
+                </div>
+                <p class="acheck">
+                    <input type="checkbox" class="j-agree-apply agree-apply" checked> 我已阅读并同意 <a><span class="j-cTip" style="color:red">《T严选员工内购注册服务协议》</span></a>
+                </p>
+                <div class="login-but"><button class="buy j-checkinfo">下一步</button></div>
+
+            </div>
+            <div class="reg-cont forget-box forget-succ hide">
+                <div class="forget-get-succ">
+                    <div class="succ-icon">&#xe6a3;</div>
+                    <span class="succ-tip"><strong>恭喜你，账号申请成功</strong></span>
+                </div>
+                <div class="btn-row">
+                    <a href="/pages/usercenterindex/usercenter.html">
+                        <div class="btn-red fl">进入我的</div>
+                    </a>
+                    <a href="/">
+                        <div class="btn-emtry fl">进入首页</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+            <div class="mask j-mask hide" id="mask-ele"></div>
+            <div class="agreement J-Agreement hide">
+                <h3>协议说明<span class="close J-ProtocolClose">×</span>
+                </h3>
+                <div class="agr-main">
+                    <div class="agr-content">
+                        <dl>
+                            <dt>T严选员工内购商城用户协议</dt>
+                            <dd class="infomation infomation-pc policy_info"><b></b><br>
+                                <div style="text-align: left; line-height: 1.7;">
+                                    <div><span>客户在接受商品订购与送货的同时，有义务遵守以下交易条款。您在T严选员工内购商城下订单之前或接受T严选员工内购商城送货之前，请您仔细阅读以下条款：</span>
+                                    </div>
+                                    <strong>
+									<div><strong>一、本站服务条款的确认和接纳</strong></div>
+                                </strong>
+                                <div><span>&nbsp;本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。用户必须完全同意所有服务条款并完成注册程序，才能成为本站的正式用户及TCL集团的普通会员。用户确认：本协议条款是处理双方权利义务的当然约定依据，除非违反国家强制性法律，否则始终有效。在下订单的同时，您也同时承认了您拥有购买这些产品的权利能力和行为能力，并且将您对您在订单中提供的所有信息的真实性负责。</span>
+                                </div>
+                                <strong>
+									<div><strong>二、服务简介</strong></div>
+                    </strong>
+                    <div><span>本站运用自己的操作系统通过国际互联网络为用户提供网络服务。同时，用户必须：</span></div>
+                    <div><span>&nbsp;1.自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。</span></div>
+                    <div><span>2.自行负担个人上网所支付的与此服务有关的电话费用、网络费用。</span></div>
+                    <div><span>3.基于本站所提供的网络服务的重要性，用户应同意：提供详尽、准确的个人资料；不断更新注册资料，符合及时、详尽、准确的要求。</span></div>
+                    <div>
+                        <span>4.为使您感受到更好的会员服务，TCL集团可能会委托相关合作方向您提供一部分会员服务而无须经过您的同意或特别告知您；对此，您完全理解并予以同意。</span>
+                    </div>
+                    <strong>
+									<div><strong>三、价格和数量</strong></div>
+                </strong>
+                <div><span>本站将尽最大努力保证您所购商品与网站上公布的价格一致，但价目表和声明并不构成要约。商品的价格都包含了增值税。如果发生了意外情况，在确认了您的订单后，由于供应商提价，税额变化引起的价格变化，或是由于网站的错误等造成商品价格变化，您有权取消您的订单，并希望您能及时通过电子邮件或电话通知本站客户服务部。</span>
+                </div>
+                <div><span>由于市场变化及各种以合理商业努力难以控制的因素的影响，本站无法承诺用户通过提交订单所希望购买的商品都会有货，用户订购的商品如果发生缺货，用户和本站皆有权取消该订单。同时，本站保留对产品订购数量的限制权。</span>
+                </div>
+                <strong>
+									<div><strong>四、送货及费用</strong></div>
+            </strong>
+            <div><span>本站将会把产品送到您所指定的送货地址。所有在本站上列出的送货时间为参考时间，参考时间的计算是根据库存状况、正常的处理过程和送货时间、送货地点的基础上估计得出的。送货费用根据您选择的配送方式的不同而异。</span>
+            </div>
+            <div><span>请清楚准确地填写您的真实姓名、送货地址及联系方式。因如下情况造成订单延迟或无法配送等，本站将不承担责任：</span></div>
+            <div><span>1.客户提供错误信息和不详细的地址；</span></div>
+            <div><span>2.货物送达无人签收，由此造成的重复配送所产生的费用及相关的后果。</span></div>
+            <div><span>3.不可抗力，例如：自然灾害、交通戒严、突发战争等。</span></div>
+            <strong>
+									<div><strong>五、服务条款的修改</strong></div>
+            </strong>
+            <div><span>本站将可能不定期的修改本用户协议的有关条款，一旦条款及服务内容产生变动，本站将会在重要页面上提示修改内容。您应经常访问本页面了解这些内容，一旦接受本条款，即意味着您已经同时详细阅读并接受了服务条款的变动。</span>
+            </div>
+            <div><span>如果不同意本站对条款内容所做的修改，用户可以主动取消获得的网络服务。</span></div>
+            <strong>
+									<div><strong>&nbsp;六、用户隐私制度</strong></div>
+            </strong>
+            <div><span>本站尊重并保护用户的个人隐私权。本站将以高度的勤勉、审慎义务对待用户的资料信息，除在如下情况下，本站依据您的个人意愿或法律的规定外，不会将这些信息对外披露或向第三方提供：</span>
+            </div>
+            <div><span>1.经您事先同意，向第三方披露；</span></div>
+            <div><span>2.根据法律的有关规定，或者行政司法机构的要求，向第三方或者行政、司法机构披露；</span></div>
+            <div><span>3.为提供您所要求的产品和服务，而必须向第三方分享您的个人信息；</span></div>
+            <div><span>4.其他本站根据法律、法规或者网站政策认为合适的披露。</span></div>
+            <strong>
+									<div><strong>七、用户的帐号，密码和安全性</strong></div>
+            </strong>
+            <div><span>用户一旦注册成功，成为本站的合法用户，将得到一个密码和用户名。您可随时根据指示改变您的密码。用户将对用户名和密码安全负全部责任。另外，每个用户都要对以其用户名进行的所有活动和事件负全责。用户若发现任何非法使用用户帐号或存在安全漏洞的情况，请立即通告本站。</span>
+            </div>
+            <strong>
+									<div><strong>八、不承诺提供担保</strong></div>
+            </strong>
+            <div><span>用户个人对网络服务的使用承担风险。除非另有明确的书面说明，本站及其所包含的其他方式通过本站提供给您的全部信息、内容、商品（包括软件）和服务，是在“现状”和“现存”的基础上提供的。除非另有明确的书面说明，我们不对本网站的运营及包含在本网站上的信息、内容、商品（包括软件）或服务作任何形式的、明示或默示的声明或担保，且不会承诺其提供给用户的全部信息或发出的电子邮件没有病毒或其他有害成分。在适用法律所允许的最大限度内，我们不承诺所有明示或默示的担保，包括但不限于对适销性和满足特定目的的默示担保。您明确同意自担风险使用本网站。</span>
+            </div>
+            <strong>
+									<div><strong>九、责任限制</strong></div>
+            </strong>
+            <div><span>本站对因不可抗力或其他无法控制的原因（如本站销售服务系统异常或无法使用导致网上交易无法完成或丢失有关的信息、记录等），应尽可能合理地协助处理善后事宜，努力使客户免受经济损失。用户因使用本站而引起的损害或经济损失，本站将依据相应的法律规定承担合理的责任，但承担的全部责任均不超过用户所购买的与该索赔有关的商品价格。</span>
+            </div>
+            <strong>
+									<div><strong>十、对用户信息的存储和限制</strong></div>
+            </strong>
+            <div><span>本站有判定用户的行为是否符合本站服务条款的要求和精神的保留权利，如果用户违背了服务条款的规定，本站有中断对其提供网络服务的权利。对有违反法律法规、捏造事实、恶意诋毁等行为的，本站有停止传输并删除其信息，禁止用户发言，限制用户订购，注销用户账户并向相关机关进行披露。</span>
+            </div>
+            <strong>
+									<div><strong>十一、用户管理</strong></div>
+            </strong>
+            <div><span>用户单独承担发布内容的责任。用户对服务的使用是根据所有适用于本站的国家法律、地方法律和国际法律标准的。用户必须遵循：</span></div>
+            <div><span>&nbsp;1.从中国境内向外传输技术性资料时必须符合中国有关法规。</span></div>
+            <div><span>2.使用网络服务不作非法用途。</span></div>
+            <div><span>3.不干扰或混乱网络服务。</span></div>
+            <div><span>4.遵守所有使用网络服务的网络协议、规定、程序和惯例。</span></div>
+            <div><span>用户须承诺不传输任何非法的、骚扰性的、中伤他人的、辱骂性的、恐性的、伤害性的、庸俗的，淫秽等信息资料。</span></div>
+            <div>
+                <span>另外，用户也不能传输何教唆他人构成犯罪行为的资料；不能传输助长国内不利条件和涉及国家安全的资料；不能传输任何不符合当地法规、国家法律和国际法律的资料。</span>
+            </div>
+            <div><span>未经许可而非法进入其它电脑系统是禁止的。</span></div>
+            <div><span>若用户的行为不符合以上提到的服务条款，本站将作出独立判断立即取消用户服务帐号。</span></div>
+            <div>
+                <span>用户需对自己在网上的行为承担法律责任。用户若在本站上散布和传播反动、色情或其他违反国家法律的信息，本站的系统记录有可能作为用户违反法律的证据。</span>
+            </div>
+            <strong>
+									<div><strong>十二、保障用户</strong></div>
+            </strong>
+            <div><span>同意保障和维护本站全体成员的利益，负责支付由用户使用超出业务范围引起的律师费用，违反服务条款的损害补偿费用等。</span></div>
+            <strong>
+									<div><strong>十三、终止服务</strong></div>
+            </strong>
+            <div><span>在下列情况下，本站可以通过注销账户的方式终止服务，同时保留对用户的违法行为追究法律责任的权利：</span></div>
+            <div><span>1.用户违反法律法规及本协议相关条款规定；</span></div>
+            <div><span>2.用户注册信息中的内容虚假；</span></div>
+            <div><span>3.用户提供的注册信息填写的联系方式不存在或无效；</span></div>
+            <div><span>4.本协议条款更新时，用户明示不愿接受新的条款；</span></div>
+            <div><span>5.用户对本站实施欺诈、胁迫、恶意攻击等行为；</span></div>
+            <div><span>6.本站认为需要终止服务的其他情况。</span></div>
+            <strong>
+									<div><strong>十四、通告</strong></div>
+            </strong>
+            <div><span>所有发给用户的通告都可通过重要页面的公告或电子邮件或常规的信件传送。用户协议条款的修改、服务变更、或其它重要事件的通告都会以此形式进行。</span>
+            </div>
+            <strong>
+									<div><strong>十五、参与广告策划</strong></div>
+            </strong>
+            <div><span>用户在他们发表的信息中加入宣传资料或参与广告策划，在本站的免费服务上展示他们的产品，任何这类促销方法，包括运输货物、付款、服务、商业条件、担保及与广告有关的描述都只是在相应的用户和广告销售商之间发生。本站不承担任何责任，本站没有义务为这类广告销售负任何一部分的责任。</span>
+            </div>
+            <strong>
+									<div><strong>十六、网络服务内容的所有权</strong></div>
+            </strong>
+            <div><span>本站定义的网络服务内容包括：文字、软件、声音、图片、录象、图表、广告中的全部内容；电子邮件的全部内容；本站为用户提供的其他信息。所有这些内容受版权、商标、标签和其它财产所有权法律的保护。所以，用户只能在本站和广告商授权下才能使用这些内容，而不能擅自复制、再造这些内容、或创造与内容有关的派生产品。本站所有的文章版权归原文作者和本站共同所有，任何人需要转载本站的文章，必须征得原文作者或本站授权。</span>
+            </div>
+            <strong>
+									<div><strong>十七、法律管辖和适用</strong></div>
+            </strong>
+            <div><span>本协议的订立、执行和解释及争议的解决均应适用中国法律。</span></div>
+            <div><span>如发生本站服务条款与中国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它合法条款则依旧保持对用户产生法律效力和影响。</span></div>
+            <div><span>本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，该规定可被删除而其余条款应予以执行。</span></div>
+            <div><span>如双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向本站所在地的人民法院提起诉讼。</span></div>
+            </div>
+            </dd>
+            <dd></dd>
+            </dl>
+            </div>
+            <div class="agree-box">
+                <button class="agree J-ProtocolSubmit">同意</button>
+            </div>
+            </div>
+            </div>
+            <div class="reg-cont forget-box applyDetailInfo hide">
+                <strong id="Msg" style="color:red;"></strong>
+                <div class="user-name input-box "><span class="user-info-label">姓名</span>
+                    <input type="text" class="user-base" name="truename" id="truename" placeholder="请输入真实姓名" value="" />
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box j-user-phone"><span class="user-info-label">手机号码</span>
+                    <input type="text" class="user-base" name="phone" id="truephone" placeholder="请输入手机号" value="" />
+
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box j-code-msg hide"><span class="user-ico">&#xe6a5;</span>
+                    <span class="pass-code"><img src="" class="imgcode"></span>
+                    <input type="text" name="J-ImgCode" class="J-ImgCode" placeholder="请输入图型验证码" maxlength="4" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box j-user-phone" id="VilidateCode"><span class="user-info-label">验证码</span>
+                    <span class="pass-code"><a href="javascript:;"  class="j-get-pass-code-two" >点击获取验证码</a></span>
+                    <input type="text" name="captchakeytwo" id="captchakeytwo" style="padding-left: 90px" placeholder="输入验证码" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box"><span class="user-info-label">公司名称</span>
+                    <input type="text" name="truecompany" class="user-base" id="truecompany" placeholder="请输入公司名称" value="" />
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box">
+                    <span class="user-info-label">部门名称</span>
+                    <input type="text" class="user-base" name="department" id="department" placeholder="请输入部门名称" />
+                </div>
+                <div class="login-but"><button class="buy j-comfrim-info">确认</button></div>
+            </div>
+            <div class="help">
+                <div class="min-wid">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>服务支持</dt>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/page/serviceRevision/policy?id=56d4f28d21ca473f871a3b845f61aee9">售后服务</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/repair.html">自助服务</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/service-home/index.html#query-wrapper">进度查询</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="http://fans.tcl.com/uec/">用户体验中心</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>客户服务</dt>
+                        <dd><a style="color:red" target="_blank" href="http://www.pengpengmall.com/" rel="nofollow">内购平台</a></dd>
+                        <dd><a target="_blank" href="/pages/bulkpurchase/newBulkpurchase.html" rel="nofollow">大宗采购</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin" rel="nofollow">经销商之家</a></dd>
+                        <dd><a target="_blank" href="http://www.shifendaojia.com/index.html" rel="nofollow">十分到家</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>关注我们</dt>
+                        <dd><a target="_blank" rel="nofollow" href="/pages/connectWithUs/connectWithUs.html" rel="nofollow">联系我们</a></dd>
+                        <dd><a target="_blank" rel="nofollow" class="botSina" href="http://weibo.com/tcljituan?topnav=1&wvr=6&topsug=1&is_hot=1">官方微博</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://fans.tcl.com/">铁粉社区</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>应用服务</dt>
+                        <dd><a target="_blank" href="http://www.ffalcon.my7v.com/" rel="nofollow">雷鸟</a></dd>
+                        <dd><a target="_blank" href="http://www.huan.tv/toIndex.action" rel="nofollow">欢网</a></dd>
+                        <dd><a target="_blank" href="https://jr.tcl.com/home.html" rel="nofollow">金融</a></dd>
+                        <dd><a target="_blank" href="http://www.imooc.com/" rel="nofollow">教育</a></dd>
+                        <dd><a target="_blank" href="http://www.golive-tv.com/" rel="nofollow">全球播</a></dd>
+                        <dd><a target="_blank" href="http://www.tcl-smarthome.com/" rel="nofollow">智能家居</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>TCL内购商城及二维码</dt>
+                        <dd><img style="height:120px;width:120px;" src="/app/images/wechat.jpg"></dd>
+                    </dl>
+                    <dl class="last-r">
+                        <p class="red phone">4008-123456</p>
+                        <p class="grey">（24小时在线，仅收市话费）</p>
+                        <a href="/pages/service/customerServiceKuyu.html" target="_self" rel="nofollow"><i>&#xe64a;</i>24小时在线客服</a>
+                    </dl>
+                </div>
+            </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <div class="foot-logo">&#xe674;</div>
+                    <p class="blod"><a target="_blank" href="/group/companyInfo/index" rel="nofollow">关于TCL</a>|<a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|<a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|<a target="_blank"
+                            rel="nofollow" href="/group/news/index">新闻中心</a>|<a target="_blank" rel="nofollow" href="/group/recruitment/index">人才招聘</a>|<a rel="nofollow" target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+                    <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号<a target="_blank" rel="nofollow" class="marginL" href="/pages/low/content.html">使用条款</a>|<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a>|
+                        <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=4">隐私保护</a>
+                    </p>
+                    <p>
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44133002100088" rel="nofollow"><img style="margin: -3px 3px 0 0; width:16px;" src="/app/images/beian.png">粤网公安备案44133002100088号</a>
+                    </p>
+                    <div class="foot-r">
+                        <div class="language">
+                            <a href="/pages/index/index.html" rel="nofollow" class="lang-item active">中文简体</a>|<a rel="nofollow" href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a>
+                        </div>
+                    </div>
+                    <div class="AC">
+                        <div><img src="/app/images/credibility.png" /></div>
+                        <div>
+                            <a href="http://wljg.gdgs.gov.cn/corpsrch.aspx?key=440000000011990" target="_blank" title="企业名称：TCL集团股份有限公司&#10;法定代表人：李东生&#10;标识状态：已激活 粤工商备P131801001423"><img src="http://wljg.gdgs.gov.cn/upload/image/20141126/20141126002933.png" alt="" style="border:0;" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="../../app/js/vendor.js"></script>
+            <script src="../../app/js/core.js"></script>
+            <script src="../../app/config/config.js"></script>
+            <script src="/app/js/applyAccount.js"></script>
+</body>
+
+</html>

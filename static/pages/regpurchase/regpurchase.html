@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>大宗采购资料完善</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../app/css/style.css">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <style>
+        .reg-header{
+            height: 150px; background: #f5f5f5;
+        }
+        .reg1226{width: 1226px; margin: 0 auto;}
+        .reg1226 .hea-box{margin-top: 33px;}
+        .reg1226 h3{padding-top: 52px; font-weight: normal; margin-left: 40px; float: left;}
+        .stepbox{margin: 60px 0;}
+        .step-content{height: 8px; background: #f5f5f5; width: 900px;position: relative; margin: 0 auto;}
+        .step-line{ height: 8px;width: 50%;  position: absolute;}
+        .step-line label{width: 30px;  top:-12px; height: 30px;  position: absolute; display: block;border-radius: 50%; border:2px solid #ccc; background: #fff;}
+        .step-line span{position: absolute; top:30px; color: #b6b6b6;}
+        .step2{left:50%}
+        .active .step1{background:#7dda4d; }
+        .active .step2{ }
+        .step1 .label1{left:-10px; border-color:#7dda4d; }
+        .step2 .label2{left:-15px; border-color:#7dda4d; }
+        .step2 .label3{right:-10px; }
+        .step1 .span1{left:-50px;  color: #333;}
+        .step2 .span2{left:-80px;  color: #333; }
+        .step2 .span3{right:-50px; }
+        .form {width: 900px;margin: 150px auto; position: relative;}
+        .form .button{height: 40px; background: #fe2d2d; text-align: center; color: #fff; width: 143px; cursor: pointer; display: inline-block;vertical-align: middle; line-height: 40px; font-style: normal; font-size: 14px;}
+        .form p label, .form .p label, .form .upfiles label{width: 160px; text-align: right; display: inline-block; margin-right: 15px;}
+        .form p,  .form .p {margin-bottom: 20px;}
+        .form input{ width:460px; height: 40px; background: #f5f5f5; padding: 0 0 0 15px; color: #666;}
+        .form .subbox{ margin-top: 30px; height: 50px;}
+        .form .submit{text-align: center;}
+        .form .submit button{width: 260px;margin-left: -80px; height: 50px;background: #fe2d2d; color: #fff; cursor: pointer; font-size: 18px;}
+        .form p label.lable-tap,  .form .p label.lable-tap{text-align:left;margin-left: 10px; color: #f00; vertical-align: middle;}
+        .row{ display: inline-block;}
+        .col-sm-3{
+            display: inline-block;
+            border-right: 6px solid #fff;
+        }
+        .col-sm-3 select{
+            padding:10px 5px;
+            background: #f5f5f5; width: 120px;
+            display: inline-block;
+            color: #666;
+        }
+        #imgUpError{margin-left: 180px; color: red; font-size: 12px; display: none;}
+        .upfilesbox{height: 245px;}
+        .upfilesinof{ display: inline-block; font-size: 14px; color: #f30;}
+        .upfiles{position: absolute; bottom: 74px;}
+        .upfiles ul {display: inline-block; margin-left: 180px; margin-top: 20px;}
+        .upfiles ul li {display: inline-block; width: 150px; margin-right: 20px;}
+        .upfiles ul li p{margin-bottom: 0px;}
+        .upfiles ul li span{font-size: 14px;}
+        .swfupload{left:0;}
+        .file {
+            position: relative;
+            display: block;
+            background: #f0f0f0;
+            border: 1px solid #e3e3e3;
+            width: 128px;
+            height: 128px;
+            overflow: hidden;
+            margin-top: 10px;
+            color: #ccc;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 118px;
+            font-size: 100px;
+            text-align: center;
+            font-weight: 100;
+        }
+        .uploadify-button-text{
+            font-size: 100px !important;
+        }
+        .file input {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            filter:alpha(opacity=0);
+        }
+        .file:hover {
+            background: #e3e3e3;
+            color: #fff;
+            text-decoration: none;
+        }
+        input.upbtn{
+            width: 130px;
+            margin-top: 10px;
+            background: #ddd;
+            padding: 0;
+        }
+        input:disabled, select:disabled{
+            cursor: not-allowed;
+            background-color: #ddd;
+        }
+        /*.uploadify-button {
+            height: 128px;
+            line-height: 128px;
+            width: 128px;
+            z-index: 1;
+            position: absolute;
+        }*/
+        .uploadimgShow{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 128px;
+            height: 128px;
+            z-index: 0;
+            display: none;
+        }
+        .agree {margin-top: 10px; font-size: 12px; margin-left: 180px; color: #999;}
+        .agree .acheck{margin-top: 40px;  color: #9f9f9f;}
+        .agree input{margin: 0;width: 16px; height: 16px;}
+    </style>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="reg-header">
+        <div class="reg1226">
+            <h1 class="hea-box fl"><a href="/" title="TCL 内购" class="logo">&#xe6a9;</a></h1>
+            <h3>大宗采购账户注册</h5>
+        </div>
+    </div>
+    <div class="reg-centent">
+        <div class="reg1226">
+            <div class="stepbox">
+                <div class="step-content active">
+                    <div class="step1 step-line">
+                        <label class="label1"></label>
+                        <span class="span1">STEP 1 注册账户</span>
+                    </div>
+                    <div class="step2 step-line">
+                        <label class="label2"></label>
+                        <label class="label3"></label>
+                        <span class="span2">STEP 2 企业基本信息</span>
+                        <span class="span3">STEP 3 完成注册</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <form id="loginForm">
+                    <p>
+                        <label>企业名称</label>
+                        <input name="companyName" id="companyName"class="" placeholder="请与营业执照上企业名称一致" type="text">
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>营业执照代码</label>
+                        <input name="bussinessLicense" id="bussinessLicense"class="" placeholder="请输入营业执照代码" type="text">
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>企业联系人</label>
+                        <input name="contactMan" id="contactMan"class="" type="text"  placeholder="请输入企业联系人" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>联系人电话</label>
+                        <input name="contactMobile" id="contactMobile"class="" type="text"  placeholder="请输入联系人电话" >
+                        <span class="error"></span>
+                    </p>
+                    <div class="p">
+                        <label>企业地址</label>
+                        <div class="row">
+                            <div id="provinces" class="col-sm-3">
+                               <select class="select2-me form_control selectAddress" id="companyProvince" name="companyProvince">
+                                   <option value=''>--请选择--</option>
+                               </select>
+                           </div><div id="areasId" class="col-sm-3" style = "display: none">
+                               <div id="citys" class="col-sm-12">
+                                   <select name="companyCity" id="companyCity" class="select2-me form_control selectAddress" data-rule-required="true">
+                                       <option value=''>--请选择--</option>
+                                   </select>
+                               </div>
+                            </div><div id="regionsId" class="col-sm-3" style = "display: none">
+                               <div id="regions" class="col-sm-12">
+                                   <select name="companyRegion" id="companyRegion" class="select2-me form_control selectAddress" data-rule-required="true">
+                                       <option value=''>--请选择--</option>
+                                   </select>
+                               </div>
+                            </div>
+                        </div>
+                        <span class="error"></span>
+                    </div>
+                    <p>
+                        <label>详细地址</label>
+                        <input name="companyAddress" id="companyAddress" class="" type="text"  placeholder="请输入详细地址" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>固定电话</label>
+                        <input name="contactTel" id="contactTel" class="" type="text"  placeholder="请输入固定电话如:xxxx-xxxxxxx" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>开户行帐号</label>
+                        <input name="companyBankNo" id="companyBankNo" class="" type="text"  placeholder="请输入开户行帐号" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>开户人姓名</label>
+                        <input name="bankOpenerName" id="bankOpenerName" class="" type="text"  placeholder="请输入开户人姓名" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>开户银行</label>
+                        <input name="bankName" id="bankName" class="" type="text"  placeholder="请输入开户银行" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>纳税人识别号</label>
+                        <input name="taxpayerRegistrationNo" id="taxpayerRegistrationNo" class="" type="text"  placeholder="请输入纳税人识别号" >
+                        <span class="error"></span>
+                    </p>
+                    <div class="p">
+                        <label>发票寄送地址</label>
+                        <div class="row">
+                            <div id="provinces2" class="col-sm-3">
+                               <select id="invoiceProvince" class="select2-me form_control selectAddress" name="invoiceProvince">
+                                   <option value=''>--请选择--</option>
+                               </select>
+                           </div><div id="areasId2" class="col-sm-3" style = "display: none">
+                               <div id="citys2" class="col-sm-12">
+                                   <select name="invoiceCity" id="invoiceCity" class="select2-me form_control selectAddress" data-rule-required="true">
+                                       <option value=''>--请选择--</option>
+                                   </select>
+                               </div>
+                           </div><div id="regionsId2" class="col-sm-3" style = "display: none">
+                               <div id="regions2" class="col-sm-12">
+                                   <select name="invoiceRegion" id="invoiceRegion" class="select2-me form_control selectAddress" data-rule-required="true">
+                                       <option value=''>--请选择--</option>
+                                   </select>
+                               </div>
+                           </div>
+                        </div>
+                        <span class="error"></span>
+                    </div>
+                    <p>
+                        <label>详细寄送地址</label>
+                        <input name="invoiceAddress" id="invoiceAddress" class="" type="text"  placeholder="请输入详细寄送地址" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>发票收件人</label>
+                        <input name="invoiceReceiver" id="invoiceReceiver" class="" type="text"  placeholder="请输入发票收件人" >
+                        <span class="error"></span>
+                    </p>
+                    <p>
+                        <label>收件人电话</label>
+                        <input name="invoiceReceiverMobile" id="invoiceReceiverMobile" class="" type="text"  placeholder="请输入收件人电话" >
+                        <span class="error"></span>
+                    </p>
+                    <div class="upfilesbox">
+                        <!--
+                        <label style="vertical-align:top;">上传资质信息</label>
+                        <div class="upfilesinof">若为三证合一证件, 只需要上传最新"营业执照"即可。 老的证件则继续按照要求上传如下三份证件资料:</div>
+                        <ul>
+                            <li><span>营业执照:</span>
+                                <a href="javascript:;" class="file">
+                                    <input id="upload1" class="upload_file" type="file" name="uploadify" accept="image/png,image/jpeg,image/jpg">
+                                    <img src="" class="uploadimgShow" id="upload1_img0">
+                                </a>
+
+                                <p style="font-size:12px; margin-left:25px; margin-top:5px; color:#c9c9c9;">
+                                    点击选择图片上传
+
+                                </p>
+                            </li>
+                            <li><span>税务登记证:</span>
+                                <a href="javascript:;" class="file">
+                                    <input id="upload2" class="upload_file" type="file" name="uploadify" accept="image/png,image/jpeg,image/jpg">
+                                    <img src="" class="uploadimgShow" id="upload1_img1">
+                                </a>
+                                <p style="font-size:12px; margin-left:25px; margin-top:5px; color:#c9c9c9;">
+                                    点击选择图片上传
+                                </p>
+                            </li>
+                            <li><span>组织机构代码证:</span>
+                                <a href="javascript:;" class="file">
+                                    <input id="upload3" class="upload_file" type="file" name="uploadify" accept="image/png,image/jpeg,image/jpg">
+                                    <img src="" class="uploadimgShow" id="upload1_img2">
+                                </a>
+                                <p style="font-size:12px; margin-left:25px; margin-top:5px; color:#c9c9c9;">
+                                    点击选择图片上传
+                                </p>
+                            </li>
+                        </ul> -->
+                        <div id="notsupport"  style="margin-left:180px;"></div>
+
+                    </div>
+                    <!-- <div class="agree">
+                        <p>注: 上传图片大小不能超过5M，支持JPEG, PNG格式。</p>
+                        <p class="acheck">
+                            <input type="checkbox" checked>
+                            我已阅读并同意 <a href="javascript:;" style="color:red">《企事业用户注册协议》</a>
+                        </p>
+                    </div> -->
+                    <div class="subbox">
+                        <div class="submit">
+                            <button>下一步</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="upfiles">
+                    <label style="vertical-align:top;">上传资质信息</label>
+                    <div class="upfilesinof">若为三证合一证件, 只需要上传最新"营业执照"即可。 老的证件则继续按照要求上传如下三份证件资料:</div>
+                    <ul>
+                        <li><span>营业执照:</span>
+                            <form method="post" enctype="multipart/form-data">
+                                <a href="javascript:;" class="file">
+                                    <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img0')">
+                                    <img src="" class="uploadimgShow" id="upload1_img0">
+                                    <font>+</font>
+                                </a>
+                            </form>
+                        </li>
+                        <li><span>税务登记证:</span>
+                            <form method="post" enctype="multipart/form-data">
+                            <a href="javascript:;" class="file">
+                                <input id="upload2"  type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img1')">
+                                <img src="" class="uploadimgShow" id="upload1_img1">
+                                <font>+</font>
+                            </a>
+                            </form>
+                        </li>
+                        <li><span>组织机构代码证:</span>
+                            <form method="post" enctype="multipart/form-data">
+                            <a href="javascript:;" class="file">
+                                <input id="upload3"  type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img2')">
+                                <img src="" class="uploadimgShow" id="upload1_img2">
+                                <font>+</font>
+                            </a>
+                            </form>
+                        </li>
+                    </ul>
+                    <p> &nbsp;</p>
+                    <div id="imgUpError">
+                        请按照要求上传证件
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="server">
+        <ul>
+          <li class="text-l disable"><span></span> <em>官方正品</em> </li>
+          <li class="text-two disable"><span></span> <em>全国联保</em> </li>
+          <!-- </a> -->
+          <li class="text-three disable"> <span></span> <em>全场包邮</em> </li>
+          <!-- </a> -->
+          <li class="text-r disable"> <span></span> <em>7天无理由退货</em> </li>
+        </ul>
+      </div>
+    <div class="help" id = "navFooterLink">
+    </div>
+    <!-- footer html start -->
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="#">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="#">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="#">社会责任</a>|
+                <a target="_blank" href="#">新闻中心</a>|
+                <a target="_blank" href="#">人才招聘</a>|
+                <a target="_blank" href="#">成员网站</a></p>
+                <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="#">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="#">法律声明</a>|
+                <a target="_blank" href="#">隐私保护</a>
+            </p>
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="#" class="lang-item active">中文简体</a>
+                    <a href="#" class="lang-item ">English</a></div>
+                <div><img src="../../app/images/credibility.png" /></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <!-- go to top html start-->
+    <div class="goTop">
+        <a href="#">
+            <div class="item">&#xe64a;</div>
+        </a>
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+    </div>
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/js/jquery.validate.min.js"></script>
+    <script src="../../app/js/ajaxfileupload.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="regpurchase.js"></script>
+</body>
+
+</html>

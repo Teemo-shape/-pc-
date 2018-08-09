@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.tcl.com/usercenter/customercomplex/accountSecurityKuyu -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>TCL个人中心-账号安全</title>
+		<meta name="description" content="TCL">
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" /><meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/member.css">
+		<link rel="stylesheet" href="../../app/css/account.css">
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<!-- Right slide bar html end -->
+<div class="mask"></div>
+<div class="slidebar">
+	<!-- Shopping Cart html start -->
+	<span class="close">&#xe60f;</span>
+	<div class="cart" id="dvPlatTopCart">
+		<h3 class="cart-head">
+		<div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+			<img class="loading" style="display:none" src="http://www.tcl.com:80/static/usercenter/img/loading.gif"/>
+		</div>
+	</h3>
+	</div>
+	<!-- Shopping Cart html end -->
+	<!-- Registration html start -->
+	<div class="regist">
+		<h3>
+		<span class="shoping">&#xe624;</span>注册
+		</h3>
+		<div class="login-inp">
+			<div><input type="text" placeholder="手机或邮箱" /></div>
+			<div class="verify"><input type="text" placeholder="图片验证码" /><span><img src="http://www.tcl.com:80/static/kuyu/common/img/verify.gif" /></span></div>
+			<div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" /></div>
+			<div><input type="text" placeholder="确认密码" /></div>
+			<p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+			<div><button class="buy zhuce">注册</button></div>
+			<p class="login-text"><span class="fr regis">登录</span></p>
+		</div>
+	</div>
+	<!-- Registration html end -->
+	<!-- login html start -->
+	<div class="login" id="slideLoginSide">
+	</div>
+	<input type="text" id="test" />
+	<!-- login html end -->
+</div>
+<!-- 面包屑 -->
+<!--crumbs html start-->
+
+<div class="m_crumbs bg_f0">
+	<div class="min-wid">
+		<div class="fl">
+			<a href="/">首页</a> / 账户中心</div>
+		<a href="{{uthome}}" class="fr">返回个人首页</a>
+	</div>
+</div>
+	<input id="usertelephone" type="hidden" value="" />
+	<input id="useremail" type="hidden" value="" />
+	<input id="src" type="hidden" value="" />
+	<input id="rank" type="hidden" value="" />
+	<input id="userName" type="hidden" value="" />
+	<input id="cuuid" type="hidden" value="" />
+
+	<input type="hidden" class="e_mail">
+	<input type="hidden" class="e_phone">
+<!--面包屑 end-->
+<div class="member_mian min-wid m-mt">
+	<div class="fl nav_left">
+		<include type="userCenterBar" src="{{userCenterBar}}"></include>
+	</div>
+	<!-- 菜单end -->
+	<div class="fr mian_right">
+		<div class="m_content">
+			<h3 id="bindTit"></h3>
+			<!---手机绑定start--->
+			<div id="bind_mailbox_mobile" class="bind_mailbox mobile">
+		 	 <input type="hidden" id="verificationKeycontent" value="">
+		 	 <input type="hidden" id="validateCode" value="">
+		 	 <div class="m_firststep" id="m1">
+						<p class="row"><span>原手机号：</span><input type="input" name="oldmobile" id="oldmobile" value="" disabled></p>
+						<p class="row"><span>短信验证码：</span><input type="text" maxlength="6" id="minputvalidateCode" class="form_control" placeholder="输入验证码"><a href="javascript:;" id="msendcode">获取短信验证码</a></p>
+						<input type="hidden" name="mcode" id="mcode">
+						<p id="mvalidateCodeError1" class="error">请输入验证码!</p>
+		 	  		<div class="btns"><a href="javascript:;" class="sure" id="btn_m1">确定</a>
+						<a href="/pages/personal/personal.html" class="back">返回</a></div>
+		 	 </div>
+		 	 <!-----第三步----->
+		 	 <div class="m_thirdstep" id="m2">
+		 	 	 <p class="row">
+						<span>新手机号</span><input type="text" id="inputMyNewPhone" class="form_control m_form" placeholder="输入新手机号">
+				 </p>
+				 <p id="mvalidateCodeError3" class="error">请输入手机号码</p>
+				 <p class="row">
+				   <span>短信验证码：</span><input type="text" id="minputvalidateCode4" placeholder="请输入验证码">
+					 <a href="javascript:;" id="msendcode1">获取短信验证码</a>
+			   </p>
+				 <p id="mvalidateCodeError4" class="error">请输入验证码</p>
+				 <div class="btns"><a href="javascript:;" class="sure" id="btn_m2">确定</a>
+				 <a href="/pages/personal/personal.html" class="back">返回</a></div>
+		 	 </div><!-----第三步 end----->
+
+		 	 <!--第四步--->
+		 	 <!-- <div class="m_fourthstep" id="m3">
+			 	 <div class="tit">
+			 	 	 请使用安全手机<br><font id="fnt_inputMyNewPhone"></font>获取验证码短信
+			 	 </div>
+			 	 <p class="row">
+				   <span>短信验证码：</span><input type="text" class="form_control" id="minputvalidateCode4" placeholder="请输入验证码">
+					 <a href="javascript:;" id="msendcode1">获取短信验证码</a>
+			   </p>
+				 <p id="mvalidateCodeError4" class="error">请输入验证码</p>
+				 <div class="btns"><a href="javascript:;" class="sure" id="btn_m3">确定</a>
+				 <a href="" class="back">返回</a></div>
+		 	 </div>-->
+		 	 <div class="m_fifthstep" id="m3">
+		 	 	 <h5>您已成功绑定安全手机</h5>
+		 	 	 <div class="btns">
+		 	  	 <a class="sure" id="btn_m3">确定</a>
+		 	   </div>
+		 	 </div>
+		 </div>
+			<!---手机绑定 end--->
+			<!---邮箱绑定start--->
+			<div id="bind_mailbox_mail" class="bind_mailbox email">
+				<input type="hidden" id="verificationKeycontent" value="">
+				<input type="hidden" id="validateCode" value="">
+				<div class="m_firststep m_step" id="p1">
+							<p class="row"><span>原邮箱账号：</span><input type="text" name="oldemail" id="oldemail" value="" disabled></p>
+							<p class="row"><span>邮箱验证码：</span><input type="text" name="validateCodefirst" id="validateCodefirst" placeholder="输入验证码"><a href="javascript:;" id="sendcode">获取邮件验证码</a></p>
+							<p id="validateCodeError1" class="error">请输入验证码</p>
+							<div class="btns">
+									<a href="javascript:;" class="sure" id="btn_p1">确定</a>
+									<a href="/pages/personal/personal.html" class="back">返回</a>
+							</div>
+			 	 </div>
+				<!-----第三步----->
+				<div class="m_thirdstep m_step" id="p2">
+					<p class="row"><span>新邮箱账号：</span><input type="text" id="inputMyNewEmail" placeholder="输入新邮箱"></p>
+					<p id="CodeError3" class="error"></p>
+					<p class="row"><span>邮箱验证码</span><input type="text" class="form_control" id="inputEmailvalidateCode4" placeholder="请输入验证码"><a href="javascript:;" id="sendcode1">获取邮件验证码</a></p>
+					<p id="CodeError4" class="error">请输入验证码</p>
+					<div class="btns">
+							<a class="sure" id="btn_p2">确定</a>
+							<a href="/pages/personal/personal.html" class="back">返回</a>
+					</div>
+				</div>
+				<!-----第三步 end----->
+				<!--第四步--->
+				<!-- <div class="m_fourthstep m_step" id="p3">
+						<span id="fnt_inputMyNewEmail"></span>
+						<p class="row"><span>邮箱验证码</span><input type="text" class="form_control" id="inputEmailvalidateCode4" placeholder="请输入验证码"><a href="javascript:;" id="sendcode1">获取邮件验证码</a></p>
+						<p id="CodeError4" class="error">请输入验证码</p>
+						<div class="btns"><a class="sure" id="btn_p3">确定</a>
+						<a class="back">返回</a></div>
+				</div> -->
+				<!--第四步 end--->
+				<div class="m_fifthstep m_step" id="p3">
+					<h5>您已成功绑定安全邮箱</h5>
+					<div class="btns">
+						<a href="/pages/usercenterindex/usercenter.html" class="sure" id="btn_p3">确定</a>
+					</div>
+				</div>
+
+			</div>
+			<!---邮箱绑定 end--->
+			<input id="new" type="hidden" value="" />
+			<input id="check" type="hidden" value="" />
+			<input id="bind" type="hidden" value="" />
+
+
+		</div>
+	</div>
+</div>
+
+
+
+		<!-- 会员中心底部 -->
+		<!-- Help center html start -->
+		<div class="help">
+			<div class="min-wid">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+					</dd>
+				</dl>
+				<dl> <dt>服务支持</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/tclchannel/toService#policy">售后服务</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/tclchannel/toService">自助服务</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/tclchannel/toService#policye">电子保单</a>
+					</dd>
+				</dl>
+				<dl> <dt>关于TCL</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=1">了解TCL</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/recruitment/index">人才招聘</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/connectWithUs.jsp">联系我们</a>
+					</dd>
+				</dl>
+				<dl> <dt>关注我们</dt>
+					<dd>
+						<a target="_blank" href="http://fans.tcl.com/">铁粉社区</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&amp;refer=www.tcl.com&amp;language=zh_cn&amp;type=widget_page&amp;vsrc=app_followbutton&amp;backurl=http%3A%2F%2Fwww.tcl.com%2F&amp;rnd=1453360859071">新浪微博</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.shifendaojia.com/pc.html">十分到家</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+					</dd>
+				</dl>
+				<dl> <dt>特色服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a>
+					</dd>
+				</dl>
+				<dl> <dt>应用服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="https://jr.tcl.com/home.html">金融</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.imooc.com/">教育</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.golive-tv.com/">全球播</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a>
+					</dd>
+				</dl>
+				<dl class="last-r">
+					<p class="red phone">4008-123456</p>
+					<p class="grey">（24小时在线，仅收市话费）</p>
+					<a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+				</dl>
+			</div>
+		</div>
+		<!-- Help center html end -->
+		<!-- go to top html-->
+		<!-- footer html end -->
+		<div class="footer">
+			<div>
+				<!-- <img src="http://www.tcl.com:80/static/frontpage/common2/img/logo.png" /> -->
+				<div class="foot-logo"></div>
+				<p class="blod">
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/investors/index">投资者关系</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> |
+					<a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> |
+					<a target="_blank" href="http://www.tcl.com/group/recruitment/index">人才招聘</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+				</p>
+				<p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+					<a target="_blank" class="marginL" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a>
+				</p>
+				<div class="foot-r">
+					<div class="language">
+						<i class="arrow"></i>
+						<a href="http://www.tcl.com/" class="lang-item active">中文简体</a>
+						<a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a>
+					</div>
+					<div><img src="http://www.tcl.com/static/kuyu/common/img/credibility.png"></div>
+					<!-- <span><em>&#xe63a;</em><p</span> -->
+				</div>
+			</div>
+		</div>
+		<!-- footer html end -->
+	</body>
+		<script src="../../app/js/vendor.js"></script>
+		<script src="../../app/js/core.js"></script>
+		<script src="../../app/config/config.js"></script>
+		<script src="manageuserNEW.js"></script>
+		<script src="manergeuserOld.js"></script>
+
+</html>

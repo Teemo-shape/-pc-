@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL - 产品订单列表</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+    	.cursor{cursor: pointer;}
+        .m_content{
+            border:1px solid #eee;
+            padding: 40px;
+        }
+        .zqproinfo{
+            border:1px solid #eee;
+            padding: 10px 30px 10px 40px;
+        }
+    </style>
+	<!--[if (IE 9)|(IE 8) ]>
+	<script src="../../app/js/ie9.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<input type="hidden" id="num" value=""/>
+	<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!-- Right slide bar html end -->
+    <div class="mask"></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close">&#xe60f;</span>
+        <div class="cart" id="dvPlatTopCart">
+            <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading" style="display:none" src="http://www.tcl.com:80static/usercenter/img/loading.gif"/>
+            </div>
+        </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist">
+            <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+            <div class="login-inp">
+                <div>
+                    <input type="text" placeholder="手机或邮箱" />
+                </div>
+                <div class="verify">
+                    <input type="text" placeholder="图片验证码" /><span><img
+                    src="http://www.tcl.com:80static/kuyu/common/img/verify.gif"/></span></div>
+                <div>
+                    <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" />
+                </div>
+                <div>
+                    <input type="text" placeholder="确认密码" />
+                </div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div>
+                    <button class="buy zhuce">注册</button>
+                </div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide">
+            <div class="login-success">
+                <h3>
+                <p class="login-img">
+                    <a href="http://www.tcl.com:80/usercenter/customercomplex/toUploadImageKuyu"
+                            target="_blank">
+                            <img src="http://www.tcl.com:80static/usercenter/img/default.png"/></a>
+                </p>
+                <p class="login-name" id="loginName"></p>
+                <ul class="login-infor">
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tclcustomer/toMyIntegralDetailKuyu"><span
+                            class="title" id="jifen">0</span></a> <span>积分</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/coupondetails/toListKuyu"><span
+                            class="title" id="coupon">0</span></a> <span>优惠券</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tcode/tcodeListKuyu/1/1/10"><span
+                            class="title" id="tcode">0</span></a> <span>T码</span></li>
+                </ul>
+            </h3>
+                <div class="login-inp" style="line-height: 3">
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/toMyCenter">个人中心<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/order/listKuyu/1/5?init=true">我的订单<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/productfavorite/toPageKuyu">我的收藏<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/reserveorder/listKuyu/1/5">我的预约<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/accountSecurityKuyu">管理账号<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                </div>
+                <div class="login-log">
+                    <a href="http://www.tcl.com:80/tclcustomer/logout" class="buy">退出</a>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="test" />
+        <input type="hidden" name="userloginname" id="userloginname" value="113362140" />
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null" />
+        <!-- login html end -->
+    </div>
+    <!-- go to top html-->
+    <div class="goTop">
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+    </div>
+    <!-- go to top html-->
+    <div id="insertc"></div>
+    <!-- Top html end -->
+    <!--crumbs html start-->
+    <div class="m_crumbs bg_f0">
+        <div class="min-wid">
+            <div class="fl">
+            <a href="/">首页</a> / 产品订单 / 我的订单 / 订单详情</div>
+            </div>
+        </div>
+    </div>
+    <!--crumbs html end-->
+    <!--mian html start-->
+    <div class="member_mian min-wid m-mt">
+        <!-- 菜单 -->
+        <!--左侧导航#navigation-->
+        <div class="fl nav_left">
+            <include type="userCenterBar" src="{{userCenterBar}}"></include>
+        </div>
+        <!-- 菜单end -->
+        <div class="fr mian_right" id="mian_right">
+            <!--<div class="m_content">-->
+                <!--<h3>产品订单</h3>
+                <div class="zqrightinfo zqtwo">
+                    <div class="zqtypesh">
+                        <p class="zqstate tab-switch">
+                            <a href="#" class="active all">全部订单</a><b>|</b>
+                            <a href="#" class="waitpay">待付款<span id="waitpaycount">0</span></a><b>|</b>
+                            <a href="#" class="waitship">待发货<span id="waitshippingcount">0</span></a><b>|</b>
+                            <a href="#" class="shipping">待收货 <span id="shippingcount">0</span></a><b>|</b>
+                            <a href="#" class="waitcomment">待评价 <span id="waitcommentcount">0</span></a><b>|</b>
+                            <a href="#" class="succeed">已完成<span id="succeedorder">0</span></a>
+                        </p>
+                        <div class="zqsearch">
+                            <input type="text" name="searchName" id="searchName" placeholder="请输入商品标题和订单号进行搜索" value="">
+                            <input type="button" binder-event="click|ajaxSearchOrder" class="zqbtnn" value="">
+                            <input type="hidden" name="state" id="state" value="" />
+                            <input type="hidden" name="nowChooseTab" id="nowChooseTab" value="all" />
+                            <input type="hidden" name="commentState" id="commentState" value="0" />
+                        </div>
+                    </div>-->
+                    <!--框架里面的内容  -->
+                    <!-- 全部订单 -->
+                    <!--<div class="zqboxright" id="usercenterOrder">-->
+                        <!-- 订单列表 -->
+
+                        <!--<div class="padding-box">-->
+                            <!--<div class="padding clearmar">-->
+                                <!-- 上一页标签处理 -->
+                                <!--<span class="prev  btn-disabled "><a href="javascript:void(0)" onclick="return false;">&#xe62d;</a></span>-->
+                                <!-- 中间页码标签处理 -->
+                                <!--<span class="item active" title="第1页">1</span>-->
+                                <!-- 下一页标签处理 -->
+                                <!--<span class="next " onclick="javascript:goPageList('2','5');">-->
+                                <!--<a href="javascript:void(0)" onclick="return false;"> &#xe62c;</a>-->
+                                <!--</span>-->
+                            <!--</div>
+                        </div>
+                        <div class="reson-tip hidden"></div>
+                        <div class="modal-backdrop"></div>
+                        <div class="reson-dialog hidden">
+                            <h3 class="m_rel"><s class="m_close"></s></h3>
+                            <div class="reson-title">取消原因</div>
+                            <div class="dialog_tit">
+                                <select name="reasons" id="reasons" class="form_control">
+                                    <option value="不想买了" selected="selected">不想买了</option>
+                                    <option value="重新下单">重新下单</option>
+                                    <option value="再考虑一段时间再买">再考虑一段时间再买</option>
+                                </select>
+                                <h3>描述</h3>
+                                <textarea placeholder="请填写取消原因" id="reasoncontent" class="form_control" maxlength="100"></textarea>
+                            </div>
+                            <div class="dialog-tip m_hide red">填写100字以内的描述信息(*非必须)</div>
+                            <div class="m_btn">
+                                <div class="m_btn_box">
+                                    <a href="javascript:cancelOrder();" class="y_btn y_btn_custom1 sure">确定</a>
+                                    <a href="javascript:;" class="y_btn y_btn_custom4 clean">取消</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_content hidden">
+                <h3>订单详情</h3>
+                <div class="m_customer">
+                    <div class="m_orderno_time">
+                    </div>
+                    <div class="m_orderno">
+                        <div class="fl">订单号 : INDENT000066419246 </div>
+                        <a href="#" class="btn y_btn_custom2 fr">返回</a>
+                        <div class=" fr">
+                            <a href="/orderpay/toOrderPayKuyu/INDENT000066419246/2/1" class="btn y_btn_custom1 fr goPay" orderuuid="0c8ce084d2ad4c43a8474ec27dd05c21">去付款</a>
+                        </div>
+                    </div>
+                    <div class="m_placean">
+                        <h4>订单状态</h4>-->
+                        <!-- 秒杀订单支付剩余时间  start-->
+                        <!-- 秒杀订单支付剩余时间  end -->
+                        <!-- 普通订单 -->
+                        <!--<div class="m_state m_statebg_1">
+                            <div class="m_state_box progress_box">
+                                <span class="m_span0 active">下单</span>
+                                <span class="m_span1">付款</span>
+                                <span class="m_span2">发货</span>
+                                <span class="m_span3">交易成功</span>
+                                <span class="m_span4">评价</span>
+                            </div>-->
+                            <!-- 预定订单 -->
+                        <!--</div>
+                        <div class="m_state_information bor-bott">
+                            <div class="m_tit">
+                                <p><span class="state-time">2016-11-01 09:14:00</span>您的订单下单成功。</p>
+                                <p class="red">订单还没支付哦。</p>
+                            </div>
+                        </div>
+                        <div class="zqrightinfo zqone  bor-bott">
+                            <div class="m_title" orderuuid="0c8ce084d2ad4c43a8474ec27dd05c21"></div>
+                            <div class="m_center">
+                                <div class="zqproinfo clearfloat">
+                                    <div class="zqimgtxt fl">
+                                        <div class="zqitimg imgwidth100">
+                                            <a href="/item/eb5b4b9fb8dc4844b379d370e92da5a4" target="_blank">
+                                                <img src="&#10;&#10;&#10;&#10;&#10;http://img.mall.tcl.com/dev1/0/000/172/0000172671.fid" alt="观影王4K护眼版55英寸">
+                                            </a>
+                                        </div>
+                                        <div class="zqittxt">
+                                            <p class="zqpmiaoshu"><a href="/item/eb5b4b9fb8dc4844b379d370e92da5a4">观影王4K护眼版55英寸</a></p>
+                                        </div>
+                                    </div>-->
+                                    <!-- 秒杀标识 -->
+                                    <!--<p class="zqmoney">
+                                        3399.00元 x 2</p>
+                                </div>-->
+                                <!-- 赠品start  -->
+                                <!-- 赠品end  -->
+                            <!--</div>
+                        </div>-->
+                        <!--receiving_information start-->
+                        <!--<div class="receiving_information bor-bott">
+                            <h4>收货信息</h4>
+                            <div class="m_receiving">
+                                <p>姓 名： chen</p>
+                                <p>联系电话： 15855558888</p>
+                                <p>收货地址： 广东省深圳市南山区西丽街道tcl国际城</p>
+                            </div>
+                        </div>-->
+                        <!--receiving_information end-->
+                        <!--invoice html start-->
+                        <!-- 发票类型：1：普通，2：电子，3：增值税 -->
+                        <!--<div class="m_invoice bor-bott">
+                            <h4>发票信息</h4>
+                            <div class="m_receiving">
+                                <p>发票类型： 电子发票</p>
+                                <p>发票抬头： chen</p>
+                                <p>发票内容： 商品明细</p>
+                            </div>
+                        </div>-->
+                        <!--invoice html end-->
+                        <!--m_detailed html start-->
+                        <!--<div class="m_detailed">
+                            <h4>支付明细</h4>
+                            <div class="m_tit">
+                                <div class="fr">
+                                    <p>商品总价：<span>6798.00元</span></p>
+                                    <p><b>运</b>费： <span class="">0.00元</span></p>
+                                    <p>优惠金额： <span class="m_span">-800.00元</span></p>
+                                    <p>订单金额：<span>5998.00元</span></p>
+                                    <p class="m_p">
+                                        实付金额：<span><b>5998.00</b>元</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--m_detailed html end-->
+                    <!--</div>
+                </div>-->
+           <!-- </div>-->
+        </div>
+    </div>
+    <!--mian html start-->
+    <div class="reson-tip hidden"></div>
+    <!-- Help center html start -->
+    <div class="help">
+        <div class="min-wid">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policy">售后服务</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService">自助服务</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policye">电子保单</a></dd>
+            </dl>
+            <dl>
+                <dt>关于TCL</dt>
+                <dd><a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=1">了解TCL</a></dd>
+                <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/group/recruitment/index">人才招聘</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/connectWithUs.jsp">联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+                <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">新浪微博</a>
+                </dd>
+                <dd><a target="_blank" href="http://www.shifendaojia.com/pc.html">十分到家</a></dd>
+                <dd><a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a></dd>
+            </dl>
+            <dl>
+                <dt>特色服务</dt>
+                <dd><a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a>
+                </dd>
+                <dd><a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>应用服务</dt>
+                <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+                <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+                <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+                <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+                <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+            </dl>
+            <dl class="last-r">
+                <p class="red phone">4008-123456</p>
+                <p class="grey">（24小时在线，仅收市话费）</p>
+                <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+            </dl>
+        </div>
+    </div>
+    <!-- Help center html end
+    <!-- go to top html-->
+    <div class="goTop">
+        <a href="#">
+            <div class="item">&#xe64a;</div>
+        </a>
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+    </div>
+    <!--<!-- footer html end -->
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe656;</div>
+            <p class="blod"><a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> | <a target="_blank" href="http://www.tcl.com/group/investors/index">投资者关系</a> | <a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> | <a target="_blank" href="/dealer/toLogin">经销商之家</a> | <a target="_blank" href="http://www.tcl.com:80/bulkpurchase/service">大宗采购</a> | <a rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> | <a href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a> | <a href="http://news.tcl.com/English.php/index/index.html">English</a></p>
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. <a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> TCL集团股份有限公司版权所有 粤ICP备05040863号</p>
+            <div class="foot-r"><span><em>&#xe63a;</em></span>诚信网站</div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <!-- footer html end -->
+    <!-- go to top html-->
+    <div class="goTop">
+        <a href="#"></a>
+    </div>
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="orderDetail.js"></script>
+</body>
+
+</html>

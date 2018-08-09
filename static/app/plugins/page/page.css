@@ -1,0 +1,6 @@
+.page a, .page .disabled, .page .current{padding: 4px 8px;border:1px solid #ccc;text-decoration: none; color:#999; margin: 0 2px;border-radius: 3px; }
+.page .disabled{border:1px solid #ccc; border-radius: 3px; color: #999; background: #eee;}
+.page .current{background:#03a9f4; border: none; color: #fff;}
+.page .dot{color: #ccc; vertical-align: middle; padding: 0 1px;}
+.page .jump input{width: 30px; border:1px solid #ccc; padding: 3px; margin: 0 3px;}
+.page .jump button{border:1px solid #ccc; padding: 4px 6px; outline: none;margin-left: 3px; background-color: #eee;cursor: pointer;}

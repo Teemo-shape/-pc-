@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head> <% var R = __result__ ; var KY = R.toProductKuyu.promotionUuid ? R.getSeckill : R.toProductKuyu ; var ISSKILL = R.getSeckill ? true : false  %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>【TCL<%= KY.secondParentCategoryName%>】<%=KY.productModel.productMain.productName %> - TCL内购</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="TCL<%=KY.secondParentCategoryName%>, TCL官网 "/>
+    <meta name="description" content="TCL<%=KY.secondParentCategoryName%>官方渠道售卖, TCL官网提供<%=KY.productModel.productMain.productName %>TCL<%=KY.secondParentCategoryName%>, 欢迎了解TCL官方产品介绍、最新价格等信息。 "/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/app/css/store.css">
+    <link rel="stylesheet" href="/app/css/lightbox/lightbox.css">
+    <link rel="stylesheet" href="/app/components/detail/detail.css">
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include ../../nav-header %>
+<!--body start-->
+<input id="GLOBAL_UUID" type="hidden" value="<%=__result__.uuid %>">
+<input id="GLOBAL_TYPE" type="hidden" value="<%=ISSKILL %>">
+<input type="hidden" id="GLOBAL_categoryUuid" value="<%=KY.productModel.productMain.categoryUuid %>" >
+<%
+var channelDic = {
+"电视":'tv',
+"手机":'mobile',
+"空调":'air',
+"冰箱":'refrigerator',
+"洗衣机":'washer',
+"健康电器":'homeappliance'
+}
+%>
+<!-- go to top html-->
+<div class="goTop">
+    <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+</div>
+
+<!--crumbs html start-->
+<div class="m_crumbs bg_f0">
+    <div class="min-wid">
+        <div class="fl" id="crumbs">
+            <a href="/">T严选</a> > <a href="/<%=(channelDic[KY.secondParentCategoryName] ? channelDic[KY.secondParentCategoryName] : '#F7')%>"><%=KY.secondParentCategoryName%></a> ><%=KY.productModel.productMain.productName %>
+        </div>
+    </div>
+</div>
+
+<!-- purchase html start -->
+<div class="box purchase clearfloat">
+    <div class="purc-l">
+        <div class="imgLoad">
+            <%
+            var mb = KY.productModel.productImage;
+            var ms = KY.productModel.productMultiImage
+            var html="";
+            if (KY.showType=='subscribe'){
+            html+='<div class="badge">预约</div>'
+            }
+            if (KY.showType=='reserve'){
+            html+='<div class="badge">预售</div>'
+            }
+            if(KY.front !=null && KY.front.priceAndPromotion.promotionInteactiveModel && KY.front.priceAndPromotion.promotionInteactiveModel.promotionTypes) {
+            if( KY.front.priceAndPromotion.promotionInteactiveModel.promotionTypes[0] == '5') {
+            if(KY.front.priceAndPromotion.name){
+            html+='<div class="badge">'+KY.front.priceAndPromotion.name+'</div>'
+            }
+            }
+            }
+            html+="<div class='purc-img'>";
+            if(mb.bigImageUrl || mb.smallImageUrl){
+            var loading = '/app/images/loading.gif';
+            var imgDom = '<div class="item active" style="text-align: center;line-height: 400px;"><img id="bigImgSrc"  src="'+ (mb.bigImageUrl ? mb.bigImageUrl : mb.smallImageUrl) +'"></div>'
+            html+= imgDom;
+            }
+            if(ms.length>0){
+            for (var i = 0; i < ms.length; i++) {
+            var image = ms[i];
+            html+='<div class="item"><img src="'+image.bigImageUrl+'"></div>';
+            }
+            }
+            html+='</div><div class="purc-list">';
+            if(mb.smallImageUrl){
+            html+='<span class="radius active"><img src="'+mb.smallImageUrl+'"></span>';
+            }
+            if(ms.length>0){
+            for (var i = 0; i < ms.length; i++) {
+            var image = ms[i];
+            html+='<span class="radius" ><img src="'+image.bigImageUrl+'"></span>';
+            }
+            }
+
+            html+="</div>";
+            %>
+            <%-html%>
+        </div>
+    </div>
+    <!-- purchase html end -->
+    <!-- 右侧数据 -->
+    <!--crumbs html end-->
+    <div  id="pForm" >
+        <input type="hidden" id="activeStatus" value="<%=(KY.activeStatus?KY.activeStatus:'')%>" />
+        <input type="hidden" id="preSaleType" value="<%=(KY.preSale?KY.preSale.type:'')%>" />
+        <input type="hidden" id="showTypedisp" value="<%=(KY.showType?KY.showType:'')%>" />
+        <input type="hidden" name="skuNo" id="skuNo" value="<%=(KY.front?KY.front.skuNo:'')%>" />
+        <input type="hidden" name="parentSkuNo" id="parentSkuNo" value="<%=(KY.productSku?KY.productSku.parentSkuNo:'')%>" />
+        <input type="hidden" name="reservePromotionUuid" id="reservePromotionUuid" value="<%=(KY.preSale?KY.preSale.uuid:'')%>" />
+        <input type="hidden" name="specSize" id="specSize" value="0" />
+        <input type="hidden" name="areaId" id="areaId" value="" />
+        <input type="hidden" name="bcustomerUuid" id="bcustomerUuid" value="" />
+        <input type="hidden" name="distributorUuid" id="distributorUuid" value="" />
+        <input type="hidden" name="activityUuid" id="activityUuid" value="" />
+        <input type="hidden" name="bType" id="bType" value="" />
+        <input type="hidden" name="productUuid" id="productUuid" value="<%=(KY.productModel?KY.productModel.productMain.uuid:'')%>" />
+        <input type="hidden" name="storeUuid" id="storeUuid" value="<%=(KY.productModel?KY.productModel.productMain.storeUuid:'')%>" />
+        <input type="hidden" name="productPrice" id="productPrice" value="" />
+        <input type="hidden" name="promotionUuid" id="promotionUuid" value="<%=(KY.promotionUuid?KY.promotionUuid:'')%>" />
+        <input type="hidden" name="initSelectSpecUuids" id="initSelectSpecUuids" value="" />
+        <input type="hidden" name="productName" id="productName" value="">
+        <input type="hidden" name="reserveOrderId" id="reserveOrderId" value="<%=(KY.reserveOrderId?KY.reserveOrderId:'')%>">
+        <input type="hidden" name="specColorUuid" id="specColorUuid" value="" />
+        <input type="hidden" name="secondParentCategoryName" id="secondParentCategoryName" value="<%=(KY.secondParentCategoryName?KY.secondParentCategoryName:'')%>">
+        <input type="hidden" name="returnCode" id="returnCode" value="<%=(KY.returnCode?KY.returnCode:'')%>">
+        <input type="hidden" name="remindSeconds" id="remindSeconds" value="<%=(KY.remindSeconds?KY.remindSeconds:'')%>">
+        <input type="hidden" name="setTitle" id="setTitle" value="<%if(KY.platformName){%>
+            【TCL <%=KY.platformName%>】<%=KY.productModel.productMain.productName %>_TCL <%=KY.secondParentCategoryName%> -TCL官网
+        <%} else{%>
+           TCL - 详情页 - <%=KY.productModel.productMain.productName%>
+        <%}%>">
+        <input type="hidden" name="nowPromotion" id="nowPromotion" value="<%=((KY.front && KY.front.priceAndPromotion) ?  (KY.front.priceAndPromotion.promotionInteactiveModel?KY.front.priceAndPromotion.promotionInteactiveModel.promotionUuid:KY.front.priceAndPromotion.promotionUuid): KY.front.priceAndPromotion.promotionUuid)%>" />
+        <!-- purchase html start -->
+        <div class="purc-r">
+            <!-- 商品名称及二维码一栏 -->
+            <div class="purc-text purc-paddt" id="render-product-title">
+                <h1 class="purc-name"><span title="<%=KY.productModel.productMain.productName%>"><%=KY.productModel.productMain.productName%></span></h1>
+                <%if(KY.promotionLimitBuy) {%>
+                <div class="purc-item redfont">秒杀时间：<%=KY.promotionLimitBuy.beginTime%>至<%=KY.promotionLimitBuy.endTime%> <%=KY.promotionLimitBuy.description%></div>
+                <%}%>
+                <div class="purc-item"><p class="desc"><%-KY.productModel.productMain.adviceNote%></p>
+                  <span class="purc-start" >
+                    <span class="state"><em>&#xe636;</em>收藏</span>
+                    <span class="total-favorite"></span></span>
+                </div>
+                <div class="purc-item clearfloat jifen">
+                    <div class="fl">
+                        <!--<span>可获取积分：<em><%if(KY.front){%><%=parseInt(KY.front.priceAndPromotion.price)%><%}else{%>0<%}%></em></span>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 秒杀 -->
+            <div id="seckill">
+                <%if(KY.promotionUuid) {%>
+                <div class="purc-text">
+                    <p class="purc-item"><strong  class="bold">剩余时间：</strong>
+                        <span class="time" id="limit_endTime">
+                            <%=Math.floor((KY.remindSeconds / 3600) / 24)%>天<%=Math.floor((KY.remindSeconds / 3600) % 24)%>时<%=Math.floor((KY.remindSeconds / 60) % 60)%>分<%=Math.floor(KY.remindSeconds % 60)%>秒
+                       </span>
+                    </p>
+                    <p class="purc-item"><strong class="bold">秒 杀 &nbsp价：</strong>
+                        <input type="hidden" id="seckillTime" value="<%=KY.remindSeconds%>" >
+                        <input type="hidden" id="handEndTime" value="<%=KY.promotionLimitBuy.handEndTime%>" >
+                        <i class="redfont mgl10"><em class="font30 redfont"><%=KY.front.priceAndPromotion.price%></em></i>
+                        <span class="txt-leave blackfont">（秒杀库存仅剩<font id="fnt_limitStock"><%=KY.front.stock%></font>件）</span>
+                        <span class="mgl20 line-through blackfont">RMB：<%=KY.productSkuPrice%></span>
+                    </p>
+                </div>
+                <%}%>
+            </div>
+            <!-- 商品价格-->
+            <%if(!KY.promotionUuid){%>
+            <div id="render-price">
+                <div class="purc-text hidden">
+                    <div class="qrcode_pos ">
+                        <dl class="fr qrcode">
+                            <dd class="icon" title="对内部员工的一项特殊优惠福利，同样的产品可以以最低的价格购买，但有购买数量限制。">员工价<em class="icon-tip"></em></dd>
+                            <dd class="icon" title="对内部员工亲友的特殊优惠福利，同样的产品可以以低于市场价的价格购买，但价格高于员工价，没有购买数量限制。">亲友价<em class="icon-tip"></em></dd>
+                        </dl>
+                        <% if(KY.productModel.staffPrice != null){ %>
+                        <p>
+                            <strong class="bold">员 工 价：</strong><i class="red"><em class="font30" id="staffPrice"><%=KY.productModel.staffPrice.toFixed(2)%></em>元</i>
+                        </p>
+                        <%}%>
+                        <% if(KY.productModel.friendPrice != null){ %>
+                        <p style="margin-top: 16px">
+                            <strong class="bold">亲 友 价：</strong><em class="font20" id="friendPrice"><%=KY.productModel.friendPrice.toFixed(2)%></em>元
+                        </p>
+                        <%}%>
+                        <!-- 促销信息 -->
+                        <div id="getStorePromotion">
+                            <% if(KY.front.priceAndPromotion.name || (R.getStorePromotion.code ==0 && R.getStorePromotion.retData.length > 0 )){%>
+                            <strong  class="bold">促销信息：</strong>
+                            <div class="inlineBlock">
+                                <% if(KY.front.priceAndPromotion.name){ %>
+                                <p  class="mypromotiontagfl" >
+                                    <span class="red">活动</span><%=KY.front.priceAndPromotion.promotionInteactiveModel.promotionName %>
+                                </p>
+                                <%}%>
+                                <%if( R.getStorePromotion.retData.length > 0 ) { %>
+                                <p  class=" mypromotiontagfl" >
+                                    <% R.getStorePromotion.retData.forEach(function (ele, index, arr) {
+                                    var promotionTypes = ele.promotionTypes[0];
+                                    var promotionName = ele.promotionName;
+                                    var dic = {1: "满减", 4: "满赠", 5: "满折", 6:"满折",7:"买减"};
+                                    %>
+                                    <span class="red"><%=dic[promotionTypes]%></span><%=promotionName%><br/>
+                                    <%})%>
+                                </p>
+                                <%}%>
+                            </div>
+                            <%}%>
+                        </div>
+                        <!-- 赠品 -->
+                        <%if( KY.front.priceAndPromotion &&  KY.front.priceAndPromotion.promotionInteactiveModel.productGiftList && KY.front.priceAndPromotion.promotionInteactiveModel.productGiftList.length > 0){%>
+                        <p class="purc-item mypromotiontag" style="color: #666;line-height:22px ;overflow:hidden">
+                            <strong  class="bold fl">赠&emsp;&emsp;&nbsp;品：</strong>
+                            <span  class="fl mypromotiontagfl">
+                                <% KY.front.priceAndPromotion.promotionInteactiveModel.productGiftList.forEach(function (ele, index, arr) {%>
+                                        <a href="/<%=ele.productUuid%>" target="_blank" ><%=ele.productName%></a>
+                                <%})%>
+                                </span>
+                        </p>
+                        <%}%>
+
+                        <!-- 预约抢购活动 -->
+                        <%if( KY.showType && KY.showType == "subscribe"){%>
+                        <li class="y_yytime">
+                            <%if( KY.activeStatus =="status1"){%>
+                            <span class="dt">预约活动开始剩余时间：</span>
+                            <%}%>
+                            <%if( KY.activeStatus=="status2"){%>
+                            <span class="dt">预约剩余时间：</span>
+                            <%}%>
+                            <%if( KY.activeStatus=="status3"){%>
+                            <span class="dt">抢购活动开始剩余时间：</span>
+                            <%}%>
+                            <%if( KY.activeStatus =="status4"){%>
+                            <span class="dt">抢购剩余时间：</span>
+                            <%}%>
+                            <input type="hidden" id="SysSecond" value="<%=KY.remindSeconds%>" >
+                            <!--//抢购这里有个自定义标签-->
+                            <div class="dd" id="remainTime">
+                                <b id="daysId"><%=Math.floor((KY.remindSeconds / 3600) / 24)%></b>
+                                天
+                                <b id="hoursId"><%=Math.floor((KY.remindSeconds / 3600) % 24)%></b>
+                                时
+                                <b id="minutesId"><%=Math.floor((KY.remindSeconds / 60) % 60)%></b>
+                                分
+                                <b id="secondeId"><%=Math.floor(KY.remindSeconds % 60)%></b>
+                                秒
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dt">发货时间：</span>
+                            <div class="dd">付款后<span style="color:red">7</span>天内</div>
+                        </li>
+                        <%}%>
+                        <%if( KY.preSale && KY.preSale.type==2){%>
+                        <div class="m_process">
+                            <div class="m_gift">
+                                <%if( KY.preSale.promotionCost ){%>
+                                <P class="f_color1">预付首款优惠金额：RMB <%=KY.preSale.promotionCost%>元</P>
+                                <%}%>
+                            </div>
+                            <div class="m_process_box book clearfix">
+                                <div class="m_left">
+                                    <div>付定金</div>
+                                    <p>剩余:<span class="f_color1"><%=KY.preSale.endTime%></span></p>
+                                </div>
+                                <span class="m_left m_span">&gt;</span>
+                                <div class="m_left">
+                                    <div>尾款截止</div>
+                                    <p>
+                                            <span class="f_color1">
+                                                <%=KY.flastPayTime.split(/\s/)[0] %>
+                                                </sapn>
+                                    </p>
+                                </div>
+                                <span class="m_left m_span">&gt;</span>
+                                <div class="m_left">
+                                    <div class="m_stocking">生产备货</div>
+                                </div>
+                                <span class="m_left m_span">&gt;</span>
+                                <div class="m_left">
+                                    <div>发货</div>
+                                    <p>付尾款后<span class="f_color1"><%=KY.preSale.sendGoodsTime%>天</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <%} else if (KY.preSale && KY.preSale.type== 1) {%>
+                        <p>付款后<%=KY.preSale.sendGoodsTime%>天内发货</p>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+            <!-- 商品规格属性选择一栏-->
+            <!-- 颜色和尺寸等选择 start-->
+            <% if(KY.front && KY.front.productAttributes) {%>
+            <div class="specattr" id="baseSpecAttr" testis="">
+                <%KY.front.productAttributes.forEach(function(ele, index, arr){%>
+                <% if(ele.canColor == '1') {%>
+                <% if(KY.productModel.productColorImages && KY.productModel.productColorImages.lenght>0) {%>
+                <div class="purc-text mypurctext">
+                    <%if(KY.productModel.productColorImages.length >1 ){%><span class="edit">修改</span><%}%>
+                    <div class="sele">选择颜色</div>
+
+                    <ul  id="colorItem" class="options ul" style="<% if(KY.productModel.productColorImages.lenght==1) {%>display:none;<%}else{%>display:block;<%}%>" >
+                        <% KY.productModel.productColorImages.forEach(function (ele, index, arr) {%>
+                        <li attr-uuid="<%=ele.attrValueUuid%>"  onclick="selectColor(<%=ele.attrValueUuid%>,<%=index%>);" class="op-item <%if ( (KY.front.initSelectSpecUuids && data.attrValueUuid) || KY.productModel.productColorImages.length == 1){%>active<%}%>">
+                            <%if(ele.smallImageUrl) {%>
+                            <img src=<%=ele.smallImageUrl%>>
+                            <%}%>
+                            <em class="color"><%=ele.colorName%></em>
+                        </li>
+                        <%})%>
+                        <% KY.productModel.productColorImages.forEach(function(ele, index, arr) {%>
+                        <% if(  (KY.front.initSelectSpecUuids && ele.attrValueUuid) || KY.productModel.productColorImages.length == 1 ) {%>
+                        <input type="hidden" id=<%=ele.attrValueUuid%> value=<%=ele.attrValueUuid%> />
+                        <input type="hidden" id=<%=ele.colorName%> value=<%=ele.colorName%> />
+                        <%}%>
+                        <%})%>
+                    </ul>
+                </div>
+                <%}%>
+                <%}%>
+                <%})%>
+            </div>
+            <%}%>
+
+            <!-- 颜色和尺寸等选择 end-->
+            <!-- 组合商品start -->
+            <!-- 组合商品start -->
+            <%if(R.attrs && R.attrs.resultlist && R.attrs.resultlist.length >0 ) {%>
+            <div class="purc-text groupedProduct clearfix" id="groupedProduct" >
+                <span class="sele fl"><%=R.attrs.displayName%></span>
+                <div class="options" style="margin-left: 60px;">
+                    <% R.attrs.resultlist.forEach(function (ele, index, arr) {%>
+                    <%if(ele.uuid ==KY.productModel.productMain.uuid){%>
+                    <span class="groupedproduct active" data-uuid = <%=ele.uuid%>><%=ele.displayName%></span>
+                    <%} else {%>
+                    <span class="groupedproduct" data-uuid = <%=ele.uuid%>><%=ele.displayName%></span>
+                    <%}%>
+                    <%})%>
+                </div>
+            </div>
+            <div class="purc-text groupedProduct clearfix" id="buyWay" style="display: none">
+                <span class="sele fl">购买方式</span>
+                <div class="options fl">
+                    <span class="groupedproduct active">员工价</span>
+                    <span class="groupedproduct">亲友价</span>
+                </div>
+            </div>
+            <%}%>
+            <div class="purc-text clearfix" style="border-bottom: none;">
+                <span class="sele fl">数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量</span>
+                <div class="fl">
+                    <span class="btn-count btn-min" binder-event="click|reduceBuyNum">-</span><input name="buySum" id="buyNum" class="buy-sum" type="text" value="1" onkeyup="getAddress.changeBuyNum()" onafterpaste="getAddress.changeBuyNum()"><span class="btn-count btn-plus" binder-event="click|addBuyNum">+</span>
+                </div>
+            </div>
+
+            <!-- 配送区域一栏-->
+            <!-- 地址选择start -->
+            <div class="purc-text purc-address">
+                <div class="purc-item purc-address-show">
+                    <input type="hidden" name="areaUuid" id="areaUuid" value="" />
+                    配送到：
+                    <div id="loadAreaAddress" class="select-address">
+                        <div class="y_sendarea">
+                            <span class="y_areasure" id="selectAreaNameId" >请选择地址</span>
+                            <div class="m_areabox">
+                                <div class="mt">
+                                    <ul class="tab">
+                                        <li class="hover"><span  id="provincetitle">请选择省</span></li>
+                                        <li><span id="citytitle">请选择市</span></li>
+                                        <li><span id="regiontitle">请选择区</span></li>
+                                        <li><span id="streettitle" >请选择街道</span></li>
+                                    </ul>
+                                </div>
+                                <div class="mc">
+                                    <ul class="area-list"  id="provinces"></ul>
+                                </div>
+                                <div class="mc" style="display: none;"  >
+                                    <ul class="area-list"  id="citys"></ul>
+                                </div>
+                                <div class="mc" style="display: none;">
+                                    <ul class="area-list"  id="regions"></ul>
+                                </div>
+                                <div class="mc" style="display: none;">
+                                    <ul class="area-list" id="streets"></ul>
+                                </div>
+                                <b class="y_arelose">&times;</b>
+                            </div>
+                        </div>
+                        <p class="fl"><span class="y_mr10" id="isProduct" ></span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 地址选择end -->
+            <div class="purc-text" style="border-bottom: none">
+                <% var preSaleType=(KY.preSale?KY.preSale.type:'')%>
+                <% var activeStatus=(KY.activeStatus?KY.activeStatus:'')%>
+                <% if(!KY.promotionUuid){%>
+                <%if( activeStatus && activeStatus == 'status4') { %>
+                <% } else if( activeStatus && activeStatus == 'status2' ) { %>
+                <%} else { %>
+                <!--<div class="select j-select"> &lt;!&ndash; binder-attr="vm.promotionLimitBuy?true:false | disabled:true "&ndash;&gt;-->
+                <!--<input type="text"  class="val" value="1" autoComplete="off" name="buyNum" binder-event="keyup|changeBlur" id="buyNum"  />-->
+                <!--<div class="mun">-->
+                <!--<span class="add" binder-event="click|addBuyNum"></span>-->
+                <!--<span class="reg" binder-event="click|reduceBuyNum"></span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <%}%>
+                <%}%>
+                <div class="purc-text purc-submit" id="promotionSub">
+                    <%if(KY.promotionUuid){%>
+                    <a class="buy" id="buyAId" href="javascript:;" >立即购买</a>
+                    <%} else {%>
+                    <%if(activeStatus && activeStatus == 'status1') {%>
+                    <a class="bespoke" id="subId" >等待预约</a>
+                    <%} else if(activeStatus && activeStatus == 'status2') {%>
+                    <a class="buy  " id="buyAId" binder-event="click|submitTOBuy" >立即预约</a>
+                    <%} else if(activeStatus && activeStatus == 'status3' ||"status5"==activeStatus && activeStatus) {%>
+                    <a class="bespoke" id="subId" >等待抢购</a>
+                    <%} else if(activeStatus && activeStatus == 'status4') {%>
+                    <a class="buy" id="buyAId" binder-event="click|submitTOBuy"  >立即抢购</a>
+                    <%} else if(preSaleType == '1') {%>
+                    <a class="buy " id="buyAId" binder-event="click|submitPreSaleTOBuy" >立即预定</a>
+                    <%} else if(preSaleType == '2') {%>
+                    <a class="buy " id="buyAId" binder-event="click|submitPreSaleTOBuy"  >立即付定金</a>
+                    <%} else {%>
+                    <a class="buy " id="buyAId" binder-event="click|toFastBuy"  >立即购买</a>
+                    <%}%>
+                    <%}%>
+                    <a href="javascript:;" binder-event="click|toAddtoCartBuy" class="buy shop-car" id="fastBuy">加入购物车</a>
+                </div>
+            </div>
+        </div>
+        <!-- purchase html end -->
+    </div>
+</div>
+<!--组合商品-->
+<div class="g-box border productDetailSuitList" id="suitList" style="display:none;"></div>
+
+<!-- 商品描述图片、服务政策及购买按钮一栏 -->
+<!-- Product details html start-->
+<div class="details-box light-gray">
+    <!-- 滚动顶部固定条 -->
+    <div class="fixed-buy" >
+        <div class="fixed-box">
+            <div class="fr">
+                <span class="fl">手机购买</span>
+                <div class="fl qrcode fixed_qrcode">
+                    <img src="/app/images/qrcode.png" />
+                    <div class="fixed-code"><img class="fl pQrCode" src="" />
+                        <p class="code-text fl" style="line-height:1.5">关注公众号<br/>一键下单购买</p>
+                    </div>
+                </div>
+                <span id = "fixedBuy">
+                   <%if("status1"==activeStatus){%>
+                     <a  class="bespoke" id="fixedFastBuy">等待预约</a>
+                   <% }else if("status2"==activeStatus){ %>
+                      <a  binder-event="click|submitTOBuy" class="buy" id="fixedFastBuy">立即预约</a>
+                   <% }else if("status3"==activeStatus||"status5"==activeStatus){%>
+                       <a class="bespoke bespoke-buy" id="fixedFastBuy">等待抢购</a>
+                   <% }else if("status4"==activeStatus){  %>
+                        <a  binder-event="click|submitTOBuy" class="buy" id="fixedFastBuy">立即抢购</a>
+                   <% }else if("1"==preSaleType){  %>
+                        <a  binder-event="click|submitPreSaleTOBuy" class="buy" id="fixedFastBuy">立即预定</a>
+                   <% }else if("2"==preSaleType){%>
+                        <a binder-event="click|submitPreSaleTOBuy" class="buy" id="fixedFastBuy">立即付定金</a>
+                  <%  }else if("status9"==activeStatus){%>
+
+                  <%  } else{%>
+                       <a  binder-event="click|toFastBuy" class="buy" id="fixedFastBuy">立即购买</a>
+                  <%  }%>
+                </span>
+                <!--<a href="javascript:;" class="buy" id="fixedFastBuy">立即购买</a>-->
+            </div>
+            <div class="fl">
+                <span><%=KY.productModel.productMain.productSn%></span>&nbsp;&nbsp;
+                <%if(KY.showType && KY.showType !='reserve' && KY.showType !='subscribe'){%>
+                <strong class="red"><%=KY.productSkuPrice.toFixed(2)%>元</strong>
+                <%}%>
+                <% if(KY.showType && KY.showType == "reserve" && KY.preSale && KY.preSale.type &&KY.preSale.type == "2"){%>
+                <strong class="red"><%=KY.preSale.firstCost.toFixed(2)%>元</strong>
+                <%}else if(KY.front.priceAndPromotion.price >= KY.productBasePrice){%>
+                <strong class="red"><%=KY.productSkuPrice.toFixed(2)%>元</strong>
+                <% }else{%>
+                <strong class="red"><%=KY.front.priceAndPromotion.price.toFixed(2)%>元</strong>&nbsp;&nbsp;
+                <span class="fr line-through ">RMB：<%=KY.productBasePrice.toFixed(2)%>元</span>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <div id="productAttr" >
+        <% var productAttrList = R.productAttr.retData.attributes %>
+        <% productAttrList && productAttrList.length && productAttrList.forEach( function (ele, index, arr) { %>
+        <p><%=ele.attributeName%> : <%=ele.attributeValue%></p>
+        <%})%>
+    </div>
+    <div class="detailNav">
+        <ul class="details detailNavBox clearfloat">
+            <li><a class="active" href="#topDetails">商品介绍</a></li>
+            <li><a href="#policy">服务政策</a></li>
+            <li><a href="#question">常见问题</a></li>
+            <li><a href="#comment">评价（<%if(R.getComments){%><%=R.getComments.wm?R.getComments.wm.totalNum:0%><%}else{%>0<%}%>）</a></li>
+        </ul>
+    </div>
+    <!-- 商品详情图片 -->
+    <div class="details">
+        <div id="topDetails"></div>
+        <div class="details-l m-details-l" style="display: block;">
+            <!--<div id="productad"></div>-->
+            <div id="details-l" class="details-l-wrap">
+                <% if(KY.productModel.productDescription.description) {
+                var dom = KY.productModel.productDescription.description;
+                dom = dom.replace(/src/g,'src=/app/images/lazy.png  data-original')
+                %>
+                <%-dom%>
+                <%} else {%>
+                <div style="padding: 30px;">无产品详情数据</div>
+                <%} %>
+            </div>
+            <!-- services html start -->
+            <div class="y_servicebox details-l-wrap" id="policy">
+                <% if( R.getServicePolicies) { %>
+                <ul class="y_servicetab">
+                    <%-R.getServicePolicies.key%>
+                </ul>
+                <div class="y_sercecontent">
+                    <% if(R.getServicePolicies.zhifu ) {%>
+                    <div class="y_sercepane zhifu ">
+                        <%-R.getServicePolicies.zhifu %>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.wuliu) {%>
+                    <div class="y_sercepane wuliu">
+                        <%-R.getServicePolicies.wuliu%>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.qianshou) {%>
+                    <div class="y_sercepane qianshou active">
+                        <%-R.getServicePolicies.qianshou%>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.xiazai) {%>
+                    <div class="y_sercepane xiazai">
+                        <%-R.getServicePolicies.xiazai%>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.anzhuang) {%>
+                    <div class="y_sercepane anzhuang">
+                        <%-R.getServicePolicies.anzhuang%>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.fapiao) {%>
+                    <div class="y_sercepane fapiao">
+                        <%-R.getServicePolicies.fapiao%>
+                    </div>
+                    <%}%>
+                    <% if(R.getServicePolicies.shouhou) {%>
+                    <div class="y_sercepane shouhou">
+                        <%-R.getServicePolicies.shouhou%>
+                    </div>
+                    <%}%>
+                </div>
+                <%}%>
+            </div>
+            <!-- services html end -->
+            <!--常见问题解答start-->
+            <div id="question" class="details-l-wrap">
+                <% if(R.getCommonProblems) {%>
+                <section class="container question_detial">
+                    <h2 class="procuct_title">常见问题</h2>
+                    <div id="questionitem" align="center">
+                        <%-R.getCommonProblems.retData.introduction%>
+                    </div>
+                </section>
+                <%}%>
+            </div>
+            <!--常见问题解答 end-->
+            <!-- 评价start -->
+            <div id="comment" class="details-l-wrap">
+                <div class="commentTitle">评价</div>
+                <% if(R.getComments && R.getComments.averagescore ) { var Comms = R.getComments; var ave = parseInt(Comms.averagescore*10) / 10  %>
+
+                <div class="comment-info">
+                    <span>好评度</span><span class="praise-rate"><%=Comms.scorePercent%>%</span> <span class="comment-split">|</span>
+                    <span class="tab-comment">
+                        <span class="tab-item active">全部评价（<%=Comms.wm?Comms.wm.totalNum:0%>）</span>
+                        <span class="tab-item" data-val="imgQtyGtZero">晒图（<%=Comms.hasImgCount%>）</span>
+                        <span class="tab-item" data-val="recomments">追评（<%=Comms.hasAfterCommentCount%>）</span>
+                    </span>
+                </div>
+                <!--<div class="reply-title"><ul class="reply-tab"> <li class="reply-item active">全部(<%=Comms.wm.totalNum%>)</li></ul></div>-->
+                <div class="reply-list commentList">
+
+                </div>
+                <div class="padding-box">
+                    <div class="padding clearmar">
+                        <% if(Comms.wm) {%>
+                        <button class="prev" style="background:#fff">&lt;</button>
+                        <% for(var i =1; i <= (Comms.wm.totalPage > 7 ? 7 : Comms.wm.totalPage); i++){%>
+                        <% if(i <8) {%>
+                        <% if(i <2) {%>
+                        <span class="item active" title="第<%=i%>页"><%=i%></span>
+                        <%}else{%>
+                        <span class="item " title="第<%=i%>页"><%=i%></span>
+                        <%}%>
+                        <%}%>
+                        <%}%>
+                        <button class="next" disabled="" style="background:#fff">&gt;</button>
+                        <%}%>
+                    </div>
+                </div>
+                <%} else {%>
+                <div class="details-comm"><div class="details-empty"><p>该商品还没有评价</p><p>快去购买提出宝贵意见吧</p></div></div>
+                <%}%>
+            </div>
+            <!-- 评价end -->
+        </div>
+        <!--<div class="details-r">-->
+        <!--<ul>-->
+        <!--<li class="item active"><a href="#topDetails"><span class="dage"></span>详情介绍</a></li>-->
+        <!--<%if(KY.productAttribute) {%>-->
+        <!--<li class="item" style="" id="checkIfProductAttribute"><a href="#productAttribute"><span class="dage"></span>规格参数</a></li>-->
+        <!--<%}else{%>-->
+        <!--<li class="item" style="display: none" id="checkIfProductAttribute"><a href="#productAttribute"><span class="dage"></span>规格参数</a></li>-->
+        <!--<%}%>-->
+        <!--<li class="item"><a href="#policy"><span class="dage"></span>服务政策</a></li>-->
+        <!--<li class="item"><a href="#question"><span class="dage"></span>常见问题</a></li>-->
+        <!--<li class="item" id="commenttap"><a href="#comment"><span class="dage"></span>晒单评价</a></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+    </div>
+</div>
+
+
+<!--body end-->
+
+<% include ../../nav-footer %>
+<script src="/app/components/detail/detail.js"></script>

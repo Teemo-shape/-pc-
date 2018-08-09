@@ -1,0 +1,78 @@
+<script>
+    var path = encodeURIComponent(location.href);
+    var login = $(".index_login");
+    var reg = $(".index_reg");
+    // var l = login.attr("href");
+    // var r = reg.attr("href");
+    // login.attr("href",l+'?from='+path)
+    // reg.attr("href", r+'?from='+path)
+</script>
+<div class="translucent fixed" style="z-index: 111">
+    <div class="top-bar">
+        <div class="top-bar-wrap">
+            <ul class="nav-left" id="top_bar_nav">
+                <li><a target="_blank" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb" titel="TCL人的内购平台" >T严选（TCL人的内购平台）介绍及疑问</a></li>
+            </ul>
+
+            <!--<a class="fansuec" href="/page/ueCenter/ueCenter">用户体验中心</a>-->
+            <ul class="nav-right" id="nav-right">
+                <li class="wechat_box">
+                        <a href="###">微信商城</a>
+                        <div class="wechat">
+                            <img src="/app/images/wechat.jpg">
+                            <p>关注公众号<br>一键下单购买</p>
+                        </div>
+                    </li><i></i>
+                <li class="index_cart_li"><a class="index_cart" href="/pages/cart/cart.html" >购物车</a><span class="newheader-circle" id="newhead_cart"></span>
+                </li><i></i>
+                <li><a class="index_reg" href="{{reg}}">注册</a></li><i></i>
+                <li><a class="index_login" href="{{login}}">登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cartHeaderBox">
+  <div class="cartHeader">
+    <h1><a href="/"></a><span id="headername"></span></h1>
+    <div class="buySteps">
+      <p>
+        <span></span>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </p>
+      <ul>
+        <li>购物车</li>
+        <li>确认订单</li>
+        <li>支付</li>
+        <li>完成</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+	var href=window.location.href;
+  $('.buySteps p i,.buySteps ul li').addClass('active');
+	if(href.indexOf('cart.html') > -1){
+	  $('#headername').html('我的购物车');
+    $('.buySteps p i:gt(0),.buySteps ul li:gt(0)').removeClass('active');
+    $('.buySteps p span').css('width','33.33%');
+	}
+	else if(href.indexOf("productInfo.html") > -1){
+	  $('#headername').html('订单确定<i>（填写并核对订单信息）</i>');
+    $('.buySteps p i:gt(1),.buySteps ul li:gt(1)').removeClass('active');
+    $('.buySteps p span').css('width','66.66%');
+    //$('.buySteps ul li:lt(2)').addClass('active').siblings('li').removeClass('active');
+	}
+	else if(href.indexOf("toOrderPayKuyu.html") > -1){
+	  $('#headername').html('订单支付');
+    $('.buySteps p i:gt(2),.buySteps ul li:gt(2)').removeClass('active');
+    $('.buySteps p span').css('width','100%');
+	}
+	else if(href.indexOf("PayResult.html") > -1){
+	  $('#headername').html('订单支付');
+    $('.buySteps p span').css('width','100%');
+    $('.buySteps p i:gt(3),.buySteps ul li:gt(3)').removeClass('active');
+	}
+</script>

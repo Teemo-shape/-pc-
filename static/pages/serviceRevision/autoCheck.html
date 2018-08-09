@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TCL服务中心_TCL帮助中心-TCL内购商城</title>
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/serviceRevision.css">
+    <style>
+    .componentCheck > #mb_con{
+        width: 640px;
+        background-color: #333;
+        border-radius: 0;
+    }
+    .componentCheck > #mb_con #mb_msg{
+        padding: 0px;
+    }
+    .componentCheck > #mb_con #mb_btn_ok{
+        background: none;
+        width: 30px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: 100;
+    }
+    .componentCheck > #mb_con #mb_btnbox{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        margin: 0;
+        font-size: 20px;
+    }
+    .componentCheck > #mb_con #mb_tit{
+        color: #fff;
+    }
+    #video{
+        width: 640px;
+        height: 360px;
+    }
+    </style>
+</head>
+<body class="componentCheck">
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <div class="navScum">
+        <div class="content"><a href="/">首页</a> > <a href="/pages/service-home/index.html">服务</a> > <a href="/pages/serviceRevision/install.html">自助检测</a></div>
+    </div>
+    <div class="server-box">
+        <div class="server-menu">
+            <h3 class="title">自助服务</h3>
+            <div class="ser-item"><a href="repair.html">我要维修</a><span class="ser-sank"></span></div>
+            <div class="ser-item "><a href="install.html">我要安装</a><span class="ser-sank"></span></div>
+            <div class="ser-item J-SerItem">
+                <p class="J-SerTitle"><a href="policy.html?0386642ee3394552ab9ffdab4395b2e4">服务政策</a></p>
+                <ul class="J-Polocy active"></ul>
+            </div>
+            <div class="ser-item active"><a href="autoCheck.html">自助检测</a><span class="ser-sank"></span></div>
+        </div>
+        <div class="server-r">
+            <h3 class="sel-title right1">
+                <span>自助检测</span>
+                <div class="right">
+                    <span>扫描二维码 关注公众号</span>
+                    <div class="sel-code"><img src="../../app/images/code-img.png" /></div>
+                </div>
+            </h3>
+            <h4 class="h4">
+                <span>选择产品</span>
+            </h4>
+            <div class="AC_product">
+
+            </div>
+            <h3 class="sel-title right2">
+                <span>检测项目</span>
+                <div class="rightm2">
+                    <span class="menu-late-search_au"><input id="autoCheckInput" class="ser-input_au" placeholder="请输入关键词搜索" value=""><span id="autoCheckBtn"><font class="sear_au"></font></span></span>
+                </div>
+            </h3>
+            <div class="AC_contents">
+                <div class="AC_con_pannel">
+                    <ul>
+                        <li>功能问题</li>
+                        <li>软件问题</li>
+                    </ul> 
+                </div>
+                <div class="AC_con_main">
+                    <div class="AC_con_content">
+                    </div>
+                    <div class="AC_result">
+                        <h4>自检结果 <span id="rsvd"><span onclick="KUYU.$scope.open(this)" id="resultVideo">查看视频教程</span><i class="vido-icon"></i></span></h4>
+                        <div class="AC_child_rest">
+    
+                        </div>
+                        <div class="btns">
+                            <a href="javascript:;" onclick="KUYU.$scope.recheck()" id="recheck">重新自检</a>
+                            <a href="/pages/serviceRevision/repair.html" id="isCommit">在线报修</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cs-wrapper" id="kfff">
+                    <span class="title">联系客服</span>
+                    <div class="items">
+                      <div class="item">
+                        <img src="../service-home/image/zxfw.png" alt="" class="icon">
+                        <div class="title">在线服务</div>
+                        <div class="desc">在线对话，为您解决遇到的问题24小时在线</div>
+                        <a href="http://service.tcl.com:31337/app/chat.html" class="btn consultation">立即咨询</a>
+                      </div>
+                      <div class="item">
+                        <img src="../service-home/image/wechat.png" alt="" class="icon">
+                        <div class="title">微信客服</div>
+                        <img src="../../app/images/code-img01.jpg" alt="" class="wxewm">
+                      </div>
+                      <div class="item">
+                        <img src="../service-home/image/kfrx.png" alt="" class="icon">
+                        <div class="title">客服热线</div>
+                        <div class="desc">仅收市话费，为您解决遇到的问题周一至周日全天服务</div>
+                        <div class="tel">4008-123456</div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @content end -->
+    <!-- Help center html start -->
+    <div class="help">
+        <div class="min-wid">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policy">售后服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#repair">自助服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#query">进度查询</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policye">电子保单</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>客户服务</dt>
+                <dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd>
+                <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+                <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd>
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd>
+                <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+                <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+            </dl>
+            <dl>
+                <dt>应用服务</dt>
+                <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+                <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+                <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+                <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+                <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+            </dl>
+            <dl class="last-r">
+                <p class="red phone">4008-123456</p>
+
+                <p class="grey">（24小时在线，仅收市话费）</p>
+                <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+            </dl>
+        </div>
+    </div>
+    <!-- Help center html end -->
+
+    <!-- footer html start -->
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="/group/companyInfo/index">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|
+                <a target="_blank" href="/group/news/index">新闻中心</a>|
+                <a target="_blank" href="/group/recruitment/index">人才招聘</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="#" class="lang-item active">中文简体</a>
+                    <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+                <div><img src="/app/images/credibility.png"/></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="pagination-plg.js"></script>
+    <script src="autoCheck.js"></script>
+    </body>
+</html>

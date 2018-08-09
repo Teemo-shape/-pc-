@@ -1,0 +1,611 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>商城抽奖活动</title>
+    <style>
+        html {
+            font-size: 64px;
+            -webkit-touch-callout: none;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none
+        }
+        body {
+            font-family: 'Microsoft Yahei',Arial;
+            color: #666;
+            margin: 0 auto;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-color: #f1e7da;
+            position: relative;
+            z-index: 1;
+        }
+
+        ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input  {
+            outline: 0;
+        }
+
+        ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input,  button{
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+            font-family: 'Microsoft Yahei',Arial;
+        }
+
+        li,ul,p,a,h3,select{
+            padding: 0;
+            margin: 0;
+            list-style-type: none
+        }
+        a {
+            color: #333;
+            outline: 0;
+            text-decoration: none;
+        }
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .y-color {
+            color: #fff100;
+        }
+        .mar-t-30 {
+            margin-top: 30px;
+        }
+        /* contant style */
+        .head .banner img{
+            width: 100%;
+            display: block;
+        }
+        .content{
+            width: 1226px;
+            margin: 0 auto;
+            padding-bottom: 120px;
+        }
+
+        .disc-award>img{
+            max-width: 100%;
+        }
+        .content>.title {
+            color: #ab2400;
+            font-size: 42px;
+            padding: 0 190px;
+            line-height: 100px;
+            font-weight: 400;
+        }
+        .content .title .y-color {
+            color: #ffbe01;
+            font-size: 75px;
+            padding: 0 10px;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .content .disc-award {
+            position: relative;
+        }
+        .content .prize-box {
+            width: 608px;
+            height: 546px;
+            padding: 20px;
+            position: absolute;
+            top: -67px;
+            left: 0;
+            background-color: #fff;
+        }
+        .content .prize-left {
+            float: left;
+            position: relative;
+        }
+        .content .prize-right {
+            margin-left: 670px;
+            position: relative;
+        }
+        .list{
+                width: 440px;
+                margin-top: 30px;
+                background: url(./list.png) top center no-repeat;
+                height: 388px;
+                position: relative;
+        }
+        .content .prize-box .prize-list {
+            position: relative;
+            overflow: hidden;
+            /*-webkit-column-count: 3;
+            column-count: 3;
+            -moz-column-count: 3;
+            -webkit-column-gap: 10px;
+            -moz-column-gap: 10px;
+            column-gap: 10px;
+            -webkit-column-span: none;
+            column-span: none;*/
+        }
+        .content .prize-box .prize-item {
+            width: 200px;
+            height: 180px;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            background-color: #e64242;
+            float:left;
+        }
+        .content .prize-box .prize-list li:last-child {
+            border-width: 0px;
+        }
+        .content .prize-box .item {
+            height: 106px;
+            padding: 20px 20px 10px;
+            text-align: center;
+            position: relative;
+        }
+        .content .prize-box .item>img {
+            max-height: 100%;
+        }
+        .content .prize-box .item-text {
+            color: #fff;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+        }
+        .content .prize-box .prize-item.start {
+            cursor: pointer;
+            background: url("./center_button.png")
+        }
+        .content .prize-box .prize-item.start .item {
+            color: #FFF;
+            height: 100%;
+            font-size: 24px;
+            padding: 10px 0;
+            font-weight: 500;
+        }
+        #lot_size{
+            font-size: 16px;
+            margin-top: 30px;
+            height: 30px;
+            color: #c15200;
+        }
+        #lot_name{
+            font-size: 30px;
+        }
+        .content .prize-box .prize-item.active {
+            background-color: rgba(243, 165, 7, 0.56);
+        }
+        .content .prize-box .prize-item.active .item  .describe {
+            color: #FFF;
+        }
+        .prize-box .item img {
+            max-height: 100%;
+        }
+        .content .prize-item .describe {
+            width: 100%;
+            display: block;
+            color: #333;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            bottom: 0.1rem;
+        }
+        .winners {
+            color: #8c260b;
+            font-size: 14px;
+        }
+        .winners .title {
+            text-align: left;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .winners .winners-list {
+           width: 335px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 60px;
+        }
+        #liswp{
+            top: 120px;
+            width: 335px;
+            padding: 0 20px 0 60px;
+            left: 12px;
+            background-color: #fff;
+            position: absolute;
+            height: 208px;
+        }
+        .winners-item .fr{
+            text-align: center;
+        }
+        .myprize{
+            height: 60px;
+            background: #fff;
+            line-height: 50px;
+            position: absolute;
+            top: 328px;
+            width: 415px;
+            left: 12px;
+            text-align: center;
+        }
+        .myprize a{
+            text-align: center;
+            text-decoration: underline;
+            color: #e64242;
+        }
+        .winners .winners-item {
+            width: 100%;
+            float: left;
+            margin-bottom: 11px;
+            color: #2a2a2a;
+        }
+        .winners-item .fl {
+            width: 40%;
+        }
+        .winners-item span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .winners-item .fr {
+            float: auto;
+            width: 60%;
+        }
+        .winners .rule {
+            line-height: 26px;
+        }
+        .winners .rule .center {
+            width: 50%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .winners .rule .center a{
+            width: 30.33333333%;
+            color: #8c260b;
+            font-weight: 600;
+            float: left;
+        }
+
+        /*** Message box sytle ***/
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*opacity: 0;*/
+            -wbbkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .mask.active {
+            opacity: 1;
+        }
+        .messageBox {
+            width: 1226px;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 1.75rem 1.25rem;
+            position: fixed;
+            left: 50%;
+            top: 25%;
+            margin-left: -613px;
+            background-color: #FFF;
+            -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+            opacity: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -wbbkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .messageBox .close {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+            background-image: url(../img/close.png);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+        .messageBox.active {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+        .messageBox .title {
+            color: #333;
+            font-size: 24px;
+        }
+        .messageBox .describe , .messageBox .warning{
+            color: #999;
+            font-size: 14px;
+            line-height: 28px;
+        }
+        .messageBox .mess-submit {
+            margin-top: 68px;
+        }
+        .messageBox .mess-row {
+            width: 780px;
+            margin: 0 auto;
+            margin-top: 68px
+        }
+        .messageBox .mess-submit.margin {
+            margin-top: 0.25rem;
+        }
+        .messageBox .mess-val {
+            width: 455px;
+            margin: 0 auto;
+            margin-top: 0.85rem;
+        }
+        .messageBox .mess-val .mess-input {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px;
+            line-height: 40px;
+            border: 1px solid #999;
+        }
+        .messageBox .warning {
+            color: #F00;
+            height: 1.0rem;
+            text-indent: 0.5rem;
+            text-align: left;
+            display: block;
+        }
+        .messageBox .mess-val .describe {
+            text-indent: 0.5rem;
+            text-align: left;
+        }
+        .messageBox .mess-val .mess-phone {
+            display: block;
+            position: relative;
+        }
+        .messageBox .mess-phone .clear-val {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0;
+            -wbbkit-transition: all 0.3s;
+            transition: all 0.3s;
+            z-index: -1;
+            cursor: pointer;
+            background-image: url(../img/cancel.png);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+        .messageBox .mess-phone .clear-val img {
+            max-width: 100%;
+        }
+        .messageBox .mess-phone .clear-val.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .messageBox .mess-submit .submit {
+            width: 380px;
+            height: 60px;
+            color: #FFF;
+            font-size: 20px;
+            margin: 0 auto;
+            display: block;
+            line-height: 60px;
+            background-color: #f00;
+
+        }
+        .messageBox .mess-row .submit {
+            width: 40%;
+            margin: 0 4%;
+            float: left;
+        }
+        .messageBox .mess-row .submit.gray {
+            background-color: #999;
+        }
+
+        .content .prize-right .rolling {
+            height: 502px;
+            position: relative;
+            overflow: hidden;
+        }
+        #shadow{
+            width: 200px;
+            height: 180px;
+            background-color: rgba(0,0,0,.3);
+            position: absolute;
+            top: 0;
+            display: none;
+        }
+        #h3_title{display: none}
+        .content .prize-box .prize-item-0,.content .prize-box  .prize-item-2, .content .prize-box .prize-item-6,.content .prize-box .prize-item-4{
+            background-color: #fb674f;
+        }
+        .noties{
+            width: 908px;
+            height: 426px;
+            background: #fff;
+            margin-top: 75px;
+            margin-left: 140px;
+            padding: 88px 0 0 58px;
+            position: relative;
+            z-index: -1;
+        }
+        .noties h4{
+            color: #e64242;
+            font-size: 20px;
+            margin-bottom:18px;
+        }
+        .noties p{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .noties .t2{margin-top:30px;}
+        .line, .line2 {
+            position:absolute;
+            height: 4px;
+            background: #f1e7da;
+        }
+        .line{
+           left: 0;
+            width: 510px;
+            top: 56px;
+        }
+        .line2{
+            width: 4px;
+            height: 60px;
+            top: 0;
+            left: 508px;
+        }
+        #prizeItemStartDiv{
+            height: 180px;
+        }
+        .prize_list{
+            position: relative;
+            height: 200px;
+        }
+        .prize_list span{
+            width: 100%;
+            display: block;
+        }
+        .prize_list .bx{
+            margin-top: 10px;
+        }
+        .back_index{margin-top: 90px; text-align: center;}
+        .back_index a{width:192px; height: 52px; background-color:#e04040; color: #fff; text-align: center; line-height: 52px; margin-bottom:23px; font-size: 24px;display: inline-block; }
+    </style>
+    <script src="../../app/js/vendor.js"></script>
+    <script type="text/javascript" src="./init.js"></script>
+
+</head>
+<body>
+<div class="head">
+    <div class="banner">
+        <img src="./new_lottery_header.jpg">
+    </div>
+    <div id="titles"></div>
+</div>
+<div class="content" style="display: none;">
+    <!--<h3 class="title" id="h3_title">您有<span  id="fnt_drawTime" class="y-color j-prize-num"></span>次抽奖机会</h3>-->
+    <div id="lottery" class="disc-award">
+        <div class="prize-left">
+            <div id="luckyPrizeDiv" class="prize-box">
+            </div>
+        </div>
+        <!-- Winners html start -->
+        <div class="prize-right">
+            <div class="winners mar-t-100 list">
+                <div class="rolling j-rolling" id="liswp">
+                    <ul id="luckyDrawPrizeUl" class="winners-list">
+                    </ul>
+                </div>
+                <p class="myprize"><a style="display:none;" href="javascript:;" id='prizeList'>查看我的奖品</a></p>
+            </div>
+        </div>
+        <!-- @Winners end -->
+    </div>
+    <div class="noties">
+        <div class="line"></div>
+        <div class="line2"></div>
+        <h4>活动说明</h4>
+        <p>1. 下单后即可获得3次抽奖机会</p>
+        <p>2. 中奖用户必须填写真实信息</p>
+        <p>3. 中奖后联系在线客服提供购买订单编号。例：INDENT000012345678</p>
+        <p>4. 活动时间: 3月4-31日， 活动奖品将在活动结束后10个工作日内统一发出</p>
+        <h4 class='t2'>活动说明</h4>
+        <p>一等奖: 国内单程机票一张(3月31日前任意地点, 港澳台除外)</p>
+        <p>二等奖: 太空记忆枕头</p>
+        <p>三等奖: 保鲜密封盒</p>
+        <p>四等奖: 欢乐好声音电影限量礼包一份</p>
+        <p>五等奖: 蒸蛋机</p>
+    </div>
+
+    <div class="back_index">
+        <a href="/pages/index/index.html">返回首页</a>
+        <p style="font-size:16px ">----活动最终解释权归TCL官方商城所有----</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /**
+     * underscore template settings
+     */
+    _.templateSettings = {
+        evaluate    : /{([\s\S]+?)}/g,
+        interpolate : /{=([\s\S]+?)}/g,
+        escape      : /{-([\s\S]+?)}/g
+    };
+</script>
+<script id="luckyDrawPrizeTemplate" type="text/template">
+    {_.each(data, function(item) {}
+    <li class="winners-item">
+        <p class="fl">
+            <span>{-item.mobile}</span>
+        </p>
+        <p class="fr">
+            <span>{-item.luckPrizeName}</span>
+        </p>
+    </li>
+    {});}
+</script>
+<script id="luckyPrizeTemplate" type="text/template">
+    {var index = 0;}
+    {_.each(data, function(item) {}
+    {if(index == 0 || index % 3 == 0){}
+    <ul class="prize-list">
+        {}}
+        {if(index == 4){}
+        <li class="prize-item start">
+            <div class=" j-start">
+                <div id="prizeItemStartDiv" class="item">
+                    立即抽奖
+                </div>
+            </div>
+            <div id="shadow"></div>
+        </li>
+        {}else{}
+        {var prizeItemNum = getPrizeItemNum(index);}
+        <li class="prize-item j-item prize-item-{-prizeItemNum}" prizeUuid="{-item.uuid}" prizeName="{-item.name}" prizeType="{-item.type}" prizeItemNum="{-prizeItemNum}">
+            <div class="item">
+                <img src="{-item.imgUrl}" />
+            </div>
+            <div class="item-text">{-item.name}</div>
+        </li>
+        {}}
+        {if(index != 0 && (index + 1) % 3 == 0){}
+    </ul>
+    {}}
+    {index = index + 1;}
+    {});}
+
+</script>
+<script>
+    function getPrizeItemNum(index){
+        var num;
+        switch(index){
+            case 0 : num = 0;break;
+            case 1 : num = 1;break;
+            case 2 : num = 2;break;
+            case 3 : num = 7;break;
+            case 5 : num = 3;break;
+            case 6 : num = 6;break;
+            case 7 : num = 5;break;
+            case 8 : num = 4;break;
+            default : num = 0;
+        }
+        return num;
+    }
+</script>
+
+
+<script language="javascript" type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
+</script>
+<script>
+    function getMyIp(){
+        return returnCitySN.cip;
+    };
+</script>
+
+
+<!-- @Message end -->
+
+</html>

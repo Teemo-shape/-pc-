@@ -1,0 +1,352 @@
+/* 个人中心-账户管理样式 2018年4月13日 10:05:08 晓瑚 */
+/* 地址管理 addaddress*/
+.m_content {
+    padding: 30px;
+    border: 1px solid #eee;
+}
+.member_mian .m_content h3 {
+    font-size: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.y_adresslist li {
+    width: 276px;
+    height: 130px;
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+.member_mian .m_content .y_adresslist li h3 {
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+.member_mian .m_content .y_adresslist li h3 span {
+    float: right;
+}
+.member_mian .m_content .y_adresslist li p {
+    color: #333;
+    height: 50px;
+    line-height: 24px;
+    overflow: hidden
+}
+.y_addlistbtn i:before {
+    content: "\e699";
+}
+.y_addlistbtn i {
+    color: #b6b6b6;
+    font-size: 44px;
+    display: block;
+    margin-bottom: 12px;
+    position: relative;
+    top: -10px;
+    margin-top: 34px;
+    font-family: iconfont-tcl;
+}
+.y_adresslist li .y_adressbtn {
+    font-family: iconfont-tcl;
+    color: #999;
+    float: right;
+    font-size: 14px;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: none;
+    bottom: 0;
+    right: 8px;
+}
+.y_adresslist li .y_adressbtn:before {
+    content: "\e6a8";
+}
+.y_adresslist li .y_deletbtn:before {
+    content: "\e63c";
+}
+.y_adresslist li .y_deletbtn {
+    margin-left: 10px;
+}
+.y_adresslist li:hover {
+    border-color: #eee;
+}
+.default_address, .no_default_address {
+    color: #ff4545;
+    left: 12px;
+    font-size: 14px;
+    bottom: 12px;
+    position: absolute;
+}
+.member_mian .m_content .y_adresslist li p {
+    font-size: 14px;
+}
+.no_default_address {
+    display: none;
+}
+.y_adressbtn.y_editbtn {
+    right: 20px;
+}
+.y_adresslist li .y_adressbtn:hover {
+    color: #f00;
+}
+/* 账号设置 personal*/
+.member_mian .m_content.prrsonal h3 {
+    border-bottom: none;
+}
+.y_personinfo {
+    padding-top: 20px;
+}
+.y_personinfo .y_personpic {
+    width: 140px;
+    margin-top: 0;
+    margin-left: 50px;
+    border: none;
+}
+.y_personinfo .y_personpic dt img, .y_personinfo .y_personpic dt {
+    width: 140px;
+    height: 140px;
+    margin: 0;
+}
+.y_personinfo .y_personpic dd {
+    font-size: 12px;
+    color: #ff4545;
+    margin-top: 10px;
+}
+.y_personinfo .y_personform {
+    margin-left: 60px;
+}
+.y_personinfo .form_group input {
+    width: 360px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #e5e5e5;
+    padding: 9px 18px;
+}
+.y_personinfo .form_btnbx {
+    padding-left: 100px;
+}
+button.y_btn.y_btn_custom1.h_40.f_16.submit {
+    background-color: #ff4545;
+}
+.y_personinfo .form_group .form_label {
+    font-size: 14px;
+}
+#cemail a, #cPhone a {
+    color: #ff4545;
+}
+.y_personinfo .form_group .form_input {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.y_personinfo .form_group .form_input span {
+    margin-right: 10px;
+}
+.y_personinfo .form_group .form_input a:hover {
+    text-decoration: underline;
+}
+.birth {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.birth select {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    background: -webkit-linear-gradient(#f0f0f0, #fff);
+    background: -o-linear-gradient(#f0f0f0, #fff);
+    background: -moz-linear-gradient(#f0f0f0, #fff);
+    background: linear-gradient(#f0f0f0, #fff);
+    padding: 0 10px;
+}
+.birth:before {
+    content: '';
+    background: url(/app/images/selarea.png) 50% 50% no-repeat;
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    right: 6px;
+    top: 0;
+    z-index: 99;
+}
+.selsex .icon-danxuankuang_weixuanzhong {
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+}
+.icon-danxuankuang_weixuanzhong:before {
+    content: "\e69d";
+}
+.selsex .on.icon-danxuankuang_weixuanzhong {
+    color: red;
+}
+.selsex .on.icon-danxuankuang_weixuanzhong:before {
+    content: "\e6b1";
+}
+.selsex label {
+    cursor: pointer;
+}
+.selsex input {
+    display: none;
+}
+.y_personinfo .form_group .error-tip {
+    font-size: 12px;
+    bottom: -36px;
+}
+/* 个人中心 usercenterindex*/
+.member_mian .m_security {
+    width: auto;
+    margin-left: 50px;
+}
+.member_mian .m_content .m_edit_box {
+    margin-top: 20px;
+}
+.member_mian .m_orderiemt {
+    border-color: #eee;
+}
+.member_mian .userOrders {
+    width: 100%;
+    overflow: hidden;
+}
+.member_mian .m_orderiemt li {
+    width: 23.5%;
+    margin-right: 2%;
+    float: left;
+    border: 1px solid #eee;
+    padding: 10px;
+    height: 80px;
+    color: #666;
+    font-size: 12px;
+    position: relative;
+    background: none;
+}
+.member_mian .m_orderiemt li strong {
+    font-size: 32px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 80px;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+#waitpaycount {
+    color: #f00;
+}
+.member_mian .m_edit {
+    margin-bottom: 20px;
+    border-color: #eee;
+}
+.member_mian .m_orderiemt {
+    border: none;
+    padding: 0;
+}
+.member_mian .m_edit .btn {
+    bottom: 0;
+    right: 100px;
+}
+.member_mian .m_content .userOrders h3 {
+    border: none;
+}
+/* 绑定手机邮箱 */
+.bind_mailbox, .modify_password {
+    visibility: visible;
+    opacity: 1;
+}
+.m_firststep {
+    display: none;
+}
+.bind_mailbox {
+    position: relative;
+    margin: 20px auto 50px;
+    left: 0;
+    z-index: 0;
+    height: auto;
+    font-size: 14px;
+}
+.bind_mailbox a:hover {
+    color: inherit;
+}
+.bind_mailbox p.row {
+    width: 460px;
+    position: relative;
+    margin: 30px auto;
+    padding-left: 100px;
+}
+.bind_mailbox p.row span {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+.bind_mailbox p.row input {
+    width: 360px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+}
+#msendcode, #msendcode1, #sendcode, #sendcode1 {
+    position: absolute;
+    display: inline-block;
+    right: 1px;
+    top: 1px;
+    width: 138px;
+    height: 37px;
+    background: #f7f7f7;
+    color: #ff4545;
+    text-align: center;
+    line-height: 38px;
+}
+.bind_mailbox .btns {
+    margin-top: 100px;
+    text-align: center;
+    width: 530px;
+}
+.bind_mailbox .btns a {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+.bind_mailbox .btns .sure {
+    background: #f00;
+    color: #fff;
+}
+.bind_mailbox .btns .back {
+    border: 1px solid #f00;
+    color: #f00;
+}
+.bind_mailbox .error {
+    left: 0;
+    position: relative;
+    top: -20px;
+    font-size: 12px;
+    color: #f00;
+    display: none;
+    margin: 0;
+    width: 100%;
+    padding-left: 100px;
+}
+#m3 h5, #p3 h5 {
+    font-size: 20px;
+    margin-top: 60px;
+}
+#m3 .btns, #p3 .btns {
+    width: auto;
+    margin-top: 20px;
+}
+#m3 .btns a, #p3 .btns a {
+    cursor: pointer;
+}

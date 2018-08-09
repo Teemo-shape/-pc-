@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="renderer" content="webkit" />
+    <title binder-data="vm.setTitle">TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,TCL健康家电</title>
+    <meta name="keywords" content="TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,TCL健康家电" />
+    <meta name="description" content="TCL官网提供TCL无霜负离子三门 207升冰箱,智能电视,曲面电视,免污洗衣机,洗衣机,健康家电,最新官方信息，TCL冰箱详情介绍，规格参数、服务政策、常见问题、最新价格等相关信息。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/store.css">
+    <link rel="stylesheet" href="../../app/css/lightbox/lightbox.css">
+    <link rel="stylesheet" href="productDetail.css">
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+
+<body binder-show="vm.productModel" style="display: none">
+<!-- Top html start -->
+<!-- header-->
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+
+<!-- Top html end -->
+<!-- Right slide bar html end -->
+<div class="mask"></div>
+<div class="slidebar">
+    <!-- Shopping Cart html start -->
+    <span class="close">&#xe60f;</span>
+    <div class="cart" id="dvPlatTopCart">
+        <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading" style="display:none" src="http://www.tcl.com:80/static/usercenter/img/loading.gif"/>
+            </div>
+        </h3>
+    </div>
+    <!-- Shopping Cart html end -->
+    <!-- Registration html start -->
+    <div class="regist">
+        <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+        <div class="login-inp">
+            <div>
+                <input type="text" placeholder="手机或邮箱" />
+            </div>
+            <div class="verify">
+                <input type="text" placeholder="图片验证码" /><span><img src="http://www.tcl.com:80/static/kuyu/common/img/verify.gif" /></span></div>
+            <div>
+                <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" />
+            </div>
+            <div>
+                <input type="text" placeholder="确认密码" />
+            </div>
+            <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+            <div>
+                <button class="buy zhuce">注册</button>
+            </div>
+            <p class="login-text"><span class="fr regis">登录</span></p>
+        </div>
+    </div>
+    <!-- Registration html end -->
+    <!-- login html start -->
+    <div class="login" id="slideLoginSide">
+    </div>
+    <input type="text" id="test" />
+    <!-- 判断是否已经登录，同步登录用于判断 -->
+    <input type="hidden" name="userloginname" id="userloginname" value="ljq@kuyumall.com" />
+    <input type="hidden" name="isRefresh" id="isRefresh" value="1" />
+    <!-- login html end -->
+</div>
+<!-- go to top html-->
+<div class="goTop">
+    <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+</div>
+<!-- go to top html-->
+<!-- 注入cookie-->
+<div id="insertc"></div>
+<!--侧栏  end  -->
+<!--crumbs html start-->
+<div class="m_crumbs bg_f0">
+    <div class="min-wid">
+        <div class="fl" id="crumbs">
+        </div>
+    </div>
+</div>
+
+<!-- purchase html start -->
+<div class="box purchase clearfloat">
+    <div class="purc-l">
+        <div class="imgLoad">
+            <img src="../../app/images/loading.gif">
+        </div>
+    </div>
+    <!-- purchase html end -->
+    <!-- 右侧数据 -->
+    <!--crumbs html end-->
+    <div  id="pForm" >
+        <input type="hidden" id="activeStatus" value="" />
+        <input type="hidden" id="preSaleType" value="" />
+        <input type="hidden" id="showTypedisp" value="" />
+        <input type="hidden" name="skuNo" id="skuNo" value="" />
+        <input type="hidden" name="parentSkuNo" id="parentSkuNo" value="" />
+        <input type="hidden" name="specSize" id="specSize" value="0" />
+        <input type="hidden" name="areaId" id="areaId" value="" />
+        <input type="hidden" name="bcustomerUuid" id="bcustomerUuid" value="" />
+        <input type="hidden" name="distributorUuid" id="distributorUuid" value="" />
+        <input type="hidden" name="activityUuid" id="activityUuid" value="" />
+        <input type="hidden" name="bType" id="bType" value="" />
+        <input type="hidden" name="productUuid" id="productUuid" value="" />
+        <input type="hidden" name="storeUuid" id="storeUuid" value="" />
+        <input type="hidden" name="productPrice" id="productPrice" value="" />
+        <input type="hidden" name="initSelectSpecUuids" id="initSelectSpecUuids" value="" />
+        <input type="hidden" name="productName" id="productName" value="">
+        <input type="hidden" name="reserveOrderId" id="reserveOrderId" value="">
+        <input type="hidden" name="specColorUuid" id="specColorUuid" value="" />
+        <!-- purchase html start -->
+        <div class="purc-r">
+            <!-- 商品名称及二维码一栏 -->
+            <div class="purc-text purc-paddt" id="render-product-title">
+
+            </div>
+            <!-- 秒杀 -->
+            <div id="seckill">
+
+            </div>
+            <!-- 商品价格-->
+            <div id="render-price"></div>
+            <!-- 商品规格属性选择一栏-->
+            <!-- 颜色和尺寸等选择 start-->
+            <div class="specattr" id="baseSpecAttr" testis="" style="display:none">
+
+            </div>
+            <!-- 颜色和尺寸等选择 end-->
+            <!-- 组合商品start -->
+            <!-- 组合商品start -->
+            <div class="purc-text groupedProduct" id="groupedProduct" style="display: none;">
+            </div>
+            <div class="purc-text">
+                <div class="select j-select" binder-show="!vm.promotionLimitBuy"> <!-- binder-attr="vm.promotionLimitBuy?true:false | disabled:true "-->
+                    <input type="text"  class="val" value="1" autoComplete="off" name="buyNum" binder-event="keyup|changeBlur" id="buyNum"  />
+                    <div class="mun">
+                        <span class="add" binder-event="click|addBuyNum"></span>
+                        <span class="reg" binder-event="click|reduceBuyNum"></span>
+                    </div>
+                </div>
+                <div class="purc-text purc-submit" id="promotionSub">
+                    <!--<a href="javascript:;" binder-event="click|toFastBuy" class="buy" id="fastBuy">立即购买</a>-->
+                </div>
+            </div>
+            <!-- 配送区域一栏-->
+            <!-- 地址选择start -->
+            <div class="purc-text purc-address">
+                <div class="purc-item purc-address-show">
+                    <input type="hidden" name="areaUuid" id="areaUuid" value="" />
+                    配送到：
+                    <div id="loadAreaAddress" class="select-address">
+                        <div class="y_sendarea">
+                            <span class="y_areasure" id="selectAreaNameId" >请选择地址</span>
+                            <div class="m_areabox">
+                                <div class="mt">
+                                    <ul class="tab">
+                                        <li class="hover"><span  id="provincetitle">请选择省</span></li>
+                                        <li><span id="citytitle">请选择市</span></li>
+                                        <li><span id="regiontitle">请选择区</span></li>
+                                        <li><span id="streettitle" >请选择街道</span></li>
+                                    </ul>
+                                </div>
+                                <div class="mc">
+                                    <ul class="area-list"  id="provinces"></ul>
+                                </div>
+                                <div class="mc" style="display: none;"  >
+                                    <ul class="area-list"  id="citys"></ul>
+                                </div>
+                                <div class="mc" style="display: none;">
+                                    <ul class="area-list"  id="regions"></ul>
+                                </div>
+                                <div class="mc" style="display: none;">
+                                    <ul class="area-list" id="streets"></ul>
+                                </div>
+                                <b class="y_arelose">&times;</b>
+                            </div>
+                        </div>
+                        <p class="fl"><span class="y_mr10" id="isProduct" ></span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 地址选择end -->
+        </div>
+        <!-- purchase html end -->
+    </div>
+</div>
+<!--组合商品-->
+<div class="g-box border productDetailSuitList" id="suitList" style="display:none;"></div>
+<!-- 商品描述图片、服务政策及购买按钮一栏 -->
+<div id="detail_ad"></div>
+<!-- Product details html start-->
+<div class="details-box light-gray">
+    <!-- 滚动顶部固定条 -->
+
+    <div class="fixed-buy" >
+        <div class="fixed-box">
+           <!--  <div class="fl">
+               <span>BCD-207TWF1</span>
+               <strong class="red">
+                   1999.00元
+               </strong>
+           </div> -->
+            <div class="fl">
+            </div>
+            <div class="fr">
+                <span class="fl">手机购买</span>
+                <div class="fl qrcode fixed_qrcode">
+                    <img src="../../app/images/qrcode.png" />
+                    <div class="fixed-code"><img class="fl pQrCode" src="" />
+                        <p class="code-text fl" style="line-height:1.5;">关注公众号<br/>一键下单购买</p>
+                    </div>
+                </div>
+                <span id = "fixedBuy"></span>
+                <!--<a href="javascript:;" class="buy" id="fixedFastBuy">立即购买</a>-->
+            </div>
+        </div>
+    </div>
+    <!-- 商品详情图片 -->
+    <div class="details">
+        <div id="topDetails"></div>
+        <div class="details-l m-details-l" style="display: block;">
+            <div id="productad"></div>
+            <div id="details-l">
+                <!-- 加载图片 -->
+
+            </div>
+            <!-- services html start -->
+            <div class="y_servicebox" id="policy">
+                <!--TAB 切换-->
+
+                <!--TAB 切换 end-->
+
+            </div>
+            <!-- services html end -->
+            <!--常见问题解答start-->
+            <div id="question">
+                <section class="container question_detial">
+                    <h2 class="procuct_title">常见问题</h2>
+                    <div id="questionitem" align="center"></div>
+                </section>
+            </div>
+            <!--常见问题解答 end-->
+            <!-- 评价start -->
+            <div id="comment"></div>
+            <!-- 评价end -->
+        </div>
+        <div class="details-r">
+            <ul>
+                <li class="item active"><a href="#topDetails"><span class="dage"></span>详情介绍</a></li>
+                <li class="item" style="" id="checkIfProductAttribute"><a href="#productAttribute"><span class="dage"></span>规格参数</a></li>
+                <li class="item"><a href="#policy"><span class="dage"></span>服务政策</a></li>
+                <li class="item"><a href="#question"><span class="dage"></span>常见问题</a></li>
+                <li class="item" id="commenttap"><a href="#comment"><span class="dage"></span>晒单评价</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- footer Help html end -->
+<!-- Help center html start -->
+<div class="help">
+    <div class="min-wid">
+        <dl>
+            <dt>帮助中心</dt>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+            </dd>
+            <dd>
+                <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>服务支持</dt>
+            <dd><a target="_blank" href="http://www.tcl.com/channel/service#policy">售后服务</a></dd>
+            <dd><a target="_blank" href="http://www.tcl.com/channel/service#repair">服务预约</a></dd>
+            <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#query">进度查询</a></dd>
+            <dd><a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policye">电子保单</a></dd>
+        </dl>
+        <dl>
+            <dt>客户服务</dt>
+            <dd><a target="_blank" href="http://www.tcl.com/bulkpurchase/service">大宗采购</a></dd>
+            <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+            <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd>
+        </dl>
+        <dl>
+            <dt>关注我们</dt>
+            <dd><a target="_blank" href="http://www.tcl.com:80/connectWithUs.jsp">联系我们</a></dd>
+            <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+            <!-- <dd><a target="_blank"  href="#">官方微信</a></dd> -->
+            <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+        </dl>
+        <!-- <dl>
+            <dt>特色服务</dt>
+            <dd><a target="_blank"  href="http://www.tcl.com:80/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a></dd>
+            <dd><a target="_blank"  href="http://www.tcl.com:80/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a></dd>
+        </dl> -->
+        <dl>
+            <dt>应用服务</dt>
+            <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+            <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+            <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+            <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+            <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+        </dl>
+        <dl class="last-r">
+            <p class="red phone">4008-123456</p>
+            <p class="grey">（24小时在线，仅收市话费）</p>
+            <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+        </dl>
+    </div>
+</div>
+<!-- Help center html end -->
+<!-- go to top html-->
+<!--<div class="goTop">
+    <a href="http://www.tcl.com:80/servicecenter/customerServiceKuyu">
+        <div class="item">&#xe64a;</div>
+    </a>
+    <a onclick="$('body,html ').animate({scrollTop: 0 },500);">&#xe639;</a>
+</div>-->
+<!-- go to top html-->
+<!-- footer html end -->
+<div class="footer">
+    <div>
+        <!-- <img src="http://www.tcl.com:80/static/frontpage/common2/img/logo.png" /> -->
+        <div class="foot-logo">&#xe674;</div>
+        <p class="blod"><a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/investors/index">投资者关系</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> | <a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> | <a target="_blank" href="http://www.tcl.com/group/recruitment/index">人才招聘</a> | <a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a> </p>
+        <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号 <a target="_blank" class="marginL" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> | <a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+        <div class="foot-r">
+            <div class="language">
+                <i class="arrow">&#xe608;</i>
+                <a href="http://www.tcl.com/" class="lang-item active">中文简体</a>
+                <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a>
+            </div>
+            <div><img src="../../app/images/credibility.png" /></div>
+            <!-- <span><em>&#xe63a;</em><p</span> -->
+        </div>
+    </div>
+</div>
+<!-- footer html end -->
+<!-- footer Help  html end -->
+<!-- go to top html-->
+<div class="goTop">
+    <a href="#"></a>
+</div>
+<!-- go to top html-->
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+<script src="productDetail.js"></script>
+</body>
+</html>

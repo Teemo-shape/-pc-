@@ -1,0 +1,265 @@
+<style>
+    .member_mian .nav_left h3 {
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+        line-height: 50px;
+        padding: 55px 0 0 0;
+        background: #f5f5f5;
+    }
+    .user-menu {
+      width: 195px;
+      float: left;
+      padding-bottom: 55px;
+      background-color: #f6f6f6;
+    }
+    .user-menu .title {
+      width: 130px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #333;
+      padding: 55px 0 26px 0;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .user-menu .item ul {
+      margin-top: 15px;
+    }
+    .user-menu .item li {
+      font-size: 14px;
+      float: none;
+      line-height: 35px;
+        text-align: center;
+      /*text-indent: 30px;*/
+      position: relative;
+    }
+    .user-menu .item li:hover a,
+    .user-menu .item .active a {
+      color: #ef0d0e;
+    }
+    .user-menu .item li:hover .badge_icon,
+    .user-menu .item .active .badge_icon {
+      display: block;
+    }
+    .user-menu .item a {
+      color: #666;
+      display: block;
+    }
+    .user-menu .item a:hover {
+      color: #ef0d0e;
+    }
+    .user-menu .badge_icon {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      border-top: 8px solid transparent;
+      border-right: 7px solid red;
+      border-bottom: 8px solid transparent;
+      display: none;
+    }
+    .content {
+      padding: 48px 36px;
+      min-height: 1280px;
+      margin-left: 215px;
+      border: 1px solid #e3e3e3;
+    }
+    .content .title {
+      color: #333;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 2px;
+    }
+    .content .order-tab {
+      line-height: 60px;
+      overflow: hidden;
+      border-bottom: 1px solid #e3e3e3;
+    }
+    .content .order-tab a {
+      color: #999;
+      display: inline-block;
+      position: relative;
+    }
+    .content .order-tab .fl a {
+      margin-right: 35px;
+      border-bottom: 2px solid transparent;
+    }
+    .content .order-tab .fl a.active {
+      border-bottom: 2px solid #ef0d0e;
+    }
+    .content .order-tab .fr a {
+      font-size: 12px;
+      margin: 0 5px;
+    }
+    .content .order-tab .fr a.active {
+      color: #ef0d0e;
+    }
+    .paging {
+      padding: 30px 0;
+      line-height: 25px;
+      text-align: center;
+    }
+    .paging a {
+      width: 25px;
+      height: 25px;
+      margin: 2px;
+      text-align: center;
+      display: inline-block;
+    }
+    .paging a.active {
+      color: #FFF;
+      background-color: #ef0d0e;
+    }
+    .paging .pre,
+    .paging .next {
+      background-color: #ebebeb;
+    }
+    .other .other-title {
+      margin-top: 15px;
+      overflow: hidden;
+      line-height: 60px;
+    }
+    .other .other-title .font22 {
+      font-weight: 300;
+    }
+    .other .other-title .fl {
+      color: #999;
+    }
+    .other .order-item {
+      color: #333;
+      padding: 40px 22px;
+      overflow: hidden;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .other .order-item .img {
+      width: 200px;
+    }
+    .other .order-item .info {
+      width: 640px;
+    }
+    .other .order-item .info span {
+      display: inline-block;
+    }
+    .other .order-item .info p {
+      line-height: 26px;
+    }
+    .other .order-item .price {
+      width: 40px;
+      line-height: 75px;
+      text-align: right;
+    }
+
+    .submit.active {
+      color: #FFF;
+      border-color: #F00;
+      background-color: #F00;
+    }
+    .submit.hollow {
+      color: #F00;
+      border: 1px solid #F00;
+    }
+    .submit.hold {
+      width: 180px;
+      height: 45px;
+      color: #FFF;
+      line-height: 45px;
+      border-color: #F00;
+      background-color: #F00;
+    }
+    .order_navigate  .zqstate{
+      float: right;
+    }
+    .order_navigate  .zqstate2{
+      text-align: right;
+    }
+    .order_navigate .zqstate a{
+      margin-left: 10px;
+    }
+  </style>
+    <div class="user-menu">
+        <div class="item">
+            <h3 class="title">订单中心</h3>
+            <ul>
+                <li data-id="orderList" ><a href="../orderList/orderList.html#orderList">我的订单</a><i class="badge_icon"></i></li>
+                <li data-id="aftersale"><a href="../aftersale/aftersale.html#aftersale">退款/售后</a><i class="badge_icon"></i></li>
+                <li data-id="productappraise"><a href="../productappraise/productappraise.html#productappraise">评价管理</a><i class="badge_icon"></i></li>
+                <li data-id="collects"><a href="../collect/collects.html#collects">我的收藏</a><i class="badge_icon"></i></li>
+                <li data-id="footermarklist"><a href="../footmark/footermarklist.html#footermarklist">我的足迹</a><i class="badge_icon"></i></li>
+            </ul>
+        </div>
+        <!--<div class="item">-->
+            <!--<h3 class="title">用户中心</h3>-->
+            <!--<ul>-->
+                <!--<li class ="otff"><a href="{{uthome}}">个人中心</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a  href="{{wodejf}}">我的积分</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a href="{{wodequanyi}}">我的权益</a><i class="badge_icon"></i></li>-->
+                <!--<li data-id="coupondetails"><a href="../coupondetails/coupondetails.html#coupondetails">我的优惠券</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a href="{{wodeshoucang}}">我的收藏</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a href="{{wodezuji}}">我的足迹</a><i class="badge_icon"></i></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+           <!--<h3 class="title">用户服务</h3>-->
+            <!--<ul>-->
+                <!--<li class ="otff"><a class="jf-domain" href="{{myproduct}}">我的产品</a><i class="badge_icon"></i></li>-->
+                <!--<li data-id="policy"><a href="../service-home/index.html#policy">售后服务</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a href="{{fuwujilu}}">服务记录</a><i class="badge_icon"></i></li>-->
+                <!--<li data-id="tcode"><a href="../tcode/tcode.html#tcode">我的T码</a><i class="badge_icon"></i></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+            <!--<h3 class="title">铁粉社区</h3>-->
+            <!--<ul>-->
+                <!--<li class ="otff"><a class="tf" href="{{shequzhongxin}}">社区中心</a><i class="badge_icon"></i></li>-->
+                <!--<li class ="otff"><a class="tf" href="{{shequtongzhi}}">社区通知</a><i class="badge_icon"></i></li>-->
+                <!--&lt;!&ndash; <li class ="otff"><a class="tf" href="{{woderenzheng}}">我的认证</a><i class="badge_icon"></i></li> &ndash;&gt;-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="item">
+            <h3 class="title">账户管理</h3>
+            <ul>
+                <li data-id="usercenter"><a href="/pages/usercenterindex/usercenter.html#usercenter">个人中心</a><i class="badge_icon"></i></li>
+                <li data-id="personal"><a href="/pages/personal/personal.html#personal">账户设置</a><i class="badge_icon"></i></li>
+                <li data-id="forget"><a href="/forget#forget">修改密码</a><i class="badge_icon"></i></li>
+                <li data-id="addaddress"><a href="/pages/addaddress/addaddress.html#addaddress">收货地址</a><i class="badge_icon"></i></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        if(KUYU.Init.getEnv().test) {
+            var tf = $(".tf");
+            var jf = $(".jf-domain");
+            $.each(tf, function (i, o) {
+                var link = $(this).attr("href");
+                link = link.replace('fans.tcl.com', 'www.t-fans.net' )
+                $(this).attr("href", link)
+            })
+            $.each(jf, function (i, o) {
+                var link = $(this).attr("href");
+                link = link.replace('hy.tcl.com', 'jf.10get.com' )
+                $(this).attr("href", link)
+            })
+        }
+        $(function () {
+            var li = $(".item ul li");
+            var otff = $(".otff");
+            $.each(otff, function (i, o) {
+                var ref = $(this).children("a").attr("href")
+                if(ref.indexOf('?') < 0) {
+                    var m = ref + '?from='+encodeURIComponent(location.href)
+                    $(this).children("a").attr("href", m)
+                }
+            });
+
+            $.each(li, function (i, o) {
+                var hashName = window.location.hash == "#"+$(o).data('id');
+                var baseName = window.location.href.indexOf($(o).data('id')+'.html')
+                if(hashName) {
+                    $(o).addClass("active");
+                }else if(baseName>0) {
+                    $(o).addClass("active");
+                }
+            })
+        })
+    </script>

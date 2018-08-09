@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL - 评价管理</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+    <style>
+        .m_content{
+            border:1px solid #eee;
+            padding: 40px;
+            min-height: 1070px;
+        }
+        .grid-list-item  .grid-list-item-header{
+             height: 40px;
+             line-height: 40px;
+             color: #333;
+             font-size: 14px;
+             padding: 0 10px;
+         }
+        .grid-list-item  .grid-list-item-body{
+            height: 120px;
+        }
+        .grid-list .grid-list-item{
+           height: 160px;
+        }
+        .grid-list-item  .grid-list-item-header .subtxt{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body >
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <div class="mask"></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close">&#xe60f;</span>
+        <div class="cart" id="dvPlatTopCart">
+            <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading" style="display:none"
+                     src="http://www.tcl.com:80/static/usercenter/img/loading.gif"/>
+            </div>
+        </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist">
+            <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+            <div class="login-inp">
+                <div>
+                    <input type="text" placeholder="手机或邮箱" />
+                </div>
+                <div class="verify">
+                    <input type="text" placeholder="图片验证码" /><span><img
+                    src="http://www.tcl.com:80/static/kuyu/common/img/verify.gif"/></span></div>
+                <div>
+                    <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" />
+                </div>
+                <div>
+                    <input type="text" placeholder="确认密码" />
+                </div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div>
+                    <button class="buy zhuce">注册</button>
+                </div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide">
+            <div class="login-success">
+                <h3>
+                <p class="login-img">
+                    <a
+                            href="http://www.tcl.com:80/usercenter/customercomplex/toUploadImageKuyu"
+                            target="_blank"><img
+                            src="http://www.tcl.com:80/static/usercenter/img/default.png"/></a>
+                </p>
+                <p class="login-name" id="loginName"></p>
+                <ul class="login-infor">
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tclcustomer/toMyIntegralDetailKuyu"><span
+                            class="title" id="jifen">0</span></a> <span>积分</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/coupondetails/toListKuyu"><span
+                            class="title" id="coupon">0</span></a> <span>优惠券</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tcode/tcodeListKuyu/1/1/10"><span
+                            class="title" id="tcode">0</span></a> <span>T码</span></li>
+                </ul>
+            </h3>
+                <div class="login-inp" style="line-height: 3">
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/toMyCenter">个人中心<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/order/listKuyu/1/5?init=true">我的订单<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/productfavorite/toPageKuyu">我的收藏<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/reserveorder/listKuyu/1/5">我的预约<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                    <div class="uname">
+                        <a href="http://www.tcl.com:80/usercenter/customercomplex/accountSecurityKuyu">管理账号<span
+                            class="fr">&#xe62f;</span></a>
+                    </div>
+                </div>
+                <div class="login-log">
+                    <a href="http://www.tcl.com:80/tclcustomer/logout" class="buy">退出</a>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="test" />
+        <!-- 判断是否已经登录，同步登录用于判断 -->
+        <input type="hidden" name="userloginname" id="userloginname" value="113362140" />
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null" />
+        <!-- login html end -->
+    </div>
+    <!-- go to top html-->
+
+    <!-- go to top html-->
+    <!-- 注入cookie-->
+    <div id="insertc"></div>
+    <!--侧栏  end  -->
+    <!--头部 end-->
+    <!--crumbs html start-->
+    <div class="m_crumbs bg_f0">
+        <div class="min-wid">
+            <div class="fl"><a href="/">首页</a> / 产品订单 / 评价管理</div>
+        </div>
+    </div>
+    <!--crumbs html end-->
+    <!--面包屑 end-->
+    <!--mian html start-->
+    <div class="member_mian min-wid m-mt">
+        <!-- 菜单 -->
+        <div class="fl nav_left">
+            <include type="userCenterBar" src="{{userCenterBar}}"></include>
+        </div>
+        <!-- 菜单end -->
+        <div class="fr mian_right mian_right" id="main_right">
+            <div class="m_content">
+                <h3>评价管理</h3>
+                <div class="zqrightinfo">
+                    <ul class="tab-item clearfloat">
+                      <!--  <li class="active"><a href="javascript:;">全部商品</a></li>-->
+                        <li class="active" data-type="waitcomment"><a href="javascript:;">待评价商品</a></li>
+                        <li data-type="appraise"><a href="javascript:;">已评价商品</a></li>
+                        <!--<li><a href="javascript:;">已追评商品</a></li>-->
+                    </ul>
+                    <div class="grid-list" id="usercenterComment">
+                        <!-- 订单列表 -->
+                        <!--<div class="grid-list-item">-->
+                            <!--<div class="grid-list-item-header">-->
+                                <!--<div class="item-header-body clearfloat">-->
+                                    <!--<div class="fl">-->
+                                        <!--<span class="subtxt">2016-5-18   12:22:38</span>-->
+                                        <!--<span class="subtxt">订单号：INDENT000003423678</span>-->
+                                        <!--<span class="subtxt">在线支付</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="fr">-->
+                                        <!--<span class="amount-title">订单金额：</span><span class="amount-sum">8999.00</span>元-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="grid-list-item-body clearfloat">-->
+                                <!--<a href="#" class="fl">-->
+                                    <!--<img src="http://img.mall.tcl.com/dev1/0/000/393/0000393351.fid">-->
+                                <!--</a>-->
+                                <!--<dl class="product-info fl">-->
+                                    <!--<dd><p class="product-title">TCL 55英寸34核原色量子点 （深空灰）</p></dd>-->
+                                    <!--<dd class="subtxt">-->
+                                        <!--<span>颜色：</span><span>深空灰</span>-->
+                                        <!--<span>尺寸：</span><span>55寸</span>-->
+                                    <!--</dd>-->
+                                <!--</dl>-->
+                                <!--<div class="product-price fl">-->
+                                    <!--<span class="amout">¥ 4799.00</span>-->
+                                    <!--<span class="sum">x1</span>-->
+                                <!--</div>-->
+                                <!--<ul class="operation fr">-->
+                                    <!--<li><span><a href="commentDetail.html">查看评价</a></span></li>-->
+                                    <!--<li><span><a href="commentDetail.html">追加评价</a></span></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="pagenation">
+                        <div style="text-align: center">
+                            <ul class="page-list clearfloat">
+                                <!--<li class="page-item pre"><a href=""><</a></li>-->
+                                <!--<li class="page-item"><a href="">1</a></li>-->
+                                <!--<li class="page-item active"><a href="">2</a></li>-->
+                                <!--<li class="page-item"><a href="">3</a></li>-->
+                                <!--<li class="page-item"><a href="">4</a></li>-->
+                                <!--<li class="page-item"><a href="">5</a></li>-->
+                                <!--<li class="page-item"><a href="">6</a></li>-->
+                                <!--<li class="page-item"><a href="">7</a></li>-->
+                                <!--<li class="page-item"><a href="">8</a></li>-->
+                                <!--<li class="page-item next"><a href="">></a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_content" style="display:none">
+                <h3>评价管理</h3>
+                <div class="zqrightinfo">
+                    <p class="zqwxinfo zqtop30  clearfloat">
+                        <span class="fl"><span class="zqtime">2016-09-26 10:00:27</span><span class="zqordernum">订单号:INDENT000063773135</span><span class="zqpay">在线支付</span></span>
+                        <span class="zqzt fr">评价状态：待评价</span>
+                    </p>
+                    <input type="hidden" value="c18d5b6cddc346928d94afc9d99702f1" name="detailUuid">
+                    <p class="height1 hgt20"></p>
+                    <div class="zqproinfo zqtop30 clearfloat">
+                        <div class="zqimgtxt fl">
+                            <div class="zqitimg">
+                                <a href="/item/9dc6d5c7f8f9487990da00cfdc28a1f7" target="_blank">
+                                    <img src="&#10;&#10;&#10;&#10;&#10;http://img.mall.tcl.com/dev1/0/000/138/0000138768.fid" alt="1.5升电水壶 1500W">
+                                </a>
+                            </div>
+                            <div class="zqittxt">
+                                <p class="zqpmiaoshu">
+                                    <a href="/item/9dc6d5c7f8f9487990da00cfdc28a1f7" target="_blank">
+                                    1.5升电水壶 1500W
+                            </a>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="zqnumber">
+                            <!--<b>|</b>-->×<span class="zqno">1</span></p>
+                        <p class="zqmoney">交易金额：9.28元</p>
+                    </div>
+                    <p class="height1"></p>
+                    <div class="zqfabiao">
+                        <p class="zqfbtitle">您的评价内容</p>
+                        <!--<form>-->
+                            <div class="zqpjarea clearfloat">
+                                <textarea rows="4" placeholder="开始对我们的商品进行评价吧，最多上传五张图片！" name="contentc18d5b6cddc346928d94afc9d99702f1" id="contentc18d5b6cddc346928d94afc9d99702f1"></textarea>
+                                <div class="zqadder">
+                                    <!--<div class="zqaddimg fl">
+                                        <b>+</b>
+                                        <input class="upload" type="file" id="c18d5b6cddc346928d94afc9d99702f1_file" name="image" value="" onchange="javascript:uploadImage('c18d5b6cddc346928d94afc9d99702f1');">
+                                    </div>-->
+                                     <form method="post" enctype="multipart/form-data">
+                                        <a href="javascript:;" class="file">
+                                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg">
+                                            <img src="" class="uploadimgShow" id="upload1_img0">
+                                            <font>+</font>
+                                        </a>
+                                        <input class="upbtn" fileElementId="upload1"  type="button"  value="上传" onclick="return KUYU.purUpload(this, 'upload1_img0');"/>
+                                    </form>
+                                    <input type="hidden" id="c18d5b6cddc346928d94afc9d99702f1_imgsString" value="">
+                                    <ul class="zqaddimgli fl" id="c18d5b6cddc346928d94afc9d99702f1_showImg">
+                                    </ul>
+                                </div>
+                            </div>
+                        <!--</form>-->
+                    </div>
+                    <p class="zqfbtitle zqtop30">您的评分</p>
+                    <!--star   多个评分-->
+                    <div id="zqstar1" class="j-start zqstar clearfloat">
+                        <span></span>
+                        <ul class="stars_Product_c18d5b6cddc346928d94afc9d99702f1">
+                            <li class="">
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">2</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">3</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">4</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">5</a>
+                            </li>
+                        </ul>
+                        <span></span>
+                        <p>描述相符</p>
+                    </div>
+                    <div id="zqstar2" class="j-start zqstar clearfloat">
+                        <span></span>
+                        <ul class="stars_TransportService_c18d5b6cddc346928d94afc9d99702f1">
+                            <li class="">
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">2</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">3</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">4</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">5</a>
+                            </li>
+                        </ul>
+                        <span></span>
+                        <p>物流服务</p>
+                    </div>
+                    <div id="zqstar3" class="j-start zqstar clearfloat">
+                        <span></span>
+                        <ul class="stars_CustomerService_c18d5b6cddc346928d94afc9d99702f1">
+                            <li class="">
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">2</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">3</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">4</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">5</a>
+                            </li>
+                        </ul>
+                        <span></span>
+                        <p>服务态度</p>
+                    </div>
+                    <!--star end-->
+                    <a href="javascript:saveAppraise('1de64cb8c5fb408293ab14a0bb891749');" class="y_btn y_btn_custom2">提交评价</a>
+                </div>
+            </div>
+            <div class="mask"></div>
+        </div>
+    </div>
+    <!--mian html start-->
+    <!-- 会员中心底部 -->
+    <!-- Help center html start -->
+    <div class="help" id = "navFooterLink">
+
+    </div>
+    <!-- Help center html end -->
+    <!-- go to top html-->
+    <!--<div class="goTop">
+        <a href="http://www.tcl.com:80/servicecenter/customerServiceKuyu">
+            <div class="item">&#xe64a;</div>
+        </a>
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+    </div>-->
+    <!-- footer html end -->
+    <div class="footer">
+        <div>
+            <!-- <img src="http://www.tcl.com:80/static/frontpage/common2/img/logo.png" /> -->
+            <div class="foot-logo">&#xe656;</div>
+            <p class="blod"><a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> | <a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> | <a target="_blank" href="http://www.tcl.com/group/investors/index">投资者关系</a> | <a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> | <a target="_blank" href="/dealer/toLogin">经销商之家</a> | <a target="_blank" href="http://www.tcl.com:80/bulkpurchase/service">大宗采购</a> | <a rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> | <a href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a> | <a href="http://news.tcl.com/English.php/index/index.html">English</a></p>
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. <a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> TCL集团股份有限公司版权所有 粤ICP备05040863号</p>
+            <div class="foot-r"><span><em>&#xe63a;</em></span>诚信网站</div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <!-- 公用js -->
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="../../app/js/ajaxfileupload.js"></script>
+    <script src="productappraise.js"></script>
+</body>
+
+</html>

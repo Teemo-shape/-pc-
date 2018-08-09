@@ -1,0 +1,37 @@
+<div id="m_box_item">
+  <h3>账号管理</h3>
+  <div class="m_box">
+      <a data-id="usercenter" href="../usercenterindex/usercenter.html#usercenter">我的个人中心</a>
+      <a href="../manageuser/manageuser.html" target="_blank">管理账号和密码</a>
+      <a data-id="addaddress" href="../addaddress/addaddress.html#addaddress">收货地址管理</a>
+      <a data-id="addinvoice" href="../addinvoice/addinvoice.html#addinvoice">增值税发票管理</a>
+      <a data-id="elinvoice" href="../elinvoice/elinvoice.html#elinvoice">电子发票管理</a>
+  </div>
+  <h3>订单中心</h3>
+  <div class="m_box">
+      <a data-id="orderList" href="../orderList/orderList.html#orderList">产品订单</a>
+      <a data-id="tcode" href="../tcode/tcode.html#tcode">我的T码</a>
+      <a data-id="aftersale" href="../aftersale/aftersale.html#aftersale">退款换货管理</a>
+      <a data-id="productfavorite" href="../productfavorite/productfavorite.html#productfavorite">我的收藏</a>
+      <a data-id="productappraise" href="../productappraise/productappraise.html#productappraise">评价管理</a>
+      <a data-id="producthistory" href="../producthistory/producthistory.html#producthistory">浏览历史</a>
+      <a data-id="coupondetails" href="../coupondetails/coupondetails.html#coupondetails">我的优惠券</a>
+      <a data-id="reserveorder" href="../reserveorder/reserveorder.html#reserveorder">我的预约</a>
+  </div>
+</div>
+
+
+<script>
+    $(function () {
+        var a = $("#m_box_item a");
+        $.each(a, function (i, o) {
+            var hashName = window.location.hash == "#"+$(o).data('id');
+            var baseName = window.location.href.indexOf($(o).data('id')+'.html')
+            if(hashName) {
+                $(o).addClass("active");
+            }else if(baseName>0) {
+                $(o).addClass("active");
+            }
+        })
+    })
+</script>

@@ -1,0 +1,57 @@
+#mb_box{
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    position: fixed;
+    filter:alpha(opacity = 50);
+    background: black;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+#mb_con{
+    z-index: 999999;
+    width: 450px;
+    position: fixed;
+    background-color: #fff;
+    border-radius:6px;
+    color: #575757;
+}
+
+#mb_tit{
+    display: block;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 4px 4px 0 0;
+}
+
+#mb_msg{
+    padding: 30px;
+    line-height: 20px;
+    font-size:16px;
+    text-align:center;
+}
+
+
+#mb_btnbox{
+    margin: 15px 0 20px 0;
+    text-align: center;
+}
+#mb_btn_ok,#mb_btn_no{
+    border-radius:4px;
+    width: 85px;
+    height: 30px;
+    color: white;
+    border: none;
+    cursor:pointer;
+}
+#mb_btn_ok{
+    background-color: #8CD4F5;
+
+}
+#mb_btn_no{
+    background-color: #bbb;
+    margin-left: 20px;
+}
+

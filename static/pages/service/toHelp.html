@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>购物指南_帮助中心 – TCL内购商城</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">   
+    
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <style>
+    .header.my{position:relative;} 
+    </style>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+    <!-- header-->
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!-- side bar start -->
+    <div class="mask" ></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close" >&#xe63b;</span>
+        <div class="cart" id="dvPlatTopCart" >
+            <h3 class="cart-head">
+                <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                    <img class="loading"  src="http://10.73.128.174:20300/static/usercenter/img/loading.gif">
+                </div>
+            </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist" >
+            <h3>
+                <span class="shoping">&#xe624;</span>注册
+            </h3>
+            <div class="login-inp">
+                <div><input type="text" placeholder="手机或邮箱"></div>
+                <div class="verify"><input type="text" placeholder="图片验证码"><span><img src="http://10.73.128.174:20300/static/kuyu/common/img/verify.gif"></span></div>
+                <div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种"></div>
+                <div><input type="text" placeholder="确认密码"></div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div><button class="buy zhuce">注册</button></div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide" >
+
+        </div>
+        <input type="text" id="test">
+        <!-- 判断是否已经登录，同步登录用于判断 -->
+        <input type="hidden" name="userloginname" id="userloginname" value="">
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null">
+        <!-- login html end -->
+    </div>
+    <!-- side bar end -->
+    <!-- Main Service Content start -->
+    <div class="member_mian min-wid m-mt help-center">
+		<div class="fl nav_left">
+			<h3>帮助中心</h3>
+			<div class="m_box">
+				<a href="toHelp.html" class="red">购物指南</a>
+				<a href="toHelp_pay.html" class="">支付方式</a>
+				<a href="toHelp_send.html" class="">配送方式</a>
+				<a href="toHelp_terms.html" class="">交易条款</a>
+				<a href="toHelp_invoice.html" class="">电子发票</a>
+			</div>
+		</div>
+		<div class="fr mian_right">
+			<div class="m_content">
+				<div class="m_content_item buy_content">
+					<div class="m_content_title">购物指南</div>
+					<div class="item_step">注册/登录 &gt; 选择商品 &gt; 立即购买 &gt; 签收须知						
+						<div class="item_title">一、注册/登录</div>
+						<div class="item_con">1 登录：如您已是会员，可在TCL官方商城首页，找到顶部右上角登录图标，点击登录。
+							<img src="/app/images/buy1.jpg" alt="">
+						</div>
+						<div class="item_con">2 注册：如您是新用户，可以选择“注册TCL账号”，使用手机号、邮箱注册注册。
+							<img src="/app/images/buy2.jpg" alt="">
+						</div>
+					</div>
+					<div class="item_box">						
+						<div class="item_title">二.选择商品</div>
+						<div class="item_con">
+							<p>1、选择配送地址，将商品加入购物车。</p>
+							<p>2、在购物车页面可选择当前能享受到的优惠哦，确认好商品信息就可以去结算啦！</p>
+							<img src="/app/images/buy3.jpg" alt="">
+							<img src="/app/images/buy4.jpg" alt="">
+						</div>						
+					</div>
+					<div class="item_box">						
+						<div class="item_title">三.确认提交</div>
+						<div class="item_con">
+							<p>1、提交订单时请注意核对发票，订单金额，优惠活动以及收件人信息，提交后不可修改。</p>
+							<p>2、提交订单时需要手动勾选或填写优惠券哦，您可以在个人中心中查看拥有的优惠券明细。</p>
+							<p>3、付款成功后，可在订单详情查看物流详情，您的商品将会在不久后送上！</p>
+							<img src="/app/images/buy5.jpg" class="mb90" alt="">	
+							<img src="/app/images/buy6.jpg" alt="">
+						</div>						
+					</div>
+					<div class="item_box">						
+						<div class="item_title">四.验证签收</div>
+						<div class="item_con">
+							<p>1.下单请尽量留下本人收件信息，若非本人收货或他人代签收，务必按照以下第二项内容操作。</p>
+							<p>2.收货时请当场验货，检查外包装是否完好，商品内容是否和订单一致，包装完好不支持开箱验货。</p>
+							<p>3.签收后若商品有质量或使用问题，可通过<a href="/tclchannel/toService#" target="_blank"><span class="red">服务</span></a>页面，进行自助服务，若未能解决您的问题，请第一时间联系在线客服或致电TCL服务中心：4008-123456.</p>
+						</div>
+					</div>
+				</div>				
+				<div class="m_content_item pay_content hidden">
+					<div class="m_content_title">支付方式</div>
+					<div class="item_box">
+						<div class="item_con">TCL 官方商城支持中国银行、中国工商银行、中国农业银行、招商银行、中国建设银行，交通银行、深圳发展银行、中国邮政储蓄银行、中信银行、兴业银行、上海银行、中国民生银行、中国光大银行等多家银行借记卡、准贷记卡及信用卡的网上支付、另有银联在线、支付宝、微信支付等第三方支付方式供您选择。
+						</div>
+						<div class="item_con">温馨提醒：目前各银行对于网上支付均有卡种、金额的限制，因各银行政策不同，建议您在申请网上支付功能时向银行咨询相关事宜。</div>
+					</div>					
+					<div class="item_box">
+						<div class="item_title">一第三方支付平台</div>
+						<div class="item_con"><img src="/app/images/wz_pay.jpg" alt=""></div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">二、支持国内十多家主流银行机构的储蓄卡及信用卡</div>
+						<div class="item_con"><img src="/app/images/other_pay.jpg" alt=""></div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">三、银行转账</div>
+						<div class="item_con">
+							<p class="mb5">TCL官方商城支持银行转账付款。</p>
+							<p>账户信息如下：</p>
+							<p>银行帐号：44001718644053008377 </p>
+							<p>开户行：中国建设银行惠州开发区支行</p>
+							<p>收款人：惠州酷友网络科技有限公司</p>
+							<p><b>温馨提醒：</b>请您在完成转账或汇款业务后，尽快与TCL官方商城在线客服或热线客服（4007-123456）联系。并提供打款人姓名、金额及订单号。</p>
+						</div>
+					</div>
+				</div>
+				<div class="m_content_item hidden">
+					<div class="m_content_title">配送方式</div>
+					<div class="item_box">
+						<div class="item_title">一、第三方支付平台</div>
+						<div class="item_con">
+							<p class="pl0">1.大家电产品——速必达物流配送为主。</p>
+							<p>包括冰箱、洗衣机、空调、彩电等。</p>
+							<p>主要依托速必达物流为用户提供一个快速、满意、放心的购物平台。</p>
+							<p>下单并提交付款后，由专业第三方快递公司进行配送。</p>	
+						</div>
+						<div class="item_con">
+							<p class="pl0">2.小件产品、小家电产品——第三方快递公司配送</p>
+							<p>包括生活家电、水家电、手机、数码等类目产品。</p>
+							<p>主要依托顺丰快递和EMS等第三方快递公司进行配送，并提供送货上门服务（特别偏远的地区除 外，当地如果没有配送点，快递公司一般会放在离该地最近的一个配送点，然后联系用户取件），为用户提供一个快速、满意、放心的购物平台。如需安装可另外拨打全国服务热线4008123456预约。</p>
+						</div>
+						<div class="item_con">
+							<p>友情提示：TCL官方商城已与所有合作的第三方快递公司签约，支持开箱验货，请用户务必先验货，后签收，如有货损，可以拒收，并第一时间联系客服处理。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">二.配送范围</div>
+						<div class="item_con">
+							<p>支持国内省会城市、地级城市及大部分县、乡镇城市的配送。采用快递公司作为物流配送方的，以顺丰快递、安能、无锡恒瑞等物流配送范围为准，可能存在部分偏远区域不能到达，请与客服确认。香港、澳门、台湾地区不能送达。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">三.配送时效</div>
+						<div class="item_con">
+							<p>对于部分偏远地区，根据配送距离，可能需要不同的配送时间。大家电的配送时间以当地物流配送时间为准，小家电以第三方物流配送时间为准。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">四.配送费用</div>
+						<div class="item_con">
+							<p>TCL官方商城目前支持全国配送范围内全场包邮，0元送到家！</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">五.商品验收与签收</div>
+						<div class="item_con">
+							<p>对于部分偏远地区，根据配送距离，可能需要不同的配送时间。大家电的配送时间以当地物流配送时间为准，小家电以第三方物流配送时间为准。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">六.特殊说明</div>
+						<div class="item_con">
+							<p class="pl0">以下情况会影响配送：</p>
+							<p class="pl0">1.无现货。（此种情况在商城工作人员与买家核对订单信息时会根据产品供货情况与买家进行确认）</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">2.对款到发货订单，买家付款没有到账。</p>
+						</div>
+						<div class="item_con">
+						</div>
+						<div class="item_con">
+							<p class="pl0">3.交货地点在配送区域以外。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">4.联系不上买家及买家不确认收货信息等原因导致配送延误的。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">5.因天气、交通及其他不可抗拒原因导致配送延误的。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">七.速必达物流简介</div>
+						<div class="item_con">
+							<p class="pl0">1.公司概况</p>
+							<p>深圳速必达商务服务有限公司，简称速必达物流，成立于2004年7月，为TCL集团下属全资子公司，注册资金1亿元，2015年营业收入预计约6.5亿左右。速必达物流于2014年5月在惠州仲恺注册了全资子公司广东速必达现代物流有限公司。速必达物流致力于成为国内领先的分销物流和全网全品类宅配专家，为用户提供极致体验的物流服务，是经中国物流与采购联合会认证的AAAA级物流 企业。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">2.业务类型</p>
+							<p>速必达物流可提供从工厂CDC总仓管理、长途干线运输到区域RDC仓储、配送一体化的成品分销物流服务，运输服务包括汽运整车、零担、快递、海运、空运、铁 运、多式联运等，并可根据客户产品特性及需求设计最合理的物流运作模式。通过整合上下游资源，以完善的流程标准体系、风险防范能力和运作过程监控体系保证 物流服务的高品质，给用户以极致的物流服务体验。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">3.能力建设和战略规划</p>
+							<p>速必达物流凭借十多年的物流运作实践，吸收和沉淀了供应链及物流运作丰富的管理理念和运作经验，以其独特的革新供应链运作模式、先进的IT系统和专业严谨的标准流程管理体系为基石，建立了深度分销物流平台网络，在国内深度分销领域建立了相对领先的物流模式。</p>
+							<p>在集团O2O大战略商业模式下，公司通过战略性投入，整合B+C业务资源，以用户体验为出发点进行流程再造，以开放合作的方式重点打造省级区域内满足O2O 业务需求由仓储、运输、路由网络组成的大件快速宅配能力，并提供稳定的物流服务，并在此基础上发展电商仓储代运营及区域零担业务。围绕核心能力建设，公司 重点规划了“三大运营平台和两大IT系统”，即仓储网络平台、班车及TS平台、宅配网络平台和物流运营IT系统、车货匹配平台系统。</p>
+							<p>速必达物流针对大家电、家居等大件产品的电商“最后一公里”的宅配物流服务需求，通过RDC仓库电商化改造、信息系统开发建设、TS及HUB的布局与建立、物流可视化、RDC定时定线班车、订单查询系统、送装调一体化等服务体系与能力建设，顺应和适应互联网时代的电商物流服务需求，积极打造成为全网全品类宅配专家。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">4.组织架构和网络分布</p>
+							<p>公司下设“四中心、一部门、三平台”，分销运营中心、仓储运营中心、宅配运营中心和方案解决中心以服务TCL集团内部客户为主；市场部依托现有平台和网络优势承揽外部业务，目前外部业务营业规模占比约20%左右；财务、人力资源、物流信息三个共享平台为公司业务发展提供支持和服务。</p>
+							<p>目前公司员工约200人左右，在全国设有三十多个分支机构、四十多个配送中心并规划设立二千多个物流中转站（TS），分布于各个省会城市和经济发达的城市， 全国管理的仓储面积约五十万平方米左右，庞大的物流网络覆盖全国4万多个经销商及终端客户（其中50%以上分布在县乡镇市场）。</p>
+							<p>在互联网浪潮的推动下，速必达物流将顺应和适应市场与用户的需求，积极寻求变革，推动核心能力的建设，为用户提供极致体验的物流服务。</p>
+						</div>
+					</div>
+				</div>	
+				<div class="m_content_item kuan_content hidden">
+					<div class="m_content_title">交易条款</div>
+					<div class="kuan_content_tip">您在TCL官方商城下订单之前或接受TCL官方商城送货之前，请您仔细阅读以下条款：</div>
+					<div class="item_box">
+						<div class="item_title">一、本站服务条款的确认和接纳</div>
+						<div class="item_con">
+							<p class="pl0">本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。用户必须完全同意所有服务条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款 是处理双方权利义务的当然约定依据，除非违反国家强制性法律，否则始终有效。在下订单的同时，您也同时 承认了您拥有购买这些产品的权利能力和行为能力，并且将您对您在订单中提供的所有信息的真实性负责。</p>							
+						</div>						
+					</div>
+					<div class="item_box">
+						<div class="item_title">二.服务简介</div>
+						<div class="item_con">
+							<p class="pl0">本站运用自己的操作系统通过国际互联网络为用户提供网络服务。同时，用户必须:</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">1.自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">2.自行负担个人上网所支付的与此服务有关的电话费用、网络费用。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">3.基于本站所提供的网络服务的重要性，用户应同意：提供详尽、准确的个人资料。不断更新注册资料，符合及时、详尽、准确的要求。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">4.本站不公开用户的姓名、地址、电子邮箱和笔名， 除以下情况外：</p>
+							<p>用户授权本站透露这些信息。</p>
+							<p>相应的法律及程序要求本站提供用户的个人资料。</p>
+							<p>如果用户提供的资料包含有不正确的信息，本站保留结束用户使用网络服务资格的权利。 </p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">三.价格和数量</div>
+						<div class="item_con">
+							<p class="pl0">1.本站将尽最大努力保证您所购商品与网站上公布的价格一致，但价目表和声明并不构成要约。</p>
+							<p>本站有权在发现了其网站上显现的产品及订单的明显错误或缺货的情况下，单方面撤回任何承诺。同时，本站保留对产品订购的数量的限制权。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">
+							2.产品的价格和可获性都在本站上指明。这类信息将随时更改且不发任何通知。</p>
+							<p>商品的价格都包含了增值税。如果发生了意外情况，在确认了您的订单后，由于供应商提价，税额变化引起的价格变化，或是由于网站的错误等造成商品价格变化，您有权取消您的订单，并希望您能及时通过电子邮件或电话通知本站客户服务部。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">3.您所订购的商品，如果发生缺货，您有权取消定单。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">四.送货及费用</div>
+						<div class="item_con">
+							<p class="pl0">1.本站将会把产品送到您所指定的送货地址。所有在本站上列出的送货时间为参考时间，参考时间的计算是根据库存状、正常的</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">2.送货费用根据您选择的配送方式的不同而异。</p>
+						</div>
+						<div class="item_con">
+							<p class="pl0">3.请清楚准确地填写您的真实姓名、送货地址及联系方式。因如下情况造成订单延迟或无法配送等，本站将不承担责任：客户提供错误信息和不详细的地址货物送达无人签收，由此造成的重复配送所产生的费用及相关的后果。</p>
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">五.服务条款的修改</div>
+						<div class="item_con">
+							<p class="pl0">1.本站将可能不定期的修改本用户协议的有关条款，一旦条款及服务内容产生变动，本站将会在重要页面上提示修改内容。</p>
+							<p>如果不同意本站对条款内容所做的修改，用户可以主动取消获得的网络服务。如果用户继续使 用本站的服务，则视为接受服务条款的变动。</p>
+						</div>
+						<div class="item_con">
+							2.本站保留随时修改或中断服务而不需告知用户的权利。
+						</div>
+						<div class="item_con">
+							3.本站行使修改或中断服务的权利，不需对用户或第三方负责。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">六.用户隐私制度</div>
+						<div class="item_con">
+							尊重用户个人隐私是本站的一项基本政策。所以，作为对以上第二点人注册资料分析的补充，本站一定不会在未经合法用户授权时公开、编辑或透露其注册资料及保存在本站中的非公开内容，除非有法律许可要求或本站在诚信的基础上认为透露这些信件在以下四种情况是必要的：
+						</div>
+						<div class="item_con">
+							1.遵守有关法律规定，遵从本站合法服务程序。
+						</div>
+						<div class="item_con">
+							2.保持维护本站的商标所有权。
+						</div>
+						<div class="item_con">
+						</div>
+						<div class="item_con">
+							3.在紧急情况下竭力维护用户个人和社会大众的隐私安全。
+						</div>
+						<div class="item_con">
+							4.符合其他相关的要求。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">七.用户的帐号，密码和安全性</div>
+						<div class="item_con">用户一旦注册成功，成为本站的合法用户，将得到一个密码和用户名。您可随时根据指示改变您的密码。用户将对用户名和密码安全负全部责任。另外，每个用户都要对以其用户名进行的所有活动和事件负全责。用户若发现任何非法使用用户帐号或存在安全漏洞的情况，请立即通告本站。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">八.拒绝提供担保</div>
+						<div class="item_con">
+						用户个人对网络服务的使用承担风险。本站对此不作任何类型的担保，不论是明确的或隐含的，但是不对商业性的隐含担保、特定目的和不违反规定的适当担保作限制。本站不担保服务一定能满足用户的要求，也不担保服务不会受中断，对服务的及时性，安全性，出错发生都不作担保。本站对在本站上得到的任何商品购物服务或交易进程，不作担保。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">九.有限责</div>
+						<div class="item_con">
+							本站对任何直接、间接、偶然、特殊及继起的损害不负责任，这些损害可能来自：不正当使用网络服务，在网上购买商品或进行同类型服务，在网上进行交易，非法使用网络服务或用户传送的信息有所变动。这些行为都有可能会导致本站的形象受损，所以本站事先提出这种损害的可能性。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十.对用户信息的存储和限制</div>
+						<div class="item_con">
+							本站不对用户所发布信息的删除或储存失败负责。本站有判定用户的行为是否符合本站服务条款的要求和精神的保留权利，如果用户违背了服务条款的规定，本站有中断对其提供网络服务的权利。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十一.用户管理</div>
+						<div class="item_con">
+						用户单独承担发布内容的责任。用户对服务的使用是根据所有适用于本站的国家法律、地方法律和国际法律标准的。用户必须遵循：
+						</div>
+						<div class="item_con">
+						1.从中国境内向外传输技术性资料时必须符合中国有关法规。
+						</div>
+						<div class="item_con">
+						2.使用网络服务不作非法用途。
+						</div>
+						<div class="item_con">
+						3.不干扰或混乱网络服务。
+						</div>
+						<div class="item_con">
+						4.遵守所有使用网络服务的网络协议、规定、程序和惯例。用户须承诺不传输任何非法的、骚扰性的、中伤他人的、辱骂性的、恐性的、伤害性的、庸俗的，淫秽等信息资料。
+						</div>
+						<div class="item_con">
+						5.另外，用户也不能传输何教唆他人构成犯罪行为的资料；不能传输助长国内不利条件和涉及国家安全的资料；不能传输任何不符合当地法规、国家法律和国际法律的资料。
+						</div>
+						<div class="item_con">
+						6.未经许可而非法进入其它电脑系统是禁止的。
+						</div>
+						<div class="item_con">
+						7.若用户的行为不符合以上提到的服务条款，本站将作出独立判断立即取消用户服务帐号。用户需对自己在网上的行为承担法律责任。用户若在本站上散布和传播反动、色情或其他违反国家法律的信息，本站的系统 记录有可能作为用户违反法律的证据。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十二.保障用户</div>
+						<div class="item_con">
+						同意保障和维护本站全体成员的利益，负责支付由用户使用超出业务范围引起的律师费用，违反服务条款的损害补偿费用等。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十三.结束服务</div>
+						<div class="item_con">
+							<p class="pl0">1.用户或本站可随时根据实际情况中断一项或多项网络服务。本站不需对任何个人或第三方负责而随时中断服务。用户对后来的条款修改有 异议，或对本站的服务不满，可以行使如下权利：</p>
+							<p>   停止使用本站的网络服务。</p>
+							<p>   通告本站停止对该用户的服务。</p>							
+						</div>
+						<div class="item_con">
+						2.结束用户服务后，用户使用网络服务的权利马上中止。从那时起，用户有权利，本站也没有义务传送任何未处理的信息或无完成的服务给用户或第三方
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十四.通告</div>
+						<div class="item_con">
+							所有发给用户的通告都可通过重要页面的公告或电子邮件或常规的信件传送。用户协议条款的修改、服务变更、或其它重要事件的通告都会以此形式进行。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十五.参与广告策划</div>
+						<div class="item_con">
+						用户在他们发表的信息中加入宣传资料或参与广告策划，在本站的免费服务上展示他们的产品，任何这类促销方法，包括运输货物、付款、服务、商业条件、担保及与广告有关的描述都只是在相应的用户和广告销售商之间发生。本站不承担任何责任，本站没有义务为这类广告销售负任何一部分的责任。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十六.网络服务内容的所有权</div>
+						<div class="item_con">
+						本站定义的网络服务内容包括：文字、软件、声音、图片、录象、图表、广告中的全部内容；电子邮件的全部内容；本站为用户提供的其他信息。所有这些内容受版权、商标、标签和其它财产所有权法律的保护。所以用户只能在本站和广告商授权下才能使用这些内容，而不能擅自复制、再造这些内容、或创造与内容有关的派生产品。本站所有的文章版权归原文作者和本站共同所有，任何人需要转载本站的文章，必须征得 原文作者 或本站授权。
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十七.责任限制</div>
+						<div class="item_con">
+							1.如因不可抗力或其他本站无法控制的原因使本站销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，本站不承担责任。但是本站会尽可能合理地协助处理善后事宜，并努力使客户免受经济损失。
+						</div>
+						<div class="item_con">
+							2.除了本站的使用条件中规定的其它限制和除外情况之外，在中国法律法规所允许的限度内，对于因 交易而引起的或与之有关的任何直接的、间接的、特殊的、附带的、后果性的或惩罚性的损害，或任何其它性质的损害，本站、本站的董事、管理人员、雇员、代理 或其它代表在任何情况下都不承担责任。本站的全部责任，不论是合同、保证、侵权(包括过失)项下的还是其它的责任，均不超过您所购买的与该索赔有关的商品 价值额。 
+						</div>
+					</div>
+					<div class="item_box">
+						<div class="item_title">十八.法律管辖和适用</div>
+						<div class="item_con">
+							1.本协议的订立、执行和解释及争议的解决均应适用中国法律。
+						</div>
+						<div class="item_con">
+							2.如发生本站服务条款与中国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它合法条款则依旧保持对用户产生法律效力和影响。
+						</div>
+						<div class="item_con">
+							3.本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，该规定可被删除而其余条款应予以执行。
+						</div>
+						<div class="item_con">
+							4.如双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向本站所在地的人民法院提起诉讼。
+						</div>
+					</div>				
+				</div>
+				<div class="m_content_item buy_content fapiao hidden">
+					<div class="item_box">						
+						<div class="item_title">电子发票来了再也不用担心发票问题啦！</div>
+						<div class="item_con">      
+							<p>2016年6月28日起TCL官方商城正式实行电子发票（除增值税专用发票外），不再开具普通纸质发票。</p>
+	      					<p>请亲下单付款前务必确认发票抬头填写是否正确如发票抬头未填写，系统将自动默认发票抬头为收货人姓名，在订单付款出库后，发票抬头无法更改。</p>
+	      				</div>
+											
+						<div class="item_title">什么是电子发票？</div>
+						<div class="item_con">      
+							<p>电子发票是指在购销商品、提供或者接受服务以及从事其他经营活动中开具、收取的以电子方式存储的收付款凭证，TCL开具的电子发票均为真实有效的合法发票，与传统纸质发票具有同等法律效力，可作为用户维权、保修、报销的有效凭据。</p>
+	      				</div>
+											
+						<div class="item_title">电子发票好处</div>
+						<div class="item_con">      
+							<p>1、	易保存<br>电子发票长期安全保存在电子发票库中，随时提供查询下载，无需担心发票丢失或损坏。</p>
+							<p>	2、	维权依据<br>网上交易出现纠纷时，基于电子发票的取证是一种有效方式。</p>
+							<p>	3、	轻松辨真伪<br>电子发票防伪模式是电子化，不用担心收到假发票，可以登录官方网站查验发票真伪。</p>
+	      				</div>							
+						<div class="item_title">常见问题</div>				
+						<div class="item_title">1、	Q：国家是否认可电子发票具有法律效应？</div>
+						<div class="item_con">      
+							<p>A：认可。国家税务总局《关于推行通过增值税电子发票系统开具的增值税电子普通发票有关问题的公告》（国家税务总局公告2015年第84号）明确了自2016年1月1日起，在全国推行增值税电子发票系统开具增值税电子普通发票。</p>
+	      				</div>
+	      				<div class="item_title">2、	Q：电子发票可否用于报销？</div>
+						<div class="item_con">      
+							<p>A：电子发票可以用于报销，国家税务总局《关于推行通过增值税电子发票系统开具的增值税电子普通发票有关问题的公告》（国家税务总局公告2015年第84号）规定，电子发票的法律效力、基本用途、基本使用规定等同于税务机关监制的增值税普通纸质发票。</p>
+	      				</div>
+	      				<div class="item_title">3、	Q：电子发票是否可以享受售后服务？</div>
+						<div class="item_con">      
+							<p>A：电子发票与纸质发票具有相同法律效力，可作为售后、维权凭据。用户可直接向维修站点和厂家提供电子发票进行维修。</p>
+	      				</div>
+	      				<div class="item_title">4、	Q：顾客下单后，何时开具电子发票？</div>
+						<div class="item_con">      
+							<p>A：订单付款、仓库发货后，即会开具电子发票。</p>
+	      				</div>
+	      				<div class="item_title">5、	Q：电子发票从哪里获取？</div>
+						<div class="item_con">      
+							<p>A：电子发票下载网址：<a target="_blank" href="http://www.chaxunfapiao.com">www.chaxunfapiao.com</a>，通过订单号可查询下载电子发票。</p>
+	      				</div>
+	      				<div class="item_title">6、	Q：如何验证电子发票真伪？</div>
+						<div class="item_con">      
+							<p>A：电子发票下载成功后，客户可凭借电子发票上所标示的发票代码、发票号码、防伪码通过税务总局指定网站进行查验：<a target="_blank" href="http://www.e-inv.cn">www.e-inv.cn</a></p>
+	      				</div>
+	      				<div class="item_title">7、	Q：选择了电子发票，还能换取纸质发票吗？</div>
+						<div class="item_con">      
+							<p>A：个人用户选择开具电子发票，后期不可换取增值税纸质普通发票，请自行下载打印电子发票；已开具纸质票的，不可以申请更换成电子发票；若因客户保存不当，导致纸质普通发票丢失，不可以补开，因此请谨慎选择发票类型。</p>
+	      				</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Main Service Content end -->    
+    
+    <!-- Help center html start -->
+	<div class="help">
+		<div class="min-wid">
+			<dl>
+				<dt>帮助中心</dt>
+				<dd><a target="_blank"  href="#">购物指南</a></dd>
+				<dd><a target="_blank"  href="#">支付方式</a></dd>
+				<dd><a target="_blank"  href="#">配送方式</a></dd>
+				<dd><a target="_blank"  href="#">交易条款</a></dd>
+				</dl>
+			<dl>
+				<dt>服务支持</dt>
+				<dd><a target="_blank"  href="#">售后服务</a></dd>
+				<dd><a target="_blank"  href="#">自助服务</a></dd>
+				<dd><a target="_blank"  href="#">电子保单</a></dd>
+			</dl>
+			<dl>
+				<dt>关于TCL</dt>
+				<dd><a target="_blank"  href="#">了解TCL</a></dd>
+				<dd><a target="_blank" rel="nofollow"  href="#">人才招聘</a></dd>
+				<dd><a target="_blank"  href="#">联系我们</a></dd> 
+			</dl>
+			<dl>
+				<dt>关注我们</dt>				
+				<dd><a target="_blank"  href="http://fans.tcl.com/">铁粉社区</a></dd>
+				<dd><a target="_blank" rel="nofollow" class="botSina"  href="#">新浪微博</a></dd>
+				<dd><a target="_blank" href="#">十分到家</a></dd>
+				<dd><a target="_blank" href="#">成员网站</a></dd>	
+			</dl>
+			<dl>
+				<dt>特色服务</dt>
+				<dd><a target="_blank"  href="#">全场包邮</a></dd>			
+				<dd><a target="_blank"  href="#">全国联保</a></dd>
+			</dl>
+			<dl>
+			    <dt>应用服务</dt>
+			    <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+			    <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+			    <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+			    <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+			    <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+			</dl>						
+			<dl class="last-r">
+				<p class="red phone">4008-123456</p>
+				<p class="grey">（24小时在线，仅收市话费）</p>
+				<a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+			</dl>
+		</div>
+	</div>
+	<!-- Help center html end -->
+  
+   <!-- footer html start -->    
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="#">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="#">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="#">社会责任</a>|
+                <a target="_blank" href="#">新闻中心</a>|
+                <a target="_blank" href="#">人才招聘</a>|
+                <a target="_blank" href="#">成员网站</a></p>
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="#">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="#">法律声明</a>|
+                <a target="_blank" href="#">隐私保护</a></p>
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="#" class="lang-item active">中文简体</a>
+                    <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+                <div><img src="../../app/images/credibility.png" /></div></div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>   
+    
+    <!--[if (IE 8) | (IE 9)]>
+    <script src="../../app/js/jquery.placeholder.min.js"></script>
+    <script src="../../app/js/respond.js"></script>
+    <![endif]-->
+    
+    <script>
+        require(['service.js'],function(obj){
+             obj.toHelp();
+        })        
+    </script>
+</body>
+</html>

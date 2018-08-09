@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL - 退换货列表</title>
+    <meta name="keywords"
+          content="TCL,TCL商城,TCL集团,TCL官方商城,TCL官网商城,TCL官网,TCL官方网站,TCL官方旗舰店,TCL旗舰店,TCL商城旗舰店,TCL网上商城,TCL电视,TCL曲面4K,TCL 4K,TCL Hero,TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,么么哒,TV+,娱乐TV+,芒果TV"/>
+    <meta name="description"
+          content="TCL官方商城(www.tcl.com)是TCL集团的网上购物商城,我们提供正品TCL电视,手机,洗衣机,空调,冰箱,配件等TCL产品。全国包邮、正品低价、快速送达、提供正规发票。"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit"/>
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+</head>
+
+<style>
+    .m_content{
+        border:1px solid #eee;
+        padding:40px;
+    }
+    .border-bottom{
+        border-bottom:1px solid #f0f0f0;
+    }
+    .padding-left{
+        padding-left:40px;
+    }
+    .item-wrap{
+        padding: 13px 0;
+    }
+    .item-wrap .item-wrap-header{
+        margin-bottom: 16px;
+    }
+    .item-wrap .item-wrap-header h2{
+        font-size: 22px;
+        color:#333;
+        line-height:22px;
+    }
+    .item-wrap  .item-form-title,.item-wrap .item-form-txt{
+        font-size:14px;
+        color:#666;
+    }
+   .item-wrap dd{
+        margin: 6px 0;
+    }
+    .item-wrap .btn-sale{
+        display: inline-block;
+        height: 30px;
+        line-height:20px;
+        text-align: center;
+        border:1px solid #999;
+        color:#666;
+        padding: 5px 26px;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    .item-wrap .btn-sale.btn-sendBack{
+        border-color:#ff4545;
+        color: #ff4545;
+        margin-right:10px
+    }
+
+    .item-wrap .product-info{
+        height:120px;
+        border:1px solid #eee;
+        margin-top: 30px;
+    }
+    .item-wrap .product-info .product-title{
+        margin-top: 23px;
+        color:#333;
+        font-size: 14px;
+    }
+    .item-wrap .product-info .product-size{
+        margin-top: 30px;
+        color: #666;
+        font-size:12px;
+    }
+    .item-wrap .product-info img{
+        width: 100px;
+        margin: 10px 28px 10px 40px;
+    }
+    .item-wrap .product-info .product-price{
+        margin:50px 0 50px 100px;
+        font-size: 14px;
+        color: #333;
+    }
+    .item-wrap .product-info .product-count{
+        margin-left: 23px;
+    }
+    .item-wrap .form-info .desc{
+        margin-left: 80px;
+        vertical-align: middle;
+    }
+    .item-wrap .form-info img{
+        width: 45px;
+    }
+    .clearfloat{clear: both;}
+</style>
+<html>
+
+<body>
+<!--头部-->
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<!-- Top html end -->
+<!-- Right slide bar html end -->
+<div class="mask"></div>
+<div class="slidebar">
+    <!-- Shopping Cart html start -->
+    <span class="close">&#xe60f;</span>
+
+    <div class="cart" id="dvPlatTopCart">
+        <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading" style="display:none"
+                     src="http://www.tcl.com:80/static/usercenter/img/loading.gif"/>
+            </div>
+        </h3>
+    </div>
+    <!-- Shopping Cart html end -->
+    <!-- Registration html start -->
+    <div class="regist">
+        <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+
+        <div class="login-inp">
+            <div>
+                <input type="text" placeholder="手机或邮箱"/>
+            </div>
+            <div class="verify">
+                <input type="text" placeholder="图片验证码"/><span><img
+                    src="http://www.tcl.com:80/static/kuyu/common/img/verify.gif"/></span></div>
+            <div>
+                <input type="text" placeholder="密码6~16位，数字/字母/字符至少两种"/>
+            </div>
+            <div>
+                <input type="text" placeholder="确认密码"/>
+            </div>
+            <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+
+            <div>
+                <button class="buy zhuce">注册</button>
+            </div>
+            <p class="login-text"><span class="fr regis">登录</span></p>
+        </div>
+    </div>
+    <!-- Registration html end -->
+    <!-- login html start -->
+    <div class="login" id="slideLoginSide">
+        <div class="login-success">
+            <h3>
+                <p class="login-img">
+                    <a
+                            href="http://www.tcl.com:80/usercenter/customercomplex/toUploadImageKuyu"
+                            target="_blank"><img
+                            src="http://www.tcl.com:80/static/usercenter/img/default.png"/></a>
+                </p>
+
+                <p class="login-name" id="loginName"></p>
+                <ul class="login-infor">
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tclcustomer/toMyIntegralDetailKuyu"><span
+                            class="title" id="jifen">0</span></a> <span>积分</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/coupondetails/toListKuyu"><span
+                            class="title" id="coupon">0</span></a> <span>优惠券</span> <i></i></li>
+                    <li class="fl"><a
+                            href="http://www.tcl.com:80/usercenter/tcode/tcodeListKuyu/1/1/10"><span
+                            class="title" id="tcode">0</span></a> <span>T码</span></li>
+                </ul>
+            </h3>
+            <div class="login-inp" style="line-height: 3">
+                <div class="uname">
+                    <a href="http://www.tcl.com:80/usercenter/customercomplex/toMyCenter">个人中心<span
+                            class="fr">&#xe62f;</span></a>
+                </div>
+                <div class="uname">
+                    <a href="http://www.tcl.com:80/usercenter/order/listKuyu/1/5?init=true">我的订单<span
+                            class="fr">&#xe62f;</span></a>
+                </div>
+                <div class="uname">
+                    <a href="http://www.tcl.com:80/usercenter/productfavorite/toPageKuyu">我的收藏<span
+                            class="fr">&#xe62f;</span></a>
+                </div>
+                <div class="uname">
+                    <a href="http://www.tcl.com:80/usercenter/reserveorder/listKuyu/1/5">我的预约<span
+                            class="fr">&#xe62f;</span></a>
+                </div>
+                <div class="uname">
+                    <a href="http://www.tcl.com:80/usercenter/customercomplex/accountSecurityKuyu">管理账号<span
+                            class="fr">&#xe62f;</span></a>
+                </div>
+            </div>
+            <div class="login-log">
+                <a href="http://www.tcl.com:80/tclcustomer/logout" class="buy">退出</a>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="test"/>
+    <!-- 判断是否已经登录，同步登录用于判断 -->
+    <input type="hidden" name="userloginname" id="userloginname" value="113362140"/>
+    <input type="hidden" name="isRefresh" id="isRefresh" value="null"/>
+    <!-- login html end -->
+</div>
+<!-- go to top html-->
+<div class="goTop">
+    <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+</div>
+<!-- go to top html-->
+<!-- 注入cookie-->
+<div id="insertc"></div>
+<!--侧栏  end  -->
+<!--头部 end-->
+<!--crumbs html start-->
+<div class="m_crumbs bg_f0">
+    <div class="min-wid">
+        <div class="fl"><a href="/">首页</a> / <a href="/pages/orderList/orderList.html#orderList">订单中心</a> / <a href="/pages/aftersale/aftersale.html#aftersale">退货换货</a></div>
+    </div>
+</div>
+<!--crumbs html end-->
+<!--面包屑 end-->
+<!--mian html start-->
+<div class="member_mian min-wid m-mt">
+    <!-- 菜单 -->
+    <div class="fl nav_left">
+        <include type="userCenterBar" src="{{userCenterBar}}"></include>
+    </div>
+    <!-- 菜单end -->
+    <div class="fr mian_right">
+        <div class="m_content">
+            <div class="r_rightbox">
+                <div class="m_padding" id="content">
+
+                </div>
+                <!-- /container -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 会员中心底部 -->
+<!-- Help center html start -->
+<div class="help" id="navFooterLink">
+</div>
+<!-- Help center html end -->
+<!-- go to top html-->
+<div class="goTop ">
+    <a href="http://www.tcl.com:80/servicecenter/customerServiceKuyu ">
+        <div class="item ">&#xe64a;</div>
+    </a>
+    <a onclick="$( 'body,html').animate({scrollTop: 0 },500); ">&#xe639;</a>
+</div>
+<!-- go to top html-->
+
+<!-- footer html end -->
+<div class="footer ">
+    <div>
+        <!-- <img src="http://www.tcl.com:80/static/frontpage/common2/img/logo.png " /> -->
+        <div class="foot-logo ">&#xe656;</div>
+        <p class="blod "><a target="_blank " href="http://www.tcl.com/group/companyInfo/index ">关于TCL</a> | <a
+                target="_blank " rel="nofollow " href="http://www.tcl.com/group/societyDuty/index ">社会责任</a> | <a
+                target="_blank " href="http://www.tcl.com/group/investors/index ">投资者关系</a> | <a target="_blank "
+                                                                                                 href="http://www.tcl.com/group/news/index ">新闻中心</a>
+            | <a target="_blank " href="/dealer/toLogin ">经销商之家</a> | <a target="_blank "
+                                                                         href="http://www.tcl.com:80/bulkpurchase/service ">大宗采购</a>
+            | <a rel="nofollow " href="http://www.tcl.com/group/companyInfo/slipPath?type=5 ">法律声明</a> | <a
+                    href="http://www.tcl.com/group/companyInfo/slipPath?type=4 ">隐私保护</a> | <a
+                    href="http://news.tcl.com/English.php/index/index.html ">English</a></p>
+
+        <p>©2010-2016 TCL CORPORATION All Rights Reserved. <a target="_blank "
+                                                              href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa ">使用条款</a>
+            TCL集团股份有限公司版权所有 粤ICP备05040863号</p>
+
+        <div class="foot-r "><span><em>&#xe63a;</em></span>诚信网站</div>
+    </div>
+</div>
+<!-- footer html end -->
+<!-- 公用js -->
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+<script src="backgoods.js"></script>
+</body>
+
+</html>

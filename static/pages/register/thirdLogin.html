@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TCL官方网站-第三方登录</title>
+		<meta name="keywords" content="TCL,TCL商城,TCL集团,TCL官方商城,TCL官网商城,TCL官网,TCL官方网站,TCL官方旗舰店,TCL旗舰店,TCL商城旗舰店,TCL网上商城,TCL电视,TCL曲面4K,TCL 4K,TCL Hero,TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,么么哒,TV+,娱乐TV+,芒果TV" />
+		<meta name="description" content="TCL官方商城(www.tcl.com)是TCL集团的网上购物商城,我们提供正品TCL电视,手机,洗衣机,空调,冰箱,配件等TCL产品。全国包邮、正品低价、快速送达、提供正规发票。" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/style.css">
+		<link rel="stylesheet" href="../../app/css/member.css">
+		<style>
+		.phoneerror, #codeerror, .uerror, .pserror, #apserror{
+			display: block; text-align: left;
+		}
+		</style>
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- Top html start -->
+		<include type="header" src="../../app/plugins/header/onlyheader.html"></include>
+		<div class="box ">
+			<div class="reg-top">
+				<div class="logo">
+					<a href="/"><img src="../../app/images/logo.png" /></a>
+				</div>
+				<div class="title">第三方登录</div>
+			</div>
+		</div>
+		<!-- Top html end -->
+
+		<!-- content html start -->
+		<div class="reg-cont y_reg-cont">
+			<ul class="y_logintab">
+				<li class="first active">还没有TCL账号？ 请注册</li>
+				<li class="last">已有TCL账号，请绑定登录</li>
+			</ul>
+			<div class="y_tabcontent">
+				<!--还没有TCL账号-->
+				<div class="y_tabpane active">
+					<input type="hidden" name="type" id="type" />
+					<input type="hidden" name="platformId" value="${platformId}" />
+					<input type="hidden" name="thirdPartyId" value="${thirdPartyId}" />
+					<input type="hidden" name="thirdPartyNickname" value="${thirdPartyNickname}" />
+					<input name="token" type="hidden" value="${token}" />
+
+					<div class="user-name input-box">
+						<span class="user-ico"></span>
+						<!--<input type="text" class="j-blur" name="phone" id="phone" binder-event="blur|checkUserName" placeholder="邮箱/手机号码" />-->
+						<input type="text" class="j-blur" name="phone" id="phone"  placeholder="邮箱/手机号码" />
+						<span class="phoneerror" style="color:red;"></span>
+					</div>
+					<div class="veri-code input-box">
+						<span class="code-ico"></span>
+						<input type="text" class="j-blur" name="validateCode" id="validateCode" binder-event="blur|checkCode" placeholder="输入手机验证码" />
+						<input type="text" id="verificationKey" hidden>
+						<span id="codeerror"></span>
+						<span class="code-img" binder-event="click|getMessage">获取验证码</span>
+						<div id="shade" style="width: 162px; height: 62px; position:absolute; right: 1px; top:1px; z-index: -1; background-color: rgba(0,0,0,.3)">
+						</div>
+						<input type="hidden" name="code" id="code" />
+						<span class="y_codets" style="display: none;">我们已经发送<span id="messageOrEmail"></span>至您的
+						<span id="phoneoremail"></span>
+						<br/> 请输入
+						<span id="msgOrEmail"></span>中的验证码</span>
+					</div>
+					<div class="user-name input-box">
+						<span class="pass-ico"></span>
+						<input type="password" id="password" name="password" binder-event="blur|checkpassword" placeholder="请输入密码" />
+						<span class="pserror"  style="color:#9c9c9c;display: none;">密码不能全是数字或全是字母，长度不能少于8位</span>
+					</div>
+					<div class="user-name input-box">
+						<span class="pass-ico"></span><input type="password" id="repPassWd" name="againpassword" binder-event="blur|checkagainp" placeholder="请输入确认密码" />
+						<span id="apserror"></span>
+					</div>
+					<div class="login-but"><button class="buy" id="registerbut" binder-event="click|register">立即注册并绑定</button></div>
+				</div>
+				<!--还没有TCL账号 end-->
+
+				<!--已有TCL账号-->
+				<div class="y_tabpane">
+					<input type="hidden" name="platformId" value="${platformId}" />
+					<input type="hidden" name="thirdPartyId" value="${thirdPartyId}" />
+					<input name="token" type="hidden" value="${token}" />
+					<div class="user-name input-box">
+						<span class="user-ico"></span>
+						<input type="text" class="j-blur" name="username" id="checkuser" binder-event="blur|checkuser" placeholder="邮箱/手机号码" />
+						<span class="uerror" style="color:red;"></span>
+					</div>
+					<div class="user-name input-box">
+						<span class="pass-ico"></span>
+						<input type="password" name="password" binder-event="blur|checkpass" id="checkpass" placeholder="请输入密码" />
+						<span class="uperror" style="color:red;"></span>
+					</div>
+					<div class="login-but">
+						<button class="buy" binder-event="click|loginbindbut" id="loginbindbut">立即绑定</button>
+					</div>
+				</div>
+				<!--已有TCL账号 end-->
+			</div>
+		</div>
+		<script src="../../app/js/vendor.js"></script>
+		<script src="../../app/js/core.js"></script>
+		<script src="../../app/config/config.js"></script>
+		<script src="../../app/js/jquery.validate.min.js"></script>
+		<script src="./thirdLogin.js"></script>
+	</body>
+
+</html>

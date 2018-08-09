@@ -1,0 +1,110 @@
+.star-product{
+    padding: 60px 0 60px 0;
+}
+.star-product .product-title{
+    font-size: 30px;
+}
+.star-product li img{
+    margin-top:0;
+}
+
+.star-product .slides{
+    height:100%;
+}
+
+.hot-product{
+    width: 100%;
+    position: relative;
+    float: left;
+}
+.hot-product .hot-title{
+    padding-bottom: 12px;
+    font-size: 30px;
+}
+.hot-product .hot-product-div{
+    padding-top: 60px;
+}
+.hot-product.hot-back .hot-product-back {
+    /*background-color: #ff7b5d;*/
+    background: #ff7b5d url("../../app/images/FestivalBg_hot.png") repeat;
+}
+
+.hot-product .hot-ul .hot-back.active {
+    background-color: #ed522f;
+}
+
+.hot-product.tv-back .hot-product-back {
+    /*background-color: #4edae5;*/
+    background: #4edae5 url("../../app/images/FestivalBg_air.png") repeat;
+}
+
+.hot-product .hot-ul .tv-back.active {
+    background-color: #17bdc9;
+
+}
+
+.hot-product.modle-back .hot-product-back {
+    /*background-color: #ae9edb;*/
+    background: #ae9edb url("../../app/images/FestivalBg_tv.png") repeat;
+}
+
+.hot-product .hot-ul .modle-back.active {
+    background-color: #886bbe;
+}
+
+.hot-product.air-back .hot-product-back {
+    /*background-color: #80d856;*/
+    background: #80d856 url("../../app/images/FestivalBg_washer.png") repeat;
+}
+
+.hot-product .hot-ul .air-back.active {
+    background-color: #4bb31a;
+}
+
+.hot-product.frig-back .hot-product-back {
+    /*background-color: #80cbc4;*/
+    background: #80cbc4 url("../../app/images/FestivalBg_frig.png") repeat;
+}
+
+.hot-product .hot-ul .frig-back.active {
+    background-color: #36b0a4;
+}
+
+.hot-product.washer-back .hot-product-back {
+    /*background-color: #4ec1f2;*/
+    background: #4ec1f2 url("../../app/images/FestivalBg_health.png") repeat;
+}
+
+.hot-product .hot-ul .washer-back.active {
+    background-color: #28a6db;
+}
+
+.hot-product.health-back .hot-product-back {
+    /* background-color: #58a3ff;*/
+    background: #58a3ff url("../../app/images/FestivalBg_phone.png") repeat;
+}
+
+.hot-product .hot-ul .health-back.active {
+    background-color: #257aa9;
+}
+
+.hot-product.lighting-back .hot-product-back {
+    background-color: #F6C631;
+    /*background: #F6C631 url("../../app/images/Festival_tiaoT.png") no-repeat;*/
+}
+
+.hot-product .hot-ul .lighting-back.active {
+    background-color: #ffa000;
+}
+.prod-desc{
+    padding-bottom: 8px;
+}
+
+.exhibition .prod-price {
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+.buy.fastBuyDisabled {
+    border-color: #999;
+    background-color: #999;
+}

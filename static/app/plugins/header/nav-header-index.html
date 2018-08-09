@@ -1,0 +1,80 @@
+<script>
+    var path = encodeURIComponent(location.href);
+    var login = $(".index_login");
+    var reg = $(".index_reg");
+    var l = login.attr("href");
+    var r = reg.attr("href");
+    login.attr("href",l+'?from='+path)
+    reg.attr("href", r+'?from='+path)
+</script>
+<div class="header translucent fixed" style="z-index: 111">
+    <div id="topads">
+
+    </div>
+    <div class="top-bar">
+        <div class="top-bar-wrap">
+            <ul class="nav-left" id="top_bar_nav">
+                <li><a target="_blank" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb" titel="TCL人的内购平台" >T严选（TCL人的内购平台）介绍及疑问</a></li>
+            </ul>
+            <!--<a class="fansuec" href="http://fans.tcl.com/uec">用户体验中心</a>-->
+            <!--<a class="fansuec" href="/page/ueCenter/ueCenter">用户体验中心</a>-->
+            <ul class="nav-right" id="nav-right">
+                <li class="wechat_box">
+                        <a href="###">微信商城</a>
+                        <div class="wechat">
+                            <img src="/app/images/wechat.jpg">
+                            <p>关注公众号<br>一键下单购买</p>
+                        </div>
+                    </li><i></i>
+                <li class="index_cart_li"><a class="index_cart" href="/pages/cart/cart.html" >购物车</a><span class="newheader-circle" id="newhead_cart"></span>
+                </li><i></i>
+                <li><a class="index_login" href="{{login}}">登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-bor">
+            <div class="nav-bar"><span class="close"></span>
+                <!--<div class="hea-box hot"></div>-->
+                <div class="saerch">
+                    <span class="fl">&#xe614;</span>
+                    <input type="text" class="nav-saerch" value="" placeholder="输入查询的商品">
+                    <div class="hot-words"></div>
+                </div>
+                <div class="menu-wrap">
+                    <h1 class="hea-box fl"><a href="/" title="TCL 内购商城" class="logo">&#xe6a9;</a></h1>
+                    <div class="menu nav-menu fl" id="j-h-menu">
+                        <i class="menu_line"></i>
+                        <div class="mes-all" >
+                            <a href="/" class="nav-cagegory">全部商品
+                                <div class="site-category">
+                                    <ul id="nav_menu">
+
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-late fr">
+                        <!--<font class="font"></font>-->
+                        <!--<a href="/pages/service-home/index.html" target="_blank">服务</a>-->
+                        <!--<a href="{{shequzhongxin}}" target="_blank">社区</a>-->
+                        <!--<a href="{{jfindex}}" target="_blank">积分兑换</a>-->
+                        <span class="menu-late-search">
+                            <input class="ser-input" placeholder="电视" value=""/>
+                            <span><font class="sear">&#xe614;</font></span>
+                            <ul class="input-list" style="display: none;">
+                            	<!--<li>电视1</li>-->
+                            	<!--<li>电视2</li>-->
+                            	<!--<li>电视3</li>-->
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-list" style="display: none;">
+
+    </div>
+</div>

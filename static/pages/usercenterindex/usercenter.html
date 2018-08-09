@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>TCL - 编辑个人信息设置</title>
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" /><meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   	    <meta name="renderer" content="webkit" />
+		<link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    	<link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/member.css">
+		<link rel="stylesheet" href="/app/css/account.css">
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+		<!-- Top html start -->
+		<input id="usertelephone" type="hidden" value="" />
+		<input id="useremail" type="hidden" value="" />
+		<input id="src" type="hidden" value="" />
+		<input id="rank" type="hidden" value="" />
+		<input id="userName" type="hidden" value="" />
+		<!-- Right slide bar html end -->
+		<div class="mask"></div>
+		<div class="slidebar">
+			<!-- Shopping Cart html start -->
+			<span class="close">&#xe60f;</span>
+			<div class="cart" id="dvPlatTopCart">
+				<h3 class="cart-head">
+					<div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+						<img class="loading" style="display:none" src="http://www.tcl.com:80/static/usercenter/img/loading.gif"/>
+					</div>
+				</h3>
+			</div>
+			<!-- Shopping Cart html end -->
+			<!-- Registration html start -->
+			<div class="regist">
+				<h3>
+				<span class="shoping">&#xe624;</span>注册
+				</h3>
+				<div class="login-inp">
+					<div><input type="text" placeholder="手机或邮箱" /></div>
+					<div class="verify"><input type="text" placeholder="图片验证码" /><span><img src="http://www.tcl.com:80/static/kuyu/common/img/verify.gif" /></span></div>
+					<div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种" /></div>
+					<div><input type="text" placeholder="确认密码" /></div>
+					<p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+					<div><button class="buy zhuce">注册</button></div>
+					<p class="login-text"><span class="fr regis">登录</span></p>
+				</div>
+			</div>
+			<!-- Registration html end -->
+			<!-- login html start -->
+			<div class="login" id="slideLoginSide">
+			</div>
+			<input type="text" id="test" />
+			<!-- login html end -->
+		</div>
+
+		<!-- 面包屑 -->
+		<!--crumbs html start-->
+
+		<div class="m_crumbs bg_f0">
+			<div class="min-wid">
+				<div class="fl">
+					<a href="/">首页</a> / 账户中心</div>
+				<a href="{{uthome}}" class="fr">返回个人首页</a>
+			</div>
+		</div>
+		<!--面包屑 end-->
+		<div class="member_mian min-wid m-mt">
+			<div class="fl nav_left">
+				<include type="userCenterBar" src="{{userCenterBar}}"></include>
+			</div>
+			<!-- 菜单end -->
+			<!-- 个人中心start -->
+			<div class="fr mian_right">
+				<div class="m_content">
+					<h3>个人中心</h3>
+					<!-- 个人资料start -->
+					<input type="hidden" id="uuid" value="">
+					<div class="m_edit">
+						<div class="m_edit_box">
+							<div class="fl m_image">
+									<img id="userimg" src="../../app/images/admin.png">
+							</div>
+							<!-- <div class="fl m_information">
+								<h4></h4>
+								<p class="color_99">等级: <span><img src="../../app/images/Artboard Copy 18.png" id="span_level" ></span></p>
+								<p>
+									<a href="../IntegralDetail/IntegralDetail.html" class="red"><span id="jifen_mycenter">0</span> </a>积分
+									<a href="http://hy.tcl.com" target="_blank" class="fr exchange">积分兑换</a>
+								</p>
+							</div> -->
+							<div class="fl m_security">
+								<p>姓&emsp;&emsp;名：
+										<span id="name">无</span>
+								</p>
+								<p>昵&emsp;&emsp;称：
+										<span id="nickName">无</span>
+								</p>
+								<p>
+									员工手机：
+									<span id="phone">无</span>
+								</p>
+								<p>
+									员工邮箱：
+									<span id="email">无</span>
+
+								</p>
+							</div>
+							<a href="../personal/personal.html" target="_blank" class="btn y_btn_custom1">编辑信息</a>
+						</div>
+					</div>
+					<!-- 个人资料end -->
+					<!---order Information html start---->
+					<div class="userOrders">
+						<h3>我的订单</h3>
+						<ol class="m_orderiemt">
+							<li>
+									待付款订单：
+									<strong id="waitpaycount"></strong>
+							</li>
+							<li>
+									待发货订单：
+									<strong  id="waitsendcount"></strong>
+							</li>
+							<li>
+									待收货订单：
+									<strong id="shippingcount"></strong>
+							</li>
+							<li style="margin-right:0;">
+									待评价订单：
+									<strong id="waitcommentcount"></strong>
+							</li>
+							<!-- <li class="m_li3 fr">
+								<div class="m_left"><s></s></div>
+								<div class="m_right">
+									<p>喜欢的商品：<span id="favoritecount">(0)</span></p>
+									<a href="../productfavorite/productfavorite.html">查看喜欢的商品></a>
+								</div>
+							</li> -->
+						</ol>
+					</div>
+					<!---order Information html end---->
+
+				</div>
+
+			</div>
+
+		</div>
+		<!-- 个人中心end -->
+		<!-- 会员中心底部 -->
+
+		<!-- Help center html start -->
+		<div class="help">
+			<div class="min-wid">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policy">售后服务</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService">自助服务</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policye">电子保单</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>关于TCL</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=1">了解TCL</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/recruitment/index">人才招聘</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/connectWithUs.jsp">联系我们</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>
+						<a target="_blank" href="http://fans.tcl.com/">铁粉社区</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">新浪微博</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.shifendaojia.com/pc.html">十分到家</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>应用服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="https://jr.tcl.com/home.html">金融</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.imooc.com/">教育</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.golive-tv.com/">全球播</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a>
+					</dd>
+				</dl>
+				<dl class="last-r">
+
+					<p class="red phone">4008-123456</p>
+					<p class="grey">（24小时在线，仅收市话费）</p>
+
+					<a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+				</dl>
+			</div>
+		</div>
+		<!-- Help center html end -->
+		<!-- go to top html-->
+
+		<!-- footer html end -->
+		<div class="footer">
+			<div>
+				<div class="foot-logo">&#xe656;</div>
+				<p class="blod">
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> |
+					<a target="_blank" href="http://www.tcl.com/group/investors/index">投资者关系</a> |
+					<a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> |
+					<a target="_blank" href="/dealer/toLogin">经销商之家</a> |
+					<a target="_blank" href="http://www.tcl.com:80/bulkpurchase/service">大宗采购</a> |
+					<a rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> |
+					<a href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a> |
+					<a href="http://news.tcl.com/English.php/index/index.html">English</a>
+				</p>
+				<p>©2010-2016 TCL CORPORATION All Rights Reserved.
+					<a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> TCL集团股份有限公司版权所有 粤ICP备05040863号</p>
+				<div class="foot-r"> <span><em>&#xe63a;</em></span>诚信网站</div>
+			</div>
+		</div>
+		<!-- footer html end -->
+
+	</body>
+	<script src="../../app/js/vendor.js"></script>
+	<script src="../../app/js/core.js"></script>
+	<script src="../../app/config/config.js"></script>
+	<script src="usercenter.js"></script>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL内购-TCL内购商城，TCL电视、TCL手机、TCL冰洗、正品专卖！</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="TCL,TCL商城,TCL集团,TCL官方商城,TCL官网商城,TCL官网,TCL官方网站,TCL官方旗舰店,TCL旗舰店,TCL商城旗舰店,TCL网上商城,TCL电视,TCL曲面4K,TCL 4K,TCL Hero,TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,么么哒,TV+,娱乐TV+,芒果TV" />
+    <meta name="description" content="TCL官方商城(www.tcl.com)是TCL集团的网上购物商城,我们提供正品TCL电视,手机,洗衣机,空调,冰箱,配件等TCL产品。全国包邮、正品低价、快速送达、提供正规发票。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+
+    <style>
+        .header.my{position:relative;}
+        .padding-box button{background: #fff;}
+        .padding-box button[disabled]{color: #999 !important;}
+        .commodity img.loading{opacity: 0;display: none;}
+        /*ï¿½ï¿½Ñ¶ï¿½Ð±ï¿½Ò³*/
+        .h_searchbox{ border-bottom: 1px solid #E2E2E2;}
+        .h_searchbox div{line-height: 38px;height: 38px;margin:30px auto; width:500px;}
+        .h_searchbox div span{ font-size:14px;}
+        .h_searchbox .h_search{float: left;width: 290px;}
+        .h_searchbox .btn{padding: 7px 30px 8px;float: left; }
+        .h_news{ padding:30px; font-size:14px;}
+        .h_news li{ padding: 15px; overflow:hidden;}
+        .h_news li.bj{ background:#f6f6f6;}
+        .h_news li:hover a{color:#d83528;}
+        .h_news li i{ display: inline-block;width: 15px;height: 13px;margin: 4px 10px 0 0;background: url("../img/laba.png") no-repeat;}
+
+        /*ï¿½ï¿½Ñ¶ï¿½ï¿½Ï¸Ò³*/
+        .h_title{ border-bottom: 1px solid #E2E2E2;padding: 30px 30px 15px;}
+        .h_title h3{ font-size:16px;}
+        .h_zxcontent{ padding: 20px 85px 20px; font-size:14px;}
+        .h_zxcontent p{ text-indent:2em;line-height: 2; margin-bottom:15px;}
+        .h_zxcontent img{ margin: 20px auto 10px;display: block;}
+
+        /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³*/
+        .r_padding30{padding:0 30px;}
+        .container{width:980px;margin-left:auto;margin-right:auto;}
+        @media (max-width:1023px){
+            .container{width:auto;min-width:767px;}}
+        .r_layout{padding-left:200px;}
+        .r_layout .r_rightbox{float:left;width:100%;box-shadow:-4px 0 6px #f2f2f2;min-height:730px;}
+        .r_leftbox{float:left;width:200px;margin-left:-100%;color:#222;font-size:14px;position:relative;left:-200px}
+
+        /*--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--*/
+        .r_leftbox a{transition:all .3s ease;}
+        .r_leftbox a:hover{color:#d83528;}
+        .r_membernav{padding-left:20px}
+        .r_membernav dl{padding:15px 0;border-top:1px solid #ebebeb;margin-top:-1px}
+        .r_membernav dl:first-child{padding-top:20px;}
+        .r_membernav dl dt{height:34px;line-height:34px;margin-bottom:5px;margin-left:-20px;padding-left:20px;}
+        .r_membernav dl dt:hover{background:#d83528;}
+        .r_membernav dl dt:hover i,
+        .r_membernav dl dt.r_active i{background-position:-25px 0;}
+        .r_membernav dl dt:hover a{color:#fff;text-decoration:none;}
+        .r_membernav dl dt i{display:inline-block;vertical-align:middle;width:25px;height:22px;overflow:hidden;background:url(../img/help_bg.png) no-repeat 0px 0;margin-right:8px;}
+        .r_membernav dl dt.r_peisong i{background-position:0px -22px;}
+        .r_membernav dl dt.r_zhifu i{background-position:0px -43px;}
+        .r_membernav dl dt.r_peisong:hover i,
+        .r_membernav dl dt.r_peisong.r_active i{background-position:-25px -22px;}
+        .r_membernav dl dt.r_zhifu:hover i,
+        .r_membernav dl dt.r_zhifu.r_active i{background-position:-25px -43px;}
+        .r_membernav dl dt.r_active{background:#d83528;}
+        .r_membernav dl dt.r_active a{color:#fff}
+        .r_membernav dl dd{padding-left:17px;}
+        .r_membernav dl dd a{display:block;padding-left:8px;height:26px;line-height:26px;font-size:12px;color:#606060;transition:all .3s ease;}
+        .r_membernav dl dd a:hover,.r_membernav dl dd a.r_active{background:#d83528;color:#fff;text-decoration:none;}
+
+        /*--ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½--*/
+        /*===ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½====*/
+        .h_service h3{ line-height:55px;}
+        .h_service h3.fw{border-bottom:1px solid #e2e2e2;}
+        .h_service ul.fuwu{width: 100%;float:left;}
+        .h_service ul.fuwu li{float:left;width: 24.9%;border-bottom: 1px solid #e2e2e2;padding: 25px 0 20px;}
+        .h_service ul.fuwu li a{ display:inline-block;width: 100%;}
+        .h_service ul.fuwu li img{ display: block;width: 50px;height: 50px;margin:15px 0 0 15px;overflow: hidden; float:left;transform: translateZ(0px);) }
+        .h_service ul.fuwu li:hover img {animation: 1s ease 0s normal none 1 wobble-vertical;}
+        .h_service ul.fuwu li s{ float:right;width:1px;height:70px;border-right: 1px solid #e2e2e2;margin-top:7px;}
+        .h_service ul.fuwu li dl{width: 90px;height: 78px;text-align:left;}
+        .h_service ul.fuwu li dt{color: #222; line-height:28px;font-size: 14px;}
+        .h_service ul.fuwu li dd{color: #606060;}
+
+        /*===ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tabï¿½Ð»ï¿½====*/
+        .h_tabbox .h_tit{ border-bottom:1px solid #e2e2e2; font-size:14px;}
+        .h_tabbox .h_tit li{float:left;text-align: center;padding:0 20px 8px; margin-bottom:-1px;}
+        .h_tabbox .h_tit li.cur{color:#d83528;border-bottom:1px solid #d83528;}
+        .h_tabbox .h_tcontent{padding: 10px 20px;display:none;}
+        .h_tabbox .h_tcontent ul li{ width:40%; margin-left:10px; float:left;line-height:33px;list-style:square; color:#999;}
+        .h_tabbox .h_tcontent ul li a:hover{ color:#d83528;}
+        .h_tabbox .r_dispalyB{display:block;}
+
+        @media (max-width:1023px){
+            .h_service ul.fuwu li{padding:15px 0 10px;}
+            .h_service ul.fuwu li img{margin:0 0 10px 33%;}
+            .h_service ul.fuwu li:hover img {animation: 1s ease 0s normal none 1 wobble-horizontal;}
+            .h_service ul.fuwu li dl{ width:85%;}
+            .h_service ul.fuwu li dl dt{ text-align:center;}
+            .h_service ul.fuwu li s{height: 120px; width:1px; margin-top: -50px;}
+            .h_tabbox .h_tit li{padding:0 15px 8px;}
+        }
+
+        /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³*/
+        .h_jiaoyi{ padding-top:15px;}
+        .h_jiaoyi .tiaokuan{border-bottom: 1px solid #E2E2E2; padding: 20px 95px;font-size:14px;}
+        .h_jiaoyi .tiaokuan1{ border-bottom:none;margin-bottom:10px;}
+        .h_jiaoyi .tiaokuan h1{ font-size:30px;}
+        .h_jiaoyi .tiaokuan h3{ font-size:16px;line-height: 27px;}
+        .h_jiaoyi .tiaokuan p{ line-height:28px;}
+        .h_jiaoyi .tiaokuan p.indent{ text-indent:2em;}
+        .h_jiaoyi .tiaokuan ul{padding-left: 50px;}
+        .h_jiaoyi .tiaokuan ul li{ list-style-type: square;color: #999;line-height: 28px;font-size: 12px;}
+        .h_jiaoyi .tiaokuan ul li a{color:#d83528 }
+
+        /*ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½*/
+        .r_tablebox{width:98%;margin:0 auto 20px;height:360px;overflow:scroll;border-left:1px solid #e2e2e2;*position:relative;}
+        .r_searchbox{border-bottom:none}
+        .r_storetable{border:1px solid #e2e2e2;border-collapse:collapse;border-right:none;border-left:none;table-layout:fixed;overflow:hidden;position:relative;}
+        .r_storetable tbody > tr > td{border:1px solid #e2e2e2;padding:5px 0;line-height:20px;text-align:center;word-wrap:break-word;}
+        .r_storetable tbody > tr > td:first-child{border-left:none;}
+        .special { font-size: 15px; font-weight: bold; color: #d83528; }
+        .special_box { background:#faf8cc }
+
+        /*ï¿½ï¿½ï¿½ï¿½*/
+        /*-- Wobble Vertical --*/
+        @-webkit-keyframes wobble-vertical {
+            16.65% {
+                -webkit-transform: translateY(8px);
+                transform: translateY(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateY(4px);
+                transform: translateY(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateY(-2px);
+                transform: translateY(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateY(1px);
+                transform: translateY(1px);
+            }
+
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        @keyframes wobble-vertical {
+            16.65% {
+                -webkit-transform: translateY(8px);
+                -ms-transform: translateY(8px);
+                transform: translateY(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateY(-6px);
+                -ms-transform: translateY(-6px);
+                transform: translateY(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateY(4px);
+                -ms-transform: translateY(4px);
+                transform: translateY(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateY(-2px);
+                -ms-transform: translateY(-2px);
+                transform: translateY(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateY(1px);
+                -ms-transform: translateY(1px);
+                transform: translateY(1px);
+            }
+
+            100% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+
+        /*ï¿½ï¿½ï¿½ï¿½*/
+        /*-- wobble-horizontal --*/
+        @-webkit-keyframes wobble-horizontal {
+            16.65% {
+                -webkit-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateX(-6px);
+                transform: translateX(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateX(4px);
+                transform: translateX(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateX(-2px);
+                transform: translateX(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateX(1px);
+                transform: translateX(1px);
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+        @keyframes wobble-horizontal {
+            16.65% {
+                -webkit-transform: translateX(8px);
+                -ms-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateX(-6px);
+                -ms-transform: translateX(-6px);
+                transform: translateX(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateX(4px);
+                -ms-transform: translateX(4px);
+                transform: translateX(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateX(-2px);
+                -ms-transform: translateX(-2px);
+                transform: translateX(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateX(1px);
+                -ms-transform: translateX(1px);
+                transform: translateX(1px);
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+
+
+        /*Tï¿½ï¿½î¶¯Ò³ï¿½ï¿½*/
+        .y_tcobtn{background:#f10517;font-size:24px;color:#fff;padding:4px 47px 6px;border-radius:5px;}
+        .y_tcobtn:hover{background:#cd0817;color:#fff;}
+        .y_tcarttit{background:#f2f2f2;border-bottom:1px solid #b6b6b6;padding:35px 0 30px;color:#333;text-align:center;}
+        .y_tcarttit h2{font-size:52px;line-height:70px;margin-bottom:22px;font-weight:normal;}
+        .y_tcarttit h3{font-size:30px;line-height:48px;font-weight:normal;}
+        .y_tcarttit h3 span{display:block;font-size:36px;}
+        .y_bgfff{background:#fff;overflow:hidden;}
+        .y_tcodecare{font-size:16px;line-height:36px;padding:20px 0 20px 18%;}
+        .y_tcodelist{padding-bottom:20px;}
+        .y_tcodelist li{border:2px solid #f2f2f2;border-radius:3px;overflow:hidden;padding:25px 0;margin-bottom:20px;}
+        .y_tcodelist li .y_pic{float:left;width:280px;height:280px;overflow:hidden;margin-left:90px;}
+        .y_tcodelist li .y_pic img{width:280px;height:280px;}
+        .y_tcodelist li .y_ms{float:left;width:520px;padding:40px 0 0 20px;}
+        .y_tcodelist li .y_ms h4{font-size:24px;height:6em;overflow:hidden;margin-bottom:20px;font-weight:normal;}
+        .y_tcodelist li .y_ms h4 a:hover{color:#d83528}
+        .y_tcodelist li .y_codebtn{text-align:right;padding-right:10px;}
+        /*Ê¹ï¿½ï¿½Tï¿½ï¿½*/
+        .y_tcodeuse{padding:45px 0 60px;}
+        .y_tcodeuse h2{font-size:54px;padding-bottom:30px;font-weight:normal;}
+        .y_tcodeform{float:left;width:400px;border-right:1px solid #ccc;padding:10px 80px 10px 0;box-sizing: content-box;}
+        .y_tcodeform .form_group{margin-bottom:10px;overflow:hidden;}
+        .y_tcodeform .form_group .form-control{font-size:16px;padding-top:9px;padding-bottom:10px;color:#999}
+        .y_tcodeform .form_group .w_100{display:block;width:378px;;}
+        .y_tcodeform .form_group .form-control.fl{width:228px;}
+        .y_tcodeform .y_yzimg{float:right;width:136px;height:40px;background:#fff;border:1px solid #e2e2e2;text-align:center;}
+        .y_tcodeform .y_yzimg img{max-height:100%;}
+        .y_tcodeform .y_change{text-align:right;font-size:16px;margin-bottom:15px;}
+        .y_tcodeform .y_change a{color:#999;}
+        .y_tcodeform .y_change a:hover{color:#d83528}
+        .y_tcodeform .btn{display:block;width:100%;padding:4px 0 6px;}
+        .y_tcodeuseslide{float:right;margin-top:40px;width:270px;padding-left:160px;background:url(../img/t_codebg.png) left center no-repeat;box-sizing:content-box;}
+        .y_tcodeuseslide dt{font-size:30px;margin-bottom:15px;}
+        .y_tcodeuseslide dd{font-size:16px;}
+
+        /*ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½*/
+        .help_online h3{border-bottom: 1px solid #E2E2E2;padding: 30px 30px 15px;text-align:center; font-size:16px;}
+        .help_online .tit h4{text-align:center; padding:30px 0; font-size:14px; font-weight:normal;}
+        .help_online .tit table{width:90%; margin:0 auto;}
+        .help_online .tit table td{border: 1px solid #EEE;padding: 5px 10px;background: #FDFDFD;}
+        .help_online .tit p{width:90%; margin:0 auto; font-size:14px;}
+
+
+        @media (max-height:900px) and (max-width:1440px){ /*BYERIC æˆ‘æ¢çš„ï¼ï¼ï¼*/
+            .r_tablebox{margin:0;width: 100%;}
+            .r_storetable tbody > tr > td{font-size:12px;line-height:16px;}
+            .container.y_mb30 .section{border:0}
+        }
+    </style>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- header-->
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<!-- side bar start -->
+<div class="mask" ></div>
+<div class="slidebar">
+    <!-- Shopping Cart html start -->
+    <span class="close" >&#xe63b;</span>
+    <div class="cart" id="dvPlatTopCart" >
+        <h3 class="cart-head">
+            <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                <img class="loading"  src="http://10.73.128.174:20300/static/usercenter/img/loading.gif">
+            </div>
+        </h3>
+    </div>
+    <!-- Shopping Cart html end -->
+    <!-- Registration html start -->
+    <div class="regist" >
+        <h3>
+            <span class="shoping">&#xe624;</span>注册
+        </h3>
+        <div class="login-inp">
+            <div><input type="text" placeholder="手机或邮箱"></div>
+            <div class="verify"><input type="text" placeholder="图片验证码"><span><img src="http://10.73.128.174:20300/static/kuyu/common/img/verify.gif"></span></div>
+            <div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种"></div>
+            <div><input type="text" placeholder="确认密码"></div>
+            <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+            <div><button class="buy zhuce">注册</button></div>
+            <p class="login-text"><span class="fr regis">登录</span></p>
+        </div>
+    </div>
+    <!-- Registration html end -->
+    <!-- login html start -->
+    <div class="login" id="slideLoginSide" >
+
+    </div>
+    <input type="text" id="test">
+    <!-- 判断是否已经登录，同步登录用于判断 -->
+    <input type="hidden" name="userloginname" id="userloginname" value="">
+    <input type="hidden" name="isRefresh" id="isRefresh" value="null">
+    <!-- login html end -->
+</div>
+<!-- side bar end -->
+<article class="container y_mb30">
+    <div class="section">
+        <section class="h_title text-center">
+            <h3 style="margin-bottom: 10px">使用条款</h3>
+            <span class="f_clr999">2015-08-13 22:46:58</span>
+        </section>
+        <div class="h_zxcontent">
+            <p></p><p style="text-indent: 2em; line-height: normal;">客户在接受商品订购与送货的同时，有义务遵守以下交易条款。</p><p style="text-indent: 2em; line-height: normal;">TCL商城保留不经通知就可以修改这些条款的权利。您在TCL商城下订单之前或接受TCL商城送货之前，请您仔细阅读以下条款：&nbsp;</p><p><br></p><p style="text-indent: 2em; line-height: normal;">1、订购的商品价格以TCL商城工作人员最终确定的价格为准。</p><p style="text-indent: 2em;"><br></p><p style="text-indent: 2em; line-height: normal;">2、请清楚准确地填写您的真实姓名、送货地址及联系方式。因如下情况造成订单延迟或无法配送等，TCL商城将不承担责任：&nbsp;</p><p><br></p><p dir="ltr" style="text-indent: 2em; line-height: normal;">&nbsp; &nbsp; A. 客户提供错误信息和不详细的地址；&nbsp;</p><p dir="ltr" style="text-indent: 2em; line-height: normal;">&nbsp; &nbsp; B. 货物送达无人签收，由此造成的重复配送所产生的费用及相关的后果；&nbsp;</p><p dir="ltr" style="text-indent: 2em; line-height: normal;">&nbsp; &nbsp; C. 不可抗力，例如：自然灾害、交通戒严、突发战争等。&nbsp;</p><p><br></p><p style="text-indent: 2em; line-height: normal;">3、安全性：无论您是电话订购商品或是网络订购商品，我们会保证交易信息的安全，并由TCL商城授权的员工处理您的订单。&nbsp;</p><p><br></p><p style="text-indent: 2em; line-height: normal;">&nbsp;4、隐私权：TCL商城尊重您的隐私权，在任何情况下，我们都不会将您的个人和订单信息出售或泄露给任何第三方（国家司法机关调取除外）。我们从网站上或电话中得到的所有客户信息仅用来处理您的相关订单。&nbsp;</p><p><br></p><p style="text-indent: 2em; line-height: normal;">&nbsp;5、免责：如因不可抗力或其它TCL商城无法控制的原因使TCL商城销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，TCL商城会尽可能合理地协助处理善后事宜，并努力使客户免受经济损失。</p><p style="text-indent: 2em; line-height: normal;">&nbsp;</p><p style="text-indent: 2em; line-height: normal;">&nbsp;6、客户监督：TCL商城希望通过不懈努力，为客户提供最佳服务，TCL商城在给客户提供服务的全过程中接受客户的监督。</p><p style="text-indent: 2em; line-height: normal;">&nbsp;</p><p style="text-indent: 2em; line-height: normal;">&nbsp;7、争议处理：如果客户与TCL商城之间发生任何争议，可依据当时双方所认定的协议或相关法律来解决，任何一方均可向惠州市惠城区法院提起诉讼。&nbsp;</p><p><br></p><p style="text-indent: 2em; line-height: normal;">&nbsp;温馨提示：
+            我们保证出货时商品外包装的完好无缺。请您在收到货物时当场仔细 检查发票及货品与送货单的商品是否一致，如果发现商品缺少或已破损等情况，请当场（即配送人员还在现场时）与我司客服部联系；如果发现邮寄包装破损，货物 在运输途中破损等情况，请当场指出并拒收，拒收后请致电我司客服，如您已签收或他人代为签收，则视为商品外包装、商品数量及内容无误，我司将不再接受该商 品的任何退换货申请。电子类商品如手机，相机等产品请您在确认外观无损的情况下开机试用，如开机试用后，发现外观问题我司将不再接受该商品的任何 退换货申请。<br></p><p></p>
+        </div>
+    </div>
+</article>
+<div class="help"><div class="min-wid"><dl>
+    <dt>帮助中心</dt>
+    <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+    </dd>
+    <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+    </dd>
+    <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+    </dd>
+    <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+    </dd>
+</dl><dl><dt>服务支持</dt><dd><a target="_blank" href="/pages/service/service.html#policy">售后服务</a></dd><dd><a target="_blank" href="/pages/service/service.html#repair">自助服务</a></dd><dd><a target="_blank" href="/pages/service/service.html#query">进度查询</a></dd><dd><a target="_blank" href="/pages/service/service.html#policye">电子保单</a></dd></dl><dl><dt>客户服务</dt><dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd><dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd><dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd></dl><dl><dt>关注我们</dt><dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd><dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&amp;refer=www.tcl.com&amp;language=zh_cn&amp;type=widget_page&amp;vsrc=app_followbutton&amp;backurl=http%3A%2F%2Fwww.tcl.com%2F&amp;rnd=1453360859071">官方微博</a></dd><dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd></dl><dl><dt>应用服务</dt><dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd><dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd><dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd><dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd><dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd></dl><dl class="last-r"><p class="red phone">4008-123456</p><p class="grey">（24小时在线，仅收市话费）</p><a href="/pages/service/customerServiceKuyu.html" target="_self"><i></i>24小时在线客服</a></dl></div></div>
+<div class="footer"><div><div class="foot-logo"></div><p class="blod"><a target="_blank" href="/group/companyInfo/index">关于TCL</a>|<a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|<a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|<a target="_blank" href="/group/news/index">新闻中心</a>|<a target="_blank" href="/group/recruitment/index">人才招聘</a>|<a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p><p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号<a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|<a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|<a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p><div class="foot-r"><div class="language"><i class="arrow"></i><a href="/pages/index/index.html" class="lang-item active">中文简体</a><a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div><div><img src="../../app/images/credibility.png"></div></div></div></div>
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+<script src="low.js"></script>
+</body>
+</html>

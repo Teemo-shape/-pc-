@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head> <% var R = __result__ %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%=R.title%>_服务政策 – TCL内购商城</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/app/css/serviceRevision.css">
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include ../../header %>
+<div class="navScum">
+        <div class="content"><a href="/">首页</a> > <a href="/pages/service-home/index.html">服务</a> > <a>服务政策</a></div>
+    </div>
+    <div class="server-box">
+        <div class="server-menu">
+            <h3 class="title">自助服务</h3>
+            <div class="ser-item"><a href="/pages/serviceRevision/repair.html">我要维修</a><span class="ser-sank"></span></div>
+            <div class="ser-item"><a href="/pages/serviceRevision/install.html">我要安装</a><span class="ser-sank"></span></div>
+            <div class="ser-item J-SerItem">
+                <p class="p">服务政策</p>
+                <ul class="J-Polocy active">
+                    <% R.menus.forEach(function(ele, index, arr){ %>
+                        <%  if (ele.uuid == R.contentId) {%>
+                            <li class="ser-item child active" data-uuid="<%=ele.uuid %>"><a href="policy?id=<%=ele.uuid %>"><%=ele.contentTitle %></a></li>
+                        <%} else {%>
+                            <li class="ser-item child" data-uuid="<%=ele.uuid %>"><a href="policy?id=<%=ele.uuid %>"><%=ele.contentTitle %></a></li>
+                        <%}%>
+                    <% })%>
+                </ul>
+            </div>
+            <div class="ser-item"><a href="/pages/serviceRevision/autoCheck.html">自助检测</a><span class="ser-sank"></span></div>
+        </div>
+        <div class="server-r">
+            <h3 class="sel-title">
+                <div class="sel-tit-fl">
+                    <p class="J-SelTitle">
+                        <% if(R.content.contentTitle) {%>
+                            <%=R.content.contentTitle %>
+                        <%}%>
+                    </p>
+                    <span class="tit-time J-SelTime">
+                        <% if(R.content.createTime) {%>
+                            <%=R.content.createTime %>
+                        <%}%>
+                    </span>
+                </div>
+                <div class="right">
+                    <span>扫描二维码 关注公众号</span>
+                    <div class="sel-code"><img src="../../app/images/code-img.png" /></div>
+                </div>
+            </h3>
+            <div class="ser-form">
+                <div class="sel-content J-SelContent">
+                    <% if(R.content.introduction) {%>
+                        <%-R.content.introduction %>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+<% include ../../footer %>
+<script>
+ $(document).on('click', '.p', function(e){
+    
+    var _this = $('.J-SerItem').find('ul');
+    if (_this.hasClass('active')) {
+        _this.removeClass('active');
+        _this.slideUp(180);
+    } else {
+        _this.addClass('active');
+        _this.slideDown(180);
+    }
+});
+</script>

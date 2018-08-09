@@ -1,0 +1,122 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+.banner .banner-anchor {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    opacity: 1;
+    /* text-indent: -90em; */
+    background-repeat: no-repeat;
+    /*transition: transform .6s, opacity .6s;*/
+    color: #666;
+    /*background-color: rgba(255,255,255,.3);*/
+    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4Cffffff,endColorstr=#4Cffffff);*/
+    border-radius: 50%;
+    /*text-align: center;*/
+    /*line-height: 70px;*/
+    color: #fff;
+}
+
+/*.banner .prev {*/
+    /*left: 20px;*/
+    /*!*transform: translateX(-100%);*!*/
+/*}*/
+
+.banner .prev:hover,
+.banner .next:hover {
+    opacity: 1
+}
+
+.banner .prev:hover {
+}
+
+.banner .next {
+    right: 75px;
+    /*transform: translateX(100%);*/
+}
+
+.banner .next:hover {
+}
+
+.banner:hover .banner-anchor {
+    /*transform: translateX(0);*/
+    /*opacity: 1;*/
+    /*visibility: visible*/
+}
+.banner .banner-slide {
+    position: absolute;
+    display: none;
+    width:100%;
+}
+.banner .banner-slide a {
+    display: block;
+}
+.banner .banner-slide img{
+    width:100%;
+    display: block;
+}
+
+
+.banner .inner {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto
+}
+
+.banner .banner-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center
+}
+
+.banner .banner-dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #fff;
+    /*transition: transform .2s;*/
+    cursor: pointer
+}
+
+.banner .banner-dots span:hover {
+    /*transform: scale(1.1)*/
+}
+
+.banner .banner-dots .active {
+    background-color: #db192a;
+    transform: scale(1.1)
+}
+.banner .banner-tit {
+    display: none
+}
+
+.flex-prev, .flex-next {
+    width: 80px;
+    height: 102px;
+    font-family: "iconfont-tcl";
+    font-size: 30px;
+    color: #666 \0;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    z-index: 1001;
+    margin-top: -15px;
+}
+
+/*.flex-prev {*/
+    /*left: 20px;*/
+/*}*/
+
+/*.flex-next {*/
+    /*right: 45px;*/
+/*}*/

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>系统繁忙</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <% include public %>
+    <style>
+        .hea-box {
+            width: 100%;
+            float: initial;
+            background-color: #f5f5f5;
+            padding: 5px 0; 
+        }
+        .hea-box .logo{
+            font-size: 70px;
+            width: 70px;
+            display: block;
+            float: initial;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #Img{
+            min-height: 300px;
+        }
+        #footFixed{
+            position: absolute;
+            bottom: 0;
+        }
+        .backIndex{
+            margin: 35px auto 0;
+            text-align: center;
+            color: #fff;
+            display: block;
+            width: 150px;
+            padding: 10px 20px;
+            background-color: #f30;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 class="hea-box" ><a title="TCL 内购商城" href="/" class="logo">&#xe6a9;</a></h1>
+    <div id="Img" style="width: 362px; margin: 10% auto 8%; text-align:center;font-size:30px;">
+        系统繁忙，请稍后再试!
+    </div>
+</div>
+<script>
+    var channelName = "<%=msg%>";
+    if(Array.isArray && channelName) {
+        console.warn('Error: '+channelName)
+    }
+</script>
+<% include footer %>

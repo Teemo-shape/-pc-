@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> TCL服务中心_TCL帮助中心-TCL内购商城</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="TCL电视,TCL曲面4K,TCL 4K,TCL智能电视,TCL健康家电,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,么么哒,TV+,娱乐TV+,芒果TV" />
+    <meta name="description" content="TCL 官网给您真诚满意的服务是我们的宗旨，了解 TCL 政策，进度查询以及常见问题，在线帮您解答 TCL 产品问题,咨询电话4008-123456" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/about.css">
+    <!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+    <style>
+    .header.my{position:relative;}
+    #fwzc img{
+    	display: block;
+    	margin: -16px auto 0px;
+    }
+    .code-img {
+        display: inline-block;
+        height: 53px;
+        width: 150px;
+        margin-left: -150px;
+        float: left;
+        position: relative;
+    }
+    #code-img-cont {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+    }
+    </style>
+
+
+</head>
+<body>
+    <!-- header-->
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!-- side bar start -->
+    <div class="mask" ></div>
+    <div class="slidebar">
+        <!-- Shopping Cart html start -->
+        <span class="close" >&#xe63b;</span>
+        <div class="cart" id="dvPlatTopCart" >
+            <h3 class="cart-head">
+                <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+                    <img class="loading"  src="http://10.73.128.174:20300/static/usercenter/img/loading.gif">
+                </div>
+            </h3>
+        </div>
+        <!-- Shopping Cart html end -->
+        <!-- Registration html start -->
+        <div class="regist" >
+            <h3>
+                <span class="shoping">&#xe624;</span>注册
+            </h3>
+            <div class="login-inp">
+                <div><input type="text" placeholder="手机或邮箱"></div>
+                <div class="verify"><input type="text" placeholder="图片验证码"><span><img src="http://10.73.128.174:20300/static/kuyu/common/img/verify.gif"></span></div>
+                <div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种"></div>
+                <div><input type="text" placeholder="确认密码"></div>
+                <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+                <div><button class="buy zhuce">注册</button></div>
+                <p class="login-text"><span class="fr regis">登录</span></p>
+            </div>
+        </div>
+        <!-- Registration html end -->
+        <!-- login html start -->
+        <div class="login" id="slideLoginSide" >
+
+        </div>
+        <input type="text" id="test">
+        <!-- 判断是否已经登录，同步登录用于判断 -->
+        <input type="hidden" name="userloginname" id="userloginname" value="">
+        <input type="hidden" name="isRefresh" id="isRefresh" value="null">
+        <!-- login html end -->
+</div>
+    <!-- side bar end -->
+
+    <!-- Main Service Content start -->
+    <div class="z_service">
+        <h1><span>给您真诚满意的服务是</span>我们的宗旨</h1>
+        <div class="z_bigbox">
+            <ul class="z_nav">
+                <li id="setBtn1">
+                    <a href="#repair" id="zweixiu">
+                        <span class="zq_icon">&#xe60a;</span>
+                        <p class="z_navtype">我要维修</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#policy" id="zweixiu">
+                        <span class="zq_icon">&#xe607;</span>
+                        <p class="z_navtype">服务政策</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#query" id="zweixiu">
+                        <span class="zq_icon">&#xe62e;</span>
+                        <p class="z_navtype">进度查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#problem" id="zweixiu">
+                        <span class="zq_icon">&#xe60b;</span>
+                        <p class="z_navtype">常见问题</p>
+                    </a>
+                </li>
+                <li class="z_two" id="setBtn2">
+                    <a href="#repair" id="zweixiu">
+                        <span class="zq_icon">&#xe641;</span>
+                        <p class="z_navtype">我要安装</p>
+                    </a>
+                </li>
+                <li class="z_two">
+                    <a href="#policye" id="zweixiu">
+                        <span class="zq_icon">&#xe642;</span>
+                        <p class="z_navtype">电子保单</p>
+                    </a>
+                </li>
+                <li class="z_two">
+                    <a href="/pages/service/customerServiceKuyu.html" id="zweixiu">
+                        <span class="zq_icon">&#xe649;</span>
+                        <p class="z_navtype">联系客服</p>
+                    </a>
+                </li>
+                <li class="z_two">
+                    <a href="/pages/service/download.html" id="zweixiu">
+                        <span class="zq_icon">&#xe669;</span>
+                        <p class="z_navtype">服务下载</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	<!--导航 end-->
+
+    <!--进度查询-->
+    <div id="query" class="z_bigbox">
+        <div class="z_jindu">
+            <h2>进度查询</h2>
+            <span class="z_line"></span>
+            <div class="z_jdcx">
+                <input type="text" id="jindu" class="z_cx fl" placeholder="输入手机号"><span type="button" class="z_btn icon fr jincuchaxun">&#xe62e;</span>
+            </div>
+            <div id="serviceDemandDealProcess"></div>
+        </div>
+    </div>
+    <!--进度查询 end-->
+
+    <!--维修安装-->
+	<div id="repair" class="z_repair clearfloat">
+    <div class="hd clearfloat ">
+        <ul class="j-repair">
+            <li class="active" typevalue="0">我要维修<span></span></li>
+            <li class="" typevalue="1">我要安装<span></span></li>
+        </ul>
+    </div>
+    <div class="bd  clearfloat">
+        <div class="z_bigbox">
+            <ul class="j-bigbox">
+                <li>
+                    <form action="/servicecenter/saveServiceKuyu" method='post' id="serviceForm">
+                        <input type="hidden" name="area" id="area">
+                        <input type="hidden" id="valuetype" value="0">
+                        <label class="wd4">
+                            <input type="text" name="linkman" id="linkman" value="" placeholder="姓名(必填)" value=""></label>
+                        <label class="wd4">
+                            <input type="text" name="mobile" id="mobile" value="" placeholder="联系电话(必填)" value=""></label>
+                        <label class="wd4">
+                            <input type="text" name="email" id="email" value="" placeholder="邮箱(可选)" value=""></label>
+                        <div class="wd4 data-box j-data psRelate">
+                            <input type="text" name="applyTime" id="applyTime" class="datepick j-val" value="" placeholder="上门日期" value="" readonly></div>
+                        <div class="wd1">
+                            <div class="form_group">
+                                <div class="fl wd4" id="dv_province" style=" margin-bottom: 0;">
+                                    <span class="y_simselect">
+                                        <s>
+                                        </s>
+                                    </span>
+                                    <select class="form_control" name="province" id="sel_province"></select>
+                                </div>
+                                <div class="fl wd4" id="dv_city" style="display: none; margin-bottom: 0;">
+                                    <span class="y_simselect">
+                                        <s>
+                                        </s>
+                                    </span>
+                                    <select class="form_control" name="city" id="sel_city"></select>
+                                </div>
+                                <div class="fl wd4" id="dv_region" style="display: none;margin-bottom: 0;">
+                                    <span class="y_simselect">
+                                        <s>
+                                        </s>
+                                    </span>
+                                    <select class="form_control" name="region" id="sel_region"></select>
+                                </div>
+                                <div class="fl wd4" id="dv_street" style="display: none;margin-bottom: 0;margin-right:0">
+                                    <span class="y_simselect">
+                                        <s>
+                                        </s>
+                                    </span>
+                                    <select class="form_control" name="street" id="sel_street"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="wd1">
+                            <input class="w10" type="text" name="addressDetail" id="addressDetail" value="" placeholder="详细地址(必填)" value=""></label>
+                        <div class="wd4">
+                            <select id="productCategory" name="productCategory">
+                                <option value="">请选择产品类别</option></select>
+                        </div>
+                        <div class="wd4">
+                            <select name="lastproductCategoryName" id="lastproductCategoryName">
+                                <option value="">请选择产品子类</option></select>
+                        </div>
+                        <div class="wd4">
+                            <select name="productVersion" id="productVersion">
+                                <option value="">请选择产品型号</option></select>
+                        </div>
+                        <select class="wd4" name="serviceType" id="serviceType"></select>
+                        <div class="wd1">
+                            <textarea rows="2" name="description" id="description" placeholder="需求描述(必填)"></textarea>
+                        </div>
+                        <div class=" clearfloat"></div>
+                        <!--验证码 start-->
+                        <div class="check-code">
+                            <input class="appointment-text" type="text" name="repairAndinstallCode" id="repairAndinstallCode" value=""  placeholder="验证码(必填)" maxlength="4">
+                            <span class="appointment-code">
+                            <img id="appointment-img" src="">
+                        </span>
+                            <span class="change-img j-tochange" id="j-tochange">换一张</span>
+                            <p class="code-tips">
+                                <span class="code-true">验证码正确</span>
+                                <span class="code-err">验证码错误</span>
+                            </p>
+                        </div>
+                        <!--验证码 end-->
+
+                        <span class="z_tijiao" id="z_tijiao" type="button">提交申请</span></form>
+
+                        <input type="hidden" value="" id="imgKey1">
+                        <input type="hidden" value="" id="imgKey2">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<!--维修安装 end-->
+    <!--服务政策-->
+    <div id="policy" class="z_bigbox">
+        <div class="z_jindu">
+            <h2>请选择需要服务和对应产品类型</h2>
+            <span class="z_line"></span>
+            <div class="twotab">
+                <div class="hd clearfloat">
+                    <ul class="j-twotab">
+                        <li class="active">产品服务政策 <span></span></li>
+                        <li >收费标准 <span></span></li>
+                    </ul>
+                </div>
+                <div class="bd two-content clearfloat" id="fwzc">
+					<ul id="ul1"></ul>
+					<ul id="ul2" style="display: none"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--服务政策 end-->
+    <!--常见问题-->
+    <div id="problem" class="z_wrong clearfloat">
+        <div class="z_bigbox">
+            <h2>常见问题</h2>
+            <span class="z_line"></span>
+            <div class="threebox">
+                <div class="bd">
+                    <ul class="j-threebox" id="changjianwenti">
+                        <li>
+							<div  class="listinfo">
+							</div>
+						</li>
+                    </ul>
+                </div>
+                <div class="hd">
+            <!-- <ul class="j-threetab">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul> -->
+          </div>
+         </div>
+        </div>
+    </div>
+    <!--常见问题 end-->
+
+    <!--电子保单-->
+    <div id="policye" class="z_bigbox">
+        <div class="z_table z_jindu clearfloat">
+            <span class="zq_icon fl">&#xe642;</span>
+            <h2 class="fl">电子保单</h2>
+            <div class="z_jdcx dzbd fr">
+                <input type="text" id="elecPolicy" class="z_cx fl" placeholder="输入手机号"><span type="button"  class="z_btn icon fr elecPolicy">&#xe62e;</span>
+            </div>
+            <div id="elecPolicyDiv"></div>
+        </div>
+    </div>
+    <!--电子保单 end-->
+
+    <!--联系客服-->
+    <div id="contact" class="z_bigbox">
+        <div class="z_jindu z_jindu-lx">
+            <h2>联系客服</h2>
+            <span class="z_line"></span>
+            <ul class="z_lianxi">
+                <li>
+                    <div class="z_icon z_icon1"></div>
+                    <p class="z_lx">在线服务</p>
+                    <p class="z_jiejue">在线对话，为您解决遇到的问题</p>
+                    <p class="z_jiejue">24小时在线</p>
+                    <a href="customerServiceKuyu.html" class="btn z_btn1">立即咨询</a>
+                </li>
+                <li>
+                    <div class="z_icon z_icon2"></div>
+                    <p class="z_lx">微信关注TCL用户服务</p>
+                    <img src="/app/images/z-ewm.png" alt="" class="z-ewm" width="120" height="120">
+                </li>
+                <li>
+                    <div class="z_icon z_icon3"></div>
+                    <p class="z_lx">客服热线</p>
+                    <p class="z_jiejue">仅收市话费，为您解决遇到的问题</p>
+                    <p class="z_jiejue">周一至周日全天服务</p>
+                    <p class="z_tel">4008-123456</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--联系客服 end-->
+    <!--验证码弹窗 start-->
+    <div class="code-container">
+        <div class="code-popup">
+            <h3 class="code-title">提示</h3>
+            <span class="code-close">X</span>
+            <div class="code-main"><!--332*135-->
+                <div class="code-input">
+                    <input type="text" name="typeValidateCode" id="query" placeholder="&nbsp;请输入图形验证码" maxlength="4">
+                    <span class="code-img">
+                        <img id="code-img-cont" src="">
+                    </span>
+                </div>
+                <p class="code-tips">
+                    <!--<span class="code-normal active">请输入验证码</span>-->
+                    <span class="code-true">验证码正确</span>
+                    <span class="code-err">验证码错误</span>
+                </p>
+                <button class="btn-confirm">确认</button>
+            </div>
+        </div>
+    </div>
+    <!--验证码弹窗 end-->
+
+    <!-- Main Service Content end -->
+
+    <!-- Help center html start -->
+    <div class="help">
+        <div class="min-wid">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                </dd>
+                <dd>
+                    <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policy">售后服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#repair">自助服务</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#query">进度查询</a>
+                </dd>
+                <dd>
+                    <a target="_blank" href="/pages/service/service.html#policye">电子保单</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>客户服务</dt>
+                <dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd>
+                <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+                <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd>
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd>
+                <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+                <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+            </dl>
+            <dl>
+                <dt>应用服务</dt>
+                <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+                <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+                <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+                <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+                <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+            </dl>
+            <dl class="last-r">
+                <p class="red phone">4008-123456</p>
+
+                <p class="grey">（24小时在线，仅收市话费）</p>
+                <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+            </dl>
+        </div>
+    </div>
+    <!-- Help center html end -->
+
+    <!-- footer html start -->
+    <div class="footer">
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="/group/companyInfo/index">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|
+                <a target="_blank" href="/group/news/index">新闻中心</a>|
+                <a target="_blank" href="/group/recruitment/index">人才招聘</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|
+                <a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="#" class="lang-item active">中文简体</a>
+                    <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+                <div><img src="/app/images/credibility.png"/></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer html end -->
+
+
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+
+    <!--[if (IE 8) | (IE 9)]>
+    <script src="../../app/js/jquery.placeholder.min.js"></script>
+    <script src="../../app/js/respond.js"></script>
+    <![endif]-->
+
+    <script>
+        require(['service.js'],function(obj){
+            obj.index();
+        })
+    </script>
+</body>
+</html>

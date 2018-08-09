@@ -1,0 +1,11 @@
+.user-name label, .user-name strong {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    left: 0;
+    color: #F50;
+    text-align: left;
+    padding-left: 62px;
+    font-weight: normal;
+    background: url(../../app/images/m_error.png) 43px 4px no-repeat;
+}

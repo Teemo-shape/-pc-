@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL - 产品评价</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/member.css">
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+    <style>
+        .m_content{
+            border:1px solid #eee;
+            padding: 40px 0 40px 40px;
+            min-height: 1070px;
+        }
+        .content_header {
+            height: 40px;
+            line-height:40px;
+            font-size: 22px;
+            color:#333;
+            border-bottom:1px solid #f0f0f0;
+        }
+        .content_header .sub_title{
+            font-size:14px;
+            color:#999;
+            margin-left: 30px;
+        }
+        .content_body{
+            margin-top: 42px;
+        }
+        .content_body .product-info{
+            width: 280px;
+            text-align: center;
+        }
+        .content_body .product-info p{
+            margin:2px 0;
+        }
+        .content_body .product-info .product_title{
+            font-size: 14px;
+            color:#333;
+        }
+        .content_body .product-info .product_param{
+            font-size: 12px;
+            color:#999;
+        }
+        .content_body .product-info .product_price{
+            font-size: 16px;
+            color:#FF4545;
+        }
+        .content_body .product-info .product_img{
+            width: 160px;
+        }
+        .content_body .comment_form{
+            margin-left: 280px;
+            padding-left: 48px;
+            border-left: 1px solid #e5e5e5;
+        }
+        .content_body .comment_form .form_item{
+            margin:24px 0;
+        }
+        .content_body .comment_form .zqstar.j-start{
+            margin: 0;
+        }
+        .content_body .comment_form .form_label{
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+            font-size: 14px;
+            color: #2A2A2A;
+            margin-right: 14px;
+        }
+        .content_body .comment_form .form_label_content{
+            display: block;
+            text-align: left;
+            width: 470px;
+            float: left;
+            word-wrap: break-word;
+        }
+        .content_body .comment_form textarea{
+            border:1px solid #ccc;
+            width: 500px;
+            height: 100px;
+            outline: none;
+            padding: 8px;
+            vertical-align: text-top;
+        }
+        .content_body .product-detail-item {
+            clear: both;
+            margin-bottom: 100px;
+        }
+        .content_body .j-comment-txt-btn{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #FF4545;
+            color: #fff;
+            font-size: 16px;
+            margin: 20px 0 0 379px;
+            cursor: pointer;
+        }
+        .content_body .comment_form .file {
+            position: relative;
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #e3e3e3;
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+            color: #ccc;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 12px;
+            font-size: 45px;
+            text-align: center;
+            font-weight: 100;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .content_body .comment_form .file input {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            filter: alpha(opacity=0);
+        }
+        .content_body .comment_form .imgList{
+            display: inline-block;
+            vertical-align: middle;
+            width: 470px;
+            float: left;
+        }
+        .content_body .comment_form .imgList dd{
+            position: relative;
+            float: left;
+            margin-left: 10px;
+        }
+        .content_body .comment_form .imgList img{
+            width: 130px;
+            height: 130px;
+        }
+        .content_body .comment_form .del_img{
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            font-size: 14px;
+            position: absolute;
+            right: -6px;
+            top: -6px;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .form_item_content {
+            float: left
+        }
+        .dn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<!-- go to top html-->
+<div class="goTop">
+    <a onclick="$('body,html').animate({scrollTop: 0 },500);"></a>
+</div>
+<div class="member_mian min-wid m-mt">
+    <!-- 菜单 -->
+    <!--左侧导航#navigation-->
+    <div class="fl nav_left">
+        <include type="userCenterBar" src="{{userCenterBar}}"></include>
+    </div>
+    <!-- 菜单end -->
+    <div class="fr mian_right" id="mian_right">
+        <div class="m_content">
+            <div class="content_header">
+                <h3>评价晒单<span class="sub_title">您的评价将给其他买家提供非常有价值的参考</span></h3>
+            </div>
+            <div class="content_body clearfloat">
+                <!--<div class="product-info fl">-->
+                    <!--<div><a  class="to_product_detail" href=""><img class="product_img" src="" alt="产品图片"></a></div>-->
+                    <!--<p class="product_title">TCL 55英寸34核原色量子点 （深空灰）</p>-->
+                    <!--<p class="product_param" id="product_param"></p>-->
+                    <!--<p class="product_price">¥2399.00</p>-->
+                <!--</div>-->
+                <!--<div class="comment_form">-->
+                    <!--<div id="comment_star">-->
+                        <!--<div id="zqstar1" class="j-start zqstar clearfloat">-->
+                            <!--<span class="form_label"><i class="red">*</i> 描述相符:</span>-->
+                            <!--<ul class="stars" id="stars_Product">-->
+                                <!--<li class=""><a href="javascript:;">1</a></li>-->
+                                <!--<li class=""><a href="javascript:;">2</a></li>-->
+                                <!--<li class=""><a href="javascript:;">3</a></li>-->
+                                <!--<li class=""><a href="javascript:;">4</a></li>-->
+                                <!--<li class=""><a href="javascript:;">5</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div id="zqstar2" class="j-start zqstar clearfloat">-->
+                            <!--<span class="form_label">卖家服务:</span>-->
+                            <!--<ul class="stars" id="stars_CustomerService">-->
+                                <!--<li class=""><a href="javascript:;">1</a></li>-->
+                                <!--<li class=""><a href="javascript:;">2</a></li>-->
+                                <!--<li class=""><a href="javascript:;">3</a></li>-->
+                                <!--<li class=""><a href="javascript:;">4</a></li>-->
+                                <!--<li class=""><a href="javascript:;">5</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div id="zqstar3" class="j-start zqstar clearfloat">-->
+                            <!--<span class="form_label">发货速度:</span>-->
+                            <!--<ul class="stars" id="stars_TransportService">-->
+                                <!--<li class=""><a href="javascript:;">1</a></li>-->
+                                <!--<li class=""><a href="javascript:;">2</a></li>-->
+                                <!--<li class=""><a href="javascript:;">3</a></li>-->
+                                <!--<li class=""><a href="javascript:;">4</a></li>-->
+                                <!--<li class=""><a href="javascript:;">5</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div id="commented_content" class="form_item"></div>-->
+                    <!--<form method="post" enctype="multipart/form-data">-->
+                        <!--<div id="comment_form">-->
+                            <!--<div>-->
+                                <!--<span class="form_label j-comment-txt-one">评价商品:</span>-->
+                                <!--<textarea name="" id="commit_coment" placeholder="开始对我们的产品评价吧，最多可以上传5张图"></textarea>-->
+                            <!--</div>-->
+                            <!--<div class="form_item">-->
+                                <!--<div class="form_item_content">-->
+                                    <!--<span class="form_label j-comment-txt-two">晒图:</span>-->
+                                    <!--<a href="javascript:;" class="file">-->
+                                        <!--<input type="file" name="file" accept="image/png,image/jpeg,image/jpg" class="upbtn" fileElementId="upload1" id="uploadImg" >-->
+                                        <!--<img src="" class="uploadimgShow" id="upload1_img0">-->
+                                        <!--<font class="font-config">+</font>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<dl class="imgList" id="imgList">-->
+                                    <!--&lt;!&ndash;<dd><img src="http://10.120.54.30:8888/group1/M00/00/E0/Cng2Hlriq_WAQ5yFAAAFg_saGls276.png" alt=""><span class="del_img">x</span></dd>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<dd><img src="http://10.120.54.30:8888/group1/M00/00/E0/Cng2Hlriq_WAQ5yFAAAFg_saGls276.png" alt=""><span class="del_img">x</span></dd>&ndash;&gt;-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                            <!--<dl>-->
+                                <!--<dd>-->
+                            <!--</dl>-->
+                        <!--</div>-->
+                    <!--</form>-->
+
+                <!--</div>-->
+                <p style="clear: both;" class="comment-btn-submit">
+                    <button id="save_appraise" class="j-comment-txt-btn">提交评价</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="help" id = "navFooterLink"></div>
+<div class="footer"></div>
+<div class="goTop">
+    <a href="#"></a>
+</div>
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+<script src="../../app/js/ajaxfileupload.js"></script>
+<script src="commentDetail.js"></script>
+</body>
+</html>

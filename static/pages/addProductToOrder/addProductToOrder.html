@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>TCL - 订单信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+		<meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/style.css">
+		<link rel="stylesheet" href="../../app/css/common.css">
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.active {
+				border: 1px solid red !important;
+			}
+			
+			.m_fullcut span {
+				background: #ff0000;
+				color: #fff;
+				padding: 0 15px;
+				line-height: 26px;
+				display: inline-block;
+				margin-right: 20px;
+			}
+			
+			.myform_control {
+				border: 1px solid #e5e5e5;
+				background: #fff;
+				padding: 9px 18px;
+				font: 14px/20px "microsoft YaHei";
+				color: #333;
+				width: 200px;
+				height: 40px;
+				padding-left: 14px;
+				padding-right: 14px;
+			}
+			.count-item.c_yd{
+				border-bottom: 0;
+			}
+		</style>
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!--头部-->
+		<!--判断是否编辑增值发票的判断-->
+		<input type="hidden" id="acompanyName" value="" />
+		<input type="hidden" id="acode" value="" />
+		<input type="hidden" id="aaddress" value="" />
+		<input type="hidden" id="aregisterMobile" value="" />
+		<input type="hidden" id="abankName" value="" />
+		<input type="hidden" id="abankNo" value="" />
+		<!--商户ID隐藏域-->
+		<input type="hidden" id="sUuid" value="" />
+		<!--商品单价-->
+		<input type="hidden" id="basePrice" value="" />
+		<!--订单总价-->
+		<input type="hidden" id="totalPrice" value="" />
+		<input type="hidden" id="affix" value="" />
+  		<input type="hidden" id="storePromotion" value="" />
+  		<input type="hidden" id="productPrice" value="" />
+		<input type="hidden" id="productBasePrice" value="" />
+		<input type="hidden" id="productNowPrice" value="" />
+		<input type="hidden" id="productUuid" value="" />
+		<input type="hidden" id="attrIds" value="" />
+		<input type="hidden" id="productBuyNum" value="" />
+		<!-- Top html start -->
+		<include type="header" src="../../app/plugins/header/nav-index.html"></include>
+		<!-- <div class="cart-nav" id="navHeader">
+			<div class="hea-box">
+				<a href="#" class="logo">&#xe656;</a>
+			</div>
+			<div class="fr">
+				<div class="order-num"><span id="headerUserName"></span>
+				</div>
+				<span class="order-num">我的订单</span>
+			</div>
+		</div> -->
+		<!-- Top html end -->
+		<!--	<div class="cart-nav">
+			<div class="hea-box">
+				<a href="/" class="logo">&#xe656;</a> 订单信息填写 </div>
+			<div class="fr">
+				<div class="order-num"><span>129365069</span><em class="arrow"></em>
+					<div class="order-operat">
+						<p class="item">
+							<a href="/usercenter/customercomplex/toMyCenter">个人中心</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/productfavorite/toPageKuyu">我的收藏</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/customercomplex/accountSecurityKuyu" target="_blank">账号管理</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/productappraise/toMyAppraiseKuyu">评价管理</a>
+						</p>
+						<p class="item">
+							<a href="/tclcustomer/logout">退出登录</a>
+						</p>
+					</div>
+				</div> <span class="order-num" onclick="window.location.href='/usercenter/order/listKuyu/1/5?init=true';">我的订单</span> </div>
+		</div>-->
+		<!-- Top html end -->
+		<!--头部 end-->
+		<div class="m-book-order-title">
+			<div class="txttitle red"></div>
+		</div>
+		<div  id="orderForm" >
+			<!-- 	经销商引导单 -->
+			<div class="mask j-mask" id="mask-address"></div>
+			<div class="mask j-mask" id="mask-ele"></div>
+			<div class="mask j-mask" id="mask-inv"></div>
+			<div class="box gray-back" id="showAddress"> 
+				<input type="hidden" name="checkArea" id="checkArea" value="" />
+				<!-- contrast html start -->
+				<div class="address">
+					<h3>收货地址</h3>
+					<ul class="add-box clearfloat"> <input type="hidden" id="receiverName_7487eaf488894395a7be05dfd8511b48" value="啊"> <input type="hidden" id="receiverAddress_7487eaf488894395a7be05dfd8511b48" value="爱上但是是"> <input type="hidden" id="receiverArea_7487eaf488894395a7be05dfd8511b48" value="香港特别行政区九龙观塘区九龙湾"> <input type="hidden" id="receiverMobile_7487eaf488894395a7be05dfd8511b48" value="13555555555">
+						<li class="item new">
+							<p class="add-address" id="newAddress"> <span class="line"></span> <span class="v-line"></span> </p>
+						</li>
+					</ul>
+				</div>
+				<!-- contrast html end -->
+			</div>
+			<div class="order">
+				<ul class="order-ul clearfloat">
+					<!-- 支付方式 -->
+					<li class="item">
+						<div class="fl name-text">支付方式</div>
+						<div class="fl"> <span class="order-tab red">在线支付(支持支付宝、微信、银联等)</span> </div>
+					</li>
+					<!-- 配送方式 -->
+					<li class="item">
+						<div class="fl name-text">配送方式</div>
+						<div class="fl mar-l red">快递配送 （全场免运费）</div>
+					</li>
+					<!-- 发票 -->
+					<li class="item">
+						<div class="fl line-h name-text">发票</div>
+						<input type="hidden" name="invoiceCate" id="invoiceCate" value="">
+						<div class="fl  mar-l"> <span class="order-but ele active" id="elei">电子发票</span> <span class="order-but inc" id="inci">增值税发票</span> </div>
+						<div class="shouInvoice-tip">电子发票法律效力、基本用途及使用规定同纸质发票。不随商品寄送。
+							<a href="javascript:;" class="elehide">什么是电子发票<i>?</i></a>
+							<div class="tip-dialog">
+								<ul class="clearfix">
+									<li>感谢您选择电子发票，电子发票是税局认可的有效付款凭证，其法律效力、基本用户及使用规定同纸质发票，可作为用户维权、保修的有效凭据。如需纸质发票可自行下载打印；</li>
+									<li>您在订单详情的"发票信息"栏可查看、下载您的电子发票。</li>
+								</ul>
+								<a target="_blank" href="/pages/service/toHelp.html?hid=5">了解详情 &gt;</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="item product-list">
+					<div class="name-text"> 商品</div>
+					<div class="discount ">
+						<div class="count-item c_yd"></div>
+					</div>
+				</div>
+				<input type="hidden" value="0" id="intetralMoneyShow" />
+				<div class="item clearfloat">
+					<div class="clearfix">
+						<div class="fl item-wid">
+							<p class="text">商品件数： <span class="red fr" id="real_total_num">0件</span></p>
+							<p class="text">金额合计：
+								<span class="red fr" id="real_total_money">
+									0元
+								</span>
+							</p>
+							<p class="text">活动优惠：
+								<span class="red fr" id="promotion_reduce_money">
+									-0.00元
+ 								</span>
+							</p>
+							<p class="text">优惠券抵扣：<span class="red fr" id="coupon_reduce_money">-0.00元</span></p>
+							<p class="text">
+								运费:<span class="red fr">
+  									0.00元
+								</span>
+							</p>
+							<p class="text red pay">
+								应付定金总额：&nbsp;&nbsp;
+								<span class="font24 fr">
+				 					 <input type="hidden" value="99.00" name="totalMoneyShow" id="totalMoney">	
+			     					 <strong id="totalMoneyShow" orginvalue="99.00">0元</strong>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="cart_btn m_cart_btnbox clearfix m_order_show">
+						<div class="fr txtRight">
+							<button class="buy  submit" id="submitForm1">立即下订单</button>
+							<p class="m-order-book-txt">点击<span class="red">"立即下订单"</span>按钮，即表示您确认自己接受本次销售交易的条款和条件。</p>
+							<div class="m-order-book-txt">支付定金后恕不退还
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" id="checkcoupon" value="" />
+		<!--3种弹框-->
+		<div id="addele" style="display: none">
+			<div class="message-box j-ele" style="opacity: 1;filter: alpha(opacity=100); z-index: 1502; visibility: visible;">
+				<span class="close j-close" id="closeinv"></span>
+				<div class="invoice addIvoice ele i-ele" style="display: none;">
+					<h3 class="title">电子发票</h3>
+					<p> </p>
+					<div class="en-select j-select"> 
+						<span class="inv">发票抬头:</span>
+						<span class="arrow j-select-arrow"></span> 
+						<input type="text" maxlength=30 name="electron_titleContent" id="electron_titleContent"  class="en-input j-select" placeholder="发票抬头（您填写的所有内容都将被系统自动打印到发票上，请如实填写。）">
+						<ul id="myul" class="select-list j-select-list"> </ul>
+					</div>
+					<p>
+						<span class="red" id="eletitle"></span>
+					</p>
+					<p> 
+						<span class="nashuiren">纳税人识别号或统一社会信用代码:</span>
+						<input type="hidden"  id="invoiceContentHidden_03d03b6b05604c5cb065aef65b72972e" name="invoiceContentHidden_03d03b6b05604c5cb065aef65b72972e">
+						<input type="text"  name="electron_invoiceContent" id="electron_ratepayer" value="" placeholder="纳税人识别号或统一社会信用代码（如您填写的发票抬头为企业名称，请务必填写）" class="text-val">
+						<p>
+							<span class="red" id="eleratepayer"></span>
+						</p>
+						<input type="text" style="color:#999" name="electron_invoiceContent" id="detail_P" id="electron_invoiceContent" value="商品明细" readonly="true" class="text-val">
+					</p>
+					<span class="red" id="eleemail"></span>
+					<span class="red" id="elemobile"></span> 
+					<div class=" clearfix" style="padding: 0;">
+						<div class="buy y_btn_custom" btntype="eleinvoice">保存</div>
+						<div class="buy disabled y_close" btntype="eleinvoice">取消</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div id="addinc" style="display: none">
+			<div class="message-box j-inc" style="opacity: 1;filter: alpha(opacity=100); z-index: 1502; visibility: visible;"> 
+				<span class="close j-close y_close" id="closeinv"></span>
+				<div class="invoice addIvoice inc i-inc" style="display: none;">
+					<h3 class="title">增值税发票</h3> 
+					<input type="hidden" id="add_uuid" name="add_uuid" value="">
+					<p class="invMargin"> 
+						<span class="inv">发票抬头:</span>
+						<input type="hidden" id="invoiceTitle_03d03b6b05604c5cb065aef65b72972e" name="invoiceTitle_03d03b6b05604c5cb065aef65b72972e" placeholder="公司名称" maxlength="30" class="form-control"> 
+						<input type="text"  name="add_companyName" id="add_companyName" value="" placeholder="发票抬头（您填写的所有内容都将被系统自动打印到发票上，请如实填写。）" maxlength="30" class="text-val"> 
+					</p>
+					<p class="proDetail"> 
+						<input type="hidden" id="invoiceContentHidden_03d03b6b05604c5cb065aef65b72972e" name="invoiceContentHidden_03d03b6b05604c5cb065aef65b72972e"> 
+						<input type="text"  style="color:#999" name="electron_invoiceContent" id="electron_invoiceContent" value="商品明细" readonly="true" class="text-val"> </p>
+					<p class="invMargin"> 
+						<span class="invShui">纳税人识别号:</span>
+						<input type="text"  name="add_code" id="add_code" value="" placeholder="纳税人识别号" maxlength="30" class="text-val"> </p>
+					<p class="invMargin"> 
+						<span class="inv">注册地址:</span>
+						<input type="text"  name="add_address" id="add_address" value="" placeholder="注册地址" maxlength="30" class="text-val"> </p>
+					<p class="invMargin"> 
+						<span class="inv">注册电话:</span>
+						<input type="text"  name="add_registerMobile" id="add_registerMobile" value="" placeholder="注册电话" maxlength="15" class="text-val"> </p>
+					<p class="invMargin"> 
+						<span class="inv">开户银行:</span>
+						<input type="text"  name="add_bankName" id="add_bankName" value="" placeholder="开户银行" maxlength="30" class="text-val"> </p>
+					<p class="invMargin"> 
+						<span class="inv">银行账户:</span>
+						<input type="text" name="add_bankNo" id="add_bankNo" value="" placeholder="银行账户" maxlength="19" class="text-val"> </p> <span class="red" id="errortxt"></span>
+					<div class="buy-box" style="padding: 0;">
+						<div class="buy y_btn_custom2" btntype="addinvoice">保存</div>
+						<div class="buy disabled y_close" btntype="addinvoice">取消</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		<div id="addressDiv" style="display: none">
+			<div class="message-box j-address" style="opacity: 1; z-index: 1502; visibility: visible;">
+				<span class="close j-close"></span>
+				<form id="addAddressId" aria-hidden="true">
+					<div class="invoice add-ress">
+						<h3 class="title">添加地址</h3>
+						<input id="consigneeId" type="hidden" value="">
+						<div class="text-box clearfloat">
+							<label class="red">*</label>
+							<div style="width: 98%; float: right;">
+								<div>
+									<input id="consignee" class="text-val" type="text" placeholder="收货人姓名" value="" name="consignee"> </div>
+								<span id="address_consignee" style="color:red; "></span>
+							</div>
+						</div>
+						<div class="text-box clearfloat">
+							<label class="red">*</label>
+							<div style="width: 98%; float: right;">
+								<div class="form-group">
+									<div id="provinces" class="col-sm-3">
+
+									</div>
+									<div id="areasId" class="col-sm-3">
+									</div>
+									<div id="regionsId" class="col-sm-3">
+									</div>
+									<div id="streets" class="col-sm-3">
+
+									</div>
+								</div>
+								<span id="address_address4" style="color:red; "></span>
+							</div>
+						</div>
+						<div class="text-box clearfloat"> <label class="red">*</label>
+							<div style="width: 98%; float: right;">
+								<div>
+									<textarea placeholder="区，街道编号/名称，楼宇名称" style="resize: none" id="address" name="address" class="text-area"></textarea>
+								</div>
+								<span id="address_address" style="color:red; "></span>
+							</div>
+						</div>
+						<div class="text-box clearfloat"> <label class="red"></label>
+							<div style="width: 98%; float: right;">
+								<div>
+									<input type="text" placeholder="邮编" value="" id="zipcode" maxlength="6" name="zipcode" class="text-val"> </div>
+								<span id="address_zipcode" style="color:red; "></span>
+							</div>
+						</div>
+						<div class="text-box clearfloat"> <label class="red">*</label>
+							<div style="width: 98%; float: right;">
+								<div>
+									<input type="text" placeholder="请输入手机号码" value="" maxlength="11" id="mobile" name="mobile" class="text-val"> </div>
+								<span id="address_mobile" style="color:red; "></span>
+							</div>
+						</div>
+						<div class="text-box clearfloat">
+							<label class="red"></label>
+							<div style="width: 98%; float: right;">
+								<div>
+									<input type="text" placeholder="区号-电话号码" value="" id="telephone" name="telephone" maxlength="15" class="text-val"> </div>
+								<span id="address_telephone" style="color:red; "></span>
+							</div>
+						</div>
+						<input type="hidden" name="addresstitle" id="addresstitle" value="">
+						<div class="buy-box" style="padding:0">
+							<button type="button" class="buy y_btn_custom1">保存</button>
+							<button type="button"  class="buy disabled">取消</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- <div class="message-box j-editaddress"> <span class="close j-close"></span> <form id="addAddressId" method="post" action="#" > </form> </div> -->
+		<!--底部-->
+		<!-- Help center html start -->
+		<div class="help" id="navFooterLink">
+
+		</div>
+		<!-- Help center html end -->
+		<!-- footer html end -->
+		<div class="footer">
+			<div>
+				<!-- <img src="http://www.tcl.com:80/static/frontpage/common2/img/logo.png" /> -->
+				<div class="foot-logo">&#xe674;</div>
+				<p class="blod">
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/investors/index">投资者关系</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> |
+					<a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> |
+					<a target="_blank" href="http://www.tcl.com/group/recruitment/index">人才招聘</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+				</p>
+				<p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+					<a target="_blank" class="marginL" href="http://www.tcl.com:80/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a>
+				</p>
+				<div class="foot-r">
+					<div class="language"> <i class="arrow">&#xe608;</i>
+						<a href="http://www.tcl.com/" class="lang-item active">中文简体</a>
+						<a href="http://news.tcl.com/English.php/index/index.html" class="lang-item">English</a>
+					</div>
+					<!-- <span><em>&#xe63a;</em><p</span> --></div>
+			</div>
+		</div>
+		<!-- footer html end -->
+	</body>
+	<script src="../../app/js/vendor.js"></script>
+	<script src="../../app/js/core.js"></script>
+	<script src="../../app/config/config.js"></script>
+	<script src="add-elinvoice.js"></script>
+	<script src="add-invoice.js"></script>
+	<script src="add-address.js"></script>
+	<!--<script src="addProductToOrder.js"></script>-->
+</html>

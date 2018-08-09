@@ -1,0 +1,12 @@
+/node_modules/
+tclshop-pc/*
+public/*
+*.zip
+.vscode
+tclshop-seo
+views
+.idea
+/JSON
+/JSON2
+/config/logs
+

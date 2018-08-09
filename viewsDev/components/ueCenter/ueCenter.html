@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head> <% var R = __result__ %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>用户体验中心 – TCL内购商城</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/app/css/serviceRevision.css">
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body class="ucCenter">
+<% include ../../header %>
+
+<div class="ucb">
+    <div class="box channel-ban banner" id="chanBanner">
+        <div class="commo-banner">
+            <% R.ads && R.ads.forEach(function (ele, index, arr) {%>
+            <div class="banner-slide" style="<% if(index == 0){%> display:block <%}else{%> display:none <%}%>">
+                <a target="_blank" href="<%=ele.link%>" class="inner-link">
+                    <img alt="<%=ele.alt%>" height="420" src="<%=ele.url%>" class="src">
+                </a>
+            </div>
+            <%})%>
+        </div>
+        <div class="banner-dots"></div>
+        <%if( R.ads && R.ads.length>1) {%>
+            <a href="javascript:;" class="banner-anchor flex-prev prev">&#xe632;</a>
+            <a href="javascript:;" class="banner-anchor flex-next next">&#xe631;</a>
+        <%}%>
+    </div>
+</div>
+
+<div class="layout" id="item1">
+    <div class="autoServices pb40" >
+        <h3 class="subTitle">自助服务</h3>
+        <ul class="clear">
+            <li>
+                <a href="/pages/serviceRevision/repair.html">
+                <span>我要维修</span>
+                <img src="/app/images/ueCenter_repair.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/serviceRevision/install.html">
+                <span>我要安装</span>
+                <img src="/app/images/ueCenter_install.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/serviceRevision/policy.html?56d4f28d21ca473f871a3b845f61aee9">
+                <span>服务政策</span>
+                <img src="/app/images/ueCenter_se.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/serviceRevision/policy.html?b989ad6ab7184eba9e85136c2d100e55">
+                <span>收费标准</span>
+                <img src="/app/images/ueCenter_m.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/service-home/index.html#query-wrapper">
+                <span>服务进度</span>
+                <img src="/app/images/ueCenter_sc.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/serviceRevision/autoCheck.html">
+                <span>自助检测</span>
+                <img src="/app/images/ueCenter_autoCheck.png" />
+                </a>
+            </li>
+            <li>
+                <a href="/pages/service/download.html">
+                <span>产品教程</span>
+                <img src="/app/images/ueCenter_edu.png" />
+                </a>
+            </li><li>
+                <a href=" <%if( R.env.env =='生产' ) { %>  <%= 'http://user.tcl.com/proxy/invoice/vat/list' %> <%} else{ %> <%= 'http://testuser.tclo2o.cn/proxy/invoice/vat/list' %> <%}%>">
+                    <span>电子发票</span>
+                    <img src="/app/images/ueCenter_invoice.png" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="feedback pb40" id="item2">
+    <div class="layout ">
+        <h3 class="subTitle">体验与反馈</h3>
+        <div class="feedAds">
+            <ul class="clear">
+                <% R.mageData.forEach(function (item, index, arr) {%> 
+                	<% if(index < 2) {%> 
+	                    <li>
+	                        <a href="<%=item.link%>">
+	                            <img width="606" height="220" src="<%=item.img%>" alt="<%=item.subtitle %>" />
+	                        </a>
+	                        <div class="title">
+	                            <p><%=item.title %></p>
+	                            <p class="sub"><%=item.subtitle %></p>
+	                        </div>
+	                        <div class="status">
+	                            <% if(item.status == 0) {%> 
+	                                <span class="start"><em><%=item.st%>&nbsp;&nbsp;开始</em></span>
+	                            <%}else if(item.status == 1) {%>
+	                                <span class="doing">进行中</span>
+	                            <%}else if(item.status == 2){%>
+	                                <span class="end">已结束</span>
+	                            <%}%>
+	                        </div>
+	                    </li>
+                    <%}%>
+                <%})%>
+            </ul>
+        </div>
+        <div class="feedLists clear">
+            <div class="feedListChild">
+                <h6>购物体验/人员反馈 <span ><a class="red" href="<%if( R.env.env =='生产' ) { %> <%= 'http://fans.tcl.com/uec/members/feedback/myfeed.html' %> <%} else{ %> <%= 'http://www.t-fans.net/uec/members/feedback/myfeed.html' %> <%}%>" >我的反馈</a></span></h6>
+                <ul class="">
+                    <% R.listPresaleFeedback.forEach(function (item, index, arr) {%>  
+                        <li><a href="<%=item.link%>"><%=item.title%>  <b class="flex-next">&#xe631;</b></a></li>
+                    <%})%>
+                </ul>
+            </div>
+            <div class="feedListChild">
+                <h6>产品使用/售后反馈 <span><a class="red" href="<%if( R.env.env =='生产' ) { %> <%= 'http://fans.tcl.com/uec/members/feedback/myfeed.html' %> <%} else{ %> <%= 'http://www.t-fans.net/uec/members/feedback/myfeed.html' %> <%}%>" >我的反馈</a></span></h6>
+                <ul class="">
+                    <% R.listAftersaleFeedback.forEach(function (item, index, arr) {%>  
+                        <li><a href="<%=item.link%>"><%=item.title%>  <b class="flex-next">&#xe631;</b></a></li>
+                    <%})%>
+                </ul>
+            </div>
+            <div class="feedListChild">
+                <h6>大家的反馈 </h6>
+                <ul class="">
+                    <% R.listFeedback.forEach(function (item, index, arr) {%>  
+                        <li><a href="<%=item.link%>"><%=item.title%> </a></li>
+                    <%})%>
+                </ul>
+                <p class="more"><a href="<%if( R.env.env =='生产' ) { %> <%= 'http://fans.tcl.com/uec/feedback.html' %> <%} else{ %> <%= 'http://www.t-fans.net/uec/feedback.html' %> <%}%>">查看更多>></a></p>
+            </div>
+            <div class="feedListChild">
+                <h6>体验优化日志 </h6>
+                <ul class="">
+                    <% R.listOptimizeLog.forEach(function (item, index, arr) {%>  
+                        <li><a href="<%=item.link%>"><%=item.title%></a></li>
+                    <%})%>
+                </ul>
+                <p class="more"><a href="<%if( R.env.env =='生产' ) { %> <%= 'http://fans.tcl.com/uec/updatelog.html' %> <%} else{ %> <%= 'http://www.t-fans.net/uec/updatelog.html' %> <%}%>">查看更多>></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layout" id="item3">
+    <div class="community pb40">
+        <h3 class="subTitle">社区精华 <a href="<%if( R.env.env =='生产' ) { %> <%= 'http://fans.tcl.com/forum/' %> <%} else{ %> <%= 'http://www.t-fans.net/forum/' %> <%}%>"  class="more">查看更多></a></h3>
+        <div class="clear row">
+            <div class="Lists">
+                <% R.community.forEach(function (item, index, arr) { %>
+                    <div class="tit">
+                        <div class="tt">
+                            <a href="<%=item.url %>" class="lis_title">
+                                <%=item.title %>
+                            </a>
+                            <div class="notes">
+                                <span class="replies">
+                                    <i><img style="margin-top:-5px" src="/app/images/ueCenter_dialog.png" /></i>
+                                    <%=item.replies %>
+                                </span>
+                                <span class="view">
+                                    <i><img style="margin-top:-5px" src="/app/images/ueCenter_view.png" /></i>
+                                    <%=item.views %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="images">
+                            <% item.images.forEach(function (ele, index, arr) {%>
+                                <a href="<%=item.url %>">
+                                    <img width="220" height="140" src="<%=ele %>" alt="<%=item.author %>"/>
+                                </a>
+                            <%})%>
+                        </div>
+                    </div> 
+                <%}) %>
+            </div>
+            <div class="activ">
+                <% R.activity.forEach(function (item, index, arr) { %>
+                    <div class="activity">
+                        <a href="<%=item.url%>" >
+                            <img src="<%=item.pic%>" />
+                            <span><%=item.title%></span>
+                            <button>立即参加</button>
+                        </a>
+                    </div>
+                <%}) %>
+            </div>
+        </div>
+    </div>            
+</div>
+
+<div class="integral pb40" id="item4">
+    <div class="layout ">
+        <h3 class="subTitle">积分兑换 <a href="<%if( R.env.env =='生产' ) { %>  <%= 'http://hy.tcl.com' %> <%} else{ %> <%= 'http://jf.10get.com' %> <%}%>" class="more">更多兑换></a></h3>
+        <ul class="clear">
+            <% R.inteGoods.forEach(function (item, index, arr) { %>
+                <li>
+                    <a href="<%=item.productUrl%>" >
+                        <img src="<%=item.imgUrl%>" width="200" height="200" />
+                        <p><%=item.productName%></p>
+                        <p class="jiprice"><%=item.price%>积分</p>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>   
+    </div>
+</div>  
+
+<div class="layout">
+    <div class="getIntegral mb40">
+        <h3 class="subTitle">赚取积分</h3>
+        <ul class="clear">
+            <li class="row">
+                <div class="integ-img fl" >
+                    <img src="/app/images/ueCenter_regTel.png" />
+                    <div class="cen">
+                        <p class="b">验证手机/绑定邮箱</p>
+                        <p>首次验证手机号码/绑定邮箱</p>
+                    </div> 
+                </div>
+                <div class="score fl">
+                    +10
+                </div>
+                <div class="integButton fl">
+                    <% if (R.phoneBinder && (R.phoneBinder.bindPhoneFlag || R.phoneBinder.bindEmailFlag)) {%>
+                        <button>已绑定</button>
+                    <%}else{ %>
+                        <button class="active">
+                            <a href="<%if( R.env.env =='生产' ) { %>  <%= 'http://user.tcl.com/proxy/accountsafe' %> <%} else{ %> <%= 'http://testuser.tclo2o.cn/proxy/accountsafe' %> <%}%>" > 
+                                去绑定
+                            </a>
+                        </button>
+                    <%}%>
+                </div>
+            </li>
+            <li class="line"><i></i></li>
+            <li class="row">
+                <div class="integ-img fl" >
+                    <img src="/app/images/ueCenter_ft.png" />
+                    <div class="cen">
+                        <p class="b">铁粉社区发帖</p>
+                        <p>发帖即可获得积分</p>
+                    </div> 
+                </div>
+                <div class="score fl">
+                    +5
+                </div>
+                <div class="integButton fl">
+                    <button class="active">
+                    	<a href="http://fans.tcl.com" > 
+                        <!--<a href="<%if( R.env.env =='生产' ) { %>  <%= 'http://fans.tcl.com' %> <%} else{ %> <%= 'http://www.t-fans.net' %> <%}%>" >--> 
+                            去发帖
+                        </a>
+                    </button>
+                </div>
+            </li>
+            <li class="row cb">
+                <div class="integ-img fl" >
+                    <img src="/app/images/ueCenter_reg.png" />
+                    <div class="cen">
+                        <p class="b">绑定产品</p>
+                        <p>成功绑定产品获取积分福利</p>
+                    </div> 
+                </div>
+                <div class="score fl">
+                    +N
+                </div>
+                <div class="integButton fl">
+                    <button class="active">
+                        <a href="<%if( R.env.env =='生产' ) { %>  <%= 'http://user.tcl.com/proxy/my/product' %> <%} else{ %> <%= 'http://testuser.tclo2o.cn/proxy/my/product' %> <%}%>" > 
+                            去绑定
+                        </a>
+                    </button>
+                </div>
+            </li>
+            <li class="line"><i></i></li>
+            <li class="row">
+                <div class="integ-img fl" >
+                    <img src="/app/images/ueCenter_qd.png" />
+                    <div class="cen">
+                        <p class="b">签到</p>
+                        <p>每天签到赠送积分</p>
+                    </div> 
+                </div>
+                <div class="score fl">
+                    +5
+                </div>
+                <div class="integButton fl">
+                    <% if(R.qiandao && R.qiandao.signStatus){%>
+                        <button>已签到</button>
+                    <%}else{%>
+                        <button class="active">
+                        	<a href="http://fans.tcl.com" > 
+                            <!--<a href="<%if( R.env.env =='生产' ) { %>  <%= 'http://fans.tcl.com/k_misign-sign.html' %> <%} else{ %> <%= 'http://www.t-fans.net/k_misign-sign.html' %> <%}%>" >--> 
+                                去签到
+                            </a>
+                        </button>
+                    <%}%>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div compid="serviceBanner" id="Item1461653856698" class="DragBox" startwidth="1120" startheight="34" startleft="53" starttop="422" style="visibility: visible;">
+      <!-- Website service  html start -->
+      <div class="server">
+        <ul>
+          <li class="text-l disable"><span></span> <em>官方正品</em> </li>
+          <li class="text-two disable"><span></span> <em>全国联保</em> </li>
+          <!-- </a> -->
+          <li class="text-three disable"> <span></span> <em>全场包邮</em> </li>
+          <!-- </a> -->
+          <li class="text-r disable"> <span></span> <em>7天无理由退货</em> </li>
+        </ul>
+      </div>
+      <!-- Website service  html end ddd-->
+    </div>
+<% include ../../footer %>
+<style>
+.layout{
+    width:1226px;
+    margin: 0 auto;
+}
+
+.ucCenter .banner-slide a {
+    height: 420px;
+}
+.subTitle {
+    padding: 40px 0 24px 0;
+    font-size: 22px;
+    color: #333; 
+    font-weight:normal;
+}
+.pb40{
+    padding-bottom: 40px;
+}
+
+.feedback .feedAds ul li {
+    position: relative;
+    margin:0 14px 14px 0;
+    cursor: pointer;
+}
+.feedback .feedAds ul li:nth-child(2n){
+    margin-right:0;
+}
+.feedback .feedAds ul li .title, .feedback .feedAds ul li .status{
+    position: absolute;
+}
+.feedback .feedAds ul li .title {
+    top: 35%;
+    right: 20px;
+    width: 253px;
+}
+.feedback .feedAds ul li .title p{
+    font-size: 20px;
+    color: #fff;
+}
+.feedback .feedAds ul li .title p.sub{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.feedback .feedAds ul li .status{
+    top:0; right:0;
+}
+.feedback .feedAds ul li .status span{
+    height: 34px;
+    display: block;
+    width: 100px;
+    line-height: 34px;
+    color: #fff;
+}
+.feedback .feedAds ul li .status span.start{
+    background: url('/app/images/ueCenter_t_start.png') left 0 no-repeat;
+    width: 190px;
+}
+.feedback .feedAds ul li .status span.start em{
+    background: #f00;
+    display: block;
+    width: 170px;
+    margin-left: 20px;
+    font-style: normal;
+}
+.feedback .feedAds ul li .status span.doing, .feedback .feedAds ul li .status span.end{
+    width: 86px;
+    text-indent: 10px;
+    text-align: center;
+}
+.feedback .feedAds ul li .status span.end{
+    background: url('/app/images/ueCenter_t_end.png')
+}
+.feedback .feedAds ul li .status span.doing{
+    background: url('/app/images/ueCenter_t_doing.png')
+}
+.feedLists {
+    font-size: 0;
+}
+.feedLists .feedListChild{
+    width: 303px;
+    height: 340px;
+    margin-right: 4px;
+    display: inline-block;
+    padding: 30px;
+    vertical-align:top;
+    background: #fff;
+    position:relative;
+} 
+.feedLists .feedListChild:nth-child(4n){
+    margin-right: 0;
+}
+.feedLists .feedListChild h6{
+    font-size: 18px; color: #333;
+    position: relative;
+    margin-top: 5px;
+    font-weight: normal;
+}
+.feedLists .feedListChild h6 span{
+    font-size: 14px;
+    position: absolute; right: 0; top:3px;
+}
+.feedLists .feedListChild ul {
+    margin-top:24px; 
+}
+.feedLists .feedListChild ul li{
+    float:none;
+    margin-top: 15px;
+}
+.feedLists .feedListChild .more{
+    position: absolute;
+    bottom: 25px;
+}
+.feedLists .feedListChild .more a{
+   color: #f00;
+}
+
+.feedLists .feedListChild ul li a{
+    font-size: 14px; color: #666;
+    position: relative;
+    display:block;
+}
+.feedLists .feedListChild ul li a:hover, .feedLists .feedListChild ul li a:hover b{
+    color: #f00;
+}
+
+
+.feedLists .feedListChild ul li a > i{
+    position: absolute;
+    right: 0px;
+    top:5px;
+}
+
+
+.ucCenter .autoServices ul{
+    border: 1px solid #e5e5e5;
+}
+.ucCenter .autoServices ul li{
+    width: 306px;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+.ucCenter .autoServices ul li:nth-child(4n+0) {
+    border-right: 0;
+}
+.ucCenter .autoServices ul li:nth-child(n+5) {
+    border-bottom:0;
+}
+.ucCenter .autoServices ul li a{
+    margin:24px 0 16px;
+    display:block;
+    color:#333;
+    font-size:18px;
+}
+
+.ucCenter .autoServices ul li img{
+    margin: 5px auto 0;
+    width:80px;
+    height:80px;
+    display:block;
+
+}
+.more{
+    float: right;
+    color: #f00;
+    font-size: 14px;
+}
+.community .row{
+    border: 1px solid #e5e5e5;
+}
+.cb{
+	clear: both;
+}
+.community .Lists, .community .activ {
+    float: left;
+}
+
+.community .activ .activity {
+    padding: 50px 34px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.community .activ .activity a{
+    display: block;
+    font-size: 0;
+}
+.community .activ .activity:last-child{
+    border-bottom: 0;
+}
+.community .activ .activity img{
+    width: 338px; height: 130px;
+}
+.community .activ .activity span{
+    font-size: 18px; display: block;
+    text-align: center; margin: 20px auto;
+}
+.community .activ .activity button{
+    width: 150px; height: 40px; color: #f00; text-align: center; line-height: 40px; border: 1px solid #f00;
+    cursor: pointer;background: #FFF;
+}
+
+.community .Lists{
+    width: 818px;
+    padding:0 48px 30px;
+    border-right:1px solid #e5e5e5;
+}
+.community .Lists .tt{
+    position: relative;
+    margin: 30px 0 14px;
+}
+.community .Lists .lis_title {
+    font-size:18px; color:#333;
+    margin-bottom:14px;
+}
+.community .Lists .notes {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  font-size: 14px;
+}
+.community .Lists .notes .replies, .community .Lists .notes .view{
+    color: #999;
+    font-size: 14px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+.community .Lists .notes .view{
+    margin-right: 0;
+}
+.community .Lists .images a{
+    font-size: 0;
+}
+.community .Lists .images a:nth-child(2){
+    margin: 0 30px;
+}
+
+.community .activ{
+    width: 405px;
+}
+.integral ul, .integral .subTitle {
+    margin: 0 12px;
+}
+.integral ul li {
+    display: inline-block;
+    width: 290px;
+    height: 340px;
+    background: #fff;
+    margin-right: 14px;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 15px;
+}
+.integral ul li:nth-child(4n+0) {
+    margin-right:0; 
+}
+.integral ul li p{
+    font-size: 16px;
+    color: #333;
+    margin: 24px auto 0;
+    width: 220px;
+    text-align: center;
+} 
+.integral ul li .jiprice{
+    font-size: 16px;
+    color: #f00;
+    margin-top: 5px;
+}
+.getIntegral ul li{
+    width:45%;
+    display:inline-block;
+    margin-bottom: 40px;
+}
+.getIntegral ul li.line {
+    width: 10%;
+    position: relative;
+    height: 80px;
+}
+.getIntegral ul li.line i {
+    border-right: 1px solid #eee;
+    display: block;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+}
+
+.getIntegral ul li img{
+    display: inline-block;
+    margin-right:24px;
+}
+.getIntegral ul li p{
+    font-size: 14px;
+    margin-top: 12px;
+    color: #666;
+}
+.getIntegral ul li .cen{
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+}
+.getIntegral ul li p.b{
+    font-size: 18px;
+    color: #333;
+    margin-top: 0;
+}
+
+.getIntegral ul li .score{
+    line-height: 80px;
+    text-align: center;
+    margin: 0 30px;
+    width: 80px;
+    font-size: 24px;
+    color: #f00;
+}
+
+.getIntegral ul li .integButton button{
+    width: 150px;
+    height: 40px;
+    border: 1px solid #ccc;
+    color: #999;
+    display: block;
+    margin: 20px auto;
+    background: #FFF;
+}
+.getIntegral ul li .integButton button.active{
+    color: #f00;
+    border-color: #f00;
+    cursor:pointer;
+}
+.getIntegral ul li .integButton button.active a{
+    color: #f00;
+}
+.feedback, .integral{
+    background: #f2f2f2;
+}
+
+
+
+.flex-next {
+    font-family: 'iconfont-tcl';
+    cursor: pointer;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    margin: 0 0 0 8px;
+    padding: 0;
+    color: #666;
+    top:2px;
+    font-style: normal;
+}
+.footer .goTop, .goTop {
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+    z-index: 20000;
+    width: 46px;
+    height: auto;
+}
+.goTop a {
+    display: block;
+    font-size: 12px;
+    padding: 8px;
+    line-height: 130%;
+    width: 55px;
+    height: 55px;
+    padding-top: 11px;
+}
+
+#chanBanner.banner {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+}
+#chanBanner .banner-slide img{position: absolute;left: 50%;margin-left: -960px;width: 1920px;}
+#chanBanner .banner-slide a{display: block;width: 100%;height: 420px; overflow: hidden;/*background-repeat: no-repeat;background-position: 50% 50%*/}
+</style>
+<script src="/app/components/ueCenter/ueCenter.js"></script>

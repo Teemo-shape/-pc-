@@ -1,0 +1,109 @@
+/*************足迹，收藏公共样式*****************/
+.m_content .header-title{
+    border-bottom:1px solid #f0f0f0;
+    padding-bottom:17px;
+    line-height: 20px;
+    margin-bottom:20px;
+}
+.m_content h3{
+    font-size:22px!important;
+    color:#333;
+    line-height: 20px!important;
+}
+.m_content .clear-block{
+    cursor:pointer;
+}
+.block-list{
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-right: -2%;
+}
+.block-list .list-item{
+    float: left;
+    border: 1px solid #e3e3e3;
+    padding: 12px 21px 25px 21px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 23%;
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom:14px;
+    margin-right:2%;
+}
+.block-list .list-item .onsell-not{
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 10;
+  background: url(../images/onsell-not.png) no-repeat;
+}
+.block-list .list-item>a:first-child {
+    display: block;
+    height: 140px;
+    width: 140px;
+    margin: 0 15px;
+}
+.block-list .list-item img {
+    max-width: 140px;
+    max-height: 140px;
+    z-index: 9;
+    position: relative;
+}
+.block-list li .listitle {
+    height: 20px;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.block-list li .price {
+    color: red;
+    font-size: 16px;
+}
+.block-list .list-item .buynow {
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin: 18px auto 0;
+    position: relative;
+    z-index: 9;
+    color: #a9a9a9;
+    font-size: 12px;
+}
+.block-list .list-item .toCancelFavorite{
+    display: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color:#999;
+    font-size: 12px;
+}
+.block-list .list-item:hover .toCancelFavorite{
+    display: block;
+}
+/*****足迹带浏览日期的样式***********/
+.block-wrap .foot-ps {
+    color: #525252;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.block-wrap .foot-ps span {
+    padding: 10px 10px 10px 0;
+}
+.block-wrap .foot-ps .J-deletedAll {
+    cursor: pointer;
+}

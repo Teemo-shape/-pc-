@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>TCL - 商品预约信息填写</title>
+		<meta name="description" content="TCL">
+		<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/common.css">
+		<link rel="stylesheet" href="../../app/css/member.css">
+		<link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<!--- jQuery -->
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+		<meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit" />
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<style>
+			.mgb30 {
+				margin-bottom: 30px;
+			}
+
+			.mgt50 {
+				margin-top: 50px;
+			}
+		</style>
+		<!--头部-->
+		<!-- Top html start -->
+		<include type="header" src="../../app/plugins/header/nav-index.html"></include>
+		<!-- <div class="cart-nav" id="navHeader">
+			<div class="hea-box">
+				<a href="http://10.73.128.174:20300/index.jsp" class="logo">&#xe656;</a>
+			</div>
+			<div class="fr">
+				<div class="order-num"><span binder-data="vm.data.customerName"></span><em class="arrow"></em>
+					<div class="order-operat">
+						<p class="item">
+							<a href="/usercenter/customercomplex/toMyCenter">个人中心</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/productfavorite/toPageKuyu">我的收藏</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/customercomplex/accountSecurityKuyu" target="_blank">账号管理</a>
+						</p>
+						<p class="item">
+							<a href="/usercenter/productappraise/toMyAppraiseKuyu">评价管理</a>
+						</p>
+						<p class="item">
+							<a href="/tclcustomer/logout">退出登录</a>
+						</p>
+					</div>
+				</div>
+				<span class="order-num" onclick="window.location.href='/usercenter/order/listKuyu/1/5?init=true';">我的订单</span>
+			</div>
+		</div> -->
+		<!--Top html end-->
+		<!--头部 end-->
+		<!--收货人信息填写-->
+			<!-- Order information html start -->
+			<div class="modal-backdrop"></div>
+			<form id="callForm" name="callForm" action="">
+			<div class="y_editadressbx">
+				<div class="text-box clearfloat">
+					<label class="red">*</label>
+					<div class="form_group" style="width:98%;float: right;">
+						<input type="text" name="consignee" value="" class="form_control" placeholder="收货人名称">
+					</div>
+				</div>
+				<div class="text-box clearfloat"> <label class="red">*</label>
+					<div class="form_group" style="width:98%;float: right;">
+						<div class="form_group">
+							<div class="fl wd4" id="dv_province" style=" margin-bottom: 0;">
+							</div>
+							<div class="fl wd4" id="dv_city" style="margin-bottom: 0px;">
+							</div>
+							<div class="fl wd4" id="dv_region" style="margin-bottom: 0px;">
+							</div>
+							<div class="fl wd4" id="dv_street" style="margin-bottom: 0px; margin-right: 0px;">
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="text-box clearfloat">
+					<label class="red">*</label>
+					<div class="form_group" style="width:98%;float: right;">
+						<textarea class="form_control" name="address" placeholder="详细地址"></textarea>
+					</div>
+				</div>
+				<div class="text-box clearfloat">
+					<label class="red"></label>
+					<div class="form_group" style="width:98%;float: right;">
+						<input type="text" name="zipcode" value="" class="form_control" placeholder="邮政编码">
+					</div>
+				</div>
+				<div class="text-box clearfloat">
+					<label class="red">*</label>
+					<div class="form_group" style="width:98%;float: right;">
+						<input type="text" name="mobile" value="" class="form_control" placeholder="手机号">
+					</div>
+				</div>
+				<div class="text-box clearfloat">
+					<label class="red"></label>
+					<div class="form_group" style="width:98%;float: right;">
+						<input type="text" name="telephone" value="" class="form_control" placeholder="固定电话">
+					</div>
+				</div>
+				<input type="hidden" value="" id="addresstitle" name="addresstitle">
+				<div class="form_action">
+					<button type="button" class="y_btn y_btn_custom1 h_40 fl">保存</button>
+					<button type="button" class="y_btn y_btn_custom4 h_40 fr y_close">取消</button>
+				</div>
+			</div>
+		</form>
+
+			<div class="order">
+				<div class="bookaddress bor-bott">
+					<h3 class="booktitle mgt50 pgb50 bor-bott" binder-data="vm.data.title"></h3>
+					<div class="booktip mgt50 mgb30">
+						<span class="txt">请填写收货地址</span><span class="tip-warn redfont">收货地址提交后将作为订单地址且无法修改</span>
+					</div>
+					<div class="showAddress" id="showAddress">
+						<ul class="y_adresslist clearfloat">
+
+							<li class="y_addlist new"><span class="y_addlistbtn"> <s
+									class="y_ico"></s>新增收货地址
+								</span></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="settle_acout mag_top20 ">
+					<button class="buy"  binder-event="click|submitForm" id="submitForm">提交预约信息</button>
+				</div>
+				<div class="maybe_concern mag_top20 pad_top20">
+					<h4 class="fsize_18 pad_bottom30">你可能关心的问题</h4>
+					<div class="table">
+						<dl class="row">
+							<dd class="cell maybe_cell">
+								<div class="maybe_content">
+									<h4>Q: 预约成功了，一定能买到吗?</h4>
+									<p>A: 您预约成功相当于获得了购买资格，还需要您在规定的时间内去抢购。由于购买人数、货源分布以及您抢购的速度等因素，有可能会抢购失败。</p>
+								</div>
+							</dd>
+							<dd class="cell maybe_cell maybe_center">
+								<div class="maybe_content">
+									<h4>Q: 我何时能收到预约的商品?</h4>
+									<p>A: 在您抢购成功并支付后，您的订单即进入发货流程，到货时间和普通商品一致。具体时效可查看帮助中心或者咨询客服。</p>
+								</div>
+							</dd>
+							<dd class="cell maybe_cell">
+								<div class="maybe_content">
+									<h4>Q: 预约商品如果发生质量问题，如何退款和退货?</h4>
+									<p>A: 预约商品退款和退货政策和普通商品相同，按商城和国家相关规定执行。具体可查看帮助中心或者咨询客服。</p>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<!-- Order information html end -->
+
+		<!-- footer Help html end -->
+
+		<!-- Help center html start -->
+		<div class="help">
+			<div class="min-wid">
+				<dl>
+					<dt>帮助中心</dt>
+
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toHelp?hid=1">购物指南</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toHelp?hid=2">支付方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toHelp?hid=3">配送方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toHelp?hid=4">交易条款</a>
+					</dd>
+
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/channel/service#policy">售后服务</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/channel/service#repair">服务预约</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toService#query">进度查询</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/tclchannel/toService#policye">电子保单</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>客户服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/bulkpurchase/service">大宗采购</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>
+						<a target="_blank" href="http://10.73.128.174:20300/connectWithUs.jsp">联系我们</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a>
+					</dd>
+					<!-- <dd><a target="_blank"  href="#">官方微信</a></dd> -->
+					<dd>
+						<a target="_blank" href="http://fans.tcl.com/">铁粉社区</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>应用服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="https://jr.tcl.com/home.html">金融</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.imooc.com/">教育</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.golive-tv.com/">全球播</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a>
+					</dd>
+				</dl>
+				<dl class="last-r">
+
+					<p class="red phone">4008-123456</p>
+					<p class="grey">（24小时在线，仅收市话费）</p>
+
+					<a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+				</dl>
+			</div>
+		</div>
+		<!-- Help center html end -->
+		<!-- go to top html-->
+		<div class="goTop">
+			<a href="http://10.73.128.174:20300/servicecenter/customerServiceKuyu">
+				<div class="item">&#xe64a;</div>
+			</a>
+			<a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+		</div>
+
+		<!-- go to top html-->
+
+		<!-- footer html end -->
+		<div class="footer">
+			<div>
+				<!-- <img src="http://10.73.128.174:20300/static/frontpage/common2/img/logo.png" /> -->
+				<div class="foot-logo">&#xe674;</div>
+				<p class="blod">
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/index">关于TCL</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/investors/index">投资者关系</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/societyDuty/index">社会责任</a> |
+					<a target="_blank" href="http://www.tcl.com/group/news/index">新闻中心</a> |
+					<a target="_blank" href="http://www.tcl.com/group/recruitment/index">人才招聘</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+				</p>
+				<p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+					<a target="_blank" class="marginL" href="http://10.73.128.174:20300/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a> |
+					<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a> |
+					<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=4">隐私保护</a>
+				</p>
+				<div class="foot-r">
+					<div class="language">
+						<i class="arrow">&#xe608;</i>
+						<a href="http://www.tcl.com/" class="lang-item active">中文简体</a>
+						<a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a>
+					</div>
+					<div><img src="../../app/images/credibility.png" /></div>/span> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- footer Help  html end -->
+
+		<!-- go to top html-->
+		<div class="goTop">
+			<a href="#"></a>
+		</div>
+		<!-- go to top html-->
+		<script src="../../app/js/vendor.js"></script>
+		<script src="../../app/js/core.js"></script>
+		<script src="../../app/config/config.js"></script>
+		<script src="addProductToOrderKuyu.js"></script>
+		<script src="addCity.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>  <% var R = __result__ %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%=R.channlKeyWords.title%></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="<%=R.channlKeyWords.keywords%>"/>
+    <meta name="description" content="<%=R.channlKeyWords.desc%>"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta name="renderer" content="webkit" />
+    <style>
+        .padding-box .padding .item:first-child{
+            background: #ddd;
+        }
+        .padding-box .padding .item:last-child{
+            background: #ddd;
+        }
+    </style>
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <% include ../../nav-header %>
+    <%
+        var channelDic = {
+            "电视":'tv',
+            "手机":'mobile',
+            "空调":'air',
+            "冰箱":'refrigerator',
+            "洗衣机":'washer',
+            "健康电器":'homeappliance'
+        }
+    %>
+    <%
+        console.log(R.getList)
+    %>
+    <% if(R.ads.data.length>0){ %>
+    <div class="layout" style="min-height:500px;">
+        <input type="hidden" id="render_service">
+
+        <div class="box channel-ban banner" id="chanBanner">
+            <div class="commo-banner">
+                <% R.ads.data && R.ads.data.forEach(function (ele, index, arr) {%>
+                <div class="banner-slide" style="<% if(index == 0){%> display:block <%}else{%> display:none <%}%>">
+                    <a target="_blank" href="<%=ele.link%>" class="inner-link">
+                        <img alt="<%=ele.name%>" src="<%=ele.url%>" class="src">
+                    </a>
+                </div>
+                <%})%>
+            </div>
+            <div class="banner-dots"></div>
+            <%if( R.ads.data && R.ads.data.length>1) {%>
+                <a href="javascript:;" class="banner-anchor flex-prev prev">&#xe632;</a>
+                <a href="javascript:;" class="banner-anchor flex-next next">&#xe631;</a>
+            <%}%>
+        </div>
+    </div>
+    <%}%>
+    <!-- Commodity list html start -->
+    <input type="hidden" id="categoryUuid" nam="categoryUuid" value="456a4e26d34540eab1b31c7212a5fd98">
+    <div class="box commodity" id="channelSty">
+        <a id="filter" name="filter"></a>
+        <div class="tmpCheatCateSelect-bg-white">
+        <div id="tmpCheatCateSelect" >
+            <%
+                var cText = {
+                    tv: [{
+                        txt: '价格选择',
+                        value: ['0-2000', '2000-3999', '4000-5999', '6000-7999', '8000-9999','10000-14999','15000-24999','25000以上'],
+                        key: ['价格区间-零到两千', '价格区间-两千到三千九', '价格区间-四千到五千九', '价格区间-六千到七千九', '价格区间-八千到九千九','价格区间-一万到一万四千九','价格区间-一万五到两万四千九','价格区间-两万五以上']
+                    },{
+                        txt: '距离选尺寸',
+                        value: ['32英寸', '40-43英寸', '48-50英寸', '55-60英寸', '60英寸以上'],
+					    key: ['尺寸-32', '尺寸-40-43', '尺寸-48-50', '尺寸-55-60', '尺寸-60以上']
+                    }, {
+                        txt: '特色',
+                        value: ['量子点','曲面屏', '高色域', '4K超高清', '安卓智能'],
+					    key: ['屏幕类型-量子点','屏幕类型-曲面电视', '色域-高色域', '分辨率-3840*2160（4K分辨率/UHD）', '电视类型-智能电视,操作系统-Android']
+                    }],
+                    mobile: [{
+                        txt: '价格选择',
+                        value: ['0-999', '1000-1999', '2000-2999', '3000-3999', '4000-4999','5000以上'],
+                        key: ['价格区间-零到九百', '价格区间-一千到一千九', '价格区间-两千到两千九', '价格区间-三千到三千九', '价格区间-四千到四千九','价格区间-五千以上']
+                    },{
+                        txt: '屏幕尺寸筛选',
+                        value: ['3.5 英寸以下', '3.6-4.5英寸', '4.6-5.5英寸', '5.5英寸以上'],
+					    key: ['屏幕尺寸-手机-3.5英寸以下', '屏幕尺寸-手机-3.6-4.5英寸', '屏幕尺寸-手机-4.6-5.5英寸', '屏幕尺寸-手机-5.5英寸以上']
+                    }, {
+                        txt: '系列筛选',
+                        value: ['黑莓系列', '平板系列', '手机配件'],
+                        key: ['系列-黑莓系列', '系列-平板系列', '系列-手机配件']
+                    }],
+                    washer: [{
+                        txt: '价格选择',
+                        value: ['0-499','500-999', '1000-1499', '1500-1999', '2000-2499', '2500-2999','3000以上'],
+                        key: ['价格区间-零到四百九','价格区间-五百到九百九', '价格区间-一千到一千四百九', '价格区间-一千五到一千九百九', '价格区间-两千到两千四百九','价格区间-两千五到两千九百九','价格区间-三千以上']
+                    },{
+                        txt: '体积容量筛选',
+                        value: ['5kg以下', '5-6kg', '6-7kg', '7-8kg', '8kg以上'],
+					    key: ['脱水容量-5以下', '脱水容量-5-6', '脱水容量-6-7', '脱水容量-7-8', '脱水容量-8以上']
+                    }, {
+                        txt: '类别筛选',
+                        value: ['波轮变频', '波轮全自动', '滚筒变频', '滚筒定频'],
+                        key: ['洗衣机类别-波轮变频', '洗衣机类别-波轮全自动', '洗衣机类别-滚筒变频', '洗衣机类别-滚筒定频']
+                    }],
+                    refrigerator: [{
+                        txt: '价格选择',
+                        value: ['0-999','1000-1999', '2000-2999', '3000-3999', '4000-4999','5000以上'],
+                        key: ['价格区间-零到九百','价格区间-一千到一千九', '价格区间-两千到两千九', '价格区间-三千到三千九', '价格区间-四千到四千九','价格区间-五千以上']
+                    },{
+                        txt: '体积容量筛选',
+                        value: ['100L以下', '101L-200L', '201L-300L', '301L-500L', '500L以上'],
+                        key: ['总有效容积（L）-100L以下', '总有效容积（L）-101-200L', '总有效容积（L）-201-300L', '总有效容积（L）-301-500L', '总有效容积（L）-500L']
+                    }, {
+                        txt: '类别筛选',
+                        value: ['单门式', '双门式', '三门式', '多门式', '对开门式'],
+                        key: ['冰箱类别-单门式', '冰箱类别-双门式', '冰箱类别-三门式', '冰箱类别-多门式', '冰箱类别-对开门式']
+                    }],
+                    air: [{
+                        txt: '价格选择',
+                        value: ['1000-1999', '2000-2999', '3000-3999', '4000-4999','5000-5999','6000-6999','7000以上'],
+                        key: ['价格区间-一千到一千九', '价格区间-两千到两千九', '价格区间-三千到三千九', '价格区间-四千到四千九','价格区间-五千到五千九','价格区间-六千到六千九','价格区间-七千以上']
+                    },{
+                        txt: '匹数',
+                        value: ['1匹', '1.5匹', '2匹', '3匹'],
+                        key: ['匹数-1P', '匹数-1.5P', '匹数-2P', '匹数-3P']
+                    }, {
+                        txt: '特点',
+                        value: ['壁挂式', '立柜式', '圆柱式', '移动式'],
+                        key: ['特点-壁挂式', '特点-立柜式', '特点-圆柱式', '特点-移动式']
+                    }, {
+                        txt: '变频/定频',
+                        value: ['变频', '定频'],
+                        key: ['定频/变频-变频', '定频/变频-定频']
+                    }],
+                    homeappliance: [{
+                        txt: '价格选择',
+                        value: ['0-999','1000-1999', '2000-2999', '3000-4999','5000-10000','10000以上'],
+                        key: ['价格区间-零到九百','价格区间-一千到一千九', '价格区间-两千到两千九', '价格区间-三千到四千九', '价格区间-五千到一万','价格区间-一万以上']
+                    },{
+                        txt: '类别筛选',
+                        value: ['空气净化器', '净水机', '吸尘器', '除螨仪', '电热水器', '加湿器', '扫地机', '挂烫机','配件'],
+					    key: ['空气净化器', '净水机', '吸尘器', '除螨仪', '电热水器', '加湿器', '扫地机', '挂烫机','健康电器配件']
+                    }]
+                };
+            %>
+
+            <div class="searByPri">
+                    <strong>价格</strong>
+                    <div class="priRange">
+                        <input class="price-start" data-start="" type="text" placeholder="￥"  onkeyup="value=value.replace(/[^\d]/g,'')" >-<input class="price-end" data-end="" type="text" placeholder="￥" onkeyup="value=value.replace(/[^\d]/g,'')">
+                        <button class="confirm">确定</button>
+                    </div>
+            </div>
+
+            <% if(R.paramOne !="") {%>
+            <% cText[R.paramOne] && cText[R.paramOne].forEach(function(ele, index, arr) {%>
+                <div class="features" ><strong>根据 <%=ele.txt%></strong><ul><li class="all"><span type="spanType<%=index+1%>" key="" value="">全部</span></li>
+                    <%ele.value.forEach(function (item, i, list) {%>
+                    <li><span type="spanType<%=index+1%>" key="<%=item%>" value="<%=ele.key[i]%>"><%=item%></span><span class="spanType-line">|</span></li>
+                    <%})%>
+                </ul>
+                </div>
+            <%})%>
+            <%}%>
+            <% if(R.paramOne !="") {%>
+            <% if(cText[R.paramOne] && cText[R.paramOne].length>2) {%>
+                <div class="toggle rotate" >&#xe632;</div>
+            <%}%>
+            <%}%>
+
+        </div>
+        </div>
+        <div class="comm-search-content">
+            <div class="sort-list">
+                <a href="javascript:;" data-name="sortWeight" sorttype="1" class="sortWeight">综合排序</a>
+                <a href="javascript:;" data-name="salsnum" sorttype="1" class="salsnum">销量&nbsp;&nbsp;↓</a>
+                <a href="javascript:;" data-name="staffPrice" sorttype="2" class="priceRank">价格&nbsp;&nbsp;↑</a>
+                <img style="display: none" class="iloading" src="/app/images/loading.gif">
+            </div>
+        </div>
+        <div class="comm-list">
+            <input type="hidden" id="hdn_totalNum" value="" />
+            <!-- 商品列表 -->
+            <%if(R.getList){%>
+                <input type="hidden" id="isRender" value=<%=R.getList.totalNum%> data-render="sever">
+            <%}%>
+            <div class="comm-mar">
+                <%if(R.getList && R.getList.list.length>0){%>
+                    <ul>
+                    <% R.getList.list.forEach(function (ele, index, arr) {%>
+                        <li data-type="tv-<%=index+1%>">     
+                           <%if(ele.promotionDesc!=''&&ele.promotionDesc!=null){%><div class="badge"><%=ele.promotionDesc%></div>
+                           <%}else if(ele.price > ele.promotionPrice && ele.promotionPrice > 0){%><div class=""></div><%}%>
+                            <div class="commImg">
+                                <a target="_blank" href="/<%=(channelDic[ele.secondParentCategory] ? channelDic[ele.secondParentCategory] : 'other')%>/<%=ele.uuid%>">
+                                    <img src="<%if(ele.pic){%><%=ele.pic%><%}else{%>'/app/images/noimg.jpg'<%}%>" alt="<%-ele.name%>" />
+                                </a>
+                            </div>
+                            <div class="comm-text">
+                                <div class="intro">
+                                    <strong><%-ele.name%></strong>
+                                    <p><%-ele.recommend %></p>
+                                </div>
+                                <div class="pri">
+                                    员工价：
+                                    <%if(ele.staffPrice && ele.staffPrice != null && ele.staffPrice != 'null' && ele.staffPrice > 0){%>
+                                        <%=Number(ele.staffPrice).toFixed(2)%>
+                                    <%} else if(ele.price > ele.promotionPrice && ele.promotionPrice > 0) {%>
+                                        <%=Number(ele.promotionPrice).toFixed(2)%>
+                                    <%} else {%>
+                                        <%=Number(ele.price).toFixed(2)%>
+                                    <%}%>
+                                    元
+                                </div>
+                                <a target="_blank" href="/<%=(channelDic[ele.secondParentCategory] ? channelDic[ele.secondParentCategory] : 'other')%>/<%=ele.uuid%>" class="addCart">立即购买</a>
+                            </div>
+                        </li>
+                    <%})%>
+                    </ul>
+                <%}else{%>
+                    <div class="noResults">很抱歉，没有符合您搜索条件的商品！</div>
+                <%}%>
+            </div>
+            <!-- 隐藏域 -->
+            <input type="hidden" id="hdn_keyword" value="" />
+            <input type="hidden" id="hdn_totalNum" value="72" />
+            <input type="hidden" id="hdn_keywords2" value="" />
+            <!-- 隐藏域 -->
+        </div>
+    </div>
+    <div id="pagingDv" class="channPag">
+        <input type="hidden" id="channelId" value="tv" />
+        <div class="padding-box">
+            <div class="padding clearmar">
+                <%
+                    var pageSize = Math.ceil(R.getList.totalNum / 12);
+
+                    <!-- 确保 R.pageUrl 有 [?&]nowPage=2 keyValue=（&nowPage=2） value=2 -->
+                    var reg = new RegExp('[?&]' + 'nowPage' + '=([^&#]*)', 'i');
+                    var stringArray = reg.exec(R.pageUrl);
+                    var keyValue = stringArray ? stringArray[0] : '';
+                    var value = stringArray ? stringArray[1] : '';
+                %>
+                <% if( R.nowPage > 1) { 
+                    var goUrl = R.pageUrl.replace(keyValue, keyValue.replace(value, R.nowPage-1));    
+                %>
+                    <a class="item" href="<%=goUrl%>" title="上一页">&lt;</a>
+                <%} else {%>
+                    <button class="prevPage" disabled>&lt;</button>
+                <%}%>
+                <% if( pageSize < 8) { %>
+                    <% for(var i = 1; i <= pageSize; i++){
+                        var goUrl = R.pageUrl.replace(keyValue, keyValue.replace(value, i));
+                    %>
+                        <% if(R.nowPage==i) {%>
+                            <a class="item active" href="<%=goUrl%>" title="第<%=i%>页"><%=i%></a>
+                        <%} else {%>
+                            <a class="item" href="<%=goUrl%>" title="第<%=i%>页"><%=i%></a>
+                        <%}%>
+                    <%}%>
+                <%} else {%>
+                    <% if (pageSize >= 8 && R.nowPage < 7) {%>
+                        <% for(var i = 1; i <= 7; i++){
+                            var goUrl = R.pageUrl.replace(keyValue, keyValue.replace(value, i));
+                        %>
+                            <% if(R.nowPage==i) { %>
+                                <a class="item active" href="<%=goUrl%>" title="第<%=i%>页"><%=i%></a>
+                            <%} else {%>
+                                <a class="item" href="<%=goUrl%>" title="第<%=i%>页"><%=i%></a>
+                            <%}%>
+                        <%}%>
+                    <%}else{
+                        var goUrlP1 = R.pageUrl.replace(keyValue, keyValue.replace(value, 1));
+                        var goUrlP2 = R.pageUrl.replace(keyValue, keyValue.replace(value, 2));
+                        var goUrlP3 = R.pageUrl.replace(keyValue, keyValue.replace(value, 3));
+                        var goUrlPe1 = R.pageUrl.replace(keyValue, keyValue.replace(value, R.nowPage-1));
+                        var goUrlPe = R.pageUrl.replace(keyValue, keyValue.replace(value, R.nowPage));
+                    %>
+                        <a class="item " href="<%=goUrlP1%>" title="第1页">1</a>
+                        <a class="item " href="<%=goUrlP2%>" title="第2页">2</a>
+                        <a class="item " href="<%=goUrlP3%>" title="第3页">3</a>
+                        <a class="item " href="javascript:;" title="第<%=i%>页">...</a>
+                        <a class="item " href="<%=goUrlPe1%>" title="第<%=R.nowPage-1%>页"><%=R.nowPage-1%></a>
+                        <a class="item active" href="<%=goUrlPe%>" title="第<%=R.nowPage%>页"><%=R.nowPage%></a>
+                    <%}%>
+                <%}%>
+                <% if( R.nowPage < pageSize) {
+                    var goUrl = R.pageUrl.replace(keyValue, keyValue.replace(value, (parseInt(R.nowPage)+1)));
+                %>
+                    <a class="item" href="<%=goUrl%>" title="下一页">&gt;</a>
+                <%} else {%>
+                    <button class="nextPage" disabled>&gt;</button>
+                <%}%>
+            </div>
+            <!--<div><%R.getList%></div>-->
+        </div>
+    </div>
+    <input type="hidden" id="hdn_sortBy" value="">
+    <input type="hidden" id="hdn_sortType" value="1">
+    <!-- Commodity list html end -->
+    <div class="layout " id="OneLine1461657084474">
+        <div class="col_main">
+            <div class="DragContainer main_wrap" id="DragContainer1461657084474" overclass="OverDragContainer" dropobj="0">
+                <div compid="kuyu/pc/tvchannel/tvoneAd" id="Item1461657121970" class="DragBox">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout">
+        <div dropobj="0" class="DragContainer drag_footer" id="DragContainer6" overclass="OverDragContainer drag_footer">
+        </div>
+    </div>
+    <% include ../../nav-footer %>
+    <script src="/app/components/channel/channel.js"></script>
+    <!--<script>-->
+        <!--var r = '<%- JSON.stringify(R.getList) %>'-->
+        <!--var pageSize = '<%- JSON.stringify(pageSize) %>'-->
+        <!--console.log(r)-->
+    <!--</script>-->
+</body>
+

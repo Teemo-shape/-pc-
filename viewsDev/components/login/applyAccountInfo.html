@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>T严选-TCL员工购物平台,TCL员工之家,TCL内部员工购物商城</title>
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+		<meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/app/css/global.css">
+		<link rel="stylesheet" href="/app/css/channel.css">
+		<link rel="stylesheet" href="/app/css/style.css">
+		<link rel="stylesheet" href="/app/components/login/login.css">
+        <!--[if (IE 9)|(IE 8) ]>
+        <script src="../../app/js/ie9.js"></script>
+        <![endif]-->
+	</head>
+	<body>
+        <style>
+            .header.my {
+                position: relative;
+            }
+        </style>
+        <style>
+            .reg-cont .btn_disabled {
+                border-color: #B4B4B4;
+                background-color: #B4B4B4
+            }
+        </style>
+		<% include ../../headerlogin %> <% var R = __result__ %>
+		<div class="box ">
+			<div class="reg-top">
+				<div class="logo">
+					<a href="javascript:;" binder-event="click|goIndex">
+						<span class="T-logo">&#xe6a9;</span>
+					</a>
+				</div>
+				<div class="title">账号申请</div>
+			</div>
+		</div>
+		<!-- Top html end -->
+		<!-- content html start -->
+		<div class="reg-cont forget-box">
+		<strong id="Msg" style="color:red;"></strong>
+			<div class="user-name input-box "><span class="user-info-label">姓名</span>
+				<input type="text" name="workid" id="workid" placeholder="请输入真实姓名" value=""/>
+				<strong ></strong>
+			</div>
+			<div class="user-name input-box"><span class="user-info-label">手机号码</span>
+				<input type="text" name="phone" id="phone" placeholder="请输入手机号" value=""/>
+				);">工号申请</a></span>
+				<strong ></strong>
+			</div>
+
+			<div class="user-name input-box" id="VilidateCode"><span class="user-info-label">验证码;</span>
+				<span class="pass-code"><a href="javascript:;"  binder-event="click|getValidateCode" >点击获取验证码</a></span>
+				<input type="hidden" name="captchakey" id="captchakey"/>
+				<input type="text" name="captchadata" id="captchadata" placeholder="输入验证码" maxlength="4" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+				<strong id="verifyCodeMsg"></strong>
+			</div>
+		<div class="user-name input-box"><span class="user-info-label">公司名称</span>
+		 <input type="text" name="loginName" id="loginName" placeholder="请输入公司名称" value=""/>
+		<strong ></strong>
+		</div>
+		<div class="user-name input-box">
+			<span class="user-info-label">部门名称</span>
+			<input type="password" name="loginPwd" id="loginPwd" placeholder="请输入部门名称"/>
+		</div>
+		<div class="login-but"><button class="buy">确认</button></div>
+	</div>
+		
+		<% include ../../footer %>
+		<script src="/app/js/applyAccountInfo.js"></script>
+	</body>
+
+</html>

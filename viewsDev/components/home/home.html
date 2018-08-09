@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>T严选-TCL员工购物平台,TCL员工之家,TCL内部员工购物商城</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" />
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/app/components/index/index.css">
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<% include ../../header %> <% var R = __result__ %>
+<%
+    var channelDic = {
+        "电视":'tv',
+        "手机":'mobile',
+        "空调":'air',
+        "冰箱":'refrigerator',
+        "洗衣机":'washer',
+        "健康电器":'homeappliance'
+    }
+%>
+
+<!--类目的导航-->
+<div id="banner-box" class="layout">
+    <div class="bannner-navgation" style="width: 1228px; margin: 0 auto">
+        <div id="ban-nav">
+            <ul class="ul">
+            <%if( R.activeMain) {%>
+                <% R.activeMain.list && R.activeMain.list.length && R.activeMain.list.forEach(function (ele, index, arr){%>
+                    <%if( index<7 ){%>
+                        <li uuid="<%=ele.uuid%>"><a target="_blank" data-state="<%=ele.state%>" title="<%=ele.categoryName%>" href="<%if(ele.categoryUrl !=undefined){%> <%=ele.categoryUrl%><%}else{%>javascript:;<%}%>"><%=ele.categoryName%></a> <i class="flex-next">&#xe631;</i></li>
+                    <%}%>
+                <%})%>
+            <%}%>
+            </ul>
+            <div class="ban-nav-box">
+                <%  R.activeMain.list && R.activeMain.list.length && R.activeMain.list.forEach(function (ele, index, arr){%>
+                <div class="ban-nav-cont" uuid="<%if(ele.children){%><%if(ele.children[0]){%><%if(ele.children[0].parentUuid !=undefined){%><%=ele.children[0].parentUuid%><%}%><%}%><%}%>"width="758px" style="display: none;">
+
+                    <ul class="ban-cont-list fl typetwo">
+                        <%  ele.children && ele.children.length && ele.children.forEach(function (ele, index, arr){%>
+                        <% if (ele.categoryName.length>0){%>
+                        <li class="typetwo-li">
+
+                            <a href="<%=ele.categoryUrl %>"><span class="typetwo-title"><%=ele.categoryName %><sapn class="typetwo-arr">&#xe62f;</sapn></span></a>
+
+                            <ul class="ban-cont-list-three">
+                                <%  ele.children && ele.children.length && ele.children.forEach(function (ele, index, arr){%>
+                                <li>
+                                    <a href="<%=ele.categoryUrl %>"> <span class="typetxt"><%=ele.categoryName %></span></a>
+                                </li>
+                                <%})%>
+                                <div class="clear"></div>
+                            </ul>
+                        </li>
+                        <%}%>
+                        <%})%>
+                    </ul>
+
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+    <div id="banner-content">
+        <div class="banner">
+            <%if(R.initAdvertisement && R.initAdvertisement.topAds && R.initAdvertisement.topAds.length) {%>
+                <% R.initAdvertisement.topAds.forEach(function (ele, index, arr) {%>
+                <div class="banner-slide" style="<% if(index == 0){%> display:block <%}else{ %> display:none <%}%>">
+                    <a target="_blank" href="<%=ele.href%>" class="inner-link"><img alt="<%=ele.alt%>"  src="<%=ele.src%>" class="src"></a>
+                </div>
+                <%})%>
+            <%}%>
+            <div class="dots-box">
+                <div class="banner-dots"></div>
+            </div>
+            <div class="anchors"><a href="javascript:;" class="banner-anchor flex-prev prev">&#xe632;</a><a href="javascript:;" class="banner-anchor flex-next next">&#xe631;</a></div>
+        </div>
+    </div>
+</div>
+
+<!-- new product start -->
+<div class="layout">
+  <div class="visual pt30 bg-white">
+    <div class="row wd1228">
+      <div class="new-product clearfloat">
+        <ul id="threeAd">
+            <%if(R.initAdvertisement && R.initAdvertisement.threeAds && R.initAdvertisement.threeAds.length) {%>
+            <% var threeAdsNum=0;%>
+                <% R.initAdvertisement.threeAds.forEach(function (ele, index, arr) {%>
+                <% if(threeAdsNum<3){ threeAdsNum++;%>
+                    <li class="new-left" <%if(arr.length-1 == index){%> style=margin-right:0px <%}%>>
+                        <a width="409" height="409" href="<%=ele.href%>" target="_blank">
+                        <div class="text-l">
+                            <p class="prod-name"></p>
+                            <p class="prod-desc"><span pid="price_TheCreativeLifes.html"> </span></p>
+                        </div>
+                        <img src="<%=ele.src %>" alt="<%=ele.alt %>"></a>
+                    </li>
+            <%}%>
+                <%})%>
+            <%}%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--明星产品 start-->
+<%if(R.initHotAdvertisement && R.initHotAdvertisement.retData && R.initHotAdvertisement.retData.length) {%>
+<div class="layout">
+    <div class="special-row wd1228">
+        <% var sellNum=0%>
+        <% R.initHotAdvertisement.retData.forEach(function (ele, index, arr) {%>
+        <%if(ele.bestSellingProducts != "0"){%>
+        <% if(sellNum<2) { sellNum++%>
+        <div class="special-box <%if(index == 0){%> border-top-yellow <%}else{%>border-top-red<%}%> tv_series11">
+            <div class="special-box-h">
+                <span class="special-box-h-one"><%=ele.titleName%></span>
+                <a class="special-box-more" href="<%=ele.url%>">查看更多<span class="special-box-more-icon">&#xe6bd;</span></a>
+            </div>
+            <% var featuredContents = ele.featuredContents %>
+            <% featuredContents.product.forEach(function (ele, index, arr) {%>
+            <a href="<%=ele.url%>" title="<%=ele.titleName%>">
+            <div class="special-box-one">
+                <div class="special-img">
+                    <img alt="<%=ele.titleName%>" src="/app/images/loadbg.gif" data-original="<%=ele.imageUrl%>" class="hot-img">
+                </div>
+                <div class="special-txt">
+                    <span class="special-red-txt"><%=ele.titleName%></span>
+                </div>
+                <div class="special-txt red-one">
+                    <span class="special-red-txt">员工价</span>
+                    <span class="secial-price">￥<%=ele.staffPrice.toFixed(2)%></span>
+                </div>
+            </div>
+            </a>
+            <%})%>
+            <div class="clear"></div>
+        </div>
+        <%}%>
+        <%}%>
+        <%})%>
+        <% var show=true; %>
+        <% R.initHotAdvertisement.retData.forEach(function (ele, index, arr) {%>
+        <%
+        var a = ele.featuredContents.poster.length;
+        var ran = parseInt(Math.random()*a)
+        %>
+        <%if(ele.bestSellingProducts != "0"){%>
+        <%if(show){%>
+        <%
+         show=false;
+        %>
+        <div class="special-more">
+            <a href="<%=ele.featuredContents.poster[ran].url%>">
+            <img alt="<%=ele.featuredContents.poster[ran].titleName%>" src="/app/images/loadbg.gif" data-original="<%=ele.featuredContents.poster[ran].imageUrl%>"class="hot-img special-more-img">
+            </a>
+        </div>
+        <%}%>
+        <%}%>
+        <%})%>
+        <div class="clear"></div>
+    </div>
+</div>
+<%}%>
+<!--明星产品 end-->
+<!--商品列表-->
+<div class="layout">
+  <div class="series">
+      <% R.getallproduct && R.getallproduct.retData && R.getallproduct.retData.length && R.getallproduct.retData.forEach(function (ele, index, arr) {%>
+      <%if(ele.bestSellingProducts == "0"){%>
+       <% if(ele.featuredContents && ele.featuredContents.poster && ele.featuredContents.poster.length) {%>
+        <div class="tv_series tv_series<%=index%>">
+          <header class="clear">
+            <h2><%=ele.titleName%></h2>
+             <% if(ele.titleName == '配件和周边') {%>
+                <a name="F7"></a>
+             <%}%>
+              <ul>
+                  <% var dics = ele.description.split(',');
+                  for(var i=0;i<dics.length; i++) {%>
+                  <% if(i>=1){%>
+                  <span style="float: left; display:inline-block; width: 20px " class="tv-division" >/</span>
+                  <%}%>
+                  <li>
+                      <a href="/search/search?keyword=<%=dics[i]%>&sortBy=sortWeight">
+                        <%=dics[i]%>
+                      </a>
+                  </li>
+                  <%}%>
+              </ul>
+            <a class="more" href="<%=(channelDic[ele.titleName] ? channelDic[ele.titleName] : ele.url)%>">更多 ></a>
+          </header>
+          <div class="tv_serise_content clear">
+            <div class="tv_sec_left fl">
+                <%
+                    var a = ele.featuredContents.poster.length;
+                    var ran = parseInt(Math.random()*a)
+                %>
+              <a href="<%=ele.featuredContents.poster[ran].url%>">
+                <img class="hot-img" alt="<%=ele.featuredContents.poster[ran].titleName%>" src="/app/images/loadbg.gif" data-original="<%=ele.featuredContents.poster[ran].imageUrl%>">
+                <!--<img class="hot-img" data-original="<%=ele.featuredContents.poster[0].imageUrl%>" src="/app/images/loadbg.gif">-->
+              </a>
+            </div>
+            <ul class="tv_sec_right fl">
+                <% ele.featuredContents.product && ele.featuredContents.product.length && ele.featuredContents.product.forEach(function (el, index ,arr) {%>
+                    <%if(index<8) {%>
+                        <li>
+                            <%if(el.label) {%>
+                                <img  class="rightbadge hot-img" src="/app/images/loadbg.gif" data-original="<%=el.label.imageUrl%>">
+                            <%}%>
+                            <a href="<%=el.url%>"><img height="180" width="180" class="hot-img" src="/app/images/loadbg.gif" data-original="<%=(el.imageUrl?el.imageUrl:'')%>" alt="<%=el.titleName%>">
+                                <p class="title"><%=el.titleName%></p>
+                                <p class="dice"><%=el.description%></p>
+                                <p class="price"><%=(el.staffPrice.toFixed(2))%> 元</p>
+                            </a>
+                        </li>
+                    <%}%>
+                <%})%>
+            </ul>
+          </div>
+        </div>
+      <%}%>
+      <%}%>
+      <%})%>
+        <ul class="float_nav">
+            <% R.getallproduct && R.getallproduct.retData && R.getallproduct.retData.length && R.getallproduct.retData.forEach(function (ele, index, arr) {%>
+                <% if(ele.featuredContents && ele.featuredContents.poster && ele.featuredContents.poster.length ) {%>
+                    <% if(ele.orderNum == 0) {%>
+            <%if(ele.bestSellingProducts == "0"){%>
+                        <li data-id="<%=index%>"><a href="javascript:;" class="nav-color" ><%=ele.titleName%></a></li>
+             <%}%>
+                    <%} else {%>
+            <%if(ele.bestSellingProducts == "0"){%>
+                        <li data-id="<%=index%>"><a href="javascript:;" ><%=ele.titleName%></a></li>
+             <%}%>
+                    <%}%>
+                <%}%>
+            <%})%>
+        </ul>
+  </div>
+</div>
+<!-- news start-->
+<!--<div class="layout" style="background-color:#fff;">-->
+    <!--&lt;!&ndash; Hardcore fans  html start &ndash;&gt;-->
+      <!--<div class="fans">-->
+          <!--<h2 id="dynamic_title"> <%if(R.initAdvertisement && R.initAdvertisement.news && R.initAdvertisement.newsTitle) {%><%=R.initAdvertisement.newsTitle.title%><%}%></h2>-->
+          <!--<ul class="fans-list" id="news">-->
+              <!--<%if(R.initAdvertisement && R.initAdvertisement.news && R.initAdvertisement.news.length) {%>-->
+              <!--<% R.initAdvertisement.news.forEach(function(newItem, index, arr) {%>-->
+              <!--<li class="fans-item">-->
+                  <!--<a href="<%=newItem.href%>"><img width="296" height="226" class="hot-img" src="/app/images/loadbg.gif" data-original="<%=newItem.src %>" alt="<%=newItem.alt %>"></a>-->
+                  <!--<div class="fans-box">-->
+                      <!--<div class="fans-title">-->
+                          <!--<span class="fans-news"><%=newItem.type%></span><%=newItem.title%>-->
+                      <!--</div>-->
+                      <!--<div class="fans-describe"><%=newItem.desc%></div>-->
+                      <!--<a href="<%=newItem.href%>" class="fans-details" target="_blank">查看详情 &gt;&gt; </a>-->
+                  <!--</div>-->
+              <!--</li>-->
+              <!--<%})%>-->
+              <!--<%}%>-->
+          <!--</ul>-->
+          <!--<div class="fans-more"> <a href="http://www.tcl.com/group/news/index" target="_blank">查看更多 &gt;&gt; </a> </div>-->
+      <!--</div>-->
+<!--    &lt;!&ndash; Hardcore fans  html end &ndash;&gt;
+    <div compid="serviceBanner" id="Item1461653856698" class="DragBox" startwidth="1120" startheight="34" startleft="53" starttop="422" style="visibility: visible;">
+      &lt;!&ndash; Website service  html start &ndash;&gt;
+      <div class="server">
+        <ul>
+          <li class="text-l disable"><span></span> <em>官方正品</em> </li>
+          <li class="text-two disable"><span></span> <em>全国联保</em> </li>
+          &lt;!&ndash; </a> &ndash;&gt;
+          <li class="text-three disable"> <span></span> <em>全场包邮</em> </li>
+          &lt;!&ndash; </a> &ndash;&gt;
+          <li class="text-r disable"> <span></span> <em>7天无理由退货</em> </li>
+        </ul>
+      </div>
+      &lt;!&ndash; Website service  html end ddd&ndash;&gt;
+    </div>-->
+<!--</div>-->
+
+
+<% include ../../footer %>
+<script src="/app/components/index/index.js"></script>

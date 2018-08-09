@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head> <% var R = __result__ %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>P5评测活动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" type="text/css" href="/app/components/p5Eva/p5.css">
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body class="ucCenter">
+<% include ../../header %>
+   <div class="p5page" id="p5">
+       <div class="banner">
+            <img src="<%=R.ads[0].url%>" />
+            <a href="javascript:;" class="btn btn-attend J_attend">参加活动</a>
+            <a href="javascript:;" class="btn btn-detail">活动细则</a>
+       </div>
+       <div class="eva-wrap">
+           <h3 class="eva-title">测评展示区</h3>
+           <ul></ul>
+           <div class="paging-wrap">
+               <div id="page" class="page-btn"></div>
+           </div>
+       </div>
+
+       <div class="mask"></div>
+        <!-- 活动表单 -->
+       <div class="attend-wrap">
+           <h3 class="maintitle">发布测评</h3>
+           <a href="javascript:;" class="btn-closedet">&nbsp;</a>
+           <div class="det-body">
+               <div class="det-item clearfix det-item1">
+                    <span class="sp1">上传照片：</span>
+                    <form method="post" enctype="multipart/form-data">
+                        <a href="javascript:;" class="file">
+                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img0', 0)">
+                            <img src="" class="uploadimgShow" id="upload1_img0">
+                            <span class="spupicon"></span>
+                            <span class="spdelicon" data-num ="0"></span>
+                        </a>
+                    </form>
+                    <form method="post" enctype="multipart/form-data">
+                        <a href="javascript:;" class="file">
+                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img1', 1)">
+                            <img src="" class="uploadimgShow" id="upload1_img1">
+                            <span class="spupicon"></span>
+                            <span class="spdelicon" data-num ="1"></span>
+                        </a>
+                    </form>
+                    <form method="post" enctype="multipart/form-data">
+                        <a href="javascript:;" class="file">
+                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img2', 2)">
+                            <img src="" class="uploadimgShow" id="upload1_img2">
+                            <span class="spupicon"></span>
+                            <span class="spdelicon" data-num ="2"></span>
+                        </a>
+                    </form>
+                    <form method="post" enctype="multipart/form-data">
+                        <a href="javascript:;" class="file">
+                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img3', 3)">
+                            <img src="" class="uploadimgShow" id="upload1_img3">
+                            <span class="spupicon"></span>
+                            <span class="spdelicon" data-num ="3"></span>
+                        </a>
+                    </form>
+                    <p>图片至少上传3张，最多不超过4张。<br />例如：电视外观（正面/背面/侧面）和使用场景图。<br />且格式为jpg/jpeg。大小在200k以内。</p>
+               </div>
+               <div class="det-item clearfix det-item2">
+                    <span class="sp1">测评内容：</span>
+                    <textarea placeholder="请输入测评内容：" maxlength="500"></textarea>
+                    <p>围绕产品外观、使用感受等方面发布不少于100字的文字评测。</p>
+                    <p class="col-red">注意：如评测内容中含不雅用语或敏感词汇，TCL官方商城将删除此条违规评测，且取消该用户的获奖资格。</p>
+               </div>
+               <div class="det-item clearfix det-item3">
+                    <span class="sp1">上传发票图：</span>
+                    <form method="post" enctype="multipart/form-data">
+                        <a href="javascript:;" class="file">
+                            <input id="upload1" type="file" name="imgFile" accept="image/png,image/jpeg,image/jpg" onchange="KUYU.purUpload(this, 'upload1_img4', 4)">
+                            <img src="" class="uploadimgShow" id="upload1_img4">
+                            <span class="spupicon"></span>
+                            <span class="spdelicon" data-num ="4"></span>
+                        </a>
+                    </form>
+                    <p>发票仅用于官方审核参与资格，不对外显示。</p>
+               </div>
+               <div class="det-item clearfix det-item4">
+                    <span class="sp1">手机号：</span>
+                    <input name="phone" placeholder="请输入手机号" maxlength="11" />
+               </div>
+               <div class="det-item clearfix det-item5">
+                    <span class="sp1">邮寄地址：</span>
+                    <input name="address" placeholder="请输入邮寄地址" />
+                    <p>以上收件信息仅用于邮寄礼品，不对外显示。</p>
+               </div>
+               <div class="sub-cont">
+                   <a href="javascript:;" class="btn-cancel">取消</a>
+                   <a href="javascript:;" class="btn-release J_release">发布</a>
+               </div>
+           </div>
+       </div>
+       <!-- 活动细则 -->
+       <div class="act-detail">
+           <h3 class="maintitle">活动细则</h3>
+           <a href="javascript:;" class="btn-closedet">&nbsp;</a>
+           <div class="det-body">
+               <h3><span class="act-tag">活动时间</span>2018年3月15日-4月30日</h3>
+               <h3><span class="act-tag">第一阶段</span>评测有礼活动，2018年3月15日-4月15日</h3>
+               <p>  1、凡在线下实体店或官网购买P5系列电视的用户即有资格参与，注册登录官网后对P5电视进行评测；<br />
+                    2、评测要求为围绕产品外观、使用感受、购物体验等方面发布不少于100字的文字，并上传发票照片（发票用于官方核对参与资格，不对外显示）和不少于3张电视照片。<br />
+                    3、参与评测即可获得奖品：<br />
+                        <span class="pdl60"></span>（1）前100名参与评论活动即可价值397元天籁K歌大礼包（话筒一个+天籁K歌软件会员一年）；<br />
+                        <span class="pdl60"></span>（2）101-300名获得三个月企鹅影院会员卡；<br />
+                        <span class="pdl60"></span>（3）300名后获得1个月企鹅影院会员卡；<br />
+                    4、获奖名单将在活动结束后7个工作日内在TCL官方商城公布，并以短信通知获奖者，请已参与用户密切留意官网动态。
+                </p>
+                <h3><span class="act-tag">第二阶段</span>评测达人大比拼，活动时间：2018年4月2日-30日</h3>
+                <p> 1、从3月15-31日评论有礼活动中精选30名最走心的使用评测，在“TCL官方商城”公众号发起大比拼活动<br />
+                    2、入选者通过转发活动推文呼吁亲友参与投票，活动结束后按照投票数排名分配奖品（投票数少于100票不享受奖品）3、奖品设置：<br />
+                    <span class="pdl70"></span>一等奖（第1名）：免单（按发票金额返现）<br />
+                    <span class="pdl70"></span>二等奖（第2-3名）：阿尔法机器人<br />
+                    <span class="pdl70"></span>三等奖（第4-8名）：TCL官方商城500元优惠券（全年全场无门槛）
+                </p>
+                <a href="javascript:;" class="btn-attend disabled J_popattend">参加活动<span class="J_count">(5s)</span></a>
+           </div>
+       </div>
+   </div> 
+<% include ../../footer %>
+<script src="/app/js/ajaxfileupload.js"></script>
+<script src="/app/components/p5Eva/page.js"></script>
+<script src="/app/components/p5Eva/p5.js"></script>
+</body>

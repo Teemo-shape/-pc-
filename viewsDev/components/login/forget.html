@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>账号登录-TCL</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/app/css/global.css">
+    <link rel="stylesheet" href="/app/css/channel.css">
+    <link rel="stylesheet" href="/app/css/style.css">
+    <link rel="stylesheet" href="/app/components/login/login.css">
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="../../app/js/ie9.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <style>
+        .header.my {
+            position: relative;
+        }
+    </style>
+    <style>
+        .reg-cont .btn_disabled {
+            border-color: #B4B4B4;
+            background-color: #B4B4B4
+        }
+    </style>
+    <% include ../../headerlogin %>
+        <% var R = __result__ %>
+            <div class="box ">
+                <div class="reg-top">
+                    <div class="logo">
+                        <a href="javascript:;" binder-event="click|goIndex">
+                            <span class="T-logo">&#xe6a9;</span>
+                        </a>
+                    </div>
+                    <div class="title">找回密码</div>
+                </div>
+            </div>
+            <!-- Top html end -->
+            <!-- content html start -->
+            <div class="reg-cont forget-box hide forget-step-two hide">
+
+                <strong id="Msg" style="color:red;"></strong>
+                <!--<div class="user-name input-box j-way j-workid"><span class="user-ico">&#xe620;</span>-->
+                <!--<input type="text" name="workid" id="workid" placeholder="请输入TCL员工工号" value=""/>-->
+                <!--<span>没有手机号的员工可使用<a class="red-link" href="javascript:selectway('email');">邮箱申请</a> 或 <a class="red-link" href="javascript:selectway('phone');">手机号申请</a></span>-->
+                <!--<strong ></strong>-->
+                <!--</div>-->
+                <div class="user-name input-box j-way j-phone"><span class="user-ico">&#xe620;</span>
+                    <input type="text" name="phone" id="phone" placeholder="请输入TCL员工手机号" value="" />
+                    <span>没有手机号的员工可使用<a class="red-link j-select-apply-way" href="javascript:;" data-rela="email">邮箱申请</a> </span>
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box j-way j-email"><span class="user-ico">&#xe643;</span>
+                    <input type="text" name="email" id="email" placeholder="请输入TCL员工邮箱" value="" />
+                    <span>没有邮箱的员工可使用<a class="red-link j-select-apply-way" href="javascript:;" data-rela="phone">手机号申请</a></span>
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box j-code-msg hide"><span class="user-ico">&#xe6a5;</span>
+                    <span class="pass-code"><img src="" id="imgcode" class="J-GetImgCode"></span>
+                    <input type="text" name="J-ImgCode" id="J-ImgCode" placeholder="请输入图型验证码" maxlength="4" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box" id="VilidateCode"><span class="user-ico">&#xe6a5;</span>
+                    <span class="pass-code"><a href="javascript:;"  class="j-get-pass-code" >点击获取验证码</a></span>
+                    <input type="hidden" name="captchakey" id="captchakey" />
+                    <input type="text" name="captchadata" id="captchadata" placeholder="输入验证码" />
+                    <strong id="verifyCodeMsg"></strong>
+                </div>
+                <div class="user-name input-box"><span class="user-ico">&#xe63e;</span>
+                    <input type="password" name="pswone" id="pswone" placeholder="请输入密码" value="" />
+                    <strong></strong>
+                </div>
+                <div class="user-name input-box">
+                    <span class="user-ico">&#xe63e;</span>
+                    <input type="password" name="pswtwo" id="pswtwo" placeholder="请输入确认密码" />
+                    <span class="psw-tip">密码长度8-16位，数字、字母、字符至少包含两种</span>
+                </div>
+                <div class="login-but"><button class="buy j-forget-info">下一步</button></div>
+            </div>
+            <div class="reg-cont forget-box forget-step-one">
+                <div class="forget-get-way">
+                    <div class="forget-get-row">
+                        <input class="get-way-select" type="radio" name="getway" value="phone" id="phone-way">
+                        <span class="get-way-select-img"></span>
+                        <label for="phone-way">通过手机号找回</label>
+                    </div>
+                    <div class="forget-get-row">
+                        <input class="get-way-select" type="radio" name="getway" value="email" id="email-way">
+                        <span class="get-way-select-img"></span>
+                        <label for="email-way">通过邮箱找回（仅限使用邮箱申请的用户）</label>
+                    </div>
+                    <!--<div class="forget-get-row">-->
+                    <!--<input class="get-way-select" type="radio" name="getway" value="workid" id="workid-way">-->
+                    <!--<span class="get-way-select-img"></span>-->
+                    <!--<label for="workid-way">通过工号找回（仅限使用工号申请的用户）</label>-->
+                    <!--</div>-->
+                    <div class="login-but"><button class="buy j-select-wap">确定</button></div>
+                </div>
+
+            </div>
+            <div class="reg-cont forget-box forget-succ hide">
+                <div class="forget-get-succ">
+                    <div class="succ-icon">&#xe6a3;</div>
+                    <span class="succ-tip">恭喜您，密码找回成功</span>
+                </div>
+                <div class="btn-row">
+                    <a href="/pages/usercenterindex/usercenter.html">
+                        <div class="btn-red fl">进入我的</div>
+                    </a>
+                    <a href="/">
+                        <div class="btn-emtry fl">进入首页</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+            <div class="help">
+                <div class="min-wid">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>服务支持</dt>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/page/serviceRevision/policy?id=56d4f28d21ca473f871a3b845f61aee9">售后服务</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/serviceRevision/repair.html">自助服务</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="/pages/service-home/index.html#query-wrapper">进度查询</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="http://fans.tcl.com/uec/">用户体验中心</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>客户服务</dt>
+                        <dd><a style="color:red" target="_blank" href="http://www.pengpengmall.com/" rel="nofollow">内购平台</a></dd>
+                        <dd><a target="_blank" href="/pages/bulkpurchase/newBulkpurchase.html" rel="nofollow">大宗采购</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin" rel="nofollow">经销商之家</a></dd>
+                        <dd><a target="_blank" href="http://www.shifendaojia.com/index.html" rel="nofollow">十分到家</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>关注我们</dt>
+                        <dd><a target="_blank" rel="nofollow" href="/pages/connectWithUs/connectWithUs.html" rel="nofollow">联系我们</a></dd>
+                        <dd><a target="_blank" rel="nofollow" class="botSina" href="http://weibo.com/tcljituan?topnav=1&wvr=6&topsug=1&is_hot=1">官方微博</a></dd>
+                        <dd><a target="_blank" rel="nofollow" href="http://fans.tcl.com/">铁粉社区</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>应用服务</dt>
+                        <dd><a target="_blank" href="http://www.ffalcon.my7v.com/" rel="nofollow">雷鸟</a></dd>
+                        <dd><a target="_blank" href="http://www.huan.tv/toIndex.action" rel="nofollow">欢网</a></dd>
+                        <dd><a target="_blank" href="https://jr.tcl.com/home.html" rel="nofollow">金融</a></dd>
+                        <dd><a target="_blank" href="http://www.imooc.com/" rel="nofollow">教育</a></dd>
+                        <dd><a target="_blank" href="http://www.golive-tv.com/" rel="nofollow">全球播</a></dd>
+                        <dd><a target="_blank" href="http://www.tcl-smarthome.com/" rel="nofollow">智能家居</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>TCL官网商城及二维码</dt>
+                        <dd><img style="height:120px;width:120px;" src="/app/images/wechat.jpg"></dd>
+                    </dl>
+                    <dl class="last-r">
+                        <p class="red phone">4008-123456</p>
+                        <p class="grey">（24小时在线，仅收市话费）</p>
+                        <a href="/pages/service/customerServiceKuyu.html" target="_self" rel="nofollow"><i>&#xe64a;</i>24小时在线客服</a>
+                    </dl>
+                </div>
+            </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <div class="foot-logo">&#xe674;</div>
+                    <p class="blod"><a target="_blank" href="/group/companyInfo/index" rel="nofollow">关于TCL</a>|<a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|<a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|<a target="_blank"
+                            rel="nofollow" href="/group/news/index">新闻中心</a>|<a target="_blank" rel="nofollow" href="/group/recruitment/index">人才招聘</a>|<a rel="nofollow" target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+                    <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号<a target="_blank" rel="nofollow" class="marginL" href="/pages/low/content.html">使用条款</a>|<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/companyInfo/slipPath?type=5">法律声明</a>|
+                        <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=4">隐私保护</a>
+                    </p>
+                    <p>
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44133002100088" rel="nofollow"><img style="margin: -3px 3px 0 0; width:16px;" src="/app/images/beian.png">粤网公安备案44133002100088号</a>
+                    </p>
+                    <div class="foot-r">
+                        <div class="language">
+                            <a href="/pages/index/index.html" rel="nofollow" class="lang-item active">中文简体</a>|<a rel="nofollow" href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a>
+                        </div>
+                    </div>
+                    <div class="AC">
+                        <div><img src="/app/images/credibility.png" /></div>
+                        <div>
+                            <a href="http://wljg.gdgs.gov.cn/corpsrch.aspx?key=440000000011990" target="_blank" title="企业名称：TCL集团股份有限公司&#10;法定代表人：李东生&#10;标识状态：已激活 粤工商备P131801001423"><img src="http://wljg.gdgs.gov.cn/upload/image/20141126/20141126002933.png" alt="" style="border:0;" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="../../app/js/vendor.js"></script>
+            <script src="../../app/js/core.js"></script>
+            <script src="../../app/config/config.js"></script>
+            <script src="/app/js/forget.js"></script>
+</body>
+
+</html>

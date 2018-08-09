@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head> <% var R = __result__ %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TCL2018春季发布会直播</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="360-site-verification" content="648523929a97ca92a6c1fa942ebf1e18" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <% include ../../public %>
+    <!--[if (IE 9)|(IE 8) ]>
+        <script src="/app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+<body class="ucCenter">
+<% include ../../header %>
+   <div class="" id="live">
+       <div class="banner">
+           <a href="<%=R.ads[0].link%>" target="_blank">
+                <img src="<%=R.ads[0].url%>" />
+           </a>
+       </div>
+       <div class="main">
+            <div class="video_main">
+                <h2 class="ht">现场直击</h2>
+                <div class="video_comment clearfix">
+                    <div class="video">
+                        <!-- <iframe src="//icon.zol.com.cn/live/oversea.html?s=TCL&l=bsh" frameborder="0" scrolling="no" width="100%" height="480" allowfullscreen="true"></iframe> -->
+                        <% 
+                            var endTime = new Date('2018/3/6 14:30').getTime();
+                            var t = endTime - Date.now();
+                            var seconds = Math.floor((t / 1000) % 60);
+                            var minutes = Math.floor((t / 1000 / 60) % 60);
+                            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                        %>
+                        <% if( hours >= 0 && minutes >= 0 && seconds >= 0 ) {%> 
+                            <div class="reduceTime">
+                                <div class="reduceTitle">
+                                    <h6>2018 TCL春季发布会直播倒计时</h6>
+                                    <p id="reduces">
+                                        <i><%=hours%></i>小时<i><%=minutes%></i>分<i><%=seconds%></i>秒
+                                    </p>
+                                    <img src="/app/images/p_x64.png" alt="">
+                                </div>
+                            </div>
+                        <%}%>
+                        <embed type="application/x-shockwave-flash" src="https://icon.zol-img.com.cn/video/flash/livePlayer.1.2.swf" width="786px" id="f" name="f" height="442px" flashvars="stream=rtmp://bsh.live.zol.com.cn/liveapp/&amp;streamname=TCL.stream&amp;autoplay=1&amp;live=1&amp;skin=https://icon.zol-img.com.cn/video/flash/mySkinZol.swf" allowscriptaccess="always" allowfullscreen="true" bgcolor="#000000" wmode="transparent">
+                    </div>
+                    <div class="comment">
+                       <h6>
+                           评论
+                       </h6>
+                       <div class="comment-list">
+                           <ul>
+                               <li></li>
+                           </ul>
+                       </div>
+                       <div class="comment-submit">
+                            <textarea name="" id="txt"></textarea>
+                            <button id="submit" binder-event="click|submit">
+                                发表
+                            </button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <% if( R.ads2.length) {%>
+            <div class="video_main">
+                <h2>春季新品</h2>
+                <div class="product_comment">
+                    <% R.ads2.forEach(function (ele, index, arr) {%>
+                        <a href="<%=ele.link%>" class="<%=(index ==0 ? 'big': 'sm' )%>" target="_blank">
+                            <img src="<%=ele.url%>" />
+                        </a>
+                    <%})%>
+                </div>
+            </div>
+            <%} %>
+            <% if( R.ads3.length) {%>
+            <div class="video_main">
+                <h2>精彩视频</h2>
+                <div class="videos_comment">
+                        <div class="box channel-ban banner" id="chanBanner">
+                            <div class="commo-banner">
+                                <% R.ads3.forEach(function (ele, index, arr) {%>
+                                <div class="banner-slide" style="<% if(index <1){%> display:block <%}else{%> display:none <%}%>">
+                                   <ul>
+                                       <%ele.forEach(function(item, i, arr2) {%> 
+                                        <li>
+                                            <div class="vd shadow" data-v="<%=item.url%>" data-t="<%=item.name%>" >
+                                                <img src="/app/images/p_x64.png" alt="" width="32" height="32">
+                                                <p><%=item.name%></p>
+                                            </div>
+                                            <img src="<%=item.icon%>" alt="" class="ig">
+                                            <!-- <video src="<%=item.url%>" class="" loop="loop" x-webkit-airplay="true" webkit-playsinline="true"> -->
+                                            </video>
+                                        </li>
+                                        <%})%>
+                                   </ul>
+                                </div>
+                                <%})%>
+                            </div>
+                            <!-- <div class="banner-dots"></div> -->
+                            <%if( R.ads3 && R.ads3.length>1) {%>
+                                <a href="javascript:;" class="banner-anchor flex-prev prev">&#xe632;</a>
+                                <a href="javascript:;" class="banner-anchor flex-next next">&#xe631;</a>
+                            <%}%>
+                        </div>
+                </div>
+            </div>
+            <%} %>
+            <div class="video_main">
+                <h2>最新新闻</h2>
+                <div class="news_comment">
+                        <ul class="fans-list" id="news">
+                        </ul>
+                </div>
+            </div>
+            <div class="video_main">
+            <div style="height:100px;">
+                    <a href="/" class="bk">返回首页</a>                  
+            </div>
+        </div>
+       </div>
+   </div> 
+<% include ../../footer %>
+<style>
+    .bk{
+        background: #FF0000;
+        border: 1px solid #FF0000;
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        color: #FFFFFF;
+        line-height: 16px;
+        width: 280px;
+        height: 40px; line-height: 40px;
+        display: block; margin: 0 auto;
+        text-align:center;
+    }
+    .banner{
+        position: relative;
+        /* height: 625px; */
+    }
+    .banner a{
+        display: block;
+    }
+    .banner a img{
+        position: absolute;
+        left: 50%;
+        margin-left: -960px;
+        max-width: 1920px;
+        width: auto;
+    }
+    .main{
+        background-image: linear-gradient(-179deg, #020204 5%, #10287E 100%);
+        width: 1920px;
+        margin: 0 auto;
+        padding-top:13px;
+        background: url("/app/images/live-big.jpg");
+        max-width: 100%;
+    }
+    .video, .comment{
+        display: inline-table;
+        vertical-align: top;
+    }
+    .video{
+        position: relative;
+        width:786px;
+    }
+    .reduceTime{
+        position: absolute;
+        width: 786px;
+        height: 442px;
+        background: url(/app/images/p_xbg.png);
+        color: #fff;
+        z-index: 222;
+    }
+    .reduceTitle{
+        text-align: center;
+        margin: 15% 0;
+        line-height: 2;
+        font-weight: lighter;
+    }
+    .reduceTitle h6{
+        font-size: 30px;
+        font-weight: 300;
+    }
+    #reduces{
+        font-size: 30px;
+    }
+    #reduces i{
+        font-style:normal;
+        font-size:48px;
+        margin: 0 8px;
+    }   
+    .video_comment{
+        margin-top:13px;
+    }
+    .comment{
+        padding-left: 12px;
+        background: url(/app/images/live-small.jpg);
+        height: 446px;
+    }
+    .main .video_main{
+        width: 1228px; margin: 0 auto;
+    }
+    .main h2{
+        font-size: 30px; font-weight: normal; color: #fff;
+        margin: 25px 0 13px;
+    }
+    .main .ht{
+        margin: 15px 0 13px;
+    }
+    
+    #txt{
+        display: block;
+        width: 412px; height: 79px; border: 1px #e6e6e6; background: #F5F5F5;
+        padding: 5px;
+        resize: none;
+    }
+    .comment h6{
+        font-size: 18px;
+        margin: 14px 14px 14px 0;
+        color: #fff;
+        padding-bottom: 14px;
+        font-weight: normal;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    .comment-list{
+        height: 230px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 408px;
+    }
+    .comment-list ul li{
+        float:none;
+        margin: 13px 0;
+        border-bottom: 1px solid #E6E6E6;
+    }
+   
+    .comment-list ul li:last-child{
+        border-bottom: none;
+    }
+    .comment-list ul li p{
+        font-size: 14px; color: #fff; margin-bottom: 10px;
+    }
+    .comment-list ul li p.t{
+        font-size: 12px; color: #999;margin-bottom: 8px; position: relative;
+    }
+    .comment-list ul li p.t i{
+        position: absolute;
+        right: 5px;
+        font-style: normal;
+    }    
+    .comment-submit button{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 14px;
+        background: #FF0000;
+        border-radius: 2px;
+        display: block;
+        width:100px;
+        height:30px;
+        float:right;
+        margin-top: 14px;
+        cursor:pointer;
+    }
+
+.comment-list::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	border-radius: 6px;
+	background-color: transparent;
+}
+
+.comment-list::-webkit-scrollbar
+{
+	width: 4px;
+}
+
+.comment-list::-webkit-scrollbar-thumb
+{
+	border-radius: 6px;
+	/* -webkit-box-shadow: inset 0 0 46px rgba(0,0,0,.3); */
+    background-color: #999;
+    
+}
+.product_comment .big img{
+    width: 1226px; height: 442px;
+}
+.product_comment .sm img{
+    width: 606px; height: 442px;
+}
+.product_comment a.sm{
+    width: 606px; overflow: hidden;
+    margin-top: 14px;
+    display: inline-block;
+}
+.product_comment a.sm:last-child{margin-left: 11px;}
+#chanBanner video{width: 400px; height: 225px; }
+#chanBanner .banner-slide ul li {
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    text-align: center;
+    position:relative;
+}
+#chanBanner .banner-slide ul li  .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index:3;
+}
+#chanBanner .banner-slide ul li{
+    cursor: pointer;
+}
+#chanBanner .banner-slide ul li  .shadow p{
+    width: 100%;
+    height: 45px;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    bottom: 0;
+    position: absolute;
+    line-height: 45px;
+    text-align: left;
+    text-indent: 20px;
+}
+#chanBanner .banner-slide ul li  .shadow img{
+    position: absolute;
+    margin: 0;
+    z-index: 3;
+    top: 50%;
+    margin-top: -16px;
+    left: 50%;
+    margin-left: -16px;
+}
+
+#chanBanner .banner-slide li img.ig {
+    position: initial;
+    margin: 0;
+    display: inline;
+    width: 400px;
+    height: 227px;
+}
+
+#chanBanner .banner-slide ul li:nth-child(3n) {
+    margin-right: 0px;
+}
+#chanBanner .banner-slide ul li:nth-child(n+4) {
+    margin-bottom: 0px;
+}
+#chanBanner .banner-anchor {
+    font-size: 40px;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 900;
+}
+#chanBanner.banner{
+    background: none;
+}
+#chanBanner .banner-anchor.next{
+    /* margin-right: -613px; */
+}
+#chanBanner .banner-anchor.prev {
+    /* margin-left: -613px; */
+}
+
+#news{
+    height: 800px;
+}
+
+.fans-item {
+    max-width: 296px;
+    margin: 0 14px 10px 0;
+}
+.fans-item:nth-child(4n) {
+    margin-right: 0px;
+}
+.fans-item .fans-box {
+    padding: 14px;
+    background-color: #f3f3f3;
+    height: 140px;
+}
+.fans-box .fans-title {
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    color: #333;
+    margin-bottom: 10px;
+}
+.fans-box .fans-news {
+    font-size: 12px;
+    padding: 0 10px;
+    margin-right: 8px;
+    display: inline-block;
+    text-align: center;
+    background-color: #4b89f1;
+    vertical-align: top;
+    color: #FFF;
+}
+.fans-box .fans-describe {
+    font-size: 12px;
+    line-height: 14px;
+    color: #666;
+    margin-bottom: 18px;
+    height: 30px;
+}
+.fans-box .fans-details {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+#mb_con{
+        width: 640px;
+        background-color: #333;
+        border-radius: 0;
+    }
+     #mb_con #mb_msg{
+        padding: 0px;
+    }
+     #mb_con #mb_btn_ok{
+        background: none;
+        width: 30px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: 100;
+    }
+     #mb_con #mb_btnbox{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        margin: 0;
+        font-size: 20px;
+    }
+    #mb_con #mb_tit{
+        color: #fff;
+    }
+</style>
+<script src="/app/components/liveVideo/liveVideo.js"></script>

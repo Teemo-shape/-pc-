@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title> TCL服务中心_服务 - TCL内购商城</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit" />
+
+  <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../../app/css/global.css">
+  <link rel="stylesheet" href="../../app/css/channel.css">
+  <link rel="stylesheet" href="../../app/css/about.css">
+  <link rel="stylesheet" href="./service-home-index.css">
+  <!--[if (IE 9)|(IE 8) ]>
+  <script src="../../app/js/ie9.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+<!-- header-->
+<include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+<!-- side bar start -->
+<div class="mask" ></div>
+<div class="slidebar">
+  <!-- Shopping Cart html start -->
+  <span class="close" >&#xe63b;</span>
+  <div class="cart" id="dvPlatTopCart" >
+    <h3 class="cart-head">
+      <div class="black"><span class="shoping">&#xe60c;</span>我的购物车
+        <img class="loading"  src="http://10.73.128.174:20300/static/usercenter/img/loading.gif">
+      </div>
+    </h3>
+  </div>
+  <!-- Shopping Cart html end -->
+  <!-- Registration html start -->
+  <div class="regist" >
+    <h3>
+      <span class="shoping">&#xe624;</span>注册
+    </h3>
+    <div class="login-inp">
+      <div><input type="text" placeholder="手机或邮箱"></div>
+      <div class="verify"><input type="text" placeholder="图片验证码"><span><img src="http://10.73.128.174:20300/static/kuyu/common/img/verify.gif"></span></div>
+      <div><input type="text" placeholder="密码6~16位，数字/字母/字符至少两种"></div>
+      <div><input type="text" placeholder="确认密码"></div>
+      <p class="grey">注册TCL，即表示同意TCL的用户协议。</p>
+      <div><button class="buy zhuce">注册</button></div>
+      <p class="login-text"><span class="fr regis">登录</span></p>
+    </div>
+  </div>
+  <!-- Registration html end -->
+  <!-- login html start -->
+  <div class="login" id="slideLoginSide" >
+
+  </div>
+  <input type="text" id="test">
+  <!-- 判断是否已经登录，同步登录用于判断 -->
+  <input type="hidden" name="userloginname" id="userloginname" value="">
+  <input type="hidden" name="isRefresh" id="isRefresh" value="null">
+  <!-- login html end -->
+</div>
+<!-- side bar end -->
+
+
+
+<div class="service-home-wrapper">
+  <div class="mbx">
+    <div><a href="/" style="color: #a6a6a6;">首页</a> > 服务</div>
+  </div>
+  <div class="banner-wrapper">
+    <div class="items">
+      <!--
+      <a class="item" href="javascript:;" target="_blank" style="background-image: url(http://zc3.ys.xf.cc/public/atcmt/imgs/dc41c378-c494-49e6-83a1-87ed62c8fae2.jpg);"></a>
+      <a class="item" href="javascript:;" target="_blank" style="background-image: url(http://zc3.ys.xf.cc/public/atcmt/imgs/1afdd5c6-dcf4-4c91-8549-433cbb423d4a.jpg);"></a>
+      <a class="item" href="javascript:;" target="_blank" style="background-image: url(http://zc3.ys.xf.cc/public/atcmt/imgs/9ce66013-3999-4652-8550-c8a77c4b1dec.jpg);"></a>
+      -->
+    </div>
+    <div class="circles">
+      <!--
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
+      -->
+    </div>
+  </div>
+  <div class="search-support-wrapper">
+    <span class="icon"></span>
+    <input type="text" class="input" placeholder="搜索支持">
+    <a href="##" class="btn">搜索</a>
+    <div class="opts">
+      <div class="title">快速链接</div>
+      <a href="/pages/serviceRevision/repair.html" target="_blank" class="opt" data-text="我要维修">我要维修</a>
+      <a href="/pages/serviceRevision/install.html" target="_blank" class="opt" data-text="我要安装">我要安装</a>
+      <a href="/pages/serviceRevision/policy.html" target="_blank" class="opt fwzc" data-text="服务政策">服务政策</a>
+      <a href="/pages/serviceRevision/policy.html" target="_blank" class="opt sfbz" data-text="收费标准">收费标准</a>
+      <a href="javascript:;" class="opt JS-scrollTop" data-scroll-top-selector=".query-wrapper" data-text="服务进度查询">服务进度查询</a>
+      <a href="/pages/service/download.html" target="_blank" class="opt" data-text="电子说明书">电子说明书</a>
+      <a href="/pages/service/download.html" target="_blank" class="opt" data-text="应用下载">应用下载</a>
+      <a href="javascript:;" class="opt JS-scrollTop" data-scroll-top-selector=".common-question-wrapper" data-text="常见问题">常见问题</a>
+      <a href="javascript:;" class="opt consultation" data-text="联系客服">联系客服</a>
+    </div>
+  </div>
+  <div class="self-help-service-wrapper">
+    <span class="title">自助服务</span>
+    <span class="line"></span>
+    <div class="items">
+      <a href="/pages/serviceRevision/repair.html" class="item" target="_blank">
+        <span class="title">我要维修</span>
+        <span class="desc">在线提交产品维修申请</span>
+        <img src="./image/repair.png" alt="" class="image">
+      </a>
+      <a href="/pages/serviceRevision/install.html" class="item" target="_blank">
+        <span class="title">我要安装</span>
+        <span class="desc">在线提交报装申请</span>
+        <img src="./image/install.png" alt="" class="image">
+      </a>
+      <a href="/pages/serviceRevision/policy.html" class="item fwzc" target="_blank">
+        <span class="title">服务政策</span>
+        <span class="desc">&nbsp;</span>
+        <img src="./image/policy.png" alt="" class="image">
+      </a>
+      <a href="/pages/serviceRevision/policy.html" class="item sfbz" target="_blank">
+        <span class="title">收费标准</span>
+        <span class="desc">&nbsp;</span>
+        <img src="./image/money.png" alt="" class="image">
+      </a>
+      <a href="/pages/serviceRevision/autoCheck.html" class="item zjjc" target="_blank">
+        <span class="title">自助检测</span>
+        <span class="desc">自助诊断和视频教程</span>
+        <img src="./image/checkauto_icon.png" alt="" class="image">
+      </a>
+    </div>
+  </div>
+  <div class="query-wrapper" id="query-wrapper">
+    <div style="font-size: 0;">&nbsp;</div>
+    <div class="fwjdcq-rq">
+      <span class="icon"></span>
+      <span class="title">服务进度查询</span>
+      <input type="text" class="sjhm" placeholder="请输入手机号">
+      <div class="txyzm">
+        <input type="text" placeholder="请输入图形验证码">
+        <img src="" alt="">
+      </div>
+      <a href="javascript:;" class="btn">查询</a>
+      <span class="sjhm-vmsg"></span>
+      <span class="txyzm-vmsg"></span>
+    </div>
+    <!--<div class="dzbdcq-rq">-->
+      <!--<span class="icon"></span>-->
+      <!--<span class="title">电子保单查询</span>-->
+      <!--<input type="text" class="sjhm" placeholder="请输入手机号">-->
+      <!--<div class="txyzm">-->
+        <!--<input type="text" placeholder="请输入图形验证码">-->
+        <!--<img src="" alt="">-->
+      <!--</div>-->
+      <!--<a href="javascript:;" class="btn">查询</a>-->
+      <!--<span class="sjhm-vmsg"></span>-->
+      <!--<span class="txyzm-vmsg"></span>-->
+    <!--</div>-->
+  </div>
+  <div class="product-support-wrapper">
+    <span class="title">产品支持</span>
+    <span class="line"></span>
+    <div class="items">
+      <a href="/pages/service/download.html" target="_blank" class="item">
+        <span class="title">应用下载</span>
+        <span class="desc">TCL产品软件 / 驱动下载</span>
+        <img src="./image/app-download.png" alt="" class="image">
+      </a>
+      <a href="/pages/service/download.html" target="_blank" class="item">
+        <span class="title">电子说明书</span>
+        <span class="desc">TCL产品使用说明书电子版</span>
+        <img src="./image/policy.png" alt="" class="image">
+      </a>
+    </div>
+  </div>
+  <div class="common-question-wrapper ">
+    <span class="title">常见问题</span>
+    <span class="line"></span>
+    <div class="items clearfix">
+      <!--<div class="item">
+        <span class="title">彩电</span>
+        <a href="##" class="link">软件应用类</a>
+        <a href="##" class="link">常规现象类</a>
+      </div>
+      <div class="item">
+        <span class="title">洗衣机</span>
+        <a href="##" class="link">全自动洗衣机</a>
+        <a href="##" class="link">滚筒洗衣机</a>
+      </div>-->
+    </div>
+  </div>
+  <div style="height: 60px; background-color: #f5f5f5;"></div>
+  <div class="contact-cs-wrapper">
+    <span class="title">联系客服</span> 
+    <span class="line"></span>
+    <div class="items">
+      <div class="item">
+        <img src="./image/zxfw.png" alt="" class="icon">
+        <div class="title">在线服务</div>
+        <div class="desc">在线对话，为您解决遇到的问题24小时在线</div>
+        <a href="http://service.tcl.com:31337/app/chat.html" class="btn consultation">立即咨询</a>
+      </div>
+      <div class="item">
+        <img src="./image/wechat.png" alt="" class="icon">
+        <div class="title">微信客服</div>
+        <img src="../../app/images/code-img01.jpg" alt="" class="wxewm">
+      </div>
+      <div class="item">
+        <img src="./image/kfrx.png" alt="" class="icon">
+        <div class="title">客服热线</div>
+        <div class="desc">仅收市话费，为您解决遇到的问题周一至周日全天服务</div>
+        <div class="tel">4008-123456</div>
+      </div>
+    </div>
+  </div>
+  <div class="shade"></div>
+  <div class="alert">
+    <a href="##" class="x">
+      <img src="./image/x.png" alt="">
+    </a>
+    <div class="msg">很抱歉，系统中未查询到该手机号对应的记录，请检查您的手机号是否输入正确。</div>
+    <a href="##" class="btn">确认</a>
+  </div>
+</div>
+
+
+
+<!-- Help center html start -->
+<div class="help">
+  <div class="min-wid">
+    <dl>
+      <dt>帮助中心</dt>
+      <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+      </dd>
+      <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+      </dd>
+      <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+      </dd>
+      <dd>
+        <a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>服务支持</dt>
+      <dd>
+        <a target="_blank" href="/pages/service/service.html#policy">售后服务</a>
+      </dd>
+      <dd>
+        <a target="_blank" href="/pages/service/service.html#repair">自助服务</a>
+      </dd>
+      <dd>
+        <a target="_blank" href="/pages/service/service.html#query">进度查询</a>
+      </dd>
+      <dd>
+        <!--<a target="_blank" href="/pages/service/service.html#policye">电子保单</a>-->
+      </dd>
+    </dl>
+    <dl>
+      <dt>客户服务</dt>
+      <dd><a target="_blank" href="/pages/bulkpurchase/bulkpurchase.html">大宗采购</a></dd>
+      <dd><a target="_blank" rel="nofollow" href="http://www.tcl.com/dealer/toLogin">经销商之家</a></dd>
+      <dd><a target="_blank" href="http://www.shifendaojia.com/index.html">十分到家</a></dd>
+    </dl>
+    <dl>
+      <dt>关注我们</dt>
+      <dd><a target="_blank" href="/pages/connectWithUs/connectWithUs.html">联系我们</a></dd>
+      <dd><a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">官方微博</a></dd>
+      <dd><a target="_blank" href="http://fans.tcl.com/">铁粉社区</a></dd>
+    </dl>
+    <dl>
+      <dt>应用服务</dt>
+      <dd><a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a></dd>
+      <dd><a target="_blank" href="https://jr.tcl.com/home.html">金融</a></dd>
+      <dd><a target="_blank" href="http://www.imooc.com/">教育</a></dd>
+      <dd><a target="_blank" href="http://www.golive-tv.com/">全球播</a></dd>
+      <dd><a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a></dd>
+    </dl>
+    <dl class="last-r">
+      <p class="red phone">4008-123456</p>
+
+      <p class="grey">（24小时在线，仅收市话费）</p>
+      <a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+    </dl>
+  </div>
+</div>
+<!-- Help center html end -->
+
+<!-- footer html start -->
+<div class="footer">
+  <div>
+    <div class="foot-logo">&#xe674;</div>
+    <p class="blod">
+      <a target="_blank" href="/group/companyInfo/index">关于TCL</a>|
+      <a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|
+      <a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|
+      <a target="_blank" href="/group/news/index">新闻中心</a>|
+      <a target="_blank" href="/group/recruitment/index">人才招聘</a>|
+      <a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p>
+
+    <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+      <a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|
+      <a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|
+      <a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p>
+
+    <div class="foot-r">
+      <div class="language">
+        <i class="arrow">&#xe608;</i>
+        <a href="#" class="lang-item active">中文简体</a>
+        <a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div>
+      <div><img src="/app/images/credibility.png"/></div>
+    </div>
+  </div>
+</div>
+<!-- footer html end -->
+
+
+
+
+
+
+<script src="../../app/js/vendor.js"></script>
+<script src="../../app/js/core.js"></script>
+<script src="../../app/config/config.js"></script>
+
+<!--[if (IE 8) | (IE 9)]>
+<script src="../../app/js/jquery.placeholder.min.js"></script>
+<script src="../../app/js/respond.js"></script>
+<![endif]-->
+
+<script>
+  require(['service-home-index.js'], function (obj) {
+    obj.index();
+  });
+</script>
+</body>
+</html>

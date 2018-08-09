@@ -1,0 +1,70 @@
+.inlineBlock{
+    display: inline-block;
+}
+#getStorePromotion{
+    margin-top: 5px;
+}
+#getStorePromotion strong{
+    color: #606060;
+    vertical-align: top;
+}
+#getStorePromotion .inlineBlock{
+    vertical-align: top;
+}
+#getStorePromotion .inlineBlock p{
+    line-height: 20px;
+}
+.mypromotiontagfl{
+    font-size: 12px;
+}
+.mypromotiontagfl span{
+    margin-right: 10px;
+}
+.m_process_box {margin-top:10px; border:1px solid #ddd; padding:20px; background:#f8f8f8; height:38px;overflow:hidden;zoom:1;}
+.m_process_box .m_left{float:left; text-align:center; color:#606060}
+.m_process_box .m_span{height:36px; line-height:36px;  margin:0 15px; color:#E5E5E5; font-family:"SimSun"; font-size:60px;}
+.m_process_box .m_left .m_stocking{line-height:36px;}
+#productAttr{display: none;}
+#productAttr p{
+    text-align: center;
+ }
+.sale .buy.fastBuyDisabled,
+.buy.fastBuyDisabled {
+    border-color: #999;
+    background-color: #999;
+}
+/******评价样式**********/
+#comment .commentTitle{
+    height:40px;
+    line-height:40px;
+    background-color: #f7f7f7;
+    padding-left:40px;
+    text-align:left;
+    margin: 20px;
+}
+#comment .comment-info{
+  text-align: left;
+  padding-left: 40px;
+}
+#comment .comment-info .praise-rate{
+    font-size: 30px;
+    color: #FF0000;
+    line-height: 38px;
+    margin-left:10px;
+}
+#comment .comment-info .tab-item{
+    height:30px;
+    padding:5px 15px;
+    font-size:13px;
+    border:1px solid #ccc;
+    margin-right:14px;
+    cursor:pointer;
+}
+#comment .comment-info .tab-item.active{
+    border-color:#ff4545;
+    color:#ff0000 ;
+}
+#comment .comment-info .comment-split{
+    color:#eee;
+    margin:0 30px;
+}

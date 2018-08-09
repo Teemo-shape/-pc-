@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>大宗采购</title>
+    <meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+    <meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../app/css/style.css">
+    <link rel="stylesheet" href="../../app/css/global.css">
+    <link rel="stylesheet" href="../../app/css/channel.css">
+    <link rel="stylesheet" href="../../app/css/purchase.css">
+    <link rel="stylesheet" href="../../app/css/common.css">
+    <style>
+        .bannertwo{
+            background: url("../../app/images/bulkPurchase.jpg") center center no-repeat;
+            height: 550px;
+        }
+        .bannerContent{
+            width: 1226px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #loginFormBox{
+            background: #fff;
+            width: 260px;
+            min-height: 280px;
+            position: absolute;
+            padding: 30px;
+            right: 0;
+            top:104px;
+        }
+        .pass-code img{height:35px; margin-top: -5px;}
+        #loginFormBox h3{
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .reg-cont .user-name, .reg-cont .veri-code, .reg-box .tips-text {
+             width: 100%;
+             margin: 0;
+        }
+        .reg-cont input, .reg-cont .buy {
+            width: 100%;
+            height: 38px;
+            line-height: 38px;
+            padding-left: 40px;
+            margin-bottom: 24px;
+            border: 1px solid #ccc;
+            font-size: 12px;
+        }
+        .reg-cont .buy{
+            border: none;
+            margin-bottom: 10px;
+        }
+        .reg-cont .user-ico, .reg-cont .code-ico, .reg-cont .pass-ico {
+            width: 26px;
+            height: 26px;
+            left: 5px;
+            top: 10px;
+            background-position: -6px -117px;
+        }
+        .reg-cont .pass-ico {
+            top: 5px;
+            background-position: -103px -113px;
+            left: 3px;
+        }
+        .login-foot a{
+            display: inline-block;
+            margin:0 15px;
+            font-size: 12px;
+        }
+        .advantage {
+            margin-top: 110px;
+        }
+        .line {
+            height: 3px;
+            color: #333;
+            background: #333;
+        }
+        .fsize_32{
+            color: #333;
+        }
+        .contact_s1{
+            text-align: center;
+            width: 100%;
+            background-color: #fafafa;
+        }
+        .cu-icon{
+            color: #fc3033;
+            border: 1px solid #fc3033;
+        }
+        .contact .contact-us{
+            margin-top: 78px;
+        }
+        .contact .mgt75 {
+            margin-bottom: 88px;
+        }
+        .cu-txt{
+            margin-left: 10px;
+        }
+        .cu-txt, .cu-txt-dis{
+            display: inline-block;
+        }
+        .cu-txt p {
+            text-align: left;
+        }
+        .word_logo{
+            width: 80px;height: 80px; font-size: 90px; line-height: 80px;
+        }
+        .incompleteTitle{
+            color: red;
+            font-size: 22px;
+            font-weight: 400;
+            text-align: left;
+            position: relative;
+        }
+        .incompleteTitle span{
+            position: absolute;
+            display: block;
+            width: 40px; height: 2px; background: red;
+            bottom: -10px;
+        }
+        .incompleteName{
+            text-align: left;
+            margin: 30px 0 55px;
+        }
+        .incomplete-but button.buy{margin-bottom: 8px; padding: 0;text-indent:0;}
+        .incomplete-but p{font-size: 12px; color: #a9a9a9;}
+        .incomplete a{padding: 10px; background: red; display: block; color: #fff; margin-bottom: 10px; margin-top: 90px;}
+        .unaudited-but:after{content: ' '; clear: both; overflow: hidden; display: block;}
+        .unaudited-but{ margin-top: 80px;}
+        .unaudited-but label, .unaudited-but div{   font-size: 11px; float: left; margin-top: 10px;}
+        .unaudited-but div{margin-left: 5px;}
+        .unaudited-but .case1 {color: red;}
+        .unaudited-but .case1 a{ color: red; margin-left: 20px; text-decoration: underline;}
+        .unaudited-but .case2 {width: 155px;text-align: left;}
+        .unaudited-but label{ width: 60px;}
+        .user-name label, .user-name strong {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            left: 0;
+            color: #F50;
+            font-size: 12px;
+            text-align: left;
+            padding-left: 2px;
+            font-weight: normal;
+            background: none;
+        }
+    </style>
+    <!--[if (IE 9)|(IE 8) ]>
+    <script src="../../app/js/ie9.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 注入cookie-->
+    <div id="insertc"></div>
+    <!-- Top html start -->
+    <include type="header" src="../../app/plugins/header/nav-header-index.html"></include>
+    <!-- Banner html start-->
+    <div class="bannertwo wid100">
+        <div class="bannerContent reg-cont">
+            <div  id="loginFormBox">
+        	     <img src="../../app/images/loading.gif">
+		    </div>
+        </div>
+    </div>
+
+    <div class="advantage tac">
+        <div class="fsize_32 pad_bottom20">企业客户优势</div>
+        <div class="line wrap"></div>
+        <div class="mgt75">
+            <div class="wid100">
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac fl six-icon">&#xe66d;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">品质保证</p>
+                            <p class="fsize_14 mgt10">TCL工厂直供</p>
+                            <p class="fsize_14">原装正品</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac fl six-icon">&#xe66e;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">全国物流覆盖</p>
+                            <p class="fsize_14 mgt10">全国省市物流无差别覆盖</p>
+                            <p class="fsize_14">快捷、安全、高效到达</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac six-icon fl">&#xe66f;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">售后无忧</p>
+                            <p class="fsize_14 mgt10">全国联保7x24小时在线服务，</p>
+                            <p class="fsize_14">专人协调处理便捷无忧</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="wid100 mgt75">
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac six-icon fl">&#xe670;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">最新优惠价</p>
+                            <p class="fsize_14 mgt10">产品调价及时通知</p>
+                            <p class="fsize_14">为您提供最新的优惠价</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac six-icon fl">&#xe671;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">三大特色</p>
+                            <p class="fsize_14 mgt10">多种支付方式、个性产品搭配，</p>
+                            <p class="fsize_14">正规增值税票</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="wid33 fl">
+                    <div class="six_dec">
+                        <div class="word_logo tac six-icon fl">&#xe672;</div>
+                        <div class="fl tal">
+                            <p class="fsize_22">全方位服务</p>
+                            <p class="fsize_14 mgt10">专人对接售前服务</p>
+                            <p class="fsize_14">提供解决方案合同签订，</p>
+                            <p class="fsize_14">订单全名跟踪，及时上门安装调试</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner html end-->
+    <!--Contact us start-->
+    <div class="contact_s1 tac">
+            <img src="../../app/images/liuc_11.jpg">
+    </div>
+    <div class="contact tac">
+       <div class="fsize_32 pad_bottom20 contact-us wrap">与我们联系</div>
+       <div class="line wrap"></div>
+       <div class="mgt75 wid100">
+           <div class="wid50 fl tac dec">
+               <div class="cu-icon cu-txt-dis">&#xe61c;</div>
+               <div class="cu-txt">
+                   <p>传真：0752-2385649</p>
+               </div>
+
+           </div>
+           <div class="wid50 fr tac dec">
+               <div class="cu-icon cu-txt-dis">&#xe601;</div>
+               <div class="cu-txt">
+                   <p>4007123456@tcl.com</p>
+                   <p>收到邮件我们将会在第一时回复您</p>
+               </div>
+           </div>
+           <div class="clear"></div>
+       </div>
+   </div>
+
+    <!--Contact us end-->
+    <!--request menu start-->
+    <!--request menu end-->
+    <!--企业优势start-->
+
+    <!--企业优势end-->
+    <!-- Main Content end -->
+    <!-- Help center html start -->
+    <div class="server">
+        <ul>
+          <li class="text-l disable"><span></span> <em>官方正品</em> </li>
+          <li class="text-two disable"><span></span> <em>全国联保</em> </li>
+          <!-- </a> -->
+          <li class="text-three disable"> <span></span> <em>全场包邮</em> </li>
+          <!-- </a> -->
+          <li class="text-r disable"> <span></span> <em>7天无理由退货</em> </li>
+        </ul>
+      </div>
+    <div class="help" id = "navFooterLink">
+    </div>
+
+    </div>
+
+    <!-- Help center html end -->
+    <!-- footer html start -->
+    <div class="footer">
+
+        <div>
+            <div class="foot-logo">&#xe674;</div>
+            <p class="blod">
+                <a target="_blank" href="#">关于TCL</a>|
+                <a target="_blank" rel="nofollow" href="#">投资者关系</a>|
+                <a target="_blank" rel="nofollow" href="#">社会责任</a>|
+                <a target="_blank" href="#">新闻中心</a>|
+                <a target="_blank" href="#">人才招聘</a>|
+                <a target="_blank" href="#">成员网站</a></p>
+            <p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号
+                <a target="_blank" class="marginL" href="#">使用条款</a>|
+                <a target="_blank" rel="nofollow" href="#">法律声明</a>|
+                <a target="_blank" href="#">隐私保护</a></p>
+            <div class="foot-r">
+                <div class="language">
+                    <i class="arrow">&#xe608;</i>
+                    <a href="#" class="lang-item active">中文简体</a>
+                    <a href="#" class="lang-item ">English</a></div>
+                <div><img src="../../app/images/credibility.png" /></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer html end -->
+    <!-- go to top html start-->
+    <div class="goTop">
+        <a href="#">
+            <div class="item">&#xe64a;</div>
+        </a>
+        <a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+    </div>
+    <script src="../../app/js/vendor.js"></script>
+    <script src="../../app/js/core.js"></script>
+    <script src="../../app/config/config.js"></script>
+    <script src="../../app/js/jquery.validate.min.js"></script>
+    <script src="newBulkpurchase.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>TCL官方网站-第三方登录</title>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="TCL,TCL商城,TCL集团,TCL官方商城,TCL官网商城,TCL官网,TCL官方网站,TCL官方旗舰店,TCL旗舰店,TCL商城旗舰店,TCL网上商城,TCL电视,TCL曲面4K,TCL 4K,TCL Hero,TCL智能电视,TCL手机,TCL洗衣机,TCL空调,TCL冰箱,么么哒,TV+,娱乐TV+,芒果TV" />
+		<meta name="description" content="TCL官方商城(www.tcl.com)是TCL集团的网上购物商城,我们提供正品TCL电视,手机,洗衣机,空调,冰箱,配件等TCL产品。全国包邮、正品低价、快速送达、提供正规发票。" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/style.css">
+		<link rel="stylesheet" href="../../app/css/member.css">
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- Top html start -->
+		<div class="box ">
+			<div class="reg-top">
+				<div class="logo">
+					<a href="/"><img src="../../app/images/logo.png" /></a>
+				</div>
+				<div class="title">第三方登录</div>
+			</div>
+		</div>
+		<div class="reg-cont y_reg_success">
+			<h1 class="y_h1">恭喜你成功绑定账号！</h1>
+			<p class="y_ico"></p>
+			<div class="login-but"><button class="buy" binder-event="click|goIndex">马上购物</button></div>
+		</div>
+		<script src="../../app/js/vendor.js"></script>
+		<script src="../../app/js/core.js"></script>
+		<script src="../../app/config/config.js"></script>
+		<script>
+			require(['KUYU.Binder', 'KUYU.Service'], function() {
+				var $binder = KUYU.Binder,
+					$init = KUYU.Init,
+					$scope = KUYU.RootScope;
+				$binder.init()
+				$scope.goIndex = function() {
+					$init.nextPage("Index", {})
+				}
+			})
+		</script>
+	</body>
+
+</html>

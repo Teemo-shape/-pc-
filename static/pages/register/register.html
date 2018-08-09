@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>TCL官方商城-会员登录</title>
+		<meta name="keywords" content="T严选,TCL员工之家,TCL内部购物平台,TCL官方网上商城" />
+		<meta name="description" content="T严选商城隶属TCL集团电子商务中心（惠州酷友网络科技有限公司），是TCL员工专属购物平台，是TCL集团认证的官方商城。T严选商城所售商品均为原装正品，并开具电子发票，支持全国联保。" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="renderer" content="webkit" />
+	    <link rel="icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+	    <link rel="shortcut icon" href="http://www.tcl.com:80/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../app/css/global.css">
+		<link rel="stylesheet" href="../../app/css/channel.css">
+		<link rel="stylesheet" href="../../app/css/style.css">
+	<style>
+		.header.my {
+			position: relative;
+		}
+		#mask{
+			min-height: 1135px;
+		}
+		.reg-cont .btn_disabled {
+			border-color: #B4B4B4;
+			background-color: #B4B4B4
+		}
+		#fivethbox{ width: 444px; margin: 80px auto;}
+		.pubt1, .pubt2{font-size: 16px; font-weight: bold; color: #404040; margin-bottom: 10px;}
+		.pubt2{margin-bottom: 5px;}
+		.pubt3{font-size: 12px; color: #a2a2a2;}
+		#fivethbox button{ width: 100%; padding:8px 0 ;margin-top: 80px; color: #fff; background-color: #1791f5; border: none;}
+        .vadliboxtu{text-align: left; width: 444px; margin: 20px auto; display: none;}
+        .vadliboxtu p{color: #1e0000; margin-bottom: 10px;}
+        .alertValidBox input{
+            height: 55px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            margin-bottom: 0;
+            border-right: 0;
+            padding-left: 10px;}
+        .alertValidBox img{cursor: pointer;
+            border: 1px solid #ccc;}
+	</style>
+		<!--[if (IE 9)|(IE 8) ]>
+		<script src="../../app/js/ie9.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<include type="header" src="../../app/plugins/header/onlyheader.html"></include>
+		<input type="hidden" id="type" value=""/>
+		<div class="box ">
+			<div class="reg-top">
+				<div class="logo">
+					<a href="/">
+						<img src=" ../../app/images/logo.png" />
+					</a>
+				</div>
+				<div class="title">TCL账号注册</div>
+			</div>
+		</div>
+		<!-- Top html end -->
+		<!-- content html start -->
+		<div class="reg-cont">
+			<!-- 注册第一步 -->
+			<div class="reg-box" id="firstbox" >
+				<div class="user-name input-box">
+					<span class="user-ico"></span>
+					<input type="text" name="username" id="username" class="j-blur" placeholder="邮箱/手机号码" />
+					<div class="prompt red" id="nameerror">请输入手机号码</div>
+				</div>
+				<div class="veri-code input-box"><span class="code-ico"></span>
+					<input type="text" class="j-blur" name="validateCode" id="validateCode" placeholder="输入图片验证码" maxlength="4" />
+					<span class="code-img" style="cursor: pointer;">
+						<img style="width: 152px;height: 55px" binder-event="click|getLocalCaptchaCodecont" id="cont_code_img" src=""/>
+					</span>
+					<div class="prompt red" id="codeerror">请输入图片验证码</div>
+				</div>
+				<div class="clause">
+					<input type="checkbox" class="clause-checkbox" checked />
+					<span class="agree-text">已阅读并同意用户服务条款和隐私政策</span>
+				</div>
+				<div>
+					<button class="buy next" id="next" style="cursor: pointer; color:#fff;" type="button" binder-event="click|register">立即注册</button>
+				</div>
+				<input type="hidden" id="verificationKeycontent" name="verificationKeycontent" />
+			</div>
+
+			<!-- 注册第二步 -->
+			<div class="reg-box" id="secondbox" style="display:none;">
+				<div class="tips-text">我们已经发送<span id="messageOrEmail"></span>至
+					<span id="phoneorEmail" style="color:blue;"></span></div>
+				<div class="tips-text mar">请输入<span id="msgOrEmail"></span>中的验证码</div>
+				<input type="hidden" name="code" id="code" />
+				<div class="veri-code" id="vericode"><span class="code-ico"></span>
+					<input type="text" name="validatecodes" id="validatecodes" placeholder="输入验证码" />
+					<input class="code-img" style="border:none;cursor: pointer;" id="sendcode" type="button"  value="获取验证码" />
+                    <div id="cerror" style="color:red; text-align: left;"></div>
+                </div>
+                <!--<div class="vadliboxtu">-->
+                    <!--<p>请输入图形验证码：</p>-->
+                    <!--<div class='alertValidBox'><input type='text' id='validCode2' placeholder='输入验证码' ><img style='width: 152px;height: 55px' onclick='KUYU.getLocalCaptchaCodecont2()'  id='cont_code_img2' src=''/><p id='alertcodeerror' style='color: red; display: none; text-align: left; margin-left: 25px;'>验证码不能为空</p></div>-->
+                <!--</div>-->
+                <div>
+					<button class="next"  binder-event="click|nextCheck" style="color:white;background: red;margin-top: 10px;text-align: center;width:440px;  height:65px; font-size: 18px; font-weight: bold; cursor: pointer; border: 1px solid gray; margin-bottom: 20px;">下一步</button>
+				</div>
+				<div>
+					<a href="../register/register.html"><button class="buy white prev">返回</button></a>
+				</div>
+			</div>
+			<!-- 注册第三步 -->
+			<div class="reg-box" id="thirdbox" style="display:none">
+				<div class="tips-text">您注册的账号为：
+					<span id="zhanghao" style="color:blue;" name="zhanghao"></span>
+				</div>
+				<div class="tips-text mar">请设置您的密码</div>
+				<div class="user-name">
+					<span class="pass-ico"></span>
+					<input type="password" name="password" id="password" onblur="javascript:KUYU.checkpassword();" placeholder="请输入密码" />
+				</div>
+				<div class="tips-text" id="passworderror" style="color:green;">密码不能全是数字或全是字母，长度不能少于8位</div>
+				<div class="user-name">
+					<span class="pass-ico"></span>
+					<input type="password" name="pass" id="pass" onblur="javascript:KUYU.checkpass();" placeholder="请输入确认密码" />
+				</div>
+				<div class="tips-text" id="passerror" style="color:red;"></div>
+				<h4 style="color: red;" id="registererror"></h4>
+				<div>
+					<button class="next checkpwd" style="color:white;background: red;margin-top: 10px;text-align: center;width:440px;  height:65px; font-size: 18px; font-weight: bold; cursor: pointer; border: 1px solid gray;margin-bottom: 20px;">提交</button>
+				</div>
+			</div>
+			<!-- 注册完成 -->
+			<div class="reg-box" id="fourthbox" style="display:none">
+				<div class="reg-suc" >恭喜您注册成功！</div>
+				<!-- <span id="tiaozhuan" style="color:red;"></span>后将跳转到登录页面 -->
+				<div class="reg-img"><img src="../../app/images/reg.jpg" /></div>
+				<div id="loginPath">
+					<a id="Path" href="{{login}}">
+						<button class="buy">登录</button>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- 大宗采购 -->
+		<div id="fivethbox" style="display:none">
+			<div class="pubt1">恭喜您！</div>
+			<div class="pubt2">已成功注册TCL帐号, <span id="fiveTime">3</span>秒后, 页面自动跳转至大宗采购首页</div>
+			<p class="pubt3">(跳转至大宗采购首页, 请登录后, 提交企业资质信息资料！)</p>
+			<!-- <span id="tiaozhuan" style="color:red;"></span>后将跳转到登录页面 -->
+			<div >
+				<a href="../bulkpurchase/newBulkpurchase.html">
+					<button class="buy">进入大宗采购</button>
+				</a>
+			</div>
+		</div>
+	</div>
+		<!-- content html end -->
+
+		<!-- Help center html start -->
+		<div class="help">
+			<div class="min-wid">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?42a6aef400b94765a3299204bf777391">购物指南</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?b1b5ae3780394e0ba1b68f79a5c2ea95">支付方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?00a69be22f1e4408bf0d9a5e563adb1e">配送方式</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="/pages/serviceRevision/ProblemDetails.html?0c770574bebd48618017e9602ff592fb">交易条款</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>服务支持</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policy">售后服务</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService">自助服务</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/tclchannel/toService#policye">电子保单</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>关于TCL</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=1">了解TCL</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" href="http://www.tcl.com/group/recruitment/index">人才招聘</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/connectWithUs.jsp">联系我们</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd>
+						<a target="_blank" href="http://fans.tcl.com/">铁粉社区</a>
+					</dd>
+					<dd>
+						<a target="_blank" rel="nofollow" class="botSina" href="http://widget.weibo.com/dialog/follow.php?fuid=1741028690&refer=www.tcl.com&language=zh_cn&type=widget_page&vsrc=app_followbutton&backurl=http%3A%2F%2Fwww.tcl.com%2F&rnd=1453360859071">新浪微博</a>
+					</dd>
+
+					<dd>
+						<a target="_blank" href="http://www.shifendaojia.com/pc.html">十分到家</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com/group/companyInfo/slipPath?type=6">成员网站</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>特色服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/0a4e159304144d22a289a8eb498e9c88">全场包邮</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl.com:80/frontshow/content/getContent/4822a43dd59f4dcab6ea13f307bbb2dc">全国联保</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>应用服务</dt>
+					<dd>
+						<a target="_blank" href="http://www.huan.tv/toIndex.action">欢网</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="https://jr.tcl.com/home.html">金融</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.imooc.com/">教育</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.golive-tv.com/">全球播</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="http://www.tcl-smarthome.com/">智能家居</a>
+					</dd>
+				</dl>
+				<dl class="last-r">
+
+					<p class="red phone">4008-123456</p>
+					<p class="grey">（24小时在线，仅收市话费）</p>
+
+					<a href="/pages/service/customerServiceKuyu.html" target="_self"><i>&#xe64a;</i>24小时在线客服</a>
+				</dl>
+			</div>
+		</div>
+		<!-- Help center html end -->
+		<!-- go to top html-->
+		<div class="goTop">
+			<a href="http://www.tcl.com:80/servicecenter/customerServiceKuyu">
+				<div class="item">&#xe64a;</div>
+			</a>
+			<a onclick="$('body,html').animate({scrollTop: 0 },500);">&#xe639;</a>
+		</div>
+		<div class="footer"><div><div class="foot-logo"></div><p class="blod"><a target="_blank" href="/group/companyInfo/index">关于TCL</a>|<a target="_blank" rel="nofollow" href="/group/investors/index">投资者关系</a>|<a target="_blank" rel="nofollow" href="/group/societyDuty/index">社会责任</a>|<a target="_blank" href="/group/news/index">新闻中心</a>|<a target="_blank" href="/group/recruitment/index">人才招聘</a>|<a target="_blank" href="/group/companyInfo/slipPath?type=6">成员网站</a></p><p>©2010-2016 TCL CORPORATION All Rights Reserved. TCL集团股份有限公司版权所有 粤ICP备05040863号<a target="_blank" class="marginL" href="/frontshow/content/getContent/bf9d8fe2ec834c178f7bd2ba2272adfa">使用条款</a>|<a target="_blank" rel="nofollow" href="/group/companyInfo/slipPath?type=5">法律声明</a>|<a target="_blank" href="/group/companyInfo/slipPath?type=4">隐私保护</a></p><div class="foot-r"><div class="language"><i class="arrow"></i><a href="/pages/index/index.html" class="lang-item active">中文简体</a><a href="http://news.tcl.com/English.php/index/index.html" class="lang-item ">English</a></div><div><img src="/app/images/credibility.png"></div></div></div></div>
+		<script src="../../app/js/vendor.js"></script>
+		<script src="../../app/js/core.js"></script>
+		<script src="../../app/config/config.js"></script>
+		<script src="../../app/js/jsencrypt.min.js"></script>
+		<script src="register.js"></script>
+
+	</body>
+</html>
